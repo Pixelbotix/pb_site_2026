@@ -1,0 +1,235 @@
+/* =========================================================
+   assets/css/layout.css
+   Goal:
+   - High contrast in light mode
+   - Clean dark mode
+   - No accidental inheritance
+   ========================================================= */
+
+
+/* ================= ICON FIX ================= */
+:where([class^="ri-"])::before {
+  content: "\f3c2";
+}
+
+
+/* =========================================================
+   NAV BAR
+   ========================================================= */
+
+/* LIGHT MODE */
+.nav-link,
+.nav-trigger {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-weight: 600;
+  cursor: pointer;
+
+  /* FIX: real readable contrast */
+  color: #eef0f4; /* gray-900 */
+}
+
+.nav-link:hover,
+.nav-trigger:hover {
+  color: #2563eb; /* blue-600 */
+}
+
+/* DARK MODE */
+.dark .nav-link,
+.dark .nav-trigger {
+  color: #e5e7eb; /* gray-200 */
+}
+
+.dark .nav-link:hover,
+.dark .nav-trigger:hover {
+  color: #60a5fa; /* blue-400 */
+}
+
+
+/* =========================================================
+   LOGO & HEADER ICONS (NO INHERITANCE)
+   ========================================================= */
+
+header .text-primary {
+  color: #2563eb;
+}
+
+.dark header .text-primary {
+  color: #60a5fa;
+}
+
+/* Dark mode toggle icon */
+#darkModeToggle i {
+  color: #111827;
+}
+
+.dark #darkModeToggle i {
+  color: #f9fafb;
+}
+
+
+/* =========================================================
+   MEGA MENU
+   ========================================================= */
+
+.mega-menu {
+  position: fixed;
+  top: 4rem;
+  left: 50%;
+  transform: translateX(-50%) translateY(-8px);
+  width: calc(100vw - 2rem);
+  max-width: 72rem;
+
+  background: #ffffff;
+  border-radius: 16px;
+  padding: 2rem;
+  border: 1px solid #e5e7eb;
+
+  box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.25s ease;
+  z-index: 40;
+}
+
+.mega-menu.show {
+  opacity: 1;
+  visibility: visible;
+  transform: translateX(-50%) translateY(0);
+}
+
+.dark .mega-menu {
+  background: #111827;
+  border-color: #374151;
+}
+
+
+/* =========================================================
+   MENU LINKS
+   ========================================================= */
+
+.menu-link {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.5rem;
+  padding: 0.5rem 0.6rem;
+  border-radius: 8px;
+  text-decoration: none;
+
+  /* FIX: darker default */
+  color: #111827;
+  transition: background 0.15s ease, color 0.15s ease;
+}
+
+.menu-link i {
+  color: #2563eb;
+  margin-top: 2px;
+}
+
+.menu-link:hover {
+  background: rgba(37, 99, 235, 0.08);
+  color: #2563eb;
+}
+
+.dark .menu-link {
+  color: #e5e7eb;
+}
+
+.dark .menu-link:hover {
+  background: rgba(255,255,255,0.08);
+  color: #ffffff;
+}
+
+.dark .menu-link:hover i {
+  color: #93c5fd;
+}
+
+
+/* =========================================================
+   TRUSTED BY SCROLLER
+   ========================================================= */
+
+#logoScroller {
+  display: flex;
+  gap: 3rem;
+  width: max-content;
+  animation: scrollInfinite 100s linear infinite;
+  will-change: transform;
+}
+
+#logoScroller:hover {
+  animation-play-state: paused;
+}
+
+@keyframes scrollInfinite {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+
+
+/* =========================================================
+   MOBILE MENU
+   ========================================================= */
+
+.mobile-trigger {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-weight: 600;
+  padding: 0.75rem 0;
+
+  /* FIX: readable light mode */
+  color: #111827;
+}
+
+.dark .mobile-trigger {
+  color: #e5e7eb;
+}
+
+.mobile-panel {
+  padding-left: 1rem;
+  margin-top: 0.4rem;
+}
+
+.mobile-panel a {
+  display: block;
+  padding: 0.35rem 0;
+  color: #374151;
+}
+
+.dark .mobile-panel a {
+  color: #d1d5db;
+}
+
+.mobile-panel a:hover {
+  color: #2563eb;
+}
+
+.dark .mobile-panel a:hover {
+  color: #93c5fd;
+}
+
+
+/* =========================================================
+   DARK MODE GLOBAL HELPERS
+   ========================================================= */
+
+.dark .bg-white { background-color: #1f2937; }
+.dark .bg-gray-50 { background-color: #111827; }
+.dark .border-gray-200 { border-color: #374151; }
+.dark .text-gray-900 { color: #f9fafb; }
+.dark .text-gray-700 { color: #e5e7eb; }
+.dark .text-gray-600 { color: #d1d5db; }
+
+
+/* =========================================================
+   MOBILE HEIGHT SAFETY
+   ========================================================= */
+
+@media (max-height: 640px) {
+  #mobileMenu > div {
+    max-height: 65vh;
+  }
+}

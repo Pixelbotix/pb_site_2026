@@ -1,0 +1,153 @@
+<!-- partials/header.html -->
+<!-- ================= HEADER ================= -->
+    <header class="sticky top-0 z-50 bg-white dark:bg-gray-900 border-b border-gray-200 dark:border-gray-700">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="h-16 flex items-center justify-between">
+
+                <!-- Logo -->
+                <div class="text-2xl font-['Pacifico'] text-primary">
+                    Pixelbotix
+                </div>
+
+                <!-- Desktop Navigation -->
+                <nav class="hidden lg:flex items-center gap-8 xl:gap-10 2xl:gap-12">
+
+
+                    <a href="#" class="nav-link">
+                        <i class="ri-home-line"></i> Home
+                    </a>
+
+                    <button class="nav-trigger" data-menu="rd">
+                        <i class="ri-lightbulb-line"></i> R&D
+                        <i class="ri-arrow-down-s-line"></i>
+                    </button>
+
+                    <button class="nav-trigger" data-menu="programs">
+                        <i class="ri-graduation-cap-line"></i> Programs
+                        <i class="ri-arrow-down-s-line"></i>
+                    </button>
+
+                    <button class="nav-trigger" data-menu="products">
+                        <i class="ri-product-hunt-line"></i> Products
+                        <i class="ri-arrow-down-s-line"></i>
+                    </button>
+
+                    <button class="nav-trigger" data-menu="services">
+                        <i class="ri-customer-service-line"></i> Services
+                        <i class="ri-arrow-down-s-line"></i>
+                    </button>
+
+                    <button class="nav-trigger" data-menu="media">
+                        <i class="ri-play-circle-line"></i> Media
+                        <i class="ri-arrow-down-s-line"></i>
+                    </button>
+
+                    <button class="nav-trigger" data-menu="about">
+                        <i class="ri-information-line"></i> About
+                        <i class="ri-arrow-down-s-line"></i>
+                    </button>
+
+                </nav>
+
+                <!-- Actions -->
+                <div class="flex items-center gap-4">
+                    <button id="darkModeToggle" class="p-2 rounded hover:bg-gray-100 dark:hover:bg-gray-800">
+                        <i id="darkModeIcon" class="ri-moon-line"></i>
+                    </button>
+                    <button class="bg-primary text-white px-5 py-2 rounded">
+                        Apply Now
+                    </button>
+                    <button id="mobileMenuBtn" class="lg:hidden p-2">
+                        <i class="ri-menu-line"></i>
+                    </button>
+                </div>
+
+            </div>
+        </div>
+
+
+        <!-- ================= MOBILE MENU ================= -->
+        <div id="mobileMenu" class="lg:hidden bg-white dark:bg-gray-900
+         border-b border-gray-200 dark:border-gray-700
+         overflow-hidden transition-[max-height] duration-300 ease-in-out
+         max-h-0">
+            <div class="px-6 py-4 space-y-5 max-h-[75vh] overflow-y-auto">
+
+                <!-- Home -->
+                <a href="/" class="block font-medium">Home</a>
+
+                <!-- R&D -->
+                <div>
+                    <button class="mobile-trigger w-full flex justify-between items-center font-medium">
+                        <span>R&D</span>
+                        <i class="ri-arrow-down-s-line transition-transform"></i>
+                    </button>
+                    <div class="mobile-panel hidden pl-4 pt-2 space-y-2 text-sm">
+                        <a href="/rd/intelligent-assistive-devices" class="block">Assistive Devices</a>
+                        <a href="/rd/uav-service-drones" class="block">UAV & Drones</a>
+                        <a href="/rd/iot-smart-automation" class="block">IoT & Automation</a>
+                        <a href="/rd/digital-twin-engineering" class="block">Digital Twin</a>
+                    </div>
+                </div>
+
+                <!-- Programs -->
+                <div>
+                    <button class="mobile-trigger w-full flex justify-between items-center font-medium">
+                        <span>Programs</span>
+                        <i class="ri-arrow-down-s-line transition-transform"></i>
+                    </button>
+                    <div class="mobile-panel hidden pl-4 pt-2 space-y-2 text-sm">
+                        <a href="/programs/ros-amr" class="block">ROS & AMR</a>
+                        <a href="/programs/embedded-ai" class="block">Embedded AI</a>
+                        <a href="/programs/drone-technology" class="block">Drone Program</a>
+                        <a href="/programs/computer-vision-ai" class="block">Computer Vision</a>
+                    </div>
+                </div>
+
+                <!-- Products -->
+                <div>
+                    <button class="mobile-trigger w-full flex justify-between items-center font-medium">
+                        <span>Products</span>
+                        <i class="ri-arrow-down-s-line transition-transform"></i>
+                    </button>
+                    <div class="mobile-panel hidden pl-4 pt-2 space-y-2 text-sm">
+                        <a href="/products/robotics-kits" class="block">Robotics Kits</a>
+                        <a href="/products/3d-printers" class="block">3D Printers</a>
+                        <a href="/products/drone-platforms" class="block">Drone Platforms</a>
+                    </div>
+                </div>
+
+                <!-- Services -->
+                <div>
+                    <button class="mobile-trigger w-full flex justify-between items-center font-medium">
+                        <span>Services</span>
+                        <i class="ri-arrow-down-s-line transition-transform"></i>
+                    </button>
+                    <div class="mobile-panel hidden pl-4 pt-2 space-y-2 text-sm">
+                        <a href="/services/3d-printing" class="block">3D Printing</a>
+                        <a href="/services/consulting" class="block">Consulting</a>
+                        <a href="/services/custom-robotics" class="block">Custom Robotics</a>
+                    </div>
+                </div>
+
+                <!-- About -->
+                <div>
+                    <button class="mobile-trigger w-full flex justify-between items-center font-medium">
+                        <span>About</span>
+                        <i class="ri-arrow-down-s-line transition-transform"></i>
+                    </button>
+                    <div class="mobile-panel hidden pl-4 pt-2 space-y-2 text-sm">
+                        <a href="/about/who-we-are" class="block">Who We Are</a>
+                        <a href="/about/vision-mission" class="block">Vision & Mission</a>
+                        <a href="/about/team" class="block">Team</a>
+                    </div>
+                </div>
+
+                <!-- Contact -->
+                <a href="/contact" class="block font-medium">Contact</a>
+
+            </div>
+        </div>
+
+
+    </header>

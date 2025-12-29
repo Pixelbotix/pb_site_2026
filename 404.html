@@ -1,0 +1,71 @@
+<!-- 404.html -->
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>404 – Page Not Found | PixelBotix</title>
+
+  <!-- Tailwind CDN (keep ONLY here or homepage, nowhere else) -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Remix Icons -->
+  <link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css"
+  />
+
+  <!-- Global / Layout CSS -->
+  <link rel="stylesheet" href="/assets/css/layout.css" />
+</head>
+
+<body class="bg-white text-gray-900 transition-colors duration-300">
+
+  <!-- REQUIRED PARTIAL TARGETS -->
+  <div id="site-header"></div>
+  <div id="mega-menus"></div>
+
+  <!-- MAIN 404 CONTENT -->
+  <main class="min-h-[70vh] flex items-center justify-center px-6">
+    <div class="text-center max-w-xl">
+
+      <div class="text-8xl font-extrabold text-primary mb-6">
+        404
+      </div>
+
+      <h1 class="text-2xl font-semibold mb-3">
+        Page not found
+      </h1>
+
+      <p class="text-gray-600 dark:text-gray-400 mb-10">
+        The page you’re looking for doesn’t exist, was removed,
+        or the URL is incorrect.
+      </p>
+
+      <div class="flex flex-wrap justify-center gap-4">
+        <a
+          href="/"
+          class="px-6 py-3 rounded-lg bg-primary text-white font-medium hover:bg-blue-600 transition"
+        >
+          Go to Homepage
+        </a>
+
+        <button
+          onclick="history.back()"
+          class="px-6 py-3 rounded-lg border border-gray-300 dark:border-gray-700 hover:bg-gray-100 dark:hover:bg-gray-800 transition"
+        >
+          Go Back
+        </button>
+      </div>
+    </div>
+  </main>
+
+  <!-- OPTIONAL: NO TRUSTED-BY ON 404 (KEEP IT LIGHT) -->
+
+  <!-- FOOTER -->
+  <div id="site-footer"></div>
+
+  <!-- CORE LAYOUT SCRIPT -->
+  <script src="/assets/js/layout.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,1216 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <script type="text/javascript" crossorigin="anonymous" async="" src="js/array.js"></script>
+    <script src="js/e.js"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pixelbotix - Robotics R&D Innovation</title>
+    <script src="https://cdn.tailwindcss.com/3.4.16"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#3b82f6',
+                        secondary: '#06b6d4'
+                    },
+                    borderRadius: {
+                        'none': '0px',
+                        'sm': '4px',
+                        DEFAULT: '8px',
+                        'md': '12px',
+                        'lg': '16px',
+                        'xl': '20px',
+                        '2xl': '24px',
+                        '3xl': '32px',
+                        'full': '9999px',
+                        'button': '8px'
+                    }
+                }
+            },
+            darkMode: 'class'
+        }
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+    <!-- <link href="css/remixicon.min.css" rel="stylesheet"> -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css">
+
+    <style>
+    /* ================= ICON FIX ================= */
+    :where([class^="ri-"])::before {
+    content: "\f3c2";
+    }
+
+    /* ================= NAV BAR ================= */
+    .nav-link,
+    .nav-trigger {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    font-weight: 500;
+    cursor: pointer;
+    color: #374151; /* gray-700 */
+    }
+
+    .nav-link:hover,
+    .nav-trigger:hover {
+    color: #2563eb; /* blue-600 */
+    }
+
+    .dark .nav-link,
+    .dark .nav-trigger {
+    color: #e5e7eb; /* gray-200 */
+    }
+
+    .dark .nav-link:hover,
+    .dark .nav-trigger:hover {
+    color: #60a5fa; /* blue-400 */
+    }
+
+    /* ================= MEGA MENU ================= */
+    .mega-menu {
+    position: fixed;
+    top: 4rem;
+    left: 50%;
+    transform: translateX(-50%) translateY(-8px);
+    width: calc(100vw - 2rem);
+    max-width: 72rem;
+    background: #ffffff;
+    border-radius: 16px;
+    padding: 2rem;
+    border: 1px solid #e5e7eb;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.25s ease;
+    z-index: 40;
+    }
+
+    .mega-menu.show {
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(-50%) translateY(0);
+    }
+
+    .dark .mega-menu {
+    background: #111827;
+    border-color: #374151;
+    }
+
+    /* ================= MENU LINKS ================= */
+    .menu-link {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.5rem;
+    padding: 0.5rem 0.6rem;
+    border-radius: 8px;
+    text-decoration: none;
+    color: #374151;
+    transition: background 0.15s ease, color 0.15s ease;
+    }
+
+    .menu-link i {
+    color: #3b82f6;
+    margin-top: 2px;
+    }
+
+    .menu-link:hover {
+    background: rgba(59,130,246,0.08);
+    color: #2563eb;
+    }
+
+    .dark .menu-link {
+    color: #e5e7eb;
+    }
+
+    .dark .menu-link:hover {
+    background: rgba(255,255,255,0.08);
+    color: #ffffff;
+    }
+
+    .dark .menu-link:hover i {
+    color: #93c5fd;
+    }
+
+    /* ================= TRUSTED BY SCROLLER ================= */
+    #logoScroller {
+    display: flex;
+    gap: 3rem;
+    width: max-content;
+    animation: scrollInfinite 100s linear infinite;
+    will-change: transform;
+    }
+
+    #logoScroller:hover {
+    animation-play-state: paused;
+    }
+
+    @keyframes scrollInfinite {
+    from { transform: translateX(0); }
+    to   { transform: translateX(-50%); }
+    }
+
+    /* ================= MOBILE MENU ================= */
+    .mobile-trigger {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-weight: 500;
+    padding: 0.75rem 0;
+    color: #374151;
+    }
+
+    .dark .mobile-trigger {
+    color: #e5e7eb;
+    }
+
+    .mobile-panel {
+    padding-left: 1rem;
+    margin-top: 0.4rem;
+    }
+
+    .mobile-panel a {
+    display: block;
+    padding: 0.35rem 0;
+    color: #4b5563;
+    }
+
+    .dark .mobile-panel a {
+    color: #d1d5db;
+    }
+
+    .mobile-panel a:hover {
+    color: #2563eb;
+    }
+
+    .dark .mobile-panel a:hover {
+    color: #93c5fd;
+    }
+
+    /* ================= DARK MODE GLOBAL HELPERS ================= */
+    .dark .bg-white { background-color: #1f2937; }
+    .dark .bg-gray-50 { background-color: #111827; }
+    .dark .border-gray-200 { border-color: #374151; }
+    .dark .text-gray-900 { color: #f9fafb; }
+    .dark .text-gray-700 { color: #e5e7eb; }
+    .dark .text-gray-600 { color: #d1d5db; }
+    .dark .hover\:bg-gray-100:hover { background-color: #374151; }
+
+
+    /* ================= MOBILE HEIGHT SAFETY ================= */
+    @media (max-height: 640px) {
+        #mobileMenu > div {
+        max-height: 65vh;
+        }
+    }
+
+    </style>
+
+
+</head>
+
+<body class="bg-white text-gray-900 transition-colors duration-300">
+
+
+    <!-- ================= HEADER ================= -->
+    <header class="sticky top-0 z-50 bg-white dark:bg-gray-900 border-b border-gray-200 dark:border-gray-700">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="h-16 flex items-center justify-between">
+
+                <!-- Logo -->
+                <div class="text-2xl font-['Pacifico'] text-primary">
+                    Pixelbotix
+                </div>
+
+                <!-- Desktop Navigation -->
+                <nav class="hidden lg:flex items-center gap-8 xl:gap-10 2xl:gap-12">
+
+
+                    <a href="#" class="nav-link">
+                        <i class="ri-home-line"></i> Home
+                    </a>
+
+                    <button class="nav-trigger" data-menu="rd">
+                        <i class="ri-lightbulb-line"></i> R&D
+                        <i class="ri-arrow-down-s-line"></i>
+                    </button>
+
+                    <button class="nav-trigger" data-menu="programs">
+                        <i class="ri-graduation-cap-line"></i> Programs
+                        <i class="ri-arrow-down-s-line"></i>
+                    </button>
+
+                    <button class="nav-trigger" data-menu="products">
+                        <i class="ri-product-hunt-line"></i> Products
+                        <i class="ri-arrow-down-s-line"></i>
+                    </button>
+
+                    <button class="nav-trigger" data-menu="services">
+                        <i class="ri-customer-service-line"></i> Services
+                        <i class="ri-arrow-down-s-line"></i>
+                    </button>
+
+                    <button class="nav-trigger" data-menu="media">
+                        <i class="ri-play-circle-line"></i> Media
+                        <i class="ri-arrow-down-s-line"></i>
+                    </button>
+
+                    <button class="nav-trigger" data-menu="about">
+                        <i class="ri-information-line"></i> About
+                        <i class="ri-arrow-down-s-line"></i>
+                    </button>
+
+                </nav>
+
+                <!-- Actions -->
+                <div class="flex items-center gap-4">
+                    <button id="darkModeToggle" class="p-2 rounded hover:bg-gray-100 dark:hover:bg-gray-800">
+                        <i id="darkModeIcon" class="ri-moon-line"></i>
+                    </button>
+                    <button class="bg-primary text-white px-5 py-2 rounded">
+                        Apply Now
+                    </button>
+                    <button id="mobileMenuBtn" class="lg:hidden p-2">
+                        <i class="ri-menu-line"></i>
+                    </button>
+                </div>
+
+            </div>
+        </div>
+
+
+        <!-- ================= MOBILE MENU ================= -->
+        <div id="mobileMenu" class="lg:hidden bg-white dark:bg-gray-900
+         border-b border-gray-200 dark:border-gray-700
+         overflow-hidden transition-[max-height] duration-300 ease-in-out
+         max-h-0">
+            <div class="px-6 py-4 space-y-5 max-h-[75vh] overflow-y-auto">
+
+                <!-- Home -->
+                <a href="/" class="block font-medium">Home</a>
+
+                <!-- R&D -->
+                <div>
+                    <button class="mobile-trigger w-full flex justify-between items-center font-medium">
+                        <span>R&D</span>
+                        <i class="ri-arrow-down-s-line transition-transform"></i>
+                    </button>
+                    <div class="mobile-panel hidden pl-4 pt-2 space-y-2 text-sm">
+                        <a href="/rd/intelligent-assistive-devices" class="block">Assistive Devices</a>
+                        <a href="/rd/uav-service-drones" class="block">UAV & Drones</a>
+                        <a href="/rd/iot-smart-automation" class="block">IoT & Automation</a>
+                        <a href="/rd/digital-twin-engineering" class="block">Digital Twin</a>
+                    </div>
+                </div>
+
+                <!-- Programs -->
+                <div>
+                    <button class="mobile-trigger w-full flex justify-between items-center font-medium">
+                        <span>Programs</span>
+                        <i class="ri-arrow-down-s-line transition-transform"></i>
+                    </button>
+                    <div class="mobile-panel hidden pl-4 pt-2 space-y-2 text-sm">
+                        <a href="/programs/ros-amr" class="block">ROS & AMR</a>
+                        <a href="/programs/embedded-ai" class="block">Embedded AI</a>
+                        <a href="/programs/drone-technology" class="block">Drone Program</a>
+                        <a href="/programs/computer-vision-ai" class="block">Computer Vision</a>
+                    </div>
+                </div>
+
+                <!-- Products -->
+                <div>
+                    <button class="mobile-trigger w-full flex justify-between items-center font-medium">
+                        <span>Products</span>
+                        <i class="ri-arrow-down-s-line transition-transform"></i>
+                    </button>
+                    <div class="mobile-panel hidden pl-4 pt-2 space-y-2 text-sm">
+                        <a href="/products/robotics-kits" class="block">Robotics Kits</a>
+                        <a href="/products/3d-printers" class="block">3D Printers</a>
+                        <a href="/products/drone-platforms" class="block">Drone Platforms</a>
+                    </div>
+                </div>
+
+                <!-- Services -->
+                <div>
+                    <button class="mobile-trigger w-full flex justify-between items-center font-medium">
+                        <span>Services</span>
+                        <i class="ri-arrow-down-s-line transition-transform"></i>
+                    </button>
+                    <div class="mobile-panel hidden pl-4 pt-2 space-y-2 text-sm">
+                        <a href="/services/3d-printing" class="block">3D Printing</a>
+                        <a href="/services/consulting" class="block">Consulting</a>
+                        <a href="/services/custom-robotics" class="block">Custom Robotics</a>
+                    </div>
+                </div>
+
+                <!-- About -->
+                <div>
+                    <button class="mobile-trigger w-full flex justify-between items-center font-medium">
+                        <span>About</span>
+                        <i class="ri-arrow-down-s-line transition-transform"></i>
+                    </button>
+                    <div class="mobile-panel hidden pl-4 pt-2 space-y-2 text-sm">
+                        <a href="/about/who-we-are" class="block">Who We Are</a>
+                        <a href="/about/vision-mission" class="block">Vision & Mission</a>
+                        <a href="/about/team" class="block">Team</a>
+                    </div>
+                </div>
+
+                <!-- Contact -->
+                <a href="/contact" class="block font-medium">Contact</a>
+
+            </div>
+        </div>
+
+
+    </header>
+
+
+    <!-- ================= TRUSTED BY ================= -->
+    <section class="bg-gray-50 dark:bg-gray-800 py-3 border-b border-gray-200 dark:border-gray-700">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="flex items-center gap-8">
+                <span class="text-sm font-medium text-gray-500 dark:text-gray-400 whitespace-nowrap">
+                    TRUSTED BY
+                </span>
+
+                <div class="overflow-hidden flex-1">
+                    <div id="logoScroller" class="flex items-center gap-12 trusted-logos"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- ================= MEGA MENU LAYER ================= -->
+    <div id="megaMenuLayer" class="hidden lg:block">
+
+        <section id="menu-rd" class="mega-menu">
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
+
+
+
+                <!-- ================= R&D DOMAINS ================= -->
+                <div>
+                    <h3 class="flex items-center gap-2 text-lg font-semibold mb-4">
+                        <i class="ri-lightbulb-line text-primary"></i>
+                        R&D Domains
+                    </h3>
+
+                    <ul class="space-y-2 text-sm">
+                        <li>
+                            <a href="/rd/intelligent-assistive-devices" class="menu-link">
+                                <i class="ri-robot-line"></i>
+                                Intelligent Assistive Devices
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/rd/uav-service-drones" class="menu-link">
+                                <i class="ri-flight-takeoff-line"></i>
+                                UAV & Service Drones
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/rd/iot-smart-automation" class="menu-link">
+                                <i class="ri-cpu-line"></i>
+                                IoT & Smart Automation
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/rd/digital-twin-engineering" class="menu-link">
+                                <i class="ri-3d-model-line"></i>
+                                Digital Twin Engineering
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/rd/smart-healthcare" class="menu-link">
+                                <i class="ri-heart-pulse-line"></i>
+                                Smart Healthcare Technologies
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/rd/rapid-prototyping" class="menu-link">
+                                <i class="ri-printer-line"></i>
+                                Rapid Prototyping & Additive Manufacturing
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- ================= SKILL LABS ================= -->
+                <div>
+                    <h3 class="flex items-center gap-2 text-lg font-semibold mb-4">
+                        <i class="ri-building-line text-primary"></i>
+                        Skill Labs & Innovation Centers
+                    </h3>
+
+                    <ul class="space-y-2 text-sm">
+                        <li>
+                            <a href="/labs/school-labs" class="menu-link">
+                                <i class="ri-school-line"></i>
+                                School Lab Setup
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/labs/college-labs" class="menu-link">
+                                <i class="ri-building-4-line"></i>
+                                College Lab Setup
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/labs/robotics-lab" class="menu-link">
+                                <i class="ri-robot-2-line"></i>
+                                Robotics Lab
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/labs/ai-ml-lab" class="menu-link">
+                                <i class="ri-brain-line"></i>
+                                AI / ML Lab
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/labs/drone-lab" class="menu-link">
+                                <i class="ri-flight-takeoff-line"></i>
+                                Drone Lab
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/labs/automation-lab" class="menu-link">
+                                <i class="ri-settings-3-line"></i>
+                                Automation Lab
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/labs/testing-simulation" class="menu-link">
+                                <i class="ri-ruler-2-line"></i>
+                                Testing & Simulation Lab
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <section id="menu-programs" class="mega-menu">
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+
+
+                <!-- ================= INTERNSHIPS ================= -->
+                <div>
+                    <h3 class="flex items-center gap-2 text-lg font-semibold mb-4">
+                        <i class="ri-briefcase-line text-primary"></i>
+                        Internships
+                    </h3>
+
+                    <ul class="space-y-2 text-sm">
+                        <li>
+                            <a href="/programs/ros-amr" class="menu-link">
+                                <i class="ri-robot-line"></i>
+                                ROS & Autonomous Mobile Robots (AMR)
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/programs/embedded-ai-bionic-arm" class="menu-link">
+                                <i class="ri-brain-line"></i>
+                                Embedded AI & Bionic Arm
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/programs/drone-technology" class="menu-link">
+                                <i class="ri-flight-takeoff-line"></i>
+                                Drone Technology Program
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/programs/iot-automation" class="menu-link">
+                                <i class="ri-cpu-line"></i>
+                                Industrial IoT & Automation
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/programs/computer-vision-ai" class="menu-link">
+                                <i class="ri-eye-line"></i>
+                                Computer Vision & AI
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- ================= EDUVERSE ================= -->
+                <div>
+                    <h3 class="flex items-center gap-2 text-lg font-semibold mb-4">
+                        <i class="ri-graduation-cap-line text-primary"></i>
+                        Eduverse (Age-Based)
+                    </h3>
+
+                    <ul class="space-y-2 text-sm">
+                        <li>
+                            <a href="/eduverse/brainy-babies" class="menu-link">
+                                <i class="ri-bear-smile-line"></i>
+                                Brainy Babies (0–5)
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/eduverse/little-techies" class="menu-link">
+                                <i class="ri-puzzle-line"></i>
+                                Little Techies (5–9)
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/eduverse/maker-school" class="menu-link">
+                                <i class="ri-tools-line"></i>
+                                Maker School (9–17)
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/eduverse/future-innovators" class="menu-link">
+                                <i class="ri-lightbulb-flash-line"></i>
+                                Future Innovators (16–25)
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- ================= WORKSHOPS & TRAINING ================= -->
+                <div>
+                    <h3 class="flex items-center gap-2 text-lg font-semibold mb-4">
+                        <i class="ri-presentation-line text-primary"></i>
+                        Workshops & Training
+                    </h3>
+
+                    <ul class="space-y-2 text-sm">
+                        <li>
+                            <a href="/workshops/upcoming" class="menu-link">
+                                <i class="ri-calendar-event-line"></i>
+                                Upcoming Workshops
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/workshops/past" class="menu-link">
+                                <i class="ri-history-line"></i>
+                                Past Workshops & FDPs
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/workshops/bootcamps" class="menu-link">
+                                <i class="ri-rocket-line"></i>
+                                Bootcamps
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/workshops/hackathons" class="menu-link">
+                                <i class="ri-code-box-line"></i>
+                                Hackathons
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/training/corporate" class="menu-link">
+                                <i class="ri-building-2-line"></i>
+                                Corporate Training
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/training/institutional" class="menu-link">
+                                <i class="ri-school-line"></i>
+                                Institutional Upskilling
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <section id="menu-products" class="mega-menu">
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+
+
+                <!-- ================= ROBOTICS & AI ================= -->
+                <div>
+                    <h3 class="flex items-center gap-2 text-lg font-semibold mb-4">
+                        <i class="ri-robot-line text-primary"></i>
+                        Robotics & AI
+                    </h3>
+
+                    <ul class="space-y-2 text-sm">
+                        <li>
+                            <a href="/products/robotics-ai-kits" class="menu-link">
+                                <i class="ri-cpu-line"></i>
+                                <span>Robotics & AI Kits</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/products/ai-iot-modules" class="menu-link">
+                                <i class="ri-cloud-line"></i>
+                                <span>AI / IoT Modules</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/products/edge-computing" class="menu-link">
+                                <i class="ri-chip-line"></i>
+                                <span>Edge Computing Boards</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- ================= ADDITIVE MANUFACTURING ================= -->
+                <div>
+                    <h3 class="flex items-center gap-2 text-lg font-semibold mb-4">
+                        <i class="ri-printer-line text-primary"></i>
+                        Additive Manufacturing
+                    </h3>
+
+                    <ul class="space-y-2 text-sm">
+                        <li>
+                            <a href="/products/3d-printers" class="menu-link">
+                                <i class="ri-printer-cloud-line"></i>
+                                <span>3D Printers</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/products/3d-scanners" class="menu-link">
+                                <i class="ri-scan-line"></i>
+                                <span>3D Scanners</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/products/materials-filaments" class="menu-link">
+                                <i class="ri-box-3-line"></i>
+                                <span>Materials & Filaments</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- ================= MOBILITY & UAV ================= -->
+                <div>
+                    <h3 class="flex items-center gap-2 text-lg font-semibold mb-4">
+                        <i class="ri-flight-takeoff-line text-primary"></i>
+                        Mobility & UAV
+                    </h3>
+
+                    <ul class="space-y-2 text-sm">
+                        <li>
+                            <a href="/products/amr-platforms" class="menu-link">
+                                <i class="ri-truck-line"></i>
+                                <span>AMR Platforms</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/products/drone-platforms" class="menu-link">
+                                <i class="ri-flight-takeoff-line"></i>
+                                <span>Drone Platforms</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/products/accessories-components" class="menu-link">
+                                <i class="ri-tools-line"></i>
+                                <span>Accessories & Components</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <section id="menu-services" class="mega-menu">
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+
+
+                <!-- ================= ENGINEERING SERVICES ================= -->
+                <div>
+                    <h3 class="flex items-center gap-2 text-lg font-semibold mb-4">
+                        <i class="ri-tools-line text-primary"></i>
+                        Engineering Services
+                    </h3>
+
+                    <ul class="space-y-2 text-sm">
+                        <li>
+                            <a href="/services/3d-printing" class="menu-link">
+                                <i class="ri-printer-line"></i>
+                                <span>3D Printing Services</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/services/3d-scanning" class="menu-link">
+                                <i class="ri-scan-line"></i>
+                                <span>3D Scanning Services</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/services/prototyping" class="menu-link">
+                                <i class="ri-shape-line"></i>
+                                <span>Rapid Prototyping</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- ================= CONSULTING & R&D ================= -->
+                <div>
+                    <h3 class="flex items-center gap-2 text-lg font-semibold mb-4">
+                        <i class="ri-user-settings-line text-primary"></i>
+                        Consulting & R&D
+                    </h3>
+
+                    <ul class="space-y-2 text-sm">
+                        <li>
+                            <a href="/services/expert-consulting" class="menu-link">
+                                <i class="ri-user-star-line"></i>
+                                <span>Expert Consulting</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/services/rd-projects" class="menu-link">
+                                <i class="ri-lightbulb-flash-line"></i>
+                                <span>R&D Project Support</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/services/academic-industry" class="menu-link">
+                                <i class="ri-links-line"></i>
+                                <span>Academic–Industry Collaboration</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- ================= CUSTOM DEVELOPMENT ================= -->
+                <div>
+                    <h3 class="flex items-center gap-2 text-lg font-semibold mb-4">
+                        <i class="ri-code-line text-primary"></i>
+                        Custom Development
+                    </h3>
+
+                    <ul class="space-y-2 text-sm">
+                        <li>
+                            <a href="/services/custom-robotics" class="menu-link">
+                                <i class="ri-robot-2-line"></i>
+                                <span>Custom Robotics Solutions</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/services/embedded-systems" class="menu-link">
+                                <i class="ri-cpu-line"></i>
+                                <span>Embedded Systems Development</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/services/automation-software" class="menu-link">
+                                <i class="ri-settings-3-line"></i>
+                                <span>Automation & Control Software</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <section id="menu-media" class="mega-menu">
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+
+
+                <!-- ================= VISUAL MEDIA ================= -->
+                <div>
+                    <h3 class="flex items-center gap-2 text-lg font-semibold mb-4">
+                        <i class="ri-image-line text-primary"></i>
+                        Visual Media
+                    </h3>
+
+                    <ul class="space-y-2 text-sm">
+                        <li>
+                            <a href="/media/gallery" class="menu-link">
+                                <i class="ri-gallery-line"></i>
+                                <span>Photo Gallery</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/media/videos" class="menu-link">
+                                <i class="ri-video-line"></i>
+                                <span>Videos & Demos</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/media/live-events" class="menu-link">
+                                <i class="ri-live-line"></i>
+                                <span>Live Sessions & Webinars</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- ================= RECOGNITION ================= -->
+                <div>
+                    <h3 class="flex items-center gap-2 text-lg font-semibold mb-4">
+                        <i class="ri-award-line text-primary"></i>
+                        Recognition
+                    </h3>
+
+                    <ul class="space-y-2 text-sm">
+                        <li>
+                            <a href="/media/achievements" class="menu-link">
+                                <i class="ri-medal-line"></i>
+                                <span>Achievements & Awards</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/media/partners" class="menu-link">
+                                <i class="ri-shake-hands-line"></i>
+                                <span>Industry & Academic Partners</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/media/testimonials" class="menu-link">
+                                <i class="ri-chat-quote-line"></i>
+                                <span>Testimonials</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- ================= NEWS & UPDATES ================= -->
+                <div>
+                    <h3 class="flex items-center gap-2 text-lg font-semibold mb-4">
+                        <i class="ri-notification-line text-primary"></i>
+                        News & Updates
+                    </h3>
+
+                    <ul class="space-y-2 text-sm">
+                        <li>
+                            <a href="/media/announcements" class="menu-link">
+                                <i class="ri-megaphone-line"></i>
+                                <span>Announcements</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/media/press" class="menu-link">
+                                <i class="ri-newspaper-line"></i>
+                                <span>Press & News</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/media/blogs" class="menu-link">
+                                <i class="ri-article-line"></i>
+                                <span>Blogs & Insights</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <section id="menu-about" class="mega-menu">
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+
+
+                <!-- ================= COMPANY ================= -->
+                <div>
+                    <h3 class="flex items-center gap-2 text-lg font-semibold mb-4">
+                        <i class="ri-building-2-line text-primary"></i>
+                        Company
+                    </h3>
+
+                    <ul class="space-y-2 text-sm">
+                        <li>
+                            <a href="/about/who-we-are" class="menu-link">
+                                <i class="ri-information-line"></i>
+                                <span>Who We Are</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/about/vision-mission" class="menu-link">
+                                <i class="ri-compass-3-line"></i>
+                                <span>Vision & Mission</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/about/journey" class="menu-link">
+                                <i class="ri-timeline-view"></i>
+                                <span>Journey & Milestones</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/about/infrastructure" class="menu-link">
+                                <i class="ri-building-line"></i>
+                                <span>Infrastructure & Labs</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- ================= LEADERSHIP & PEOPLE ================= -->
+                <div>
+                    <h3 class="flex items-center gap-2 text-lg font-semibold mb-4">
+                        <i class="ri-team-line text-primary"></i>
+                        Leadership & People
+                    </h3>
+
+                    <ul class="space-y-2 text-sm">
+                        <li>
+                            <a href="/about/leadership" class="menu-link">
+                                <i class="ri-user-star-line"></i>
+                                <span>Leadership Team</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/about/mentors" class="menu-link">
+                                <i class="ri-user-heart-line"></i>
+                                <span>Advisors & Mentors</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/about/team" class="menu-link">
+                                <i class="ri-group-line"></i>
+                                <span>Core Team</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/careers" class="menu-link">
+                                <i class="ri-briefcase-line"></i>
+                                <span>Careers</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- ================= CONNECT ================= -->
+                <div>
+                    <h3 class="flex items-center gap-2 text-lg font-semibold mb-4">
+                        <i class="ri-links-line text-primary"></i>
+                        Connect
+                    </h3>
+
+                    <ul class="space-y-2 text-sm">
+                        <li>
+                            <a href="/about/partners" class="menu-link">
+                                <i class="ri-shake-hands-line"></i>
+                                <span>Partnerships & Collaborations</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/about/community" class="menu-link">
+                                <i class="ri-global-line"></i>
+                                <span>Community & Ecosystem</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/contact" class="menu-link">
+                                <i class="ri-mail-send-line"></i>
+                                <span>Contact Us</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/legal" class="menu-link">
+                                <i class="ri-shield-check-line"></i>
+                                <span>Legal & Compliance</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+
+            </div>
+
+        </section>
+
+    </div>
+
+    <!-- ================= FOOTER ================= -->
+    <footer class="bg-gray-900 text-gray-400 py-10 mt-32">
+        <div class="max-w-7xl mx-auto px-6 grid grid-cols-2 md:grid-cols-4 gap-8">
+            <div>
+                <div class="text-xl font-['Pacifico'] text-primary mb-2">Pixelbotix</div>
+                <p>Future-driven robotics and education company.</p>
+            </div>
+            <div>
+                <h4 class="text-white mb-2">Programs</h4>
+                <ul class="space-y-1">
+                    <li>Internships</li>
+                    <li>Eduverse</li>
+                    <li>Workshops</li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="text-white mb-2">Company</h4>
+                <ul class="space-y-1">
+                    <li>About</li>
+                    <li>Careers</li>
+                    <li>Contact</li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="text-white mb-2">Legal</h4>
+                <ul class="space-y-1">
+                    <li>Privacy</li>
+                    <li>Terms</li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ================= DESKTOP DROPDOWN================= -->
+    <script>
+        /* ================= DESKTOP MEGA MENU ================= */
+
+        const desktopTriggers = document.querySelectorAll('.nav-trigger');
+        const desktopMenus = document.querySelectorAll('.mega-menu');
+        const megaLayer = document.getElementById('megaMenuLayer');
+
+        function closeAllDesktopMenus() {
+            desktopMenus.forEach(menu => menu.classList.remove('show'));
+        }
+
+        desktopTriggers.forEach(trigger => {
+            trigger.addEventListener('mouseenter', () => {
+                closeAllDesktopMenus();
+
+                const menuId = 'menu-' + trigger.dataset.menu;
+                const targetMenu = document.getElementById(menuId);
+
+                if (targetMenu) {
+                    targetMenu.classList.add('show');
+                }
+            });
+        });
+
+        /* Close when cursor leaves mega menu area */
+        megaLayer.addEventListener('mouseleave', closeAllDesktopMenus);
+
+        /* ================= DARK MODE ================= */
+
+        const darkToggle = document.getElementById('darkModeToggle');
+        const darkIcon = document.getElementById('darkModeIcon');
+
+        darkToggle.addEventListener('click', () => {
+            const root = document.documentElement;
+            root.classList.toggle('dark');
+
+            darkIcon.className = root.classList.contains('dark')
+                ? 'ri-sun-line'
+                : 'ri-moon-line';
+        });
+    </script>
+
+    <!-- ================= Logo Scroll ================= -->
+    <script>
+        const BASE = "/static/images/trusted_by/";
+
+        const logos = [
+            "3devok-logo_4.png",
+            "actlogo_10.jpg",
+            "Airobo_infinity_2.png",
+            "Bigzero-logo_3.jpg",
+            "CEG_col_2.png",
+            "DMI_5.png",
+            "iitm_logo.png",
+            "KIT_2.svg.png",
+            "LMEC_7.webp",
+            "Loyola_6.png",
+            "make3d_6.png",
+            "medical_spectra.jpeg",
+            "Mithra_3d_tech_5.jpg",
+            "mit_logo_1.png",
+            "nitt_13.png",
+            "perfin_health_care_1.png",
+            "Pertinent-Logo-1.png",
+            "Rajeshwari_engg_college_9.png",
+            "remo_11.webp",
+            "sairam_8.gif",
+            "sairam-sec-logo_8.png",
+            "Saveetha_1.png",
+            "sri_balaji_14.png",
+            "SRM_Institute_of_Science_and_Technology_Logo.svg_3.png",
+            "Vellore_Institute_of_Technology_seal_4.svg.png"
+        ];
+
+        const scroller = document.getElementById("logoScroller");
+
+        function addLogos(list) {
+            list.forEach(file => {
+                const img = document.createElement("img");
+                img.src = BASE + file;
+                img.loading = "lazy";
+                img.className =
+                    "h-12 object-contain flex-shrink-0 opacity-100 will-change-transform transition-all";
+                img.onerror = () => img.style.display = "none"; // hide if image fails
+                scroller.appendChild(img);
+            });
+        }
+
+        // Add logos twice for smooth infinite scrolling
+        addLogos(logos);
+        addLogos(logos);
+    </script>
+
+
+
+    <!-- ================= MOBILE MENU LOGIC ================= -->
+    <script>
+        /* ================= MOBILE MENU TOGGLE ================= */
+
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const mobileMenuPanel = document.getElementById('mobileMenu');
+
+        mobileMenuBtn.addEventListener('click', () => {
+            const isClosed = mobileMenuPanel.classList.contains('max-h-0');
+
+            if (isClosed) {
+                mobileMenuPanel.classList.remove('max-h-0');
+                mobileMenuPanel.classList.add('max-h-[75vh]');
+            } else {
+                mobileMenuPanel.classList.add('max-h-0');
+                mobileMenuPanel.classList.remove('max-h-[75vh]');
+            }
+        });
+
+        /* ================= SINGLE-OPEN ACCORDION ================= */
+
+        const mobileTriggers = document.querySelectorAll('.mobile-trigger');
+
+        mobileTriggers.forEach(trigger => {
+            trigger.addEventListener('click', () => {
+                const panel = trigger.nextElementSibling;
+                const icon = trigger.querySelector('i');
+
+                // Close all other panels
+                mobileTriggers.forEach(other => {
+                    if (other !== trigger) {
+                        other.nextElementSibling.classList.add('hidden');
+                        other.querySelector('i').classList.remove('rotate-180');
+                    }
+                });
+
+                // Toggle current panel
+                panel.classList.toggle('hidden');
+                icon.classList.toggle('rotate-180');
+            });
+        });
+    </script>
+
+</body>

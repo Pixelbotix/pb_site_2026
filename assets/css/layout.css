@@ -225,6 +225,34 @@ header .text-primary {
   }
 }
 
+
+
+
+#gallery-marquee {
+  animation: galleryScroll 60s linear infinite;
+}
+
+#gallery-marquee:hover {
+  animation-play-state: paused;
+}
+
+@keyframes galleryScroll {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+/* Card sizing consistency */
+.gallery-card {
+  width: 360px;
+  flex-shrink: 0;
+}
+
+
+
 /* =========================================================
    Institutions We’ve Worked With SCROLLER in gallery 
    ========================================================= */
@@ -252,3 +280,20 @@ header .text-primary {
 #academic-logo-scroller:hover {
   animation-play-state: paused;
 }
+
+
+/* Gallery page part */
+
+@keyframes gallery-scroll {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+.gallery-track {
+  animation: gallery-scroll 40s linear infinite;
+}
+
+.gallery-track:hover {
+  animation-play-state: paused;
+}
+

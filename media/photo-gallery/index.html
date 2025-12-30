@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Gallery | PixelBotix Technologies</title>
+  <meta name="description"
+        content="Workshops, FDPs, Guest Lectures and Training Programs conducted by PixelBotix since April 2025." />
+
+  <!-- Tailwind -->
+  <script src="https://cdn.tailwindcss.com/3.4.16"></script>
+  <script>
+    tailwind.config = { darkMode: 'class' }
+  </script>
+
+  <!-- Icons -->
+  <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css">
+
+  <!-- Global Layout CSS -->
+  <link rel="stylesheet" href="/assets/css/layout.css">
+</head>
+
+<body class="bg-white dark:bg-gray-900 text-gray-900 dark:text-gray-100 transition-colors">
+
+  <!-- ================= NAVBAR ================= -->
+  <div id="site-navbar"></div>
+
+  <!-- ================= PAGE CONTENT ================= -->
+  <main class="min-h-screen">
+
+    <!-- ===== HEADER ===== -->
+    <section class="py-16 bg-gray-50 dark:bg-gray-900">
+      <div class="max-w-7xl mx-auto px-6 text-center">
+        <span class="inline-block mb-4 px-4 py-1 text-sm font-medium rounded-full
+                     bg-blue-100 text-blue-700 dark:bg-blue-900 dark:text-blue-200">
+          Operational since April 2025
+        </span>
+
+        <h1 class="text-4xl font-bold mb-4">Gallery</h1>
+
+        <p class="text-gray-600 dark:text-gray-400 max-w-3xl mx-auto">
+          Workshops, Faculty Development Programs, Guest Lectures and
+          Training Programs conducted by PixelBotix across institutions.
+        </p>
+      </div>
+    </section>
+
+    <!-- ===== FILTERS ===== -->
+    <section class="py-10">
+      <div class="max-w-7xl mx-auto px-6">
+        <div class="flex flex-wrap justify-center gap-3">
+          <button class="gallery-filter active" data-filter="all">All</button>
+          <button class="gallery-filter" data-filter="workshop">Workshops</button>
+          <button class="gallery-filter" data-filter="fdp">FDPs</button>
+          <button class="gallery-filter" data-filter="lecture">Guest Lectures</button>
+          <button class="gallery-filter" data-filter="school">School Programs</button>
+          <button class="gallery-filter" data-filter="college">College Programs</button>
+          <button class="gallery-filter" data-filter="demo">Product Demos</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== GALLERY GRID ===== -->
+    <section class="pb-20">
+      <div class="max-w-7xl mx-auto px-6">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+          <!-- ===== EVENT CARD ===== -->
+          <article class="gallery-card" data-category="workshop">
+            <div class="aspect-video bg-gray-200 dark:bg-gray-700 rounded-lg mb-4">
+              <!-- replace src later -->
+              <img src="/assets/gallery/placeholder/thumb.jpg"
+                   alt="Robotics Workshop"
+                   class="w-full h-full object-cover rounded-lg">
+            </div>
+
+            <h3 class="text-lg font-semibold mb-1">
+              Robotics & AI Workshop
+            </h3>
+
+            <p class="text-sm text-gray-600 dark:text-gray-400">
+              SRM Institute of Science and Technology
+            </p>
+
+            <div class="flex justify-between text-sm text-gray-500 dark:text-gray-400 mt-2">
+              <span>Chennai, TN</span>
+              <span>May 2025</span>
+            </div>
+
+            <span class="inline-block mt-3 text-xs font-medium px-3 py-1 rounded-full
+                         bg-blue-100 text-blue-700 dark:bg-blue-900 dark:text-blue-200">
+              Workshop
+            </span>
+          </article>
+
+          <!-- ===== DUPLICATE CARD TEMPLATE ===== -->
+          <!-- Copy this block per real event -->
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== INSTITUTIONS ===== -->
+    <section class="py-16 bg-gray-50 dark:bg-gray-900">
+    <div class="max-w-7xl mx-auto px-6 text-center">
+        <h2 class="text-3xl font-bold mb-4">
+        Institutions We’ve Worked With
+        </h2>
+
+        <p class="text-gray-600 dark:text-gray-400 mb-10">
+        Selected institutions where PixelBotix programs have been conducted.
+        </p>
+
+        <div class="overflow-hidden">
+        <div
+            id="academic-logo-scroller"
+            class="flex items-center gap-12 mx-auto"
+        ></div>
+        </div>
+    </div>
+    </section>
+
+
+    <!-- ===== CTA ===== -->
+    <section class="py-16">
+      <div class="max-w-4xl mx-auto text-center px-6">
+        <h2 class="text-3xl font-bold mb-4">
+          Interested in hosting a workshop or program?
+        </h2>
+
+        <p class="text-gray-600 dark:text-gray-400 mb-8">
+          Reach out to PixelBotix to collaborate on hands-on learning initiatives.
+        </p>
+
+        <a href="/contact"
+           class="inline-flex items-center px-8 py-4 bg-primary text-white
+                  rounded-lg font-semibold hover:bg-blue-700 transition">
+          Contact Us
+          <i class="ri-arrow-right-line ml-2"></i>
+        </a>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ================= FOOTER ================= -->
+  <div id="site-footer"></div>
+
+  <!-- ================= GLOBAL SCRIPT ================= -->
+  <script src="/assets/js/layout.js"></script>
+
+  <!-- ================= FILTER LOGIC (LIGHT) ================= -->
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const buttons = document.querySelectorAll(".gallery-filter");
+      const cards = document.querySelectorAll(".gallery-card");
+
+      buttons.forEach(btn => {
+        btn.addEventListener("click", () => {
+          buttons.forEach(b => b.classList.remove("active"));
+          btn.classList.add("active");
+
+          const filter = btn.dataset.filter;
+
+          cards.forEach(card => {
+            card.style.display =
+              filter === "all" || card.dataset.category === filter
+                ? "block"
+                : "none";
+          });
+        });
+      });
+    });
+  </script>
+
+  <!-- ================= FILTER BUTTON STYLE ================= -->
+  <style>
+    .gallery-filter {
+      padding: 0.6rem 1.2rem;
+      border-radius: 9999px;
+      background: #e5e7eb;
+      color: #374151;
+      font-weight: 500;
+    }
+    .gallery-filter.active {
+      background: #2563eb;
+      color: #ffffff;
+    }
+    .dark .gallery-filter {
+      background: #374151;
+      color: #e5e7eb;
+    }
+    .dark .gallery-filter.active {
+      background: #3b82f6;
+      color: #ffffff;
+    }
+  </style>
+
+</body>
+</html>

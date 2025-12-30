@@ -1,9 +1,8 @@
-// assets/js/layout.js
 /* =========================================================
    layout.js
    - Loads shared partials
    - Initializes layout-level UI only
-   - Safe for GitHub Pages / static hosting
+   - Safe for static hosting
 ========================================================= */
 
 /* ---------- PARTIAL LOADER ---------- */
@@ -22,8 +21,8 @@ async function loadPartial(targetId, file) {
 
 /* ---------- MOBILE MENU ---------- */
 function initMobileMenu() {
-  const btn = document.getElementById("mobileMenuBtn");
-  const menu = document.getElementById("mobileMenu");
+  const btn = document.getElementById("nav-mobile-btn");
+  const menu = document.getElementById("nav-mobile-menu");
   if (!btn || !menu) return;
 
   btn.onclick = () => {
@@ -41,12 +40,12 @@ function initMobileMenu() {
       triggers.forEach(other => {
         if (other !== trigger) {
           other.nextElementSibling.classList.add("hidden");
-          other.querySelector("i").classList.remove("rotate-180");
+          other.querySelector("i")?.classList.remove("rotate-180");
         }
       });
 
       panel.classList.toggle("hidden");
-      icon.classList.toggle("rotate-180");
+      icon?.classList.toggle("rotate-180");
     };
   });
 }
@@ -55,12 +54,13 @@ function initMobileMenu() {
 function initDesktopMenu() {
   const triggers = document.querySelectorAll(".nav-trigger");
   const menus = document.querySelectorAll(".mega-menu");
-  const layer = document.getElementById("megaMenuLayer");
+  const zone = document.getElementById("nav-hover-zone");
 
-  if (!triggers.length || !layer) return;
+  if (!triggers.length || !zone) return;
 
-  const closeAll = () =>
+  const closeAll = () => {
     menus.forEach(menu => menu.classList.remove("show"));
+  };
 
   triggers.forEach(trigger => {
     trigger.onmouseenter = () => {
@@ -72,18 +72,17 @@ function initDesktopMenu() {
     };
   });
 
-  layer.onmouseleave = closeAll;
+  zone.onmouseleave = closeAll;
 }
 
 /* ---------- DARK MODE ---------- */
 function initDarkMode() {
-  const toggle = document.getElementById("darkModeToggle");
-  const icon = document.getElementById("darkModeIcon");
+  const toggle = document.getElementById("nav-dark-toggle");
+  const icon = document.getElementById("nav-dark-icon");
   if (!toggle || !icon) return;
 
   const root = document.documentElement;
 
-  // Restore persisted state
   if (localStorage.theme === "dark") {
     root.classList.add("dark");
   }
@@ -99,29 +98,136 @@ function initDarkMode() {
   };
 
   function syncIcon() {
-    const isDark = root.classList.contains("dark");
-
-    // Icon represents CURRENT MODE
-    icon.className = isDark
+    icon.className = root.classList.contains("dark")
       ? "ri-moon-line"
       : "ri-sun-line";
   }
 }
 
+/* ---------- TRUSTED BY SCROLLER ---------- */
+function initTrustedBy() {
+  const BASE = "/static/trusted-by/";
+
+  const LOGOS = [
+    "3devok-logo_4.png",
+    "actlogo_10.jpg",
+    "Airobo_infinity_2.png",
+    "Bigzero-logo_3.jpg",
+    "CEG_col_2.png",
+    "DMI_5.png",
+    "iitm_logo.png",
+    "KIT_2.svg.png",
+    "LMEC_7.webp",
+    "Loyola_6.png",
+    "make3d_6.png",
+    "medical_spectra.jpeg",
+    "Mithra_3d_tech_5.jpg",
+    "mit_logo_1.png",
+    "nitt_13.png",
+    "perfin_health_care_1.png",
+    "Pertinent-Logo-1.png",
+    "Rajeshwari_engg_college_9.png",
+    "remo_11.webp",
+    "sairam_8.gif",
+    "sairam-sec-logo_8.png",
+    "Saveetha_1.png",
+    "sri_balaji_14.png",
+    "SRM_Institute_of_Science_and_Technology_Logo.svg_3.png",
+    "Vellore_Institute_of_Technology_seal_4.svg.png"
+  ];
+
+  const scroller = document.getElementById("nav-logo-scroller");
+  if (!scroller) return;
+
+  scroller.innerHTML = "";
+
+  [...LOGOS, ...LOGOS].forEach(file => {
+    const img = document.createElement("img");
+    img.src = BASE + file;
+    img.loading = "lazy";
+    img.alt = file.replace(/[-_]/g, " ");
+    img.className = "h-12 object-contain flex-shrink-0";
+    img.onerror = () => img.remove();
+    scroller.appendChild(img);
+  });
+}
+
+/* ---------- BACK TO TOP ---------- */
+function initBackToTop() {
+  const btn = document.getElementById("back-to-top");
+  if (!btn) return;
+
+  const toggle = () => {
+    if (window.scrollY > 300) {
+      btn.classList.remove("opacity-0", "invisible");
+      btn.classList.add("opacity-100", "visible");
+    } else {
+      btn.classList.remove("opacity-100", "visible");
+      btn.classList.add("opacity-0", "invisible");
+    }
+  };
+
+  window.addEventListener("scroll", toggle);
+
+  btn.onclick = () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
+}
+
 /* ---------- MASTER INITIALIZER ---------- */
 async function initLayout() {
-  await loadPartial("site-header", "/partials/header.html");
-  await loadPartial("mega-menus", "/partials/mega-menus.html");
-  await loadPartial("trusted-by", "/partials/trusted-by.html");
+  await loadPartial("site-navbar", "/partials/navbar.html");
   await loadPartial("site-footer", "/partials/footer.html");
 
-  // Bind AFTER DOM injection
   requestAnimationFrame(() => {
     initMobileMenu();
     initDesktopMenu();
     initDarkMode();
+    initTrustedBy();
+    initBackToTop();
+    initAcademicClients(); 
   });
 }
 
 /* ---------- BOOTSTRAP ---------- */
 document.addEventListener("DOMContentLoaded", initLayout);
+
+
+/* ---------- ACADEMIC CLIENTS SCROLLER IN GALLERY ---------- */
+function initAcademicClients() {
+  const BASE = "/static/academic-clients/";
+
+  const LOGOS = [
+    "actlogo_10.jpg",
+    "CEG_col_2.png",
+    "DMI_5.png",
+    "iitm_logo.png",
+    "KIT_2.svg.png",
+    "LMEC_7.webp",
+    "Loyola_6.png",
+    "mit_logo_1.png",
+    "nitt_13.png",
+    "Rajeshwari_engg_college_9.png",
+    "remo_11.webp",
+    "sairam_8.gif",
+    "Saveetha_1.png",
+    "sri_balaji_14.png",
+    "SRM_Institute_of_Science_and_Technology_Logo.svg_3.png",
+    "Vellore_Institute_of_Technology_seal_4.svg.png"
+  ];
+
+  const scroller = document.getElementById("academic-logo-scroller");
+  if (!scroller) return;
+
+  scroller.innerHTML = "";
+
+  [...LOGOS, ...LOGOS].forEach(file => {
+    const img = document.createElement("img");
+    img.src = BASE + file;
+    img.loading = "lazy";
+    img.alt = file.replace(/[-_]/g, " ");
+    img.className = "h-14 object-contain flex-shrink-0 opacity-90";
+    img.onerror = () => img.remove();
+    scroller.appendChild(img);
+  });
+}

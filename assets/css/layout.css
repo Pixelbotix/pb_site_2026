@@ -5,7 +5,14 @@
    - partials/navbar.html
    ========================================================= */
 
-/* =========================================================
+
+html, body {
+  max-width: 100vw;
+  overflow-x: hidden;
+}
+
+
+   /* =========================================================
    FIXED HEADER OFFSET
    Header height = h-16 = 64px
    ========================================================= */
@@ -247,10 +254,17 @@ header .text-primary {
 
 /* Card sizing consistency */
 .gallery-card {
-  width: 360px;
+  width: 100%;
+  max-width: 360px;
   flex-shrink: 0;
 }
 
+
+@media (max-width: 640px) {
+  .gallery-card {
+    max-width: 100%;
+  }
+}
 
 
 /* =========================================================

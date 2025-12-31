@@ -27,376 +27,631 @@
   <!-- NAVBAR -->
   <div id="site-navbar"></div>
 
-  <main>
+    <main>
 
-    <!-- HERO -->
-        <section id="home" class="hero-bg min-h-screen flex items-center">
-            <div class="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="max-w-3xl">
-                    <h1 class="text-5xl lg:text-7xl font-bold text-white mb-6 leading-tight">
-                        PixelBotix Technologies
-                    </h1>
-                    <p class="text-xl lg:text-2xl text-white/90 mb-4 font-medium">
-                        Research, Innovation & Applied Engineering
-                    </p>
-                    <p class="text-lg text-white/80 mb-8 max-w-2xl leading-relaxed">
-                        A research-driven technology and innovation company working across Robotics, Artificial
-                        Intelligence, Additive Manufacturing, and Applied Engineering. Founded in April 2025, we operate
-                        at the intersection of R&D, product engineering, and skill development.
-                    </p>
-                    <div class="flex flex-col sm:flex-row gap-4">
-                        <button
-                            class="!rounded-button whitespace-nowrap bg-primary hover:bg-blue-600 text-white px-8 py-4 font-semibold transition-colors">
-                            Explore Our Solutions
-                        </button>
-                        <button
-                            class="!rounded-button whitespace-nowrap border-2 border-white text-white hover:bg-white hover:text-gray-900 px-8 py-4 font-semibold transition-colors">
-                            Get in Touch
-                        </button>
-                    </div>
-                </div>
-            </div>
-        </section>
+    <!-- ================= HERO ================= -->
+    <section class="hero-bg min-h-screen flex items-center relative">
+    <!-- overlay -->
+    <div class="absolute inset-0 bg-black/60"></div>
 
-        <section id="about" class="py-20 bg-gray-50 dark:bg-gray-800">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="text-center mb-16">
-                    <h2 class="text-4xl lg:text-5xl font-bold text-gray-900 dark:text-white mb-6">
-                        About PixelBotix Technologies
-                    </h2>
-                    <p class="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto leading-relaxed">
-                        PixelBotix Technologies Pvt. Ltd. is an R&D-focused innovation company delivering applied
-                        research, engineering solutions, and hands-on education across emerging technology domains.
-                    </p>
-                </div>
-                <div class="grid lg:grid-cols-2 gap-12 items-center mb-20">
-                    <div>
-                        <h3 class="text-3xl font-bold text-gray-900 dark:text-white mb-6">Who We Are</h3>
-                        <div class="space-y-6">
-                            <div class="flex items-start space-x-4">
-                                <div
-                                    class="w-8 h-8 flex items-center justify-center bg-primary/10 rounded-full flex-shrink-0">
-                                    <i class="ri-flask-line text-primary"></i>
-                                </div>
-                                <div>
-                                    <h4 class="font-semibold text-gray-900 dark:text-white mb-2">Applied Research &
-                                        Prototyping</h4>
-                                    <p class="text-gray-600 dark:text-gray-300">Developing practical solutions through
-                                        experimentation and real-world application testing.</p>
-                                </div>
-                            </div>
-                            <div class="flex items-start space-x-4">
-                                <div
-                                    class="w-8 h-8 flex items-center justify-center bg-primary/10 rounded-full flex-shrink-0">
-                                    <i class="ri-tools-line text-primary"></i>
-                                </div>
-                                <div>
-                                    <h4 class="font-semibold text-gray-900 dark:text-white mb-2">Engineering Solutions &
-                                        Technology Services</h4>
-                                    <p class="text-gray-600 dark:text-gray-300">Comprehensive technology services from
-                                        concept to deployment for industries and startups.</p>
-                                </div>
-                            </div>
-                            <div class="flex items-start space-x-4">
-                                <div
-                                    class="w-8 h-8 flex items-center justify-center bg-primary/10 rounded-full flex-shrink-0">
-                                    <i class="ri-graduation-cap-line text-primary"></i>
-                                </div>
-                                <div>
-                                    <h4 class="font-semibold text-gray-900 dark:text-white mb-2">Hands-on Education &
-                                        Capability Building</h4>
-                                    <p class="text-gray-600 dark:text-gray-300">Practical, application-driven education
-                                        programs for institutions and learners.</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="relative">
-                        <img src="https://readdy.ai/api/search-image?query=Professional%20technology%20team%20working%20in%20modern%20research%20laboratory%20with%20robotics%20equipment%2C%20AI%20systems%2C%20and%203D%20printing%20technology%2C%20clean%20white%20background%20with%20bright%20professional%20lighting&width=600&height=400&seq=about-img&orientation=landscape"
-                            alt="PixelBotix Technologies Team" class="w-full h-96 object-cover rounded-2xl shadow-lg">
-                    </div>
-                </div>
-                <div class="grid md:grid-cols-3 gap-8 mb-16">
-                    <div class="bg-white dark:bg-gray-900 p-8 rounded-2xl shadow-sm">
-                        <div class="w-12 h-12 flex items-center justify-center bg-primary/10 rounded-xl mb-6">
-                            <i class="ri-building-line text-primary ri-xl"></i>
-                        </div>
-                        <h4 class="text-xl font-semibold text-gray-900 dark:text-white mb-4">Industries & Startups</h4>
-                        <p class="text-gray-600 dark:text-gray-300">Partnering with forward-thinking organizations to
-                            develop and deploy cutting-edge technology solutions.</p>
-                    </div>
-                    <div class="bg-white dark:bg-gray-900 p-8 rounded-2xl shadow-sm">
-                        <div class="w-12 h-12 flex items-center justify-center bg-primary/10 rounded-xl mb-6">
-                            <i class="ri-school-line text-primary ri-xl"></i>
-                        </div>
-                        <h4 class="text-xl font-semibold text-gray-900 dark:text-white mb-4">Engineering Colleges &
-                            Universities</h4>
-                        <p class="text-gray-600 dark:text-gray-300">Collaborative programs bridging academic learning
-                            with practical industry applications.</p>
-                    </div>
-                    <div class="bg-white dark:bg-gray-900 p-8 rounded-2xl shadow-sm">
-                        <div class="w-12 h-12 flex items-center justify-center bg-primary/10 rounded-xl mb-6">
-                            <i class="ri-team-line text-primary ri-xl"></i>
-                        </div>
-                        <h4 class="text-xl font-semibold text-gray-900 dark:text-white mb-4">Schools & Training
-                            Institutions</h4>
-                        <p class="text-gray-600 dark:text-gray-300">Building foundational technology skills through
-                            hands-on learning experiences.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-    <!-- About PixelBotix Technologies -->
-    <section class="py-20 bg-gray-50 dark:bg-gray-900">
-      <div class="max-w-7xl mx-auto px-6 text-center">
-        <h1 class="text-4xl md:text-5xl font-bold mb-4">
-          PixelBotix Technologies Pvt. Ltd.
+    <div class="relative w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="max-w-3xl">
+        <h1 class="text-5xl lg:text-7xl font-bold text-white mb-6 leading-tight">
+            PixelBotix Technologies
         </h1>
-        <p class="text-xl font-medium text-blue-600 mb-6">
-          Research, Innovation & Applied Engineering
+
+        <p class="text-xl lg:text-2xl text-white/90 mb-4 font-medium">
+            Research, Innovation & Applied Engineering
         </p>
-        <p class="max-w-3xl mx-auto text-gray-600 dark:text-gray-400">
-          PixelBotix Technologies Pvt. Ltd. is an R&D-focused technology company
-          working across Robotics, Artificial Intelligence, Additive Manufacturing,
-          and Applied Engineering. Founded in April 2025, we operate at the
-          intersection of research, product development, and real-world execution.
+
+        <p class="text-lg text-white/80 mb-8 leading-relaxed">
+            PixelBotix Technologies Pvt. Ltd. is a research-driven technology company working across Robotics,
+            Artificial Intelligence, Additive Manufacturing, and Applied Engineering. Founded in April 2025,
+            we operate at the intersection of R&D, product engineering, industrial services, and capability building.
         </p>
-      </div>
+
+        <div class="flex flex-col sm:flex-row gap-4">
+            <a href="/services"
+            class="bg-primary hover:bg-blue-600 text-white px-8 py-4 font-semibold rounded-lg transition">
+            Explore Our Work
+            </a>
+            <a href="/contact"
+            class="border-2 border-white text-white hover:bg-white hover:text-gray-900 px-8 py-4 font-semibold rounded-lg transition">
+            Get in Touch
+            </a>
+        </div>
+        </div>
+    </div>
     </section>
 
-    <!-- WHO WE ARE -->
-    <section class="py-20">
-      <div class="max-w-7xl mx-auto px-6">
-        <div class="max-w-3xl mb-14">
-          <h2 class="text-3xl font-bold mb-4">Who We Are</h2>
-          <p class="text-gray-600 dark:text-gray-400">
-            PixelBotix is built as a research-first organization with a strong
-            emphasis on applied engineering, practical problem-solving, and
-            execution-driven innovation.
-          </p>
-        </div>
 
-        <div class="grid md:grid-cols-3 gap-8">
-          <div class="bg-gray-50 dark:bg-gray-800 p-8 rounded-xl">
-            <i class="ri-flask-line text-3xl text-blue-600 mb-4"></i>
-            <h3 class="font-semibold text-lg mb-2">Applied Research & Prototyping</h3>
-            <p class="text-gray-600 dark:text-gray-400">
-              Research-led experimentation, rapid prototyping, and validation of
-              engineering concepts for real-world deployment.
-            </p>
-          </div>
-
-          <div class="bg-gray-50 dark:bg-gray-800 p-8 rounded-xl">
-            <i class="ri-tools-line text-3xl text-blue-600 mb-4"></i>
-            <h3 class="font-semibold text-lg mb-2">Engineering & Technology Services</h3>
-            <p class="text-gray-600 dark:text-gray-400">
-              End-to-end technology services covering design, development,
-              manufacturing support, and system integration.
-            </p>
-          </div>
-
-          <div class="bg-gray-50 dark:bg-gray-800 p-8 rounded-xl">
-            <i class="ri-graduation-cap-line text-3xl text-blue-600 mb-4"></i>
-            <h3 class="font-semibold text-lg mb-2">Capability Building & Training</h3>
-            <p class="text-gray-600 dark:text-gray-400">
-              Hands-on technical programs designed to bridge academic learning with
-              applied engineering skills.
-            </p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- MISSION & VISION -->
+    <!-- ================= ABOUT ================= -->
     <section class="py-20 bg-gray-50 dark:bg-gray-800">
-      <div class="max-w-7xl mx-auto px-6">
-        <div class="grid md:grid-cols-2 gap-12">
-          <div class="bg-white dark:bg-gray-900 p-10 rounded-xl">
-            <h2 class="text-2xl font-bold mb-6">Our Mission</h2>
-            <ul class="space-y-4 text-gray-600 dark:text-gray-400">
-              <li>• Develop and deliver applied R&D and engineering solutions</li>
-              <li>• Enable industries through prototyping, manufacturing, and technology services</li>
-              <li>• Build future-ready talent through application-driven education</li>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-16">
+            <h2 class="text-4xl lg:text-5xl font-bold mb-6">About PixelBotix</h2>
+            <p class="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
+            PixelBotix is an R&D-focused innovation company delivering applied research, engineering solutions,
+            manufacturing services, and hands-on technical programs across emerging technology domains.
+            </p>
+        </div>
+
+        <div class="grid lg:grid-cols-2 gap-12 items-center">
+            <div class="space-y-6">
+            <div>
+                <h3 class="text-3xl font-bold mb-4">Who We Are</h3>
+                <p class="text-gray-600 dark:text-gray-300 leading-relaxed">
+                We work on real-world problems where research must translate into execution. Our focus is on
+                building deployable systems, functional prototypes, and practical engineering solutions that
+                bridge the gap between concept and application.
+                </p>
+            </div>
+            <ul class="space-y-4 text-gray-600 dark:text-gray-300">
+                <li>• Applied research and experimental prototyping</li>
+                <li>• Engineering and manufacturing services</li>
+                <li>• Industry-aligned education and capability development</li>
             </ul>
-          </div>
+            </div>
 
-          <div class="bg-white dark:bg-gray-900 p-10 rounded-xl">
-            <h2 class="text-2xl font-bold mb-6">Our Vision</h2>
-            <p class="text-gray-600 dark:text-gray-400">
-              To become a trusted research and innovation partner enabling industries,
-              institutions, and learners to build and deploy intelligent,
-              future-ready technologies.
-            </p>
-          </div>
+            <img
+            src="https://readdy.ai/api/search-image?query=Professional%20technology%20team%20working%20in%20modern%20research%20laboratory%20with%20robotics%20equipment%2C%20AI%20systems%2C%20and%203D%20printing%20technology%2C%20clean%20white%20background%20with%20bright%20professional%20lighting&width=600&height=400&seq=about-img&orientation=landscape"
+            alt="PixelBotix Research Lab"
+            class="rounded-2xl shadow-lg w-full h-96 object-cover">
         </div>
-      </div>
-    </section>
-
-    <!-- WHAT WE DO -->
-    <section class="py-20">
-      <div class="max-w-7xl mx-auto px-6">
-        <h2 class="text-3xl font-bold mb-12 text-center">What We Do</h2>
-
-        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-          <div class="p-8 bg-gray-50 dark:bg-gray-800 rounded-xl">
-            <h3 class="font-semibold text-lg mb-3">Research & Development</h3>
-            <p class="text-gray-600 dark:text-gray-400">
-              Applied research, experimentation, and prototyping across intelligent systems.
-            </p>
-          </div>
-
-          <div class="p-8 bg-gray-50 dark:bg-gray-800 rounded-xl">
-            <h3 class="font-semibold text-lg mb-3">Robotics & AI</h3>
-            <p class="text-gray-600 dark:text-gray-400">
-              Design and delivery of robotics, automation, and AI-driven solutions.
-            </p>
-          </div>
-
-          <div class="p-8 bg-gray-50 dark:bg-gray-800 rounded-xl">
-            <h3 class="font-semibold text-lg mb-3">Additive Manufacturing</h3>
-            <p class="text-gray-600 dark:text-gray-400">
-              3D printer sales, 3D printing services, and prototyping support.
-            </p>
-          </div>
-
-          <div class="p-8 bg-gray-50 dark:bg-gray-800 rounded-xl">
-            <h3 class="font-semibold text-lg mb-3">3D Scanning & Reverse Engineering</h3>
-            <p class="text-gray-600 dark:text-gray-400">
-              3D scanner sales, scanning services, and digital reconstruction.
-            </p>
-          </div>
-
-          <div class="p-8 bg-gray-50 dark:bg-gray-800 rounded-xl md:col-span-2 lg:col-span-1">
-            <h3 class="font-semibold text-lg mb-3">Institutional & Industry Engagement</h3>
-            <p class="text-gray-600 dark:text-gray-400">
-              Workshops, FDPs, guest lectures, and collaborative engineering initiatives.
-            </p>
-          </div>
         </div>
-      </div>
     </section>
 
-    <!-- JOURNEY -->
-    <section class="py-20 bg-gray-50 dark:bg-gray-800">
-      <div class="max-w-4xl mx-auto px-6">
-        <h2 class="text-3xl font-bold mb-10 text-center">Journey & Milestones</h2>
-        <ul class="space-y-6 text-gray-600 dark:text-gray-400">
-          <li>• April 2025 — Company incorporated</li>
-          <li>• Launch of research-driven workshops and institutional programs</li>
-          <li>• Technology awareness programs and guest lectures</li>
-          <li>• Expansion into additive manufacturing and 3D scanning services</li>
-        </ul>
-      </div>
-    </section>
-
-    <!-- LEADERSHIP -->
+    <!-- ================= CHALLENGES ================= -->
     <section class="py-20 bg-white dark:bg-gray-900">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-16">
                 <h2 class="text-4xl lg:text-5xl font-bold text-gray-900 dark:text-white mb-6">
-                    Leadership Team
+                    Addressing Critical Challenges
                 </h2>
                 <p class="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
-                    Experienced leaders driving innovation and excellence in technology research and development.
+                    Our work focuses on solving real-world problems through practical, execution-driven solutions.
                 </p>
             </div>
-            <div class="grid md:grid-cols-2 gap-12 max-w-4xl mx-auto">
-                <div class="bg-gray-50 dark:bg-gray-800 p-8 rounded-2xl text-center cursor-pointer hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1"
-                    onclick="openLeaderModal('sabique')">
-                    <div class="w-32 h-32 rounded-full mx-auto mb-6 overflow-hidden shadow-lg">
-                        <img src="https://readdy.ai/api/search-image?query=Professional%20portrait%20of%20Indian%20technology%20executive%20in%20formal%20business%20attire%2C%20clean%20studio%20background%20with%20professional%20lighting%2C%20confident%20expression%2C%20modern%20corporate%20headshot%20style%20for%20technology%20company%20leadership&width=400&height=400&seq=sabique-portrait&orientation=squarish"
-                            alt="Dr. Sabique P V" class="w-full h-full object-cover">
-                    </div>
-                    <h3 class="text-2xl font-bold text-gray-900 dark:text-white mb-2">Dr. Sabique P V</h3>
-                    <p class="text-primary font-semibold mb-4">Founder & CEO</p>
-                    <p class="text-gray-600 dark:text-gray-300 mb-4">Director — Technology & R&D</p>
-                    <p class="text-gray-600 dark:text-gray-300">Leads operations, strategy, institutional
-                        partnerships, and business development. Oversees research, engineering development, program
-                        design, and applied technology initiatives.</p>
-                    <div class="mt-4 text-primary text-sm font-medium">
-                        Click to learn more
-                    </div>
-                </div>
-                <div class="bg-gray-50 dark:bg-gray-800 p-8 rounded-2xl text-center cursor-pointer hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1"
-                    onclick="openLeaderModal('sivaperumal')">
-                    <div class="w-32 h-32 rounded-full mx-auto mb-6 overflow-hidden shadow-lg">
-                        <img src="https://readdy.ai/api/search-image?query=Professional%20portrait%20of%20Indian%20manufacturing%20director%20in%20business%20formal%20attire%2C%20clean%20studio%20background%20with%20professional%20lighting%2C%20confident%20expression%2C%20modern%20corporate%20headshot%20style%20for%20technology%20company%20leadership&width=400&height=400&seq=sivaperumal-portrait&orientation=squarish"
-                            alt="Sivaperumal R" class="w-full h-full object-cover">
-                    </div>
-                    <h3 class="text-2xl font-bold text-gray-900 dark:text-white mb-2">Sivaperumal R</h3>
-                    <p class="text-primary font-semibold mb-4">Director</p>
-                    <p class="text-gray-600 dark:text-gray-300 mb-4">Additive Manufacturing & Industrial Services
-                    </p>
-                    <p class="text-gray-600 dark:text-gray-300">Leads 3D printer sales, 3D printing services, 3D
-                        scanning solutions, and industry engagement initiatives across manufacturing sectors.</p>
-                    <div class="mt-4 text-primary text-sm font-medium">
-                        Click to learn more
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- COMPLIANCE -->
-    <section class="py-20 bg-gray-50 dark:bg-gray-800">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-16">
-                <h2 class="text-4xl lg:text-5xl font-bold text-gray-900 dark:text-white mb-6">
-                    Compliance & Ethics
-                </h2>
-            </div>
-            <div class="max-w-4xl mx-auto">
-                <div class="bg-white dark:bg-gray-900 p-10 rounded-2xl shadow-sm text-center">
+            <div class="grid md:grid-cols-3 gap-8 mb-20">
+                <div class="text-center">
                     <div
-                        class="w-20 h-20 flex items-center justify-center bg-green-100 dark:bg-green-900/30 rounded-2xl mx-auto mb-8">
-                        <i class="ri-shield-check-line text-green-600 dark:text-green-400 ri-3x"></i>
+                        class="w-16 h-16 flex items-center justify-center bg-red-100 dark:bg-red-900/30 rounded-2xl mx-auto mb-6">
+                        <i class="ri-disconnect-line text-red-600 dark:text-red-400 ri-2x"></i>
                     </div>
-                    <h3 class="text-2xl font-bold text-gray-900 dark:text-white mb-6">Commitment to Excellence</h3>
-                    <p class="text-lg text-gray-600 dark:text-gray-300 leading-relaxed mb-8">
-                        PixelBotix Technologies Pvt. Ltd. is a registered private limited company operating with a
-                        strong commitment to ethical practices, transparency, and responsible technology deployment.
-                        We adhere to institutional standards, industry expectations, and compliance requirements
-                        across all engagements.
-                    </p>
-                    <div class="grid md:grid-cols-3 gap-6 text-sm">
-                        <div class="flex items-center justify-center space-x-2">
-                            <i class="ri-check-line text-green-600 dark:text-green-400"></i>
-                            <span class="text-gray-600 dark:text-gray-300">Ethical Practices</span>
-                        </div>
-                        <div class="flex items-center justify-center space-x-2">
-                            <i class="ri-check-line text-green-600 dark:text-green-400"></i>
-                            <span class="text-gray-600 dark:text-gray-300">Transparency</span>
-                        </div>
-                        <div class="flex items-center justify-center space-x-2">
-                            <i class="ri-check-line text-green-600 dark:text-green-400"></i>
-                            <span class="text-gray-600 dark:text-gray-300">Compliance</span>
-                        </div>
+                    <h3 class="text-xl font-semibold text-gray-900 dark:text-white mb-4">Research-Deployment Gap
+                    </h3>
+                    <p class="text-gray-600 dark:text-gray-300">Bridging the disconnect between theoretical research
+                        and practical, deployable solutions in the market.</p>
+                </div>
+                <div class="text-center">
+                    <div
+                        class="w-16 h-16 flex items-center justify-center bg-orange-100 dark:bg-orange-900/30 rounded-2xl mx-auto mb-6">
+                        <i class="ri-hammer-line text-orange-600 dark:text-orange-400 ri-2x"></i>
                     </div>
+                    <h3 class="text-xl font-semibold text-gray-900 dark:text-white mb-4">Limited Infrastructure
+                        Access</h3>
+                    <p class="text-gray-600 dark:text-gray-300">Providing access to advanced applied engineering
+                        infrastructure and cutting-edge technology resources.</p>
+                </div>
+                <div class="text-center">
+                    <div
+                        class="w-16 h-16 flex items-center justify-center bg-yellow-100 dark:bg-yellow-900/30 rounded-2xl mx-auto mb-6">
+                        <i class="ri-user-settings-line text-yellow-600 dark:text-yellow-500 ri-2x"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-900 dark:text-white mb-4">Academic-Industry Skill
+                        Mismatch</h3>
+                    <p class="text-gray-600 dark:text-gray-300">Aligning educational outcomes with industry
+                        requirements through practical, hands-on learning approaches.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- CTA -->
-    <section class="py-20 bg-blue-600 text-white text-center">
-      <div class="max-w-4xl mx-auto px-6">
-        <h2 class="text-3xl font-bold mb-4">Work With PixelBotix</h2>
-        <p class="mb-8 opacity-90">
-          For research collaboration, prototyping support, manufacturing services,
-          or institutional engagement, connect with our team.
+    <!-- ================= MISSION & VISION ================= -->
+    <section class="py-20 bg-gray-50 dark:bg-gray-800">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+        <div class="text-center mb-16">
+        <h2 class="text-4xl lg:text-5xl font-bold text-gray-900 dark:text-white mb-6">
+            Our Mission & Vision
+        </h2>
+        <p class="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
+            Clear intent, execution focus, and long-term direction.
         </p>
-        <a href="/contact"
-           class="inline-block bg-white text-blue-600 px-8 py-4 rounded-lg font-semibold hover:bg-gray-100">
-          Contact Us
-        </a>
-      </div>
+        </div>
+
+        <div class="grid lg:grid-cols-2 gap-12">
+
+        <!-- MISSION -->
+        <div class="bg-white dark:bg-gray-900 p-10 rounded-2xl shadow-sm">
+            <div class="flex items-center gap-4 mb-8">
+            <div class="w-14 h-14 flex items-center justify-center bg-blue-100 dark:bg-blue-900/30 rounded-2xl">
+                <i class="ri-flag-line text-blue-600 dark:text-blue-400 ri-xl"></i>
+            </div>
+            <h3 class="text-2xl font-bold text-gray-900 dark:text-white">
+                Our Mission
+            </h3>
+            </div>
+
+            <div class="space-y-6 text-gray-600 dark:text-gray-300">
+
+            <div class="flex items-start gap-4">
+                <div class="w-6 h-6 flex items-center justify-center bg-primary rounded-full flex-shrink-0 mt-1">
+                <i class="ri-check-line text-white text-sm"></i>
+                </div>
+                <p>
+                Develop and deliver applied R&D and engineering solutions in robotics, AI, and intelligent systems.
+                </p>
+            </div>
+
+            <div class="flex items-start gap-4">
+                <div class="w-6 h-6 flex items-center justify-center bg-primary rounded-full flex-shrink-0 mt-1">
+                <i class="ri-check-line text-white text-sm"></i>
+                </div>
+                <p>
+                Enable industries through prototyping, additive manufacturing, and advanced technology services.
+                </p>
+            </div>
+
+            <div class="flex items-start gap-4">
+                <div class="w-6 h-6 flex items-center justify-center bg-primary rounded-full flex-shrink-0 mt-1">
+                <i class="ri-check-line text-white text-sm"></i>
+                </div>
+                <p>
+                Build future-ready talent through hands-on, application-driven education and institutional programs.
+                </p>
+            </div>
+
+            </div>
+        </div>
+
+        <!-- VISION -->
+        <div class="bg-white dark:bg-gray-900 p-10 rounded-2xl shadow-sm">
+            <div class="flex items-center gap-4 mb-8">
+            <div class="w-14 h-14 flex items-center justify-center bg-purple-100 dark:bg-purple-900/30 rounded-2xl">
+                <i class="ri-eye-line text-purple-600 dark:text-purple-400 ri-xl"></i>
+            </div>
+            <h3 class="text-2xl font-bold text-gray-900 dark:text-white">
+                Our Vision
+            </h3>
+            </div>
+
+            <p class="text-lg text-gray-600 dark:text-gray-300 leading-relaxed">
+            To become a trusted research and innovation partner that enables industries, institutions, and learners
+            to design, build, and deploy intelligent, scalable, and future-ready technologies through strong R&D,
+            engineering execution, and applied learning ecosystems.
+            </p>
+        </div>
+
+        </div>
+    </div>
     </section>
 
-  </main>
+
+    <!-- ================= WHAT WE DO ================= -->
+    <section class="py-20 bg-white dark:bg-gray-900">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+        <div class="text-center mb-16">
+        <h2 class="text-4xl lg:text-5xl font-bold text-gray-900 dark:text-white mb-6">
+            What We Do
+        </h2>
+        <p class="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
+            Applied research, engineering systems, manufacturing services, and capability-building programs.
+        </p>
+        </div>
+
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+        <!-- 1. R&D -->
+        <div class="bg-gray-50 dark:bg-gray-800 p-8 rounded-2xl">
+            <div class="w-12 h-12 flex items-center justify-center bg-blue-100 dark:bg-blue-900/30 rounded-xl mb-6">
+            <i class="ri-microscope-line text-blue-600 dark:text-blue-400 ri-xl"></i>
+            </div>
+            <h3 class="text-xl font-semibold text-gray-900 dark:text-white mb-4">
+            Research & Development
+            </h3>
+            <div class="text-gray-600 dark:text-gray-300 space-y-2">
+            <p>• Applied robotics and intelligent systems research</p>
+            <p>• AI-driven automation and control systems</p>
+            <p>• Bionic and assistive device R&D</p>
+            <p>• ROS / ROS2-based system development</p>
+            </div>
+        </div>
+
+        <!-- 2. Robotics & AI -->
+        <div class="bg-gray-50 dark:bg-gray-800 p-8 rounded-2xl">
+            <div class="w-12 h-12 flex items-center justify-center bg-purple-100 dark:bg-purple-900/30 rounded-xl mb-6">
+            <i class="ri-robot-line text-purple-600 dark:text-purple-400 ri-xl"></i>
+            </div>
+            <h3 class="text-xl font-semibold text-gray-900 dark:text-white mb-4">
+            Robotics, AI & Emerging Technologies
+            </h3>
+            <div class="text-gray-600 dark:text-gray-300 space-y-2">
+            <p>• Robotics system design and integration</p>
+            <p>• Educational and industrial robotics kits</p>
+            <p>• Bionic arm platforms and control systems</p>
+            <p>• Embedded AI and real-time systems</p>
+            </div>
+        </div>
+
+        <!-- 3. ROS -->
+        <div class="bg-gray-50 dark:bg-gray-800 p-8 rounded-2xl">
+            <div class="w-12 h-12 flex items-center justify-center bg-cyan-100 dark:bg-cyan-900/30 rounded-xl mb-6">
+            <i class="ri-node-tree text-cyan-600 dark:text-cyan-400 ri-xl"></i>
+            </div>
+            <h3 class="text-xl font-semibold text-gray-900 dark:text-white mb-4">
+            ROS & Advanced Robotics Platforms
+            </h3>
+            <div class="text-gray-600 dark:text-gray-300 space-y-2">
+            <p>• ROS / ROS2 architecture and middleware</p>
+            <p>• Mobile robots, manipulators, AMRs</p>
+            <p>• ROS-based bionic arm control stacks</p>
+            <p>• Simulation, navigation, and deployment</p>
+            </div>
+        </div>
+
+        <!-- 4. Additive Manufacturing -->
+        <div class="bg-gray-50 dark:bg-gray-800 p-8 rounded-2xl">
+            <div class="w-12 h-12 flex items-center justify-center bg-green-100 dark:bg-green-900/30 rounded-xl mb-6">
+            <i class="ri-printer-line text-green-600 dark:text-green-400 ri-xl"></i>
+            </div>
+            <h3 class="text-xl font-semibold text-gray-900 dark:text-white mb-4">
+            Additive Manufacturing
+            </h3>
+            <div class="text-gray-600 dark:text-gray-300 space-y-2">
+            <p>• 3D printer sales and installation</p>
+            <p>• 3D printing services and rapid prototyping</p>
+            <p>• Custom parts for robotics and bionic systems</p>
+            <p>• Design for additive manufacturing (DfAM)</p>
+            </div>
+        </div>
+
+        <!-- 5. 3D Scanning -->
+        <div class="bg-gray-50 dark:bg-gray-800 p-8 rounded-2xl">
+            <div class="w-12 h-12 flex items-center justify-center bg-indigo-100 dark:bg-indigo-900/30 rounded-xl mb-6">
+            <i class="ri-scan-line text-indigo-600 dark:text-indigo-400 ri-xl"></i>
+            </div>
+            <h3 class="text-xl font-semibold text-gray-900 dark:text-white mb-4">
+            3D Scanning & Reverse Engineering
+            </h3>
+            <div class="text-gray-600 dark:text-gray-300 space-y-2">
+            <p>• 3D scanner sales and services</p>
+            <p>• Reverse engineering of components</p>
+            <p>• Human-fit digitization for assistive devices</p>
+            <p>• CAD reconstruction and inspection</p>
+            </div>
+        </div>
+
+        <!-- 6. Engagement -->
+        <div class="bg-gray-50 dark:bg-gray-800 p-8 rounded-2xl">
+            <div class="w-12 h-12 flex items-center justify-center bg-orange-100 dark:bg-orange-900/30 rounded-xl mb-6">
+            <i class="ri-presentation-line text-orange-600 dark:text-orange-400 ri-xl"></i>
+            </div>
+            <h3 class="text-xl font-semibold text-gray-900 dark:text-white mb-4">
+            Institutional & Industry Engagement
+            </h3>
+            <div class="text-gray-600 dark:text-gray-300 space-y-2">
+            <p>• Technical workshops and bootcamps</p>
+            <p>• Faculty Development Programs (FDPs)</p>
+            <p>• Bionic arm & embedded AI training</p>
+            <p>• Industry collaboration and lab enablement</p>
+            </div>
+        </div>
+
+        </div>
+    </div>
+    </section>
+
+
+    <!-- ================= LEADERSHIP TEAM ================= -->
+    <section class="py-20 bg-white dark:bg-gray-900">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+        <div class="text-center mb-16">
+        <h2 class="text-4xl lg:text-5xl font-bold text-gray-900 dark:text-white mb-6">
+            Leadership Team
+        </h2>
+        <p class="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
+            Leadership with hands-on responsibility across research, engineering, and industrial execution.
+        </p>
+        </div>
+
+        <div class="grid md:grid-cols-2 gap-12 max-w-4xl mx-auto">
+
+        <!-- LEADER 1 -->
+        <div
+            class="bg-gray-50 dark:bg-gray-800 p-8 rounded-2xl text-center cursor-pointer
+                hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1"
+            onclick="openLeaderModal('sabique')"
+        >
+            <div class="w-32 h-32 rounded-full mx-auto mb-6 overflow-hidden shadow-lg">
+            <img
+            src="/assets/images/people/director/Sabique.jpeg"
+            alt="Dr. Sabique P V"
+            class="w-full h-full object-cover"
+            />
+
+            </div>
+
+            <h3 class="text-2xl font-bold text-gray-900 dark:text-white mb-1">
+            Dr. Sabique P V
+            </h3>
+
+            <p class="text-primary font-semibold mb-3">
+            Founder & CEO
+            </p>
+
+            <p class="text-gray-600 dark:text-gray-300 mb-4">
+            Operations, Strategy & Institutional Engagement
+            </p>
+
+            <p class="text-gray-600 dark:text-gray-300">
+            Leads company operations, strategic direction, institutional partnerships, and business development.
+            Oversees program design, execution quality, and applied research initiatives.
+            </p>
+
+            <div class="mt-4 text-primary text-sm font-medium">
+            View profile
+            </div>
+        </div>
+
+        <!-- LEADER 2 -->
+        <div
+            class="bg-gray-50 dark:bg-gray-800 p-8 rounded-2xl text-center cursor-pointer
+                hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1"
+            onclick="openLeaderModal('sivaperumal')"
+        >
+            <div class="w-32 h-32 rounded-full mx-auto mb-6 overflow-hidden shadow-lg">
+            <img
+            src="/assets/images/people/director/Siva.jpeg"
+            alt="Dr. Sivaperumal R"
+            class="w-full h-full object-cover"
+            />
+
+            </div>
+
+            <h3 class="text-2xl font-bold text-gray-900 dark:text-white mb-1">
+            Sivaperumal R
+            </h3>
+
+            <p class="text-primary font-semibold mb-3">
+            Director
+            </p>
+
+            <p class="text-gray-600 dark:text-gray-300 mb-4">
+            Additive Manufacturing & Industrial Services
+            </p>
+
+            <p class="text-gray-600 dark:text-gray-300">
+            Leads 3D printer sales, 3D printing services, 3D scanning solutions, reverse engineering,
+            and industrial client engagement across manufacturing sectors.
+            </p>
+
+            <div class="mt-4 text-primary text-sm font-medium">
+            View profile
+            </div>
+        </div>
+
+        </div>
+    </div>
+    </section>
+
+    <!-- ================= LEADERSHIP MODAL ================= -->
+    <div id="leadership-modal"
+        class="fixed inset-0 z-[9999] hidden bg-black/70 backdrop-blur-sm
+                flex items-center justify-center px-4">
+
+    <div class="bg-white dark:bg-gray-900 max-w-3xl w-full rounded-2xl shadow-2xl relative">
+
+        <!-- Close button -->
+        <button
+        onclick="closeLeaderModal()"
+        class="absolute top-4 right-4 text-gray-500 hover:text-gray-900
+                dark:hover:text-white text-2xl">
+        &times;
+        </button>
+
+        <!-- Dynamic content injected here -->
+        <div id="modal-content" class="p-8"></div>
+
+    </div>
+    </div>
+
+    <!-- ================= COMPLIANCE ================= -->
+        <section class="py-20 bg-gray-50 dark:bg-gray-800">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-16">
+                    <h2 class="text-4xl lg:text-5xl font-bold text-gray-900 dark:text-white mb-6">
+                        Compliance & Ethics
+                    </h2>
+                </div>
+                <div class="max-w-4xl mx-auto">
+                    <div class="bg-white dark:bg-gray-900 p-10 rounded-2xl shadow-sm text-center">
+                        <div
+                            class="w-20 h-20 flex items-center justify-center bg-green-100 dark:bg-green-900/30 rounded-2xl mx-auto mb-8">
+                            <i class="ri-shield-check-line text-green-600 dark:text-green-400 ri-3x"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold text-gray-900 dark:text-white mb-6">Commitment to Excellence</h3>
+                        <p class="text-lg text-gray-600 dark:text-gray-300 leading-relaxed mb-8">
+                            PixelBotix Technologies Pvt. Ltd. is a registered private limited company operating with a
+                            strong commitment to ethical practices, transparency, and responsible technology deployment.
+                            We adhere to institutional standards, industry expectations, and compliance requirements
+                            across all engagements.
+                        </p>
+                        <div class="grid md:grid-cols-3 gap-6 text-sm">
+                            <div class="flex items-center justify-center space-x-2">
+                                <i class="ri-check-line text-green-600 dark:text-green-400"></i>
+                                <span class="text-gray-600 dark:text-gray-300">Ethical Practices</span>
+                            </div>
+                            <div class="flex items-center justify-center space-x-2">
+                                <i class="ri-check-line text-green-600 dark:text-green-400"></i>
+                                <span class="text-gray-600 dark:text-gray-300">Transparency</span>
+                            </div>
+                            <div class="flex items-center justify-center space-x-2">
+                                <i class="ri-check-line text-green-600 dark:text-green-400"></i>
+                                <span class="text-gray-600 dark:text-gray-300">Compliance</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    <!-- ================= CTA ================= -->
+        <section class="py-20 bg-primary text-white">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+                <h2 class="text-4xl lg:text-5xl font-bold mb-6">
+                    Get in Touch
+                </h2>
+                <p class="text-xl mb-12 max-w-3xl mx-auto opacity-90">
+                    Ready to collaborate on R&D, prototyping, additive manufacturing, technology programs, or
+                    institutional initiatives? Connect with the PixelBotix team today.
+                </p>
+                <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
+                    <div class="text-center">
+                        <div class="w-16 h-16 flex items-center justify-center bg-white/10 rounded-2xl mx-auto mb-4">
+                            <i class="ri-flask-line text-white ri-2x"></i>
+                        </div>
+                        <h3 class="font-semibold mb-2">R&D Collaboration</h3>
+                        <p class="text-white/80 text-sm">Research partnerships and innovation projects</p>
+                    </div>
+                    <div class="text-center">
+                        <div class="w-16 h-16 flex items-center justify-center bg-white/10 rounded-2xl mx-auto mb-4">
+                            <i class="ri-tools-line text-white ri-2x"></i>
+                        </div>
+                        <h3 class="font-semibold mb-2">Prototyping Services</h3>
+                        <p class="text-white/80 text-sm">Custom development and engineering solutions</p>
+                    </div>
+                    <div class="text-center">
+                        <div class="w-16 h-16 flex items-center justify-center bg-white/10 rounded-2xl mx-auto mb-4">
+                            <i class="ri-printer-line text-white ri-2x"></i>
+                        </div>
+                        <h3 class="font-semibold mb-2">Manufacturing</h3>
+                        <p class="text-white/80 text-sm">3D printing and additive manufacturing services</p>
+                    </div>
+                    <div class="text-center">
+                        <div class="w-16 h-16 flex items-center justify-center bg-white/10 rounded-2xl mx-auto mb-4">
+                            <i class="ri-graduation-cap-line text-white ri-2x"></i>
+                        </div>
+                        <h3 class="font-semibold mb-2">Education Programs</h3>
+                        <p class="text-white/80 text-sm">Workshops, training, and skill development</p>
+                    </div>
+                </div>
+                <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                    <button
+                        class="!rounded-button whitespace-nowrap bg-white text-primary hover:bg-gray-100 px-8 py-4 font-semibold transition-colors">
+                        Start a Conversation
+                    </button>
+                    <button
+                        class="!rounded-button whitespace-nowrap border-2 border-white text-white hover:bg-white hover:text-primary px-8 py-4 font-semibold transition-colors">
+                        View Our Portfolio
+                    </button>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
 
   <!-- FOOTER -->
   <div id="site-footer"></div>
+
+    <script>
+    const leadershipProfiles = {
+    sabique: {
+        name: "Dr. Sabique P V",
+        title: "Founder & CEO",
+        subtitle: "Director — Technology & R&D",
+        image: "/assets/images/people/director/Sabique.jpeg",
+        education: "Ph.D. — Technology & Innovation",
+        experience: "15+ years",
+        linkedin: "https://linkedin.com/in/sabique-pv",
+        description:
+        "Dr. Sabique P V leads PixelBotix with a strong focus on applied research, engineering execution, and institutional collaboration.",
+        expertise: [
+        "Applied R&D in Robotics, AI, and Automation",
+        "Institutional and industry partnerships",
+        "Engineering program architecture",
+        "Strategic technology leadership",
+        "Execution-driven innovation"
+        ]
+    },
+
+    sivaperumal: {
+        name: "Sivaperumal R",
+        title: "Director",
+        subtitle: "Additive Manufacturing & Industrial Services",
+        image: "/assets/images/people/director/Siva.jpeg",
+        education: "M.Tech — Manufacturing Engineering",
+        experience: "12+ years",
+        linkedin: "https://linkedin.com/in/sivaperumal-r",
+        description:
+        "Sivaperumal R oversees additive manufacturing operations, industrial services, and execution of 3D technologies.",
+        expertise: [
+        "3D printer sales and deployment",
+        "Industrial 3D printing services",
+        "3D scanning and reverse engineering",
+        "Manufacturing workflow optimization",
+        "Industry solution delivery"
+        ]
+    }
+    };
+
+    function openLeaderModal(id) {
+    const profile = leadershipProfiles[id];
+    const modal = document.getElementById("leadership-modal");
+    const content = document.getElementById("modal-content");
+
+    content.innerHTML = `
+        <div class="flex flex-col md:flex-row gap-8">
+        <img src="${profile.image}"
+            class="w-40 h-40 rounded-2xl object-cover">
+
+        <div>
+            <h3 class="text-2xl font-bold mb-1">${profile.name}</h3>
+            <p class="text-primary font-semibold">${profile.title}</p>
+            <p class="text-gray-600 dark:text-gray-300 mb-4">${profile.subtitle}</p>
+
+            <p class="text-gray-600 dark:text-gray-300 mb-6">${profile.description}</p>
+
+            <div class="grid grid-cols-2 gap-4 mb-6 text-sm">
+            <div>
+                <strong>Education</strong><br>${profile.education}
+            </div>
+            <div>
+                <strong>Experience</strong><br>${profile.experience}
+            </div>
+            </div>
+        </div>
+        </div>
+
+        <h4 class="text-lg font-semibold mt-8 mb-4">Key Expertise</h4>
+        <ul class="space-y-2 mb-8">
+        ${profile.expertise.map(e => `<li>• ${e}</li>`).join("")}
+        </ul>
+
+        <div class="flex justify-between items-center border-t pt-6">
+        <a href="${profile.linkedin}" target="_blank"
+            class="bg-blue-600 text-white px-6 py-3 rounded-lg">
+            LinkedIn
+        </a>
+        <button onclick="closeLeaderModal()"
+                class="px-6 py-3 rounded-lg bg-gray-200 dark:bg-gray-800">
+            Close
+        </button>
+        </div>
+    `;
+
+    modal.classList.remove("hidden");
+    document.body.style.overflow = "hidden";
+    }
+
+    function closeLeaderModal() {
+    document.getElementById("leadership-modal").classList.add("hidden");
+    document.body.style.overflow = "auto";
+    }
+    </script>
 
 
 

@@ -111,6 +111,8 @@ header .text-primary {
   border-color: #374151;
 }
 
+
+
 /* =========================================================
    MEGA MENU LINKS
    ========================================================= */
@@ -317,4 +319,18 @@ header .text-primary {
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
+}
+
+/* About US page  */
+/* Who We are section in About us page */
+#who-we-are {
+  scroll-margin-top: 5rem;
+}
+
+#vision-mission {
+  scroll-margin-top: 5rem;
+}
+
+#leadership {
+  scroll-margin-top: 5rem;
 }

@@ -176,8 +176,8 @@ function initBackToTop() {
 
 /* ---------- MASTER INITIALIZER ---------- */
 async function initLayout() {
-  await loadPartial("site-navbar", "../partials/navbar.html");
-  await loadPartial("site-footer", "../partials/footer.html");
+  await loadPartial("site-navbar", "/pb_site_2026/partials/navbar.html");
+  await loadPartial("site-footer", "/pb_site_2026/partials/footer.html");
 
   requestAnimationFrame(() => {
     initMobileMenu();

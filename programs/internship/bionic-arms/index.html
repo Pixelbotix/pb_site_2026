@@ -1,0 +1,915 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <script type="text/javascript" crossorigin="anonymous" async="" src="js/array.js"></script>
+    <script src="js/e.js"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta property="og:title" content="Integrating Machine Learning on Embedded System For Multi-Gesture Bionic Hand Control - PixelBotix Technologies - PixelBotix Technologies">
+    <meta property="og:description" content="15-day hands-on internship on Integrating Machine Learning on Embedded System For Multi-Gesture Bionic Hand Control - PixelBotix Technologies">
+    <meta property="og:image" content="https://pixelbotix.com/static/workshop/15_day_bionic_with_expert.jpeg">
+    <meta property="og:url" content="https://pixelbotix.com/bionic_arm_internship.html">
+    <meta property="og:type" content="website">
+
+    <title>Integrating Machine Learning on Embedded System For Multi-Gesture Bionic Hand Control - PixelBotix Technologies</title>
+    <script src="https://cdn.tailwindcss.com/3.4.16"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#3B82F6',
+                        secondary: '#10B981'
+                    },
+                    borderRadius: {
+                        'none': '0px',
+                        'sm': '4px',
+                        DEFAULT: '8px',
+                        'md': '12px',
+                        'lg': '16px',
+                        'xl': '20px',
+                        '2xl': '24px',
+                        '3xl': '32px',
+                        'full': '9999px',
+                        'button': '8px'
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        :where([class^="ri-"])::before {
+            content: "\f3c2";
+        }
+
+        .dark {
+            --bg-primary: #0f172a;
+            --bg-secondary: #1e293b;
+            --text-primary: #f8fafc;
+            --text-secondary: #cbd5e1;
+            --border-color: #334155;
+        }
+
+        .light {
+            --bg-primary: #ffffff;
+            --bg-secondary: #f8fafc;
+            --text-primary: #1e293b;
+            --text-secondary: #64748b;
+            --border-color: #e2e8f0;
+        }
+
+        body {
+            background-color: var(--bg-primary);
+            color: var(--text-primary);
+            transition: all 0.3s ease;
+        }
+
+        .theme-bg {
+            background-color: var(--bg-primary);
+        }
+
+        .theme-bg-secondary {
+            background-color: var(--bg-secondary);
+        }
+
+        .theme-text {
+            color: var(--text-primary);
+        }
+
+        .theme-text-secondary {
+            color: var(--text-secondary);
+        }
+
+        .theme-border {
+            border-color: var(--border-color);
+        }
+
+        .floating-buttons {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            z-index: 50;
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        @media (max-width: 768px) {
+            .floating-buttons {
+                bottom: 1rem;
+                right: 1rem;
+            }
+        }
+
+
+    </style>
+</head>
+
+<body class="light">
+    <!-- Navigation Header -->
+    <header class="fixed top-0 left-0 right-0 z-50 bg-white dark:bg-gray-800 shadow-lg transition-colors duration-300">
+        <div class="w-full px-4 lg:px-8">
+            <div class="flex items-center justify-between h-16">
+                <a href="#" class="flex items-center">
+                    <!-- Dark theme logo (shown only in dark mode) -->
+                    <img src="/static/logo/logo-dark.png" alt="Logo Light" class="w-20 h-20 hidden dark:inline-block">
+                    <img src="/static/logo/logo-white.png" alt="Logo Dark" class="w-20 h-20 inline-block dark:hidden">
+                </a>
+
+                <nav class="hidden md:flex items-center space-x-8">
+                    <a href="index.html"
+                        class="text-gray-900 dark:text-white hover:text-primary transition-colors">Home</a>
+                    <a href="/about/about-us.html"
+                        class="text-gray-900 dark:text-white hover:text-primary transition-colors">About Us</a>
+
+                    <!-- Dropdown for Services -->
+                    <div class="relative group">
+                        <button
+                            class="text-gray-900 dark:text-white hover:text-primary transition-colors flex items-center space-x-2">
+                            <i class="ri-service-line"></i> <!-- Service Icon -->
+                            <span>Services</span>
+                        </button>
+                        <!-- Dropdown Menu -->
+                        <div
+                            class="absolute left-0 mt-2 w-64 bg-white dark:bg-gray-800 shadow-lg rounded-lg opacity-0 group-hover:opacity-100 group-hover:block transition-opacity duration-300 p-4 space-y-3">
+                            <!-- AI & Robotics -->
+                            <a href="index.html#ai-robotics"
+                                class="flex items-center space-x-3 py-2 px-4 text-gray-900 dark:text-white hover:bg-blue-50 dark:hover:bg-gray-700 rounded-lg transition-all">
+                                <i class="ri-robot-line text-xl"></i>
+                                <span>AI & Robotics</span>
+                            </a>
+                            <!-- Eduverse -->
+                            <a href="index.html#eduverse"
+                                class="flex items-center space-x-3 py-2 px-4 text-gray-900 dark:text-white hover:bg-blue-50 dark:hover:bg-gray-700 rounded-lg transition-all">
+                                <i class="ri-earth-line text-xl"></i>
+                                <span>Eduverse</span>
+                            </a>
+                            <!-- Skill Labs -->
+                            <a href="index.html#skill-labs"
+                                class="flex items-center space-x-3 py-2 px-4 text-gray-900 dark:text-white hover:bg-blue-50 dark:hover:bg-gray-700 rounded-lg transition-all">
+                                <i class="ri-laptop-line text-xl"></i>
+                                <span>Skill Labs</span>
+                            </a>
+                        </div>
+                    </div>
+
+                    <a href="https://shop.pixelbotix.com/"
+                        class="text-gray-900 dark:text-white hover:text-primary transition-colors">Products</a>
+
+                        <!-- Dropdown for Events -->
+                        <div class="relative group">
+                            <button
+                                class="text-gray-900 dark:text-white hover:text-primary transition-colors flex items-center space-x-2">
+                                <i class="ri-book-open-line"></i> <!-- Workshop Icon -->
+                                <span>Events</span>
+                            </button>
+
+                            <!-- Dropdown Menu -->
+                            <div
+                                class="absolute left-0 mt-2 w-64 bg-white dark:bg-gray-800 shadow-lg rounded-lg opacity-0 group-hover:opacity-100 group-hover:block transition-opacity duration-300 p-4 space-y-3">
+
+                                <!-- ROS Workshop -->
+                                <a href="ros_internship.html"
+                                    class="flex items-center space-x-3 py-2 px-4 text-gray-900 dark:text-white hover:bg-blue-50 dark:hover:bg-gray-700 rounded-lg transition-all">
+                                    <i class="ri-route-line text-xl"></i>
+                                    <span>ROS & Autonomous Mobile Robot Internship Program</span>
+                                </a>
+
+                                <!-- Bionic Arm Workshop -->
+                                <a href="bionic_arm_internship.html"
+                                    class="flex items-center space-x-3 py-2 px-4 text-gray-900 dark:text-white hover:bg-blue-50 dark:hover:bg-gray-700 rounded-lg transition-all">
+                                    <i class="ri-hand-heart-line text-xl"></i>
+                                    <span>Bionic Arm & Gesture Control Internship Program</span>
+                                </a>
+
+                            </div>
+                        </div>
+
+                    <a href="index.html#contact"
+                        class="text-gray-900 dark:text-white hover:text-primary transition-colors">Contact</a>
+                </nav>
+
+                <div class="flex items-center space-x-4">
+                    <button id="theme-toggle"
+                        class="w-10 h-10 flex items-center justify-center rounded-full bg-gray-100 dark:bg-gray-700 text-gray-900 dark:text-white hover:bg-gray-200 dark:hover:bg-gray-600 transition-colors">
+                        <i class="ri-sun-line dark:hidden ri-lg"></i>
+                        <i class="ri-moon-line hidden dark:block ri-lg"></i>
+                    </button>
+                    <button id="mobile-menu-toggle"
+                        class="md:hidden w-10 h-10 flex items-center justify-center text-gray-900 dark:text-white">
+                        <i class="ri-menu-line ri-lg"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div id="mobile-menu"
+            class="md:hidden hidden bg-white dark:bg-gray-800 border-t border-gray-200 dark:border-gray-700">
+            <div class="px-4 py-2 space-y-2">
+                <a href="index.html" class="block py-2 text-gray-900 dark:text-white hover:text-primary">Home</a>
+                <a href="/about/about-us.html" class="block py-2 text-gray-900 dark:text-white hover:text-primary">About Us</a>
+
+                <!-- Mobile dropdown for Services -->
+                <div class="space-y-2">
+                    <button class="w-full text-left text-gray-900 dark:text-white hover:text-primary">
+                        Services
+                    </button>
+                    <div class="space-y-2 pl-4">
+                        <a href="index.html#ai-robotics"
+                            class="block py-2 text-gray-900 dark:text-white hover:text-primary">AI & Robotics</a>
+                        <a href="index.html#eduverse"
+                            class="block py-2 text-gray-900 dark:text-white hover:text-primary">Eduverse</a>
+                        <a href="index.html#skill-labs"
+                            class="block py-2 text-gray-900 dark:text-white hover:text-primary">Skill Labs</a>
+                    </div>
+                </div>
+
+                <a href="https://shop.pixelbotix.com/" class="block py-2 text-gray-900 dark:text-white hover:text-primary">Products</a>
+
+                <div class="space-y-2">
+                    <button class="w-full text-left text-gray-900 dark:text-white hover:text-primary">
+                        Events
+                    </button>
+                    <div class="space-y-2 pl-4">
+                        <a href="ros_internship.html"
+                            class="block py-2 text-gray-900 dark:text-white hover:text-primary">
+                            ROS & Autonomous Mobile Robot Internship Program
+                        </a>
+                        <a href="bionic_arm_internship.html"
+                            class="block py-2 text-gray-900 dark:text-white hover:text-primary">
+                            Bionic Arm & Gesture Control Internship Program
+                        </a>
+                    </div>
+                </div>
+
+                <a href="index.html#contact"
+                    class="block py-2 text-gray-900 dark:text-white hover:text-primary">Contact</a>
+            </div>
+        </div>
+    </header>
+      <!-- NAVBAR -->
+    <div id="site-navbar"></div>
+    <!-- Main Content -->
+    <main class="pt-16">
+        <!-- Hero Section -->
+        <section class="py-16 lg:py-24 theme-bg">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="grid lg:grid-cols-2 gap-12 items-center">
+                    <!-- Left Column - Content -->
+                    <div class="space-y-8">
+                        <div>
+                            <h1 class="text-4xl lg:text-5xl font-bold theme-text mb-6">
+                               15-Day Hands-on<br>
+                                <span class="text-primary">Internship & Skill Development Program</span>
+                            </h1>
+                            <p class="text-xl theme-text-secondary mb-8">
+                                Integrating Machine Learning on Embedded System For Multi-Gesture Bionic Hand Control
+                            </p>
+                        </div>
+                        <!-- Workshop Details -->
+                        <div class="space-y-4">
+                            <div class="flex items-center space-x-3">
+                                <div class="w-8 h-8 flex items-center justify-center">
+                                    <i class="ri-calendar-line text-primary text-xl"></i>
+                                </div>
+                                <span class="theme-text font-medium">24 November Onwards</span>
+                            </div>
+                            <div class="flex items-center space-x-3">
+                                <div class="w-8 h-8 flex items-center justify-center">
+                                    <i class="ri-time-line text-primary text-xl"></i>
+                                </div>
+                                <span class="theme-text font-medium">1:00 PM – 5:00 PM </span>
+                            </div>
+                            <div class="flex items-center space-x-3">
+                                <div class="w-8 h-8 flex items-center justify-center">
+                                    <i class="ri-map-pin-line text-primary text-xl"></i>
+                                </div>
+                                <span class="theme-text font-medium">PixelBotix Skill Labs, Tambaram, Chennai</span>
+                            </div>
+                        </div>
+                        <!-- Price & CTA -->
+                        <div class="space-y-6">
+                            <div class="flex items-baseline space-x-2">
+                                
+
+                                <div class="flex items-center gap-3">
+                                    <span class="text-xl text-gray-500 line-through">₹7,999</span>
+                                    <span class="text-sm bg-red-500 text-white px-2 py-1 rounded">25% OFF</span>
+                                    <span class="text-3xl font-bold text-primary">₹5,999</span>
+                                </div>
+
+
+                                <span
+                                    class="bg-secondary text-white px-3 py-1 rounded-full text-sm font-medium">LIMITED SEATS</span>
+                            </div>
+                            <div class="flex flex-col sm:flex-row gap-4">
+                                <a href="https://forms.gle/nhRC2b2ZkrgPNqFQ6" target="_blank" rel="noopener noreferrer">
+                                    <button
+                                        class="bg-primary text-white px-6 py-3 !rounded-button font-semibold hover:bg-green-600 transition-all transform hover:scale-105 shadow-lg whitespace-nowrap">
+                                        Register Now
+                                    </button>
+                                </a>
+
+                                <a href="#curriculum">
+                                    <button
+                                        class="border-2 border-primary text-primary px-8 py-3 !rounded-button font-semibold hover:bg-primary hover:text-white transition-colors whitespace-nowrap">
+                                        View Curriculum
+                                    </button>
+                                <a href="https://wa.me/917200445685?text=I%20want%20to%20register%20for%20Bionic%20Arm%20Internship"
+                                target="_blank" rel="noopener noreferrer">
+
+                                    <button
+                                        class="bg-green-500 text-white px-8 py-3 !rounded-button font-semibold hover:bg-green-600 transition-colors whitespace-nowrap flex items-center space-x-2">
+                                        <div class="w-5 h-5 flex items-center justify-center">
+                                            <i class="ri-whatsapp-line"></i>
+                                        </div>
+                                        <span>WhatsApp Us</span>
+                                    </button>
+                                </a>
+
+                            </div>
+                            <p class="text-sm theme-text-secondary">
+                                Secure online payment. If you face issues, contact us on WhatsApp or call +91 7200445685.
+                            </p>
+                        </div>
+                    </div>
+                    <!-- Right Column - Poster -->
+                    <div class="lg:order-last">
+                        <div class="relative rounded-2xl overflow-hidden shadow-2xl">
+                            <img src="static/workshop/15_day_bionic.jpeg" alt="3D Printing & AI Integration Workshop Poster"
+                                class="w-full h-auto object-cover object-top">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Key Highlights Section -->
+        <section id="key-highlights" class="py-16 theme-bg">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                
+                <h2 class="text-3xl font-bold theme-text text-center mb-12">Key Highlights</h2>
+
+                <div class="grid md:grid-cols-3 gap-10">
+
+                    <!-- Card 1 -->
+                    <div class="text-center">
+                        <div class="w-16 h-16 bg-primary text-white rounded-full flex items-center justify-center mx-auto mb-4">
+                            <i class="ri-robot-arm-line text-2xl"></i>
+                        </div>
+                        <h3 class="font-semibold theme-text mb-2">Build Your Bionic Arm</h3>
+                        <p class="theme-text-secondary text-sm">Assemble and program a functional multi-gesture bionic hand.</p>
+                    </div>
+
+                    <!-- Card 2 -->
+                    <div class="text-center">
+                        <div class="w-16 h-16 bg-primary text-white rounded-full flex items-center justify-center mx-auto mb-4">
+                            <i class="ri-pulse-line text-2xl"></i>
+                        </div>
+                        <h3 class="font-semibold theme-text mb-2">EMG Signal Processing</h3>
+                        <p class="theme-text-secondary text-sm">Learn muscle-signal acquisition, filtering & real-time processing.</p>
+                    </div>
+
+                    <!-- Card 3 -->
+                    <div class="text-center">
+                        <div class="w-16 h-16 bg-primary text-white rounded-full flex items-center justify-center mx-auto mb-4">
+                            <i class="ri-cpu-line text-2xl"></i>
+                        </div>
+                        <h3 class="font-semibold theme-text mb-2">Embedded Machine Learning</h3>
+                        <p class="theme-text-secondary text-sm">Train & deploy ML models for gesture recognition on microcontrollers.</p>
+                    </div>
+
+                    <!-- Card 4 -->
+                    <div class="text-center">
+                        <div class="w-16 h-16 bg-primary text-white rounded-full flex items-center justify-center mx-auto mb-4">
+                            <i class="ri-run-line text-2xl"></i>
+                        </div>
+                        <h3 class="font-semibold theme-text mb-2">Real-Time Gesture Control</h3>
+                        <p class="theme-text-secondary text-sm">Control the bionic arm using live EMG-based gesture predictions.</p>
+                    </div>
+
+                    <!-- Card 5 -->
+                    <div class="text-center">
+                        <div class="w-16 h-16 bg-primary text-white rounded-full flex items-center justify-center mx-auto mb-4">
+                            <i class="ri-award-line text-2xl"></i>
+                        </div>
+                        <h3 class="font-semibold theme-text mb-2">Industry-Recognized Certificate</h3>
+                        <p class="theme-text-secondary text-sm">Receive a govt-recognized internship certificate.</p>
+                    </div>
+
+                    <!-- Card 6 -->
+                    <div class="text-center">
+                        <div class="w-16 h-16 bg-primary text-white rounded-full flex items-center justify-center mx-auto mb-4">
+                            <i class="ri-briefcase-line text-2xl"></i>
+                        </div>
+                        <h3 class="font-semibold theme-text mb-2">Full-Time Internship Chance</h3>
+                        <p class="theme-text-secondary text-sm">Top performers receive opportunities to join PixelBotix.</p>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        
+        <!-- What You'll Learn Section -->
+        <section id="curriculum" class="py-16 theme-bg-secondary">
+
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <h2 class="text-3xl font-bold theme-text text-center mb-12">What You'll Learn</h2>
+
+                <div class="grid md:grid-cols-2 gap-8">
+
+                    <!-- LEFT COLUMN -->
+                    <div class="space-y-6">
+
+                        <div class="flex items-start space-x-4">
+                            <div class="w-8 h-8 flex items-center justify-center bg-primary text-white rounded-full flex-shrink-0 mt-1">
+                                <i class="ri-check-line text-sm"></i>
+                            </div>
+                            <div>
+                                <h3 class="font-semibold theme-text mb-2">Introduction to Bionics & Human–Machine Interface</h3>
+                                <p class="theme-text-secondary">Understand how bionic systems interact with muscle signals and human physiology.</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start space-x-4">
+                            <div class="w-8 h-8 flex items-center justify-center bg-primary text-white rounded-full flex-shrink-0 mt-1">
+                                <i class="ri-check-line text-sm"></i>
+                            </div>
+                            <div>
+                                <h3 class="font-semibold theme-text mb-2">EMG Sensor Setup & Signal Processing</h3>
+                                <p class="theme-text-secondary">Learn electrode placement, filtering techniques, and biosignal preprocessing.</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start space-x-4">
+                            <div class="w-8 h-8 flex items-center justify-center bg-primary text-white rounded-full flex-shrink-0 mt-1">
+                                <i class="ri-check-line text-sm"></i>
+                            </div>
+                            <div>
+                                <h3 class="font-semibold theme-text mb-2">Sensor Data Acquisition & Serial Communication</h3>
+                                <p class="theme-text-secondary">Collect and visualize EMG data using microcontrollers and serial interfaces.</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start space-x-4">
+                            <div class="w-8 h-8 flex items-center justify-center bg-primary text-white rounded-full flex-shrink-0 mt-1">
+                                <i class="ri-check-line text-sm"></i>
+                            </div>
+                            <div>
+                                <h3 class="font-semibold theme-text mb-2">3D-Printed Bionic Arm Assembly</h3>
+                                <p class="theme-text-secondary">Assemble the mechanical structure and integrate servo motors with linkages.</p>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <!-- RIGHT COLUMN -->
+                    <div class="space-y-6">
+
+                        <div class="flex items-start space-x-4">
+                            <div class="w-8 h-8 flex items-center justify-center bg-primary text-white rounded-full flex-shrink-0 mt-1">
+                                <i class="ri-check-line text-sm"></i>
+                            </div>
+                            <div>
+                                <h3 class="font-semibold theme-text mb-2">Feature Extraction & Machine Learning Basics</h3>
+                                <p class="theme-text-secondary">Extract EMG features and train ML models to classify human hand gestures.</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start space-x-4">
+                            <div class="w-8 h-8 flex items-center justify-center bg-primary text-white rounded-full flex-shrink-0 mt-1">
+                                <i class="ri-check-line text-sm"></i>
+                            </div>
+                            <div>
+                                <h3 class="font-semibold theme-text mb-2">Real-Time Gesture Classification</h3>
+                                <p class="theme-text-secondary">Implement a live prediction pipeline that maps muscle activity to gestures.</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start space-x-4">
+                            <div class="w-8 h-8 flex items-center justify-center bg-primary text-white rounded-full flex-shrink-0 mt-1">
+                                <i class="ri-check-line text-sm"></i>
+                            </div>
+                            <div>
+                                <h3 class="font-semibold theme-text mb-2">Embedded Integration & Motor Control</h3>
+                                <p class="theme-text-secondary">Deploy ML models on embedded boards and control servo motors for each gesture.</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start space-x-4">
+                            <div class="w-8 h-8 flex items-center justify-center bg-primary text-white rounded-full flex-shrink-0 mt-1">
+                                <i class="ri-check-line text-sm"></i>
+                            </div>
+                            <div>
+                                <h3 class="font-semibold theme-text mb-2">Final Demo, Performance Tuning & Certification</h3>
+                                <p class="theme-text-secondary">Optimize your bionic arm, prepare your final presentation, and receive certification.</p>
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+
+        <!-- Who Should Attend Section -->
+        <section class="py-16 theme-bg">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <h2 class="text-3xl font-bold theme-text text-center mb-12">Who Should Attend?</h2>
+                <div class="grid md:grid-cols-3 gap-8">
+                    <div class="text-center">
+                        <div
+                            class="w-16 h-16 bg-primary text-white rounded-full flex items-center justify-center mx-auto mb-4">
+                            <i class="ri-graduation-cap-line text-2xl"></i>
+                        </div>
+                        <h3 class="font-semibold theme-text mb-2">Students & Scholars</h3>
+                        <p class="theme-text-secondary">All branches welcome</p>
+                    </div>
+                    <div class="text-center">
+                        <div
+                            class="w-16 h-16 bg-primary text-white rounded-full flex items-center justify-center mx-auto mb-4">
+                            <i class="ri-briefcase-line text-2xl"></i>
+                        </div>
+                        <h3 class="font-semibold theme-text mb-2">Industrial Professionals</h3>
+                        <p class="theme-text-secondary">& Faculty members</p>
+                    </div>
+                    <div class="text-center">
+                        <div
+                            class="w-16 h-16 bg-primary text-white rounded-full flex items-center justify-center mx-auto mb-4">
+                            <i class="ri-lightbulb-line text-2xl"></i>
+                        </div>
+                        <h3 class="font-semibold theme-text mb-2">Entrepreneurs</h3>
+                        <p class="theme-text-secondary">& Tech Enthusiasts</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+    </main>
+
+    <!-- Floating Buttons -->
+    <div class="fixed bottom-8 w-full flex justify-center">
+<a href="https://forms.gle/nhRC2b2ZkrgPNqFQ6" target="_blank" rel="noopener noreferrer">
+    <button
+        class="bg-primary text-white px-6 py-3 !rounded-button font-semibold hover:bg-blue-600 transition-all transform hover:scale-105 shadow-lg whitespace-nowrap">
+        Register Now – Limited Seats
+    </button>
+</a>
+
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white pt-16 pb-8">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8 mb-12">
+                <!-- Company Info -->
+                <div>
+                    <h3 class="text-xl font-bold mb-6">PixelBotix Technologies</h3>
+                    <p class="text-gray-400 mb-6">Future-driven product innovation and EdTech company pioneering the
+                        convergence of Robotics, AI, Smart Manufacturing, and Emerging Technologies.</p>
+                    <div class="flex space-x-4">
+                        <a href="https://www.facebook.com/profile.php?id=61575683369348" target="_blank"
+                            class="text-gray-400 hover:text-white transition-colors">
+                            <i class="ri-facebook-fill ri-lg"></i>
+                        </a>
+                        <a href="https://x.com/PixelBotix" target="_blank"
+                            class="text-gray-400 hover:text-white transition-colors">
+                            <i class="ri-twitter-fill ri-lg"></i>
+                        </a>
+                        <a href="https://www.linkedin.com/company/pixelbotix/" target="_blank"
+                            class="text-gray-400 hover:text-white transition-colors">
+                            <i class="ri-linkedin-fill ri-lg"></i>
+                        </a>
+                        <a href="https://www.instagram.com/pixel_botix/" target="_blank"
+                            class="text-gray-400 hover:text-white transition-colors">
+                            <i class="ri-instagram-fill ri-lg"></i>
+                        </a>
+                        <a href="https://www.youtube.com/@PixelBotix" target="_blank"
+                            class="text-gray-400 hover:text-white transition-colors">
+                            <i class="ri-youtube-fill ri-lg"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Quick Links -->
+                <div>
+                    <h3 class="text-xl font-bold mb-6">Quick Links</h3>
+                    <ul class="space-y-3">
+                        <li><a href="#home" class="text-gray-400 hover:text-white transition-colors">Home</a></li>
+                        <li><a href="/about/about-us.html" class="text-gray-400 hover:text-white transition-colors">About
+                                Us</a></li>
+                        <li><a href="#ai-robotics" class="text-gray-400 hover:text-white transition-colors">AI &
+                                Robotics</a></li>
+                        <li><a href="#eduverse" class="text-gray-400 hover:text-white transition-colors">Eduverse</a>
+                        </li>
+                        <li><a href="#skill-labs" class="text-gray-400 hover:text-white transition-colors">Skill
+                                Labs</a></li>
+                        <li><a href="https://shop.pixelbotix.com/" class="text-gray-400 hover:text-white transition-colors">Products</a>
+                        </li>
+                        <li><a href="#contact" class="text-gray-400 hover:text-white transition-colors">Contact</a></li>
+                    </ul>
+                </div>
+
+                <!-- Our Programs -->
+                <div>
+                    <h3 class="text-xl font-bold mb-6">Our Programs</h3>
+                    <ul class="space-y-3">
+                        <li><a href="#brainy-babies" class="text-gray-400 hover:text-white transition-colors">Brainy
+                                Babies (0-5 years)</a></li>
+                        <li><a href="#little-techies" class="text-gray-400 hover:text-white transition-colors">Little
+                                Techies (5-9 years)</a></li>
+                        <li><a href="#maker-school" class="text-gray-400 hover:text-white transition-colors">Maker
+                                School (9-17 years)</a></li>
+                        <li><a href="#future-innovators" class="text-gray-400 hover:text-white transition-colors">Future
+                                Innovators (16-25 years)</a></li>
+                        <li><a href="#school-lab-setup" class="text-gray-400 hover:text-white transition-colors">School
+                                Lab Setup</a></li>
+                        <li><a href="#faculty-development"
+                                class="text-gray-400 hover:text-white transition-colors">Faculty Development</a></li>
+                    </ul>
+                </div>
+
+                <!-- Policies -->
+                <div>
+                    <h3 class="text-xl font-bold mb-6">Policies</h3>
+                    <ul class="space-y-3">
+                        <li><a href="/policies/privacy_policy.html"
+                                class="text-gray-400 hover:text-white transition-colors">Privacy Policy</a></li>
+                        <li><a href="/policies/terms.html" class="text-gray-400 hover:text-white transition-colors">Terms &
+                                Conditions</a></li>
+                        <li><a href="/policies/refund_cancellation.html"
+                                class="text-gray-400 hover:text-white transition-colors">Refund & Cancellation</a></li>
+                        <li><a href="/policies/shipping_policy.html"
+                                class="text-gray-400 hover:text-white transition-colors">Shipping Policy</a></li>
+                        <li><a href="/policies/disclaimer.html"
+                                class="text-gray-400 hover:text-white transition-colors">Disclaimer</a></li>
+                    </ul>
+                </div>
+
+                <!-- Newsletter -->
+                <div>
+                    <h3 class="text-xl font-bold mb-6">Subscribe to Our Newsletter</h3>
+                    <p class="text-gray-400 mb-4">Stay updated with our latest news, programs, and innovations.</p>
+                    <form class="mb-4">
+                        <div class="flex">
+                            <input type="email" placeholder="Your email address"
+                                class="px-4 py-3 bg-gray-800 text-white rounded-l focus:outline-none focus:ring-2 focus:ring-primary border-none flex-grow">
+                            <button type="submit"
+                                class="bg-primary text-white px-4 py-3 rounded-r hover:bg-blue-600 transition-colors whitespace-nowrap">Subscribe</button>
+                        </div>
+                    </form>
+                    <p class="text-gray-500 text-sm">By subscribing, you agree to our Privacy Policy and consent to
+                        receive updates from our company.</p>
+                </div>
+            </div>
+
+            <div class="border-t border-gray-800 pt-8">
+                <div class="flex flex-col md:flex-row justify-between items-center">
+                    <p class="text-gray-500 text-sm mb-4 md:mb-0">&copy; 2025 PixelBotix Technologies Pvt. Ltd. All
+                        rights reserved.</p>
+                    <div class="flex space-x-6">
+                        <a href="#" class="text-gray-500 hover:text-white text-sm transition-colors">Privacy Policy</a>
+                        <a href="#" class="text-gray-500 hover:text-white text-sm transition-colors">Terms of
+                            Service</a>
+                        <a href="#" class="text-gray-500 hover:text-white text-sm transition-colors">Cookie Policy</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Floating Buttons Container -->
+            <div class="fixed bottom-8 right-8 z-50 flex flex-col sm:flex-row sm:space-x-4 space-y-4 sm:space-y-0">
+                <!-- Back to Top Button -->
+                <button id="back-to-top"
+                    class="bg-primary text-white w-12 h-12 rounded-full shadow-lg flex items-center justify-center opacity-0 invisible transition-all duration-300">
+                    <i class="ri-arrow-up-line ri-lg"></i>
+                </button>
+
+                <!-- WhatsApp Button -->
+                <a href="https://wa.me/917200445335?text=Hello!%20I%20would%20like%20to%20know%20more%20about%20PixelBotix%20and%20your%20programs.%20Can%20you%20help%20me?"
+                    target="_blank"
+                    class="bg-green-500 text-white w-12 h-12 rounded-full shadow-lg flex items-center justify-center hover:bg-green-600 transition-all transform hover:scale-105">
+                    <i class="ri-whatsapp-line text-xl"></i>
+                </a>
+            </div>
+        </div>
+    </footer>
+
+
+    <!-- Scripts -->
+    <script id="theme-toggle-script">
+        document.addEventListener('DOMContentLoaded', function () {
+            const themeToggle = document.getElementById('theme-toggle');
+            const html = document.documentElement;
+            themeToggle.addEventListener('click', function () {
+                html.classList.toggle('dark');
+                localStorage.setItem('theme', html.classList.contains('dark') ? 'dark' : 'light');
+            });
+            const savedTheme = localStorage.getItem('theme');
+            if (savedTheme) {
+                if (savedTheme === 'dark') {
+                    html.classList.add('dark');
+                } else {
+                    html.classList.remove('dark');
+                }
+            }
+        });
+    </script>
+
+    <script id="mobile-menu-script">
+        document.addEventListener('DOMContentLoaded', function () {
+            const mobileMenuToggle = document.getElementById('mobile-menu-toggle');
+            const mobileMenu = document.getElementById('mobile-menu');
+            mobileMenuToggle.addEventListener('click', function () {
+                mobileMenu.classList.toggle('hidden');
+            });
+        });
+    </script>
+
+    <script id="back-to-top-script">
+        document.addEventListener('DOMContentLoaded', function () {
+            const backToTopButton = document.getElementById('back-to-top');
+            function toggleBackToTopButton() {
+                if (window.scrollY > 300) {
+                    backToTopButton.classList.remove('opacity-0', 'invisible');
+                    backToTopButton.classList.add('opacity-100', 'visible');
+                } else {
+                    backToTopButton.classList.remove('opacity-100', 'visible');
+                    backToTopButton.classList.add('opacity-0', 'invisible');
+                }
+            }
+            window.addEventListener('scroll', toggleBackToTopButton);
+            backToTopButton.addEventListener('click', function () {
+                window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+
+
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const modal = document.getElementById("registerModal");
+            const closeModal = document.getElementById("closeModal");
+            const category = document.getElementById("category");
+            const otherTextDiv = document.getElementById("otherTextDiv");
+
+            const step1 = document.getElementById("step1");
+            const step2 = document.getElementById("step2");
+            const step3 = document.getElementById("step3");
+            const step4 = document.getElementById("step4");
+
+            const submitFormBtn = document.getElementById("submitForm");
+            const paidBtn = document.getElementById("paidBtn");
+
+
+            let formData = {}; // temporary store
+
+            // Utility: Show only 1 step at a time
+            function showStep(step) {
+                [step1, step2, step3, step4].forEach(s => s.classList.add("hidden"));
+                step.classList.remove("hidden");
+            }
+
+            // Open modal (called from buttons on page)
+            window.openRegisterModal = function () {
+                modal.classList.remove("hidden");
+                showStep(step1);
+            };
+
+            // Close modal
+            closeModal.addEventListener("click", () => {
+                modal.classList.add("hidden");
+            });
+
+            // Step 1: Form Submit
+            submitFormBtn.addEventListener("click", (e) => {
+                e.preventDefault();
+
+                // Collect form values
+                formData = {
+                    name: document.getElementById("name").value.trim(),
+                    phone: document.getElementById("phone").value.trim(),
+                    email: document.getElementById("email").value.trim(),
+                    category: document.getElementById("category").value,
+                    otherText: document.getElementById("otherText").value.trim()
+                };
+
+                // Basic validation
+                if (!formData.name || !formData.email || !formData.phone || !formData.category) {
+                    alert("Please fill all required fields.");
+                    return;
+                }
+
+                // Phone validation: 10 digits only
+                const phoneRegex = /^\d{10}$/;
+                if (!phoneRegex.test(formData.phone)) {
+                    alert("Please enter a valid 10-digit phone number.");
+                    return;
+                }
+
+                // Email validation: basic pattern
+                const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                if (!emailRegex.test(formData.email)) {
+                    alert("Please enter a valid email address.");
+                    return;
+                }
+
+                // Next step: Payment
+                showStep(step2);
+
+                // // Device detection for QR / UPI
+
+
+                if (/Mobi|Android|iPhone/i.test(navigator.userAgent)) {
+                    // Mobile: show QR payment
+                    document.getElementById("mobilePaymentOptions").classList.remove("hidden");
+                    document.getElementById("desktopPayment").classList.add("hidden");
+                } else {
+                    // Desktop: show QR payment
+                    document.getElementById("desktopPayment").classList.remove("hidden");
+                    document.getElementById("mobilePaymentOptions").classList.add("hidden");
+                }
+
+                
+            });
+
+            // Utility: Show only 1 step at a time
+            function showStep(step) {
+                [step1, step2, step3, step4].forEach(s => s.classList.add("hidden"));
+                step.classList.remove("hidden");
+
+                // If payment step, start countdown
+                if (step === step2) {
+                    startCountdown(2); // 2 minutes
+                }
+            }
+
+            // Countdown Function
+            function startCountdown(minutes) {
+                const countdownEl = document.getElementById("countdown");
+                let time = minutes * 60; // in seconds
+
+                const timer = setInterval(() => {
+                    const mins = Math.floor(time / 60);
+                    const secs = time % 60;
+                    countdownEl.textContent = `⏳ Complete payment in ${mins}:${secs.toString().padStart(2, "0")}`;
+                    
+                    if (time <= 0) {
+                        clearInterval(timer);
+                        countdownEl.textContent = "⌛ Time is up! Please refresh or restart registration.";
+                        // Optionally disable the Paid button
+                        document.getElementById("paidBtn").disabled = true;
+                        document.getElementById("paidBtn").classList.add("opacity-50", "cursor-not-allowed");
+                    }
+
+                    time--;
+                }, 1000);
+            }
+
+
+            // Step 2: User clicked "I have paid"
+            paidBtn.addEventListener("click", () => {
+                showStep(step3); // Show confirmation step
+            });
+
+            // Step 3: User confirms
+            document.getElementById("confirmPaidBtn").addEventListener("click", () => {
+                // Save data without transactionId
+                fetch("https://script.google.com/macros/s/AKfycbweqGNvDjeFf1pnd317SAtZX2WVkTdOmMfjPSxQNlHMvSnfWn8geVKYrhFJUVtEWObxqA/exec", {
+                    method: "POST",
+                    mode: "no-cors", // ← important to prevent CORS errors
+                    headers: {
+                        "Content-Type": "application/json",
+                    },
+                    body: JSON.stringify(formData)
+                })
+                .then(() => {
+                    // Can't read JSON in no-cors mode, so just show success
+                    showStep(step4);
+                })
+                .catch(err => {
+                    console.error(err);
+                    alert("Error saving data. Please try again.");
+                });
+            });
+
+
+        });
+    </script>
+
+
+
+</body>
+
+</html>

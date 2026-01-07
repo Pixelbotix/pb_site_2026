@@ -334,3 +334,23 @@ header .text-primary {
 #leadership {
   scroll-margin-top: 5rem;
 }
+
+/* Announcements filters */
+.filter-pill {
+cursor: pointer;
+transition: all 0.2s ease;
+}
+.filter-pill:hover {
+transform: translateY(-1px);
+}
+
+.filter-button.active {
+  background-color: #3b82f6;
+  color: white;
+}
+
+.dark .filter-button.active {
+  background-color: #2563eb;
+  color: white;
+}
+

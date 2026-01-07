@@ -1,0 +1,323 @@
+<!-- media/news-updates/announcements/index.html -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Announcements | PixelBotix</title>
+    <meta name="description"
+        content="Official announcements from PixelBotix including workshops, FDPs, MoUs, events, and institutional updates." />
+
+    <!-- Tailwind -->
+    <script src="https://cdn.tailwindcss.com/3.4.16"></script>
+    <script>
+        tailwind.config = { darkMode: 'class' }
+    </script>
+
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css">
+
+    <!-- Global Layout -->
+    <link rel="stylesheet" href="/assets/css/layout.css">
+
+    <style>
+        .filter-pill {
+            padding: 0.5rem 1rem;
+            border-radius: 9999px;
+            font-size: 0.875rem;
+            font-weight: 500;
+            cursor: default;
+        }
+    </style>
+
+    <style>
+        .badge {
+            font-size: 0.75rem;
+            padding: 0.25rem 0.75rem;
+            border-radius: 9999px;
+            font-weight: 500;
+        }
+        
+    </style>
+
+
+</head>
+
+<body class="bg-white dark:bg-gray-900 text-gray-900 dark:text-gray-100 transition-colors">
+
+    <!-- NAVBAR -->
+    <div id="site-navbar"></div>
+
+    <main class="min-h-screen">
+
+        <!-- ================= HERO ================= -->
+        <section class="py-20 bg-gray-50 dark:bg-gray-800">
+            <div class="max-w-7xl mx-auto px-6 text-center">
+                <h1 class="text-4xl lg:text-5xl font-bold mb-6">
+                    Announcements
+                </h1>
+                <p class="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
+                    Official updates, workshops, FDPs, partnerships, and institutional activities
+                    from PixelBotix Technologies.
+                </p>
+            </div>
+        </section>
+
+
+        <!-- ================= FILTERS ================= -->
+        <section class="py-10 bg-gray-50 dark:bg-gray-800">
+            <div class="max-w-7xl mx-auto px-6">
+
+                <div class="grid md:grid-cols-2 gap-10 items-start">
+
+                    <!-- STATUS FILTER -->
+                    <div>
+                        <h3 class="text-lg font-semibold mb-4 text-gray-900 dark:text-white">
+                            Status
+                        </h3>
+                        <div class="flex flex-wrap gap-3">
+                        <span class="filter-pill bg-blue-100 text-blue-700 dark:bg-blue-900 dark:text-blue-200"
+                                data-status="upcoming">
+                            Upcoming
+                        </span>
+
+                        <span class="filter-pill bg-green-100 text-green-700 dark:bg-green-900 dark:text-green-200"
+                                data-status="ongoing">
+                            Ongoing
+                        </span>
+
+                        <span class="filter-pill bg-gray-200 text-gray-700 dark:bg-gray-700 dark:text-gray-300"
+                                data-status="completed">
+                            Completed / Past
+                        </span>
+                        </div>
+
+                    </div>
+
+                    <!-- CATEGORY FILTER -->
+                    <div class="flex flex-wrap gap-3">
+                    <span class="filter-pill bg-purple-100 text-purple-700 dark:bg-purple-900 dark:text-purple-200"
+                            data-category="workshops">
+                        Workshops
+                    </span>
+
+                    <span class="filter-pill bg-orange-100 text-orange-700 dark:bg-orange-900 dark:text-orange-200"
+                            data-category="fdps">
+                        FDPs
+                    </span>
+
+                    <span class="filter-pill bg-indigo-100 text-indigo-700 dark:bg-indigo-900 dark:text-indigo-200"
+                            data-category="mou">
+                        MoUs & Partnerships
+                    </span>
+
+                    <span class="filter-pill bg-teal-100 text-teal-700 dark:bg-teal-900 dark:text-teal-200"
+                            data-category="events">
+                        Events
+                    </span>
+
+                    <span class="filter-pill bg-pink-100 text-pink-700 dark:bg-pink-900 dark:text-pink-200"
+                            data-category="institutional">
+                        Institutional Updates
+                    </span>
+                    </div>
+
+
+
+
+                </div>
+
+            </div>
+        </section>
+
+
+        <!-- ================= ANNOUNCEMENTS GRID ================= -->
+        <section class="py-16">
+            <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+                <!-- CARD 1 -->
+                <article class="announcement-card bg-white dark:bg-gray-800 rounded-2xl shadow overflow-hidden"
+                    data-status="upcoming" data-category="workshops">
+                    <img src="https://readdy.ai/api/search-image?query=robotics%20hands-on%20workshop%20students%20working%20with%20robots&width=600&height=350"
+                        alt="Robotics Workshop" class="w-full h-48 object-cover" />
+
+                    <div class="p-6 border-l-4 border-blue-500">
+                        <div class="flex gap-2 mb-3">
+                            <span class="badge bg-purple-100 text-purple-700 dark:bg-purple-900 dark:text-purple-200">
+                                Workshop
+                            </span>
+                            <span class="badge bg-blue-100 text-blue-700 dark:bg-blue-900 dark:text-blue-200">
+                                Upcoming
+                            </span>
+                        </div>
+
+                        <h3 class="text-lg font-semibold mb-2">
+                            Advanced Robotics Hands-On Workshop
+                        </h3>
+
+                        <p class="text-sm text-gray-500 dark:text-gray-400 mb-3">
+                            March 2026
+                        </p>
+
+                        <p class="text-sm text-gray-600 dark:text-gray-300">
+                            Practical workshop focused on ROS-based robotics,
+                            system integration, and real-world execution.
+                        </p>
+                    </div>
+                </article>
+
+                <!-- CARD 2 -->
+                <article class="announcement-card bg-white dark:bg-gray-800 rounded-2xl shadow overflow-hidden"
+                    data-status="ongoing" data-category="fdps">
+                    <img src="https://readdy.ai/api/search-image?query=faculty%20development%20program%20engineering%20training%20session&width=600&height=350"
+                        alt="FDP Program" class="w-full h-48 object-cover" />
+
+                    <div class="p-6 border-l-4 border-orange-500">
+                        <div class="flex gap-2 mb-3">
+                            <span class="badge bg-orange-100 text-orange-700 dark:bg-orange-900 dark:text-orange-200">
+                                FDP
+                            </span>
+                            <span class="badge bg-green-100 text-green-700 dark:bg-green-900 dark:text-green-200">
+                                Ongoing
+                            </span>
+                        </div>
+
+                        <h3 class="text-lg font-semibold mb-2">
+                            Faculty Development Program on AI & Robotics
+                        </h3>
+
+                        <p class="text-sm text-gray-500 dark:text-gray-400 mb-3">
+                            Jan – Mar 2026
+                        </p>
+
+                        <p class="text-sm text-gray-600 dark:text-gray-300">
+                            Outcome-driven FDP for faculty on applied AI,
+                            robotics platforms, and modern labs.
+                        </p>
+                    </div>
+                </article>
+
+                <!-- CARD 3 -->
+                <article class="announcement-card bg-white dark:bg-gray-800 rounded-2xl shadow overflow-hidden"
+                    data-status="completed" data-category="mou">
+                    <img src="https://readdy.ai/api/search-image?query=industry%20academic%20mou%20signing%20ceremony&width=600&height=350"
+                        alt="MoU Signing" class="w-full h-48 object-cover" />
+
+                    <div class="p-6 border-l-4 border-indigo-500">
+                        <div class="flex gap-2 mb-3">
+                            <span class="badge bg-indigo-100 text-indigo-700 dark:bg-indigo-900 dark:text-indigo-200">
+                                MoU
+                            </span>
+                            <span class="badge bg-gray-200 text-gray-700 dark:bg-gray-700 dark:text-gray-300">
+                                Completed
+                            </span>
+                        </div>
+
+                        <h3 class="text-lg font-semibold mb-2">
+                            Academic–Industry Collaboration Agreement
+                        </h3>
+
+                        <p class="text-sm text-gray-500 dark:text-gray-400 mb-3">
+                            December 2025
+                        </p>
+
+                        <p class="text-sm text-gray-600 dark:text-gray-300">
+                            Long-term partnership for applied R&D,
+                            internships, and institutional capability building.
+                        </p>
+                    </div>
+                </article>
+
+            </div>
+        </section>
+
+        <!-- ================= EMPTY STATE ================= -->
+        <section id="empty-state" class="py-20 hidden">
+            <div class="text-center">
+                <i class="ri-search-line text-4xl text-gray-400 mb-4"></i>
+                <h3 class="text-xl font-semibold mb-2">No announcements available</h3>
+                <p class="text-gray-600 dark:text-gray-400">
+                    Please check back later for updates.
+                </p>
+            </div>
+        </section>
+
+
+
+    </main>
+
+    <!-- FOOTER -->
+    <div id="site-footer"></div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const statusPills = document.querySelectorAll(".filter-pill[data-status]");
+            const categoryPills = document.querySelectorAll(".filter-pill[data-category]");
+            const cards = document.querySelectorAll(".announcement-card");
+            const emptyState = document.getElementById("empty-state");
+
+            let activeStatuses = new Set();
+            let activeCategories = new Set();
+
+            function updateVisibility() {
+                let visibleCount = 0;
+
+                cards.forEach(card => {
+                    const status = card.dataset.status;
+                    const category = card.dataset.category;
+
+                    const statusMatch =
+                        activeStatuses.size === 0 || activeStatuses.has(status);
+                    const categoryMatch =
+                        activeCategories.size === 0 || activeCategories.has(category);
+
+                    if (statusMatch && categoryMatch) {
+                        card.style.display = "block";
+                        visibleCount++;
+                    } else {
+                        card.style.display = "none";
+                    }
+                });
+
+                if (emptyState) {
+                    emptyState.classList.toggle("hidden", visibleCount !== 0);
+                }
+            }
+
+            function togglePill(pill, set) {
+                const value =
+                    pill.dataset.status || pill.dataset.category;
+
+                if (set.has(value)) {
+                    set.delete(value);
+                    pill.classList.remove("ring-2", "ring-primary");
+                    pill.classList.add("opacity-60");
+                } else {
+                    set.add(value);
+                    pill.classList.add("ring-2", "ring-primary");
+                    pill.classList.remove("opacity-60");
+                }
+
+                updateVisibility();
+            }
+
+            statusPills.forEach(pill => {
+                pill.addEventListener("click", () => togglePill(pill, activeStatuses));
+            });
+
+            categoryPills.forEach(pill => {
+                pill.addEventListener("click", () => togglePill(pill, activeCategories));
+            });
+
+            updateVisibility();
+        });
+    </script>
+
+
+    <script src="/assets/js/layout.js"></script>
+</body>
+
+
+</html>

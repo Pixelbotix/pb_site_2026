@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Faculty Development Programs (FDP) | PixelBotix</title>
+  <meta name="description"
+        content="Architecture-first Faculty Development Programs (FDPs) on Robotics, ROS 2, AI, Automation, and Lab Design by PixelBotix." />
+
+  <!-- Tailwind -->
+  <script src="https://cdn.tailwindcss.com/3.4.16"></script>
+  <script>
+    tailwind.config = { darkMode: 'class' }
+  </script>
+
+  <!-- Icons -->
+  <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css">
+
+  <!-- Global Layout -->
+  <link rel="stylesheet" href="/assets/css/layout.css">
+
+  <style>
+    .filter-pill {
+      padding: 0.5rem 1rem;
+      border-radius: 9999px;
+      font-size: 0.875rem;
+      font-weight: 500;
+      cursor: pointer;
+      user-select: none;
+      transition: all 0.2s ease;
+    }
+    .filter-pill.active {
+      outline: 2px solid #3b82f6;
+      outline-offset: 2px;
+    }
+    .badge {
+      font-size: 0.75rem;
+      padding: 0.25rem 0.75rem;
+      border-radius: 9999px;
+      font-weight: 500;
+    }
+  </style>
+</head>
+
+<body class="bg-white dark:bg-gray-900 text-gray-900 dark:text-gray-100 transition-colors">
+
+<!-- NAVBAR -->
+<div id="site-navbar"></div>
+
+<main class="min-h-screen">
+
+<!-- ================= HERO ================= -->
+<section class="py-20 bg-gray-50 dark:bg-gray-800">
+  <div class="max-w-7xl mx-auto px-6 text-center">
+    <h1 class="text-4xl lg:text-5xl font-bold mb-6">
+      Faculty Development Programs (FDP)
+    </h1>
+    <p class="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
+      Architecture-first FDPs focused on real execution —
+      robotics, ROS 2, AI, automation, and modern lab ecosystems.
+    </p>
+  </div>
+</section>
+
+<!-- ================= WHY INSTITUTIONS APPROVE ================= -->
+<section class="py-20">
+  <div class="max-w-7xl mx-auto px-6 max-w-4xl">
+    <h2 class="text-3xl font-bold mb-8">
+      Why Institutions Approve These FDPs
+    </h2>
+
+    <ul class="space-y-4 text-gray-600 dark:text-gray-300">
+      <li>• Outcome-based FDPs aligned with NBA / NAAC / NEP requirements</li>
+      <li>• Hands-on execution with measurable faculty deliverables</li>
+      <li>• Lab-ready experiments, not demo-only sessions</li>
+      <li>• Suitable for AICTE records, IQAC documentation, and internal audits</li>
+      <li>• Designed to directly upgrade curriculum, labs, and student projects</li>
+    </ul>
+  </div>
+</section>
+
+<!-- ================= FORMAT & DELIVERY ================= -->
+<section class="py-20 bg-gray-50 dark:bg-gray-800">
+  <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-3 gap-8">
+
+    <div class="bg-white dark:bg-gray-900 p-6 rounded-2xl shadow">
+      <h3 class="font-semibold mb-2">Duration</h3>
+      <p class="text-sm text-gray-600 dark:text-gray-300">
+        3-Day · 5-Day · 7-Day formats based on depth and objectives
+      </p>
+    </div>
+
+    <div class="bg-white dark:bg-gray-900 p-6 rounded-2xl shadow">
+      <h3 class="font-semibold mb-2">Mode</h3>
+      <p class="text-sm text-gray-600 dark:text-gray-300">
+        On-campus preferred · Hybrid supported · Limited online theory
+      </p>
+    </div>
+
+    <div class="bg-white dark:bg-gray-900 p-6 rounded-2xl shadow">
+      <h3 class="font-semibold mb-2">Faculty Strength</h3>
+      <p class="text-sm text-gray-600 dark:text-gray-300">
+        Optimized for 20–60 faculty participants per FDP
+      </p>
+    </div>
+
+  </div>
+</section>
+
+<!-- ================= WHAT FACULTY TAKE BACK ================= -->
+<section class="py-20">
+  <div class="max-w-7xl mx-auto px-6 max-w-4xl">
+    <h2 class="text-3xl font-bold mb-8">
+      What Faculty Take Back
+    </h2>
+
+    <ul class="space-y-4 text-gray-600 dark:text-gray-300">
+      <li>• Teaching-ready lab experiments and reference architectures</li>
+      <li>• ROS 2 / AI project templates for student execution</li>
+      <li>• Slides, codebases, and execution guides for classroom use</li>
+      <li>• Roadmap for upgrading existing robotics / AI laboratories</li>
+    </ul>
+  </div>
+</section>
+
+<!-- ================= FILTERS ================= -->
+<section class="py-10 bg-gray-50 dark:bg-gray-800">
+  <div class="max-w-7xl mx-auto px-6">
+    <div class="grid md:grid-cols-2 gap-10">
+
+      <div>
+        <h3 class="text-lg font-semibold mb-4">Status</h3>
+        <div class="flex flex-wrap gap-3">
+          <span class="filter-pill bg-blue-100 text-blue-700 dark:bg-blue-900 dark:text-blue-200" data-status="upcoming">Upcoming</span>
+          <span class="filter-pill bg-green-100 text-green-700 dark:bg-green-900 dark:text-green-200" data-status="ongoing">Ongoing</span>
+          <span class="filter-pill bg-gray-200 text-gray-700 dark:bg-gray-700 dark:text-gray-300" data-status="completed">Completed</span>
+        </div>
+      </div>
+
+      <div>
+        <h3 class="text-lg font-semibold mb-4">Domain</h3>
+        <div class="flex flex-wrap gap-3">
+          <span class="filter-pill bg-indigo-100 text-indigo-700 dark:bg-indigo-900 dark:text-indigo-200" data-domain="robotics">Robotics & ROS 2</span>
+          <span class="filter-pill bg-purple-100 text-purple-700 dark:bg-purple-900 dark:text-purple-200" data-domain="ai">AI / ML</span>
+          <span class="filter-pill bg-orange-100 text-orange-700 dark:bg-orange-900 dark:text-orange-200" data-domain="labs">Lab Design</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ================= FDP GRID ================= -->
+<section class="py-16">
+  <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+    <article class="fdp-card bg-white dark:bg-gray-800 rounded-2xl shadow overflow-hidden"
+             data-status="upcoming" data-domain="robotics">
+      <img src="https://readdy.ai/api/search-image?query=faculty%20robotics%20ros2%20training&width=600&height=350"
+           class="w-full h-48 object-cover" />
+      <div class="p-6 border-l-4 border-blue-500">
+        <div class="flex gap-2 mb-3">
+          <span class="badge bg-indigo-100 text-indigo-700">ROS 2</span>
+          <span class="badge bg-blue-100 text-blue-700">Upcoming</span>
+        </div>
+        <h3 class="text-lg font-semibold mb-2">FDP on Robotics & ROS 2 Architecture</h3>
+        <p class="text-sm text-gray-500 mb-2">April 2026 · Engineering College</p>
+        <p class="text-sm text-gray-600 dark:text-gray-300">
+          Node graphs, navigation stack, sensor pipelines,
+          and scalable teaching architecture.
+        </p>
+      </div>
+    </article>
+
+    <article class="fdp-card bg-white dark:bg-gray-800 rounded-2xl shadow overflow-hidden"
+             data-status="ongoing" data-domain="ai">
+      <img src="https://readdy.ai/api/search-image?query=faculty%20ai%20machine%20learning%20fdp&width=600&height=350"
+           class="w-full h-48 object-cover" />
+      <div class="p-6 border-l-4 border-purple-500">
+        <div class="flex gap-2 mb-3">
+          <span class="badge bg-purple-100 text-purple-700">AI / ML</span>
+          <span class="badge bg-green-100 text-green-700">Ongoing</span>
+        </div>
+        <h3 class="text-lg font-semibold mb-2">FDP on Applied AI for Engineering Education</h3>
+        <p class="text-sm text-gray-500 mb-2">Jan – Mar 2026 · University</p>
+        <p class="text-sm text-gray-600 dark:text-gray-300">
+          Model pipelines, datasets, deployment thinking
+          under real constraints.
+        </p>
+      </div>
+    </article>
+
+    <article class="fdp-card bg-white dark:bg-gray-800 rounded-2xl shadow overflow-hidden"
+             data-status="completed" data-domain="labs">
+      <img src="https://readdy.ai/api/search-image?query=engineering%20robotics%20ai%20lab%20setup&width=600&height=350"
+           class="w-full h-48 object-cover" />
+      <div class="p-6 border-l-4 border-orange-500">
+        <div class="flex gap-2 mb-3">
+          <span class="badge bg-orange-100 text-orange-700">Labs</span>
+          <span class="badge bg-gray-200 text-gray-700">Completed</span>
+        </div>
+        <h3 class="text-lg font-semibold mb-2">FDP on Robotics & AI Lab Design</h3>
+        <p class="text-sm text-gray-500 mb-2">Dec 2025 · Autonomous Institution</p>
+        <p class="text-sm text-gray-600 dark:text-gray-300">
+          Hardware planning, software stacks,
+          execution roadmap, and metrics.
+        </p>
+      </div>
+    </article>
+
+  </div>
+</section>
+
+<!-- ================= CTA ================= -->
+<section class="py-20 bg-gradient-to-r from-blue-600 to-indigo-600">
+  <div class="max-w-7xl mx-auto px-6 text-center">
+    <h2 class="text-3xl lg:text-4xl font-bold text-white mb-6">
+      Conduct an FDP at Your Institution
+    </h2>
+    <p class="text-lg text-blue-100 max-w-2xl mx-auto mb-10">
+      Architecture-driven FDPs aligned to NEP, NBA,
+      and modern engineering education requirements.
+    </p>
+    <a href="/contact"
+       class="inline-flex items-center justify-center
+              bg-white text-blue-600
+              px-10 py-4 rounded-2xl
+              font-semibold
+              hover:bg-gray-100 transition-colors">
+      Request an FDP
+    </a>
+  </div>
+</section>
+
+</main>
+
+<!-- FOOTER -->
+<div id="site-footer"></div>
+
+<script src="/assets/js/layout.js"></script>
+</body>
+</html>

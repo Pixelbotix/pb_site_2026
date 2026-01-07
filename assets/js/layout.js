@@ -106,7 +106,7 @@ function initDarkMode() {
 
 /* ---------- TRUSTED BY SCROLLER ---------- */
 function initTrustedBy() {
-  const BASE = "static/trusted-by/";
+  const BASE = "pb_site_2026/static/trusted-by/";
 
   const LOGOS = [
     "3devok-logo_4.png",
@@ -195,7 +195,7 @@ document.addEventListener("DOMContentLoaded", initLayout);
 
 /* ---------- ACADEMIC CLIENTS SCROLLER IN GALLERY ---------- */
 function initAcademicClients() {
-  const BASE = "static/academic-clients/";
+  const BASE = "/pb_site_2026/static/academic-clients";
 
   const LOGOS = [
     "actlogo_10.jpg",

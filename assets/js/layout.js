@@ -106,7 +106,8 @@ function initDarkMode() {
 
 /* ---------- TRUSTED BY SCROLLER ---------- */
 function initTrustedBy() {
-  const BASE = "pb_site_2026/static/trusted-by/";
+  const BASE = "/pb_site_2026/static/trusted-by/";
+
 
   const LOGOS = [
     "3devok-logo_4.png",

@@ -106,7 +106,7 @@ function initDarkMode() {
 
 /* ---------- TRUSTED BY SCROLLER ---------- */
 function initTrustedBy() {
-  const BASE = "/static/trusted-by/";
+  const BASE = "static/trusted-by/";
 
   const LOGOS = [
     "3devok-logo_4.png",
@@ -176,8 +176,8 @@ function initBackToTop() {
 
 /* ---------- MASTER INITIALIZER ---------- */
 async function initLayout() {
-  await loadPartial("site-navbar", "/partials/navbar.html");
-  await loadPartial("site-footer", "/partials/footer.html");
+  await loadPartial("site-navbar", "partials/navbar.html");
+  await loadPartial("site-footer", "partials/footer.html");
 
   requestAnimationFrame(() => {
     initMobileMenu();
@@ -195,7 +195,7 @@ document.addEventListener("DOMContentLoaded", initLayout);
 
 /* ---------- ACADEMIC CLIENTS SCROLLER IN GALLERY ---------- */
 function initAcademicClients() {
-  const BASE = "/static/academic-clients/";
+  const BASE = "static/academic-clients/";
 
   const LOGOS = [
     "actlogo_10.jpg",

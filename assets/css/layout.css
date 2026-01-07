@@ -315,7 +315,7 @@ header .text-primary {
 
 /* Hero for about one */
 .hero-bg {
-  background-image: url("/assets/images/about_hero/rd-lab.jpg");
+  background-image: url("assets/images/about_hero/rd-lab.jpg");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;

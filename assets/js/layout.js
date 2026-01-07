@@ -1,5 +1,5 @@
 /* =========================================================
-   layout.js
+assets/js/layout.js
    - Loads shared partials
    - Initializes layout-level UI only
    - Safe for static hosting
@@ -176,8 +176,8 @@ function initBackToTop() {
 
 /* ---------- MASTER INITIALIZER ---------- */
 async function initLayout() {
-  await loadPartial("site-navbar", "partials/navbar.html");
-  await loadPartial("site-footer", "partials/footer.html");
+  await loadPartial("site-navbar", "../partials/navbar.html");
+  await loadPartial("site-footer", "../partials/footer.html");
 
   requestAnimationFrame(() => {
     initMobileMenu();

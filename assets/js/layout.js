@@ -195,7 +195,7 @@ document.addEventListener("DOMContentLoaded", initLayout);
 
 /* ---------- ACADEMIC CLIENTS SCROLLER IN GALLERY ---------- */
 function initAcademicClients() {
-  const BASE = "/pb_site_2026/static/academic-clients";
+  const BASE = "/pb_site_2026/static/academic-clients/";
 
   const LOGOS = [
     "actlogo_10.jpg",

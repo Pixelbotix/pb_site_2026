@@ -1,38 +1,317 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="js/e.js"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>ROS 2 & Autonomous Robotics | PixelBotix Technologies</title>
-  <meta name="description"
-        content="ROS 2 architecture, autonomous robotics systems, AMRs, simulation, and deployment programs by PixelBotix Technologies." />
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Join PixelBotix's 15-day hands-on ROS2 & Autonomous Mobile Robot Navigation internship program in Chennai. Learn ROS2, SLAM, Navigation, Gazebo, LiDAR & real robots with India's top robotics mentor Dr. P.V. Sabique.">
+    <meta name="keywords" content="ROS2 internship, robotics internship India, autonomous mobile robots, AMR navigation training, PixelBotix, SLAM training, Gazebo simulation, ROS2 course Chennai, Dr Sabique">
+    <meta name="robots" content="index, follow">
 
-  <!-- Tailwind -->
-  <script src="https://cdn.tailwindcss.com/3.4.16"></script>
-  <script>
-    tailwind.config = { darkMode: 'class' }
-  </script>
 
-  <!-- Icons -->
-  <link rel="stylesheet"
-        href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css">
+    <!-- Canonical -->
+    <link rel="canonical" href="https://www.pixelbotix.com/ros_internship.html">
 
-  <!-- Global Layout -->
-  <link rel="stylesheet" href="/pb_site_2026/assets/css/layout.css">
+    <!-- Open Graph -->
+    <meta property="og:title" content="PixelBotix - ROS2 & Autonomous Mobile Robot Navigation Internship">
+    <meta property="og:description" content="Hands-on offline robotics internship with ROS2, SLAM, Navigation & real robots. Learn from India's top robotics expert.">
+    <meta property="og:image" content="https://www.pixelbotix.com/static/images/internship_ros_image/ros_pixelbotix.jpeg">
+    <meta property="og:url" content="https://www.pixelbotix.com/ros_internship.html">
+    <meta property="og:type" content="website">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="PixelBotix - ROS2 & Autonomous Mobile Robot Navigation Internship">
+    <meta name="twitter:description" content="15-day offline robotics internship with ROS2, SLAM, Navigation & hands-on robot practice.">
+    <meta name="twitter:image" content="https://www.pixelbotix.com/static/images/internship_ros_image/ros_pixelbotix.jpeg">
+
+    <!-- Schema Markup -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org/",
+      "@type": "Course",
+      "name": "ROS2 & Autonomous Mobile Robot Navigation Internship",
+      "description": "15-day intensive offline robotics internship on ROS2, SLAM, Navigation, Gazebo, OpenCV and real mobile robots.",
+      "provider": {
+        "@type": "Organization",
+        "name": "PixelBotix Robotics Lab",
+        "url": "https://www.pixelbotix.com"
+      }
+    }
+    </script>
+
+    <!-- Title -->
+    <title>PixelBotix - ROS2 & Autonomous Mobile Robot Navigation Internship Program</title>
+
+    <!-- Preload for performance -->
+    <link rel="preload" href="static/images/internship_ros_image/ros_pixelbotix.jpeg" as="image">
+
+    <!-- Resources -->
+    <script src="https://cdn.tailwindcss.com/3.4.16"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#57B5E7',
+                        secondary: '#8DD3C7'
+                    },
+                    borderRadius: {
+                        'button': '8px'
+                    }
+                }
+            }
+        }
+    </script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@latest/fonts/remixicon.css" rel="stylesheet">
+
+    <style>
+
+        @keyframes scrollInfinite {
+            from { transform: translateX(0); }
+            to { transform: translateX(-100%); }
+        }
+
+        #logoScroller {
+            display: flex;
+            animation: scrollInfinite 100s linear infinite;
+            width: max-content; /* IMPORTANT */
+            will-change: transform;
+        }
+        :where([class^="ri-"])::before {
+            content: "\f3c2";
+        }
+
+        .dark {
+            background-color: #1a1a1a;
+            color: #ffffff;
+        }
+
+        .dark .bg-white {
+            background-color: #2a2a2a;
+        }
+
+        .dark .text-gray-900 {
+            color: #ffffff;
+        }
+
+        .dark .text-gray-800 {
+            color: #e5e5e5;
+        }
+
+        .dark .text-gray-700 {
+            color: #d1d1d1;
+        }
+
+        .dark .text-gray-600 {
+            color: #b8b8b8;
+        }
+
+        .dark .border-gray-200 {
+            border-color: #404040;
+        }
+
+        .dark .bg-gray-50 {
+            background-color: #2d2d2d;
+        }
+
+        .dark .bg-gray-100 {
+            background-color: #333333;
+        }
+
+        .dark .border-primary {
+            border-color: #57B5E7;
+        }
+
+        .dark .bg-gradient-to-r {
+            background: #2a2a2a;
+        }
+
+        .dark .bg-gradient-to-br {
+            background: #2a2a2a;
+        }
+
+        .dark .border-blue-100,
+        .dark .border-green-100,
+        .dark .border-orange-100,
+        .dark .border-purple-100,
+        .dark .border-teal-100,
+        .dark .border-indigo-100,
+        .dark .border-yellow-100,
+        .dark .border-rose-100 {
+            border-color: #404040;
+        }
+    </style>
+    <link rel="icon" type="image/png" href="static/favicon/favicon.png">
 </head>
 
-<body class="bg-white dark:bg-gray-900 text-gray-900 dark:text-gray-100 transition-colors">
+<body class="bg-white text-gray-900 transition-colors duration-300">
 
-  <!-- NAVBAR -->
-  <div id="site-navbar"></div>
 
-  <main>
+    <!-- Header -->
+    <header class="fixed top-0 left-0 right-0 z-50 bg-white dark:bg-gray-800 shadow-lg transition-colors duration-300">
+
+
+        <div class="w-full px-4 lg:px-8">
+            <div class="flex items-center justify-between h-16">
+                <a href="#" class="flex items-center">
+                    <!-- Dark theme logo (shown only in dark mode) -->
+                    <img src="static/logo/logo-dark.png" alt="Logo Light" class="w-20 h-20 hidden dark:inline-block">
+                    <img src="static/logo/logo-white.png" alt="Logo Dark" class="w-20 h-20 inline-block dark:hidden">
+                </a>
+
+                <nav class="hidden md:flex items-center space-x-8">
+                    <a href="index.html"
+                        class="text-gray-900 dark:text-white hover:text-primary transition-colors">Home</a>
+                    <a href="about/about-us.html"
+                        class="text-gray-900 dark:text-white hover:text-primary transition-colors">About Us</a>
+
+                    <!-- Dropdown for Services -->
+                    <div class="relative group">
+                        <button
+                            class="text-gray-900 dark:text-white hover:text-primary transition-colors flex items-center space-x-2">
+                            <i class="ri-service-line"></i> <!-- Service Icon -->
+                            <span>Services</span>
+                        </button>
+                        <!-- Dropdown Menu -->
+                        <div
+                            class="absolute left-0 mt-2 w-64 bg-white dark:bg-gray-800 shadow-lg rounded-lg opacity-0 group-hover:opacity-100 group-hover:block transition-opacity duration-300 p-4 space-y-3">
+                            <!-- AI & Robotics -->
+                            <a href="index.html#ai-robotics"
+                                class="flex items-center space-x-3 py-2 px-4 text-gray-900 dark:text-white hover:bg-blue-50 dark:hover:bg-gray-700 rounded-lg transition-all">
+                                <i class="ri-robot-line text-xl"></i>
+                                <span>AI & Robotics</span>
+                            </a>
+                            <!-- Eduverse -->
+                            <a href="index.html#eduverse"
+                                class="flex items-center space-x-3 py-2 px-4 text-gray-900 dark:text-white hover:bg-blue-50 dark:hover:bg-gray-700 rounded-lg transition-all">
+                                <i class="ri-earth-line text-xl"></i>
+                                <span>Eduverse</span>
+                            </a>
+                            <!-- Skill Labs -->
+                            <a href="index.html#skill-labs"
+                                class="flex items-center space-x-3 py-2 px-4 text-gray-900 dark:text-white hover:bg-blue-50 dark:hover:bg-gray-700 rounded-lg transition-all">
+                                <i class="ri-laptop-line text-xl"></i>
+                                <span>Skill Labs</span>
+                            </a>
+                        </div>
+                    </div>
+
+                    <a href="https://shop.pixelbotix.com/"
+                        class="text-gray-900 dark:text-white hover:text-primary transition-colors">Products</a>
+
+                        <!-- Dropdown for Workshops -->
+                        <div class="relative group">
+                            <button
+                                class="text-gray-900 dark:text-white hover:text-primary transition-colors flex items-center space-x-2">
+                                <i class="ri-book-open-line"></i> <!-- Workshop Icon -->
+                                <!-- <span>Workshops</span> -->
+
+                                <span class="flex items-center gap-2">
+                                    Programme
+                                    <span class="text-[10px] px-2 py-0.5 rounded-full bg-red-500 text-white font-semibold animate-pulse">
+                                        NEW
+                                    </span>
+                                </span>
+
+                            </button>
+
+                                <!-- Dropdown Menu -->
+                                <div
+                                    class="absolute left-0 mt-2 w-64 bg-white dark:bg-gray-800 shadow-lg rounded-lg opacity-0 group-hover:opacity-100 group-hover:block transition-opacity duration-300 p-4 space-y-3">
+                                    <a href="ros_internship.html" class="flex items-center space-x-3 py-2 px-4 hover:bg-blue-50 dark:hover:bg-gray-700 rounded-lg transition-all">
+                                        <i class="ri-route-line text-xl"></i>
+                                        <span>ROS & Autonomous Mobile Robot Internship Program</span>
+                                    </a>
+
+                                </div>
+                            </div>
+
+
+                    <a href="index.html#contact"
+                        class="text-gray-900 dark:text-white hover:text-primary transition-colors">Contact</a>
+                </nav>
+
+                <div class="flex items-center space-x-4">
+                    <button id="theme-toggle"
+                        class="w-10 h-10 flex items-center justify-center rounded-full bg-gray-100 dark:bg-gray-700 text-gray-900 dark:text-white hover:bg-gray-200 dark:hover:bg-gray-600 transition-colors">
+                        <i class="ri-sun-line dark:hidden ri-lg"></i>
+                        <i class="ri-moon-line hidden dark:block ri-lg"></i>
+                    </button>
+                    <button id="mobile-menu-toggle"
+                        class="md:hidden w-10 h-10 flex items-center justify-center text-gray-900 dark:text-white">
+                        <i class="ri-menu-line ri-lg"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div id="mobile-menu"
+            class="md:hidden hidden bg-white dark:bg-gray-800 border-t border-gray-200 dark:border-gray-700">
+            <div class="px-4 py-2 space-y-2">
+                <a href="index.html" class="block py-2 text-gray-900 dark:text-white hover:text-primary">Home</a>
+                <a href="about/about-us.html" class="block py-2 text-gray-900 dark:text-white hover:text-primary">About Us</a>
+
+                <!-- Mobile dropdown for Services -->
+                <div class="space-y-2">
+                    <button class="w-full text-left text-gray-900 dark:text-white hover:text-primary">
+                        Services
+                    </button>
+                    <div class="space-y-2 pl-4">
+                        <a href="index.html#ai-robotics"
+                            class="block py-2 text-gray-900 dark:text-white hover:text-primary">AI & Robotics</a>
+                        <a href="index.html#eduverse"
+                            class="block py-2 text-gray-900 dark:text-white hover:text-primary">Eduverse</a>
+                        <a href="index.html#skill-labs"
+                            class="block py-2 text-gray-900 dark:text-white hover:text-primary">Skill Labs</a>
+                    </div>
+                </div>
+
+                <a href="https://shop.pixelbotix.com/" class="block py-2 text-gray-900 dark:text-white hover:text-primary">Products</a>
+
+                <div class="space-y-2">
+
+
+                    <button class="w-full text-left text-gray-900 dark:text-white hover:text-primary flex items-center gap-2">
+                        Programme
+                        <span class="text-[10px] px-2 py-0.5 rounded-full bg-red-500 text-white font-semibold animate-pulse">
+                            NEW
+                        </span>
+                    </button>
+
+                    <div class="space-y-2 pl-4">
+                        <a href="ros_internship.html"
+                            class="block py-2 text-gray-900 dark:text-white hover:text-primary">
+                            ROS & Autonomous Mobile Robot Internship Program
+                        </a>
+                        <!-- <a href="bionic_arm_internship.html"
+                            class="block py-2 text-gray-900 dark:text-white hover:text-primary">
+                            Bionic Arm & Gesture Control Internship Program
+                        </a> -->
+                    </div>
+                </div>
+
+                <a href="index.html#contact"
+                    class="block py-2 text-gray-900 dark:text-white hover:text-primary">Contact</a>
+            </div>
+        </div>
+    </header>
 
 
     
     <section class="relative min-h-screen bg-white overflow-hidden"
-            style="background-image: url('/assets/images/programs/ros-2/hero/hero_background.jpg'); background-size: cover; background-position: center;">
+            style="background-image: url('https://readdy.ai/api/search-image?query=modern%20robotics%20laboratory%20with%20autonomous%20mobile%20robots%20and%20ROS2%20workstations%2C%20students%20working%20with%20robotic%20systems%2C%20clean%20white%20background%20with%20blue%20accents%2C%20professional%20engineering%20environment%2C%20high-tech%20atmosphere&width=1920&height=1080&seq=hero-bg&orientation=landscape'); background-size: cover; background-position: center;">
             <div class="absolute inset-0 bg-white bg-opacity-90"></div>
             <div class="relative z-10 max-w-7xl mx-auto px-4 py-20">
                 
@@ -1223,45 +1502,168 @@
 
 
 
-    <!-- ================= CTA ================= -->
-    <section class="py-24 bg-primary text-white">
-      <div class="max-w-6xl mx-auto px-6 text-center">
-        <h2 class="text-4xl font-bold mb-6">
-          Build Real ROS 2 Systems
-        </h2>
-        <p class="text-xl mb-10">
-          Not tutorials. Not toy bots. Deployed robotics systems.
-        </p>
-        <a href="/pb_site_2026/contact"
-           class="inline-flex items-center justify-center bg-white text-primary px-10 py-4 rounded-2xl font-semibold">
-          Start a Collaboration
-        </a>
-      </div>
-    </section>
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white pt-16 pb-8">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8 mb-12">
+                <!-- Company Info -->
+                <div>
+                    <h3 class="text-xl font-bold mb-6">PixelBotix Technologies</h3>
+                    <p class="text-gray-400 mb-6">Future-driven product innovation and EdTech company pioneering the
+                        convergence of Robotics, AI, Smart Manufacturing, and Emerging Technologies.</p>
+                    <div class="flex space-x-4">
+                        <a href="https://www.facebook.com/profile.php?id=61575683369348" target="_blank" class="text-gray-400 hover:text-white transition-colors">
+                            <i class="ri-facebook-fill ri-lg"></i>
+                        </a>
+                        <a href="https://x.com/PixelBotix" target="_blank" class="text-gray-400 hover:text-white transition-colors">
+                            <i class="ri-twitter-fill ri-lg"></i>
+                        </a>
+                        <a href="https://www.linkedin.com/company/pixelbotix/" target="_blank" class="text-gray-400 hover:text-white transition-colors">
+                            <i class="ri-linkedin-fill ri-lg"></i>
+                        </a>
+                        <a href="https://www.instagram.com/pixel_botix/" target="_blank" class="text-gray-400 hover:text-white transition-colors">
+                            <i class="ri-instagram-fill ri-lg"></i>
+                        </a>
+                        <a href="https://www.youtube.com/@PixelBotix" target="_blank" class="text-gray-400 hover:text-white transition-colors">
+                            <i class="ri-youtube-fill ri-lg"></i>
+                        </a>
+                    </div>
+                </div>
 
-  </main>
+                <!-- Quick Links -->
+                <div>
+                    <h3 class="text-xl font-bold mb-6">Quick Links</h3>
+                    <ul class="space-y-3">
+                        <li><a href="#home" class="text-gray-400 hover:text-white transition-colors">Home</a></li>
+                        <li><a href="about/about-us.html" class="text-gray-400 hover:text-white transition-colors">About Us</a></li>
+                        <li><a href="#ai-robotics" class="text-gray-400 hover:text-white transition-colors">AI & Robotics</a></li>
+                        <li><a href="#eduverse" class="text-gray-400 hover:text-white transition-colors">Eduverse</a></li>
+                        <li><a href="#skill-labs" class="text-gray-400 hover:text-white transition-colors">Skill Labs</a></li>
+                        <li><a href="https://shop.pixelbotix.com/" class="text-gray-400 hover:text-white transition-colors">Products</a></li>
+                        <li><a href="#contact" class="text-gray-400 hover:text-white transition-colors">Contact</a></li>
+                    </ul>
+                </div>
 
-  <!-- FOOTER -->
-  <div id="site-footer"></div>
+                <!-- Our Programs -->
+                <div>
+                    <h3 class="text-xl font-bold mb-6">Our Programs</h3>
+                    <ul class="space-y-3">
+                        <li><a href="#brainy-babies" class="text-gray-400 hover:text-white transition-colors">Brainy Babies (0-5 years)</a></li>
+                        <li><a href="#little-techies" class="text-gray-400 hover:text-white transition-colors">Little Techies (5-9 years)</a></li>
+                        <li><a href="#maker-school" class="text-gray-400 hover:text-white transition-colors">Maker School (9-17 years)</a></li>
+                        <li><a href="#future-innovators" class="text-gray-400 hover:text-white transition-colors">Future Innovators (16-25 years)</a></li>
+                        <li><a href="#school-lab-setup" class="text-gray-400 hover:text-white transition-colors">School Lab Setup</a></li>
+                        <li><a href="#faculty-development" class="text-gray-400 hover:text-white transition-colors">Faculty Development</a></li>
+                    </ul>
+                </div>
 
-  <script src="/pb_site_2026/assets/js/layout.js"></script>
-<!-- Script for YOutube -->
-<script>
-    document.getElementById("play-button").addEventListener("click", function () {
-        const container = document.getElementById("video-container");
+                <!-- Policies -->
+                <div>
+                    <h3 class="text-xl font-bold mb-6">Policies</h3>
+                    <ul class="space-y-3">
+                        <li><a href="policies/privacy_policy.html" class="text-gray-400 hover:text-white transition-colors">Privacy Policy</a></li>
+                        <li><a href="policies/terms.html" class="text-gray-400 hover:text-white transition-colors">Terms & Conditions</a></li>
+                        <li><a href="policies/refund_cancellation.html" class="text-gray-400 hover:text-white transition-colors">Refund & Cancellation</a></li>
+                        <li><a href="policies/shipping_policy.html" class="text-gray-400 hover:text-white transition-colors">Shipping Policy</a></li>
+                        <li><a href="policies/disclaimer.html" class="text-gray-400 hover:text-white transition-colors">Disclaimer</a></li>
+                    </ul>
+                </div>
 
-        container.innerHTML = `
-            <iframe 
-                class="w-full h-full"
-                src="https://www.youtube.com/embed/hi0jIaFB2ZE?autoplay=1&mute=1&rel=0"
-                title="Program Walkthrough Video"
-                frameborder="0"
-                allow="autoplay; encrypted-media"
-                allowfullscreen
-            ></iframe>
-        `;
-    });
-</script>
+                <!-- Newsletter -->
+                <div>
+                    <h3 class="text-xl font-bold mb-6">Subscribe to Our Newsletter</h3>
+                    <p class="text-gray-400 mb-4">Stay updated with our latest news, programs, and innovations.</p>
+                    <form class="mb-4">
+                        <div class="flex">
+                            <input type="email" placeholder="Your email address"
+                                class="px-4 py-3 bg-gray-800 text-white rounded-l focus:outline-none focus:ring-2 focus:ring-primary border-none flex-grow">
+                            <button type="submit"
+                                class="bg-primary text-white px-4 py-3 rounded-r hover:bg-blue-600 transition-colors whitespace-nowrap">Subscribe</button>
+                        </div>
+                    </form>
+                    <p class="text-gray-500 text-sm">By subscribing, you agree to our Privacy Policy and consent to
+                        receive updates from our company.</p>
+                </div>
+            </div>
+
+            <div class="border-t border-gray-800 pt-8">
+                <div class="flex flex-col md:flex-row justify-between items-center">
+                    <p class="text-gray-500 text-sm mb-4 md:mb-0">&copy; 2025 PixelBotix Technologies Pvt. Ltd. All rights reserved.</p>
+                    <div class="flex space-x-6">
+                        <a href="#" class="text-gray-500 hover:text-white text-sm transition-colors">Privacy Policy</a>
+                        <a href="#" class="text-gray-500 hover:text-white text-sm transition-colors">Terms of Service</a>
+                        <a href="#" class="text-gray-500 hover:text-white text-sm transition-colors">Cookie Policy</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Floating Buttons Container -->
+            <div class="fixed bottom-8 right-8 z-50 flex flex-col sm:flex-row sm:space-x-4 space-y-4 sm:space-y-0">
+                <!-- Back to Top Button -->
+                <button id="back-to-top"
+                    class="bg-primary text-white w-12 h-12 rounded-full shadow-lg flex items-center justify-center opacity-0 invisible transition-all duration-300">
+                    <i class="ri-arrow-up-line ri-lg"></i>
+                </button>
+
+                <!-- WhatsApp Button -->
+                <a href="https://wa.me/917200445335?text=Hello!%20I%20would%20like%20to%20know%20more%20about%20PixelBotix%20and%20your%20programs.%20Can%20you%20help%20me?" target="_blank"
+                    class="bg-green-500 text-white w-12 h-12 rounded-full shadow-lg flex items-center justify-center hover:bg-green-600 transition-all transform hover:scale-105">
+                    <i class="ri-whatsapp-line text-xl"></i>
+                </a>
+            </div>
+        </div>
+    </footer>
+
+    <script id="theme-toggle-script">
+        document.addEventListener('DOMContentLoaded', function () {
+            const themeToggle = document.getElementById('theme-toggle');
+            const html = document.documentElement;
+            themeToggle.addEventListener('click', function () {
+                html.classList.toggle('dark');
+                localStorage.setItem('theme', html.classList.contains('dark') ? 'dark' : 'light');
+            });
+            const savedTheme = localStorage.getItem('theme');
+            if (savedTheme) {
+                if (savedTheme === 'dark') {
+                    html.classList.add('dark');
+                } else {
+                    html.classList.remove('dark');
+                }
+            }
+        });
+    </script>
+
+    <script id="mobile-menu-script">
+        document.addEventListener('DOMContentLoaded', function () {
+            const mobileMenuToggle = document.getElementById('mobile-menu-toggle');
+            const mobileMenu = document.getElementById('mobile-menu');
+            mobileMenuToggle.addEventListener('click', function () {
+                mobileMenu.classList.toggle('hidden');
+            });
+        });
+    </script>
+
+    <script id="back-to-top-script">
+        document.addEventListener('DOMContentLoaded', function () {
+            const backToTopButton = document.getElementById('back-to-top');
+            function toggleBackToTopButton() {
+                if (window.scrollY > 300) {
+                    backToTopButton.classList.remove('opacity-0', 'invisible');
+                    backToTopButton.classList.add('opacity-100', 'visible');
+                } else {
+                    backToTopButton.classList.remove('opacity-100', 'visible');
+                    backToTopButton.classList.add('opacity-0', 'invisible');
+                }
+            }
+            window.addEventListener('scroll', toggleBackToTopButton);
+            backToTopButton.addEventListener('click', function () {
+                window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
 
     <script id="faq-functionality">
         document.addEventListener('DOMContentLoaded', function () {
@@ -1281,5 +1683,93 @@
         });
     </script>
 
+    <script id="scroll-animation">
+        document.addEventListener('DOMContentLoaded', function () {
+            const style = document.createElement('style');
+            style.textContent = `
+@keyframes scroll {
+0% { transform: translateX(0); }
+100% { transform: translateX(-50%); }
+}
+.animate-scroll {
+animation: scroll 10s linear infinite;
+}
+`;
+            document.head.appendChild(style);
+        });
+    </script>
+
+    <script src="js/share.js"></script>
+
+<script>
+const BASE = "static/images/trusted_by/";
+
+const logos = [
+    "3devok-logo_4.png",
+    "actlogo_10.jpg",
+    "Airobo_infinity_2.png",
+    "Bigzero-logo_3.jpg",
+    "CEG_col_2.png",
+    "DMI_5.png",
+    "iitm_logo.png",
+    "KIT_2.svg.png",
+    "LMEC_7.webp",
+    "Loyola_6.png",
+    "make3d_6.png",
+    "medical_spectra.jpeg",
+    "Mithra_3d_tech_5.jpg",
+    "mit_logo_1.png",
+    "nitt_13.png",
+    "perfin_health_care_1.png",
+    "Pertinent-Logo-1.png",
+    "Rajeshwari_engg_college_9.png",
+    "remo_11.webp",
+    "sairam_8.gif",
+    "sairam-sec-logo_8.png",
+    "Saveetha_1.png",
+    "sri_balaji_14.png",
+    "SRM_Institute_of_Science_and_Technology_Logo.svg_3.png",
+    "Vellore_Institute_of_Technology_seal_4.svg.png"
+];
+
+const scroller = document.getElementById("logoScroller");
+
+function addLogos(list) {
+    list.forEach(file => {
+        const img = document.createElement("img");
+        img.src = BASE + file;
+        img.loading = "lazy";
+        img.className =
+            "h-12 object-contain flex-shrink-0 opacity-100 will-change-transform transition-all";
+        img.onerror = () => img.style.display = "none"; // hide if image fails
+        scroller.appendChild(img);
+    });
+}
+
+// Add logos twice for smooth infinite scrolling
+addLogos(logos);
+addLogos(logos);
+</script>
+
+<!-- Script for YOutube -->
+<script>
+    document.getElementById("play-button").addEventListener("click", function () {
+        const container = document.getElementById("video-container");
+
+        container.innerHTML = `
+            <iframe 
+                class="w-full h-full"
+                src="https://www.youtube.com/embed/hi0jIaFB2ZE?autoplay=1&mute=1&rel=0"
+                title="Program Walkthrough Video"
+                frameborder="0"
+                allow="autoplay; encrypted-media"
+                allowfullscreen
+            ></iframe>
+        `;
+    });
+</script>
+
+
 </body>
+
 </html>

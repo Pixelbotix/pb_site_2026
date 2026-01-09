@@ -154,26 +154,44 @@ function initTrustedBy() {
 }
 
 /* ---------- BACK TO TOP ---------- */
+/* ---------- NSE STYLE BACK TO TOP (PROGRESS CIRCLE) ---------- */
 function initBackToTop() {
-  const btn = document.getElementById("back-to-top");
-  if (!btn) return;
+  const progress = document.getElementById("progressCircle");
+  if (!progress) return;
 
-  const toggle = () => {
-    if (window.scrollY > 300) {
-      btn.classList.remove("opacity-0", "invisible");
-      btn.classList.add("opacity-100", "visible");
+  const circle = progress.querySelector(".circle");
+
+  const radius = 15.9155;
+  const circumference = 2 * Math.PI * radius;
+
+  circle.style.strokeDasharray = `${circumference}`;
+  circle.style.strokeDashoffset = `${circumference}`;
+
+  const updateProgress = () => {
+    const scrollTop = window.scrollY;
+    const docHeight =
+      document.documentElement.scrollHeight -
+      document.documentElement.clientHeight;
+
+    const progressRatio = docHeight > 0 ? scrollTop / docHeight : 0;
+    const offset = circumference - progressRatio * circumference;
+
+    circle.style.strokeDashoffset = offset;
+
+    if (scrollTop > 200) {
+      progress.classList.add("show");
     } else {
-      btn.classList.remove("opacity-100", "visible");
-      btn.classList.add("opacity-0", "invisible");
+      progress.classList.remove("show");
     }
   };
 
-  window.addEventListener("scroll", toggle);
+  window.addEventListener("scroll", updateProgress, { passive: true });
 
-  btn.onclick = () => {
+  progress.addEventListener("click", () => {
     window.scrollTo({ top: 0, behavior: "smooth" });
-  };
+  });
 }
+
 
 /* ---------- MASTER INITIALIZER ---------- */
 async function initLayout() {

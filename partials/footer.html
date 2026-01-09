@@ -154,10 +154,33 @@
 
   <!-- ================= FLOATING BUTTONS ================= -->
   <div class="fixed bottom-8 right-8 z-50 flex flex-col gap-4">
-    <button id="back-to-top"
+    <!-- <button id="back-to-top"
       class="bg-primary text-white w-12 h-12 rounded-full shadow-lg flex items-center justify-center opacity-0 invisible transition-all">
       <i class="ri-arrow-up-line ri-lg"></i>
-    </button>
+    </button> -->
+
+    <!-- NSE STYLE BACK TO TOP -->
+    <div id="progressCircle"
+        class="progress-circle"
+        title="Go to Top"
+        aria-label="Go to Top"
+        tabindex="0">
+      <svg viewBox="0 0 36 36" class="progress-svg">
+        <!-- Background -->
+        <path class="circle-bg"
+          d="M18 2.0845
+            a 15.9155 15.9155 0 0 1 0 31.831
+            a 15.9155 15.9155 0 0 1 0 -31.831" />
+        <!-- Progress -->
+        <path class="circle"
+          d="M18 2.0845
+            a 15.9155 15.9155 0 0 1 0 31.831
+            a 15.9155 15.9155 0 0 1 0 -31.831" />
+        <!-- Arrow -->
+        <text x="18" y="22" text-anchor="middle" class="arrow">↑</text>
+      </svg>
+    </div>
+
 
     <a href="https://wa.me/917200445335" target="_blank"
       class="whatsapp-pulse bg-green-500 text-white w-12 h-12 rounded-full shadow-lg

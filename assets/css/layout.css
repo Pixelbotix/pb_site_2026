@@ -406,3 +406,65 @@ transform: translateY(-1px);
     opacity: 0;
   }
 }
+
+/* ================= NSE STYLE BACK TO TOP ================= */
+
+.progress-circle {
+  position: fixed;
+  bottom: 8rem;
+  right: 2rem;
+  width: 56px;
+  height: 56px;
+  cursor: pointer;
+  z-index: 50;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+
+.progress-circle.show {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.progress-svg {
+  width: 100%;
+  height: 100%;
+  transform: rotate(-90deg);
+}
+
+.circle-bg {
+  fill: none;
+  stroke: #e5e7eb;
+  stroke-width: 3;
+}
+
+.dark .circle-bg {
+  stroke: #374151;
+}
+
+.circle {
+  fill: none;
+  stroke: #2563eb;
+  stroke-width: 3;
+  stroke-linecap: round;
+  stroke-dasharray: 100, 100;
+  stroke-dashoffset: 100;
+  transition: stroke-dashoffset 0.15s linear;
+}
+
+.dark .circle {
+  stroke: #60a5fa;
+}
+
+.arrow {
+  fill: #2563eb;
+  font-size: 14px;
+  font-weight: 700;
+  transform: rotate(90deg);
+  pointer-events: none;
+}
+
+.dark .arrow {
+  fill: #60a5fa;
+}

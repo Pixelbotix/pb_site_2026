@@ -363,3 +363,32 @@ transform: translateY(-1px);
   color: white;
 }
 
+/* ================= WHATSAPP PULSE (NSE-STYLE) ================= */
+
+.whatsapp-pulse {
+  position: relative;
+}
+
+.whatsapp-pulse .pulse-ring {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background: rgba(34, 197, 94, 0.45); /* green-500 */
+  animation: whatsappPulse 2.2s ease-out infinite;
+  z-index: 0;
+}
+
+@keyframes whatsappPulse {
+  0% {
+    transform: scale(1);
+    opacity: 0.8;
+  }
+  70% {
+    transform: scale(2.4);
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;
+  }
+}

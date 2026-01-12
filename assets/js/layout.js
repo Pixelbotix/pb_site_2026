@@ -250,3 +250,36 @@ function initAcademicClients() {
     scroller.appendChild(img);
   });
 }
+
+
+
+// Contact Form Submit form js for
+
+const modal = document.getElementById("contact-modal");
+document.getElementById("open-contact-form").onclick = () => {
+  modal.classList.remove("hidden");
+  document.body.style.overflow = "hidden";
+};
+
+document.getElementById("close-contact-form").onclick = () => {
+  modal.classList.add("hidden");
+  document.body.style.overflow = "auto";
+};
+
+document.getElementById("contact-form").addEventListener("submit", async e => {
+  e.preventDefault();
+  const status = document.getElementById("form-status");
+  status.classList.remove("hidden");
+  status.textContent = "Submitting…";
+
+  const data = new FormData(e.target);
+
+  await fetch("https://script.google.com/macros/s/AKfycbyTHVXRMmwh4TRVOYPOoziLRjj4PabvAIVdAlRbnHnK8_GvT_PyvMC6TuFePlGaWc4P/exec", {
+    method: "POST",
+    body: data
+  });
+
+  status.textContent = "Submitted successfully";
+  e.target.reset();
+});
+

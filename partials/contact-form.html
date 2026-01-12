@@ -1,0 +1,67 @@
+<form id="contactForm" class="space-y-6">
+
+  <!-- REQUIRED: source identifier -->
+  <input type="hidden" name="source" value="Contact Page">
+
+  <div>
+    <label class="block text-sm font-medium mb-1">Name *</label>
+    <input
+      name="name"
+      required
+      class="w-full px-4 py-3 rounded-lg border
+             bg-white dark:bg-gray-800
+             border-gray-300 dark:border-gray-600
+             focus:outline-none focus:ring-2 focus:ring-blue-500">
+  </div>
+
+  <div>
+    <label class="block text-sm font-medium mb-1">Email *</label>
+    <input
+      type="email"
+      name="email"
+      required
+      class="w-full px-4 py-3 rounded-lg border
+             bg-white dark:bg-gray-800
+             border-gray-300 dark:border-gray-600
+             focus:outline-none focus:ring-2 focus:ring-blue-500">
+  </div>
+
+  <div>
+    <label class="block text-sm font-medium mb-1">Phone</label>
+    <input
+      name="phone"
+      class="w-full px-4 py-3 rounded-lg border
+             bg-white dark:bg-gray-800
+             border-gray-300 dark:border-gray-600">
+  </div>
+
+  <div>
+    <label class="block text-sm font-medium mb-1">Organization</label>
+    <input
+      name="organization"
+      class="w-full px-4 py-3 rounded-lg border
+             bg-white dark:bg-gray-800
+             border-gray-300 dark:border-gray-600">
+  </div>
+
+  <div>
+    <label class="block text-sm font-medium mb-1">Message</label>
+    <textarea
+      name="message"
+      rows="4"
+      class="w-full px-4 py-3 rounded-lg border
+             bg-white dark:bg-gray-800
+             border-gray-300 dark:border-gray-600"></textarea>
+  </div>
+
+  <button
+    type="submit"
+    class="bg-blue-600 hover:bg-blue-700
+           text-white px-8 py-4 rounded-lg
+           font-semibold shadow-lg">
+    Submit
+  </button>
+
+  <p id="formStatus" class="text-sm"></p>
+
+</form>

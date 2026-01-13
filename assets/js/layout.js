@@ -264,13 +264,51 @@ async function loadContactForm() {
     const res = await fetch("/pb_site_2026/partials/contact-form.html", {
       cache: "no-cache"
     });
-    if (!res.ok) return;
+    if (!res.ok) throw new Error("Form load failed");
 
     container.innerHTML = await res.text();
-  } catch (e) {
-    console.error("Failed to load contact form");
+
+    // ✅ ATTACH SUBMIT HANDLER AFTER LOAD
+    const form = container.querySelector("#contactForm");
+    const status = container.querySelector("#formStatus");
+
+    if (!form) return;
+
+    form.addEventListener("submit", async (e) => {
+      e.preventDefault();
+
+      status.textContent = "Submitting…";
+      status.className = "text-sm text-blue-600";
+
+      const formData = new FormData(form);
+
+      try {
+        const response = await fetch(
+          "https://script.google.com/macros/s/AKfycbyTHVXRMmwh4TRVOYPOoziLRjj4PabvAIVdAlRbnHnK8_GvT_PyvMC6TuFePlGaWc4P/exec",
+          {
+            method: "POST",
+            body: formData
+          }
+        );
+
+        if (!response.ok) throw new Error("Submission failed");
+
+        status.textContent = "Submitted successfully ✔";
+        status.className = "text-sm text-green-600";
+
+        form.reset();
+
+      } catch (err) {
+        status.textContent = "Submission failed. Try again.";
+        status.className = "text-sm text-red-600";
+      }
+    });
+
+  } catch (err) {
+    console.error(err);
   }
 }
+
 
 
 

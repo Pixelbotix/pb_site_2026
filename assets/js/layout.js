@@ -205,7 +205,7 @@ async function initLayout() {
     initTrustedBy();
     initBackToTop();
     initAcademicClients(); 
-    initContactForm();
+    // initContactForm();
     loadContactForm();
   });
 }

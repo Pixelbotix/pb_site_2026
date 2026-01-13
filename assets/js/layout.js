@@ -205,7 +205,7 @@ async function initLayout() {
     initTrustedBy();
     initBackToTop();
     initAcademicClients(); 
-    // initContactForm();
+    initContactPopup();
     loadContactForm();
   });
 }
@@ -254,7 +254,7 @@ function initAcademicClients() {
 }
 
 
-
+// COntact page part 
 
 async function loadContactForm() {
   const container = document.getElementById("contact-form-container");
@@ -318,4 +318,45 @@ async function loadContactForm() {
   } catch (err) {
     console.error(err);
   }
+}
+
+
+
+// Other page contact page
+function initContactPopup() {
+  const modal = document.getElementById("contact-popup");
+  const closeBtn = document.getElementById("contact-popup-close");
+  const container = document.getElementById("contact-popup-form");
+  const titleEl = document.getElementById("contact-popup-title");
+
+  if (!modal || !container) return;
+
+  document.addEventListener("click", async (e) => {
+    const trigger = e.target.closest("[data-contact]");
+    if (!trigger) return;
+
+    e.preventDefault();
+
+    const source = trigger.dataset.source || "Unknown";
+    const title  = trigger.dataset.title  || "Contact PixelBotix";
+
+    titleEl.textContent = title;
+
+    modal.classList.remove("hidden");
+    document.body.style.overflow = "hidden";
+
+    if (container.innerHTML.trim() === "") {
+      const res = await fetch("/pb_site_2026/partials/contact-form.html", {
+        cache: "no-cache"
+      });
+      container.innerHTML = await res.text();
+    }
+
+    injectContextAndBind(container, source);
+  });
+
+  closeBtn.onclick = () => {
+    modal.classList.add("hidden");
+    document.body.style.overflow = "auto";
+  };
 }

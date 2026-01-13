@@ -284,7 +284,7 @@ async function loadContactForm() {
 
       try {
         const response = await fetch(
-          "https://script.google.com/macros/s/AKfycbyTHVXRMmwh4TRVOYPOoziLRjj4PabvAIVdAlRbnHnK8_GvT_PyvMC6TuFePlGaWc4P/exec",
+          "https://script.google.com/macros/s/AKfycby2V1X-f9Z_0SYaSK6XR7QXIojv0f7-taoxCPbFrODC0hbUtKAyb_hIJdfEI_9YFqJ5/exec",
           {
             method: "POST",
             body: formData
@@ -309,58 +309,4 @@ async function loadContactForm() {
   }
 }
 
-
-
-
-// Contact Form Submit form js for
-
-// function initContactForm() {
-//   const modal = document.getElementById("contact-modal");
-//   const openBtn = document.getElementById("open-contact-form");
-//   const closeBtn = document.getElementById("close-contact-form");
-//   const form = document.getElementById("contact-form");
-//   const status = document.getElementById("form-status");
-
-//   // If this page has no contact form, exit cleanly
-//   if (!modal || !openBtn || !closeBtn || !form) return;
-
-//   openBtn.onclick = () => {
-//     modal.classList.remove("hidden");
-//     document.body.style.overflow = "hidden";
-//   };
-
-//   closeBtn.onclick = () => {
-//     modal.classList.add("hidden");
-//     document.body.style.overflow = "auto";
-//   };
-
-//   form.addEventListener("submit", async e => {
-//     e.preventDefault();
-
-//     status.classList.remove("hidden");
-//     status.textContent = "Submitting…";
-
-//     const data = new FormData(form);
-
-//     try {
-//       const res = await fetch(
 //         "https://script.google.com/macros/s/AKfycbyTHVXRMmwh4TRVOYPOoziLRjj4PabvAIVdAlRbnHnK8_GvT_PyvMC6TuFePlGaWc4P/exec",
-//         { method: "POST", body: data }
-//       );
-
-//       if (!res.ok) throw new Error("Network error");
-
-//       status.textContent = "Submitted successfully";
-//       form.reset();
-
-//       setTimeout(() => {
-//         modal.classList.add("hidden");
-//         document.body.style.overflow = "auto";
-//         status.classList.add("hidden");
-//       }, 1500);
-
-//     } catch (err) {
-//       status.textContent = "Submission failed. Please try again.";
-//     }
-//   });
-// }

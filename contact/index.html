@@ -18,6 +18,9 @@
 
   <!-- Global Layout CSS -->
   <link rel="stylesheet" href="/pb_site_2026/assets/css/layout.css">
+    <!-- ================= GLOBAL SCRIPT ================= -->
+  <script src="/pb_site_2026/assets/js/layout.js"></script>
+
 </head>
 
 <body class="bg-white dark:bg-gray-900 text-gray-900 dark:text-gray-100 transition-colors">
@@ -42,38 +45,28 @@
         <!-- Grid -->
         <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
 
-          <!-- ================= CONTACT CTA ================= -->
-          <div class="bg-white dark:bg-gray-800 rounded-xl shadow-lg p-10 flex flex-col justify-center">
 
-            <h2 class="text-2xl font-semibold mb-4 text-gray-900 dark:text-white">
-              Get in Touch
-            </h2>
+        <!-- ================= CONTACT CTA ================= -->
+        <div class="bg-white dark:bg-gray-800 rounded-xl shadow-lg p-10 flex flex-col justify-center">
 
-            <p class="text-gray-600 dark:text-gray-400 mb-8">
-              For inquiries related to programs, institutional partnerships,
-              business collaborations, products, or general questions,
-              please use our official contact form.
-            </p>
+          <h2 class="text-2xl font-semibold mb-4 text-gray-900 dark:text-white">
+            Get in Touch
+          </h2>
 
-            <button
-              id="open-contact-form"
-              class="inline-flex items-center justify-center gap-3
-                    bg-blue-600 hover:bg-blue-700
-                    text-white
-                    px-8 py-4
-                    rounded-lg
-                    font-semibold
-                    shadow-lg
-                    border border-blue-500
-                    dark:bg-blue-500 dark:hover:bg-blue-600
-                    dark:border-blue-400"
-            >
-              <i class="ri-mail-send-line text-xl"></i>
-              Open Contact Form
-            </button>
+          <p class="text-gray-600 dark:text-gray-400 mb-8">
+            For inquiries related to programs, institutional partnerships,
+            business collaborations, products, or general questions,
+            please use our official contact form.
+          </p>
 
-
+          <!-- COMMON CONTACT FORM (INJECTED HERE) -->
+          <div id="contact-form-container"
+              class="mt-4">
+            <!-- contact-form.html loads here -->
           </div>
+
+        </div>
+
 
           <!-- ================= INFO + MAP ================= -->
           <div class="space-y-8">
@@ -139,8 +132,6 @@
   <!-- ================= FOOTER ================= -->
   <div id="site-footer"></div>
 
-  <!-- ================= GLOBAL SCRIPT ================= -->
-  <script src="/pb_site_2026/assets/js/layout.js"></script>
 
 
 
@@ -186,5 +177,8 @@
   </div>
 </div>
 
+
+
 </body>
+
 </html>

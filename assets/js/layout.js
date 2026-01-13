@@ -205,6 +205,8 @@ async function initLayout() {
     initTrustedBy();
     initBackToTop();
     initAcademicClients(); 
+    initContactForm();
+    loadContactForm();
   });
 }
 
@@ -253,33 +255,74 @@ function initAcademicClients() {
 
 
 
+
+async function loadContactForm() {
+  const container = document.getElementById("contact-form-container");
+  if (!container) return;
+
+  try {
+    const res = await fetch("/pb_site_2026/partials/contact-form.html", {
+      cache: "no-cache"
+    });
+    if (!res.ok) return;
+
+    container.innerHTML = await res.text();
+  } catch (e) {
+    console.error("Failed to load contact form");
+  }
+}
+
+
+
 // Contact Form Submit form js for
 
-const modal = document.getElementById("contact-modal");
-document.getElementById("open-contact-form").onclick = () => {
-  modal.classList.remove("hidden");
-  document.body.style.overflow = "hidden";
-};
+// function initContactForm() {
+//   const modal = document.getElementById("contact-modal");
+//   const openBtn = document.getElementById("open-contact-form");
+//   const closeBtn = document.getElementById("close-contact-form");
+//   const form = document.getElementById("contact-form");
+//   const status = document.getElementById("form-status");
 
-document.getElementById("close-contact-form").onclick = () => {
-  modal.classList.add("hidden");
-  document.body.style.overflow = "auto";
-};
+//   // If this page has no contact form, exit cleanly
+//   if (!modal || !openBtn || !closeBtn || !form) return;
 
-document.getElementById("contact-form").addEventListener("submit", async e => {
-  e.preventDefault();
-  const status = document.getElementById("form-status");
-  status.classList.remove("hidden");
-  status.textContent = "Submitting…";
+//   openBtn.onclick = () => {
+//     modal.classList.remove("hidden");
+//     document.body.style.overflow = "hidden";
+//   };
 
-  const data = new FormData(e.target);
+//   closeBtn.onclick = () => {
+//     modal.classList.add("hidden");
+//     document.body.style.overflow = "auto";
+//   };
 
-  await fetch("https://script.google.com/macros/s/AKfycbyTHVXRMmwh4TRVOYPOoziLRjj4PabvAIVdAlRbnHnK8_GvT_PyvMC6TuFePlGaWc4P/exec", {
-    method: "POST",
-    body: data
-  });
+//   form.addEventListener("submit", async e => {
+//     e.preventDefault();
 
-  status.textContent = "Submitted successfully";
-  e.target.reset();
-});
+//     status.classList.remove("hidden");
+//     status.textContent = "Submitting…";
 
+//     const data = new FormData(form);
+
+//     try {
+//       const res = await fetch(
+//         "https://script.google.com/macros/s/AKfycbyTHVXRMmwh4TRVOYPOoziLRjj4PabvAIVdAlRbnHnK8_GvT_PyvMC6TuFePlGaWc4P/exec",
+//         { method: "POST", body: data }
+//       );
+
+//       if (!res.ok) throw new Error("Network error");
+
+//       status.textContent = "Submitted successfully";
+//       form.reset();
+
+//       setTimeout(() => {
+//         modal.classList.add("hidden");
+//         document.body.style.overflow = "auto";
+//         status.classList.add("hidden");
+//       }, 1500);
+
+//     } catch (err) {
+//       status.textContent = "Submission failed. Please try again.";
+//     }
+//   });
+// }

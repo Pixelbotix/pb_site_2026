@@ -1,67 +1,118 @@
-<form id="contactForm" class="space-y-6">
+<!-- partials/contact-form.html -->
+<form id="contactForm"
+      class="space-y-6 bg-white dark:bg-gray-900">
 
-  <!-- REQUIRED: source identifier -->
+  <!-- SOURCE -->
   <input type="hidden" name="source" value="Contact Page">
 
+  <!-- HEADER -->
+  <div class="mb-6">
+    <h3 class="text-2xl font-bold text-gray-900 dark:text-white">
+      Get in Touch
+    </h3>
+    <p class="text-sm text-gray-600 dark:text-gray-400 mt-1">
+      Fill in the details below. Our team will contact you shortly.
+    </p>
+  </div>
+
+  <!-- NAME -->
   <div>
-    <label class="block text-sm font-medium mb-1">Name *</label>
+    <label class="block text-sm font-medium mb-1 text-gray-700 dark:text-gray-300">
+      Full Name <span class="text-red-500">*</span>
+    </label>
     <input
       name="name"
       required
+      placeholder="John Doe"
       class="w-full px-4 py-3 rounded-lg border
              bg-white dark:bg-gray-800
              border-gray-300 dark:border-gray-600
-             focus:outline-none focus:ring-2 focus:ring-blue-500">
+             text-gray-900 dark:text-white
+             placeholder-gray-400
+             focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500">
   </div>
 
+  <!-- EMAIL -->
   <div>
-    <label class="block text-sm font-medium mb-1">Email *</label>
+    <label class="block text-sm font-medium mb-1 text-gray-700 dark:text-gray-300">
+      Email Address <span class="text-red-500">*</span>
+    </label>
     <input
       type="email"
       name="email"
       required
+      placeholder="you@example.com"
       class="w-full px-4 py-3 rounded-lg border
              bg-white dark:bg-gray-800
              border-gray-300 dark:border-gray-600
-             focus:outline-none focus:ring-2 focus:ring-blue-500">
+             text-gray-900 dark:text-white
+             placeholder-gray-400
+             focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500">
   </div>
 
-  <div>
-    <label class="block text-sm font-medium mb-1">Phone</label>
-    <input
-      name="phone"
-      class="w-full px-4 py-3 rounded-lg border
-             bg-white dark:bg-gray-800
-             border-gray-300 dark:border-gray-600">
+  <!-- PHONE + ORG (GRID) -->
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+    <div>
+      <label class="block text-sm font-medium mb-1 text-gray-700 dark:text-gray-300">
+        Phone Number
+      </label>
+      <input
+        name="phone"
+        placeholder="+91 XXXXX XXXXX"
+        class="w-full px-4 py-3 rounded-lg border
+               bg-white dark:bg-gray-800
+               border-gray-300 dark:border-gray-600
+               text-gray-900 dark:text-white
+               placeholder-gray-400
+               focus:outline-none focus:ring-2 focus:ring-blue-500">
+    </div>
+
+    <div>
+      <label class="block text-sm font-medium mb-1 text-gray-700 dark:text-gray-300">
+        Organization
+      </label>
+      <input
+        name="organization"
+        placeholder="College / Company name"
+        class="w-full px-4 py-3 rounded-lg border
+               bg-white dark:bg-gray-800
+               border-gray-300 dark:border-gray-600
+               text-gray-900 dark:text-white
+               placeholder-gray-400
+               focus:outline-none focus:ring-2 focus:ring-blue-500">
+    </div>
   </div>
 
+  <!-- MESSAGE -->
   <div>
-    <label class="block text-sm font-medium mb-1">Organization</label>
-    <input
-      name="organization"
-      class="w-full px-4 py-3 rounded-lg border
-             bg-white dark:bg-gray-800
-             border-gray-300 dark:border-gray-600">
-  </div>
-
-  <div>
-    <label class="block text-sm font-medium mb-1">Message</label>
+    <label class="block text-sm font-medium mb-1 text-gray-700 dark:text-gray-300">
+      Message
+    </label>
     <textarea
       name="message"
       rows="4"
+      placeholder="Tell us briefly about your requirement"
       class="w-full px-4 py-3 rounded-lg border
              bg-white dark:bg-gray-800
-             border-gray-300 dark:border-gray-600"></textarea>
+             border-gray-300 dark:border-gray-600
+             text-gray-900 dark:text-white
+             placeholder-gray-400
+             focus:outline-none focus:ring-2 focus:ring-blue-500"></textarea>
   </div>
 
+  <!-- SUBMIT -->
   <button
     type="submit"
-    class="bg-blue-600 hover:bg-blue-700
-           text-white px-8 py-4 rounded-lg
-           font-semibold shadow-lg">
-    Submit
+    class="w-full bg-blue-600 hover:bg-blue-700
+           text-white py-3 rounded-lg
+           font-semibold shadow-lg
+           transition-transform hover:scale-[1.01]
+           disabled:opacity-60">
+    Submit Request
   </button>
 
-  <p id="formStatus" class="text-sm"></p>
+  <!-- STATUS -->
+  <p id="formStatus"
+     class="text-sm text-center text-gray-600 dark:text-gray-400 mt-2"></p>
 
 </form>

@@ -296,7 +296,18 @@ async function loadContactForm() {
         status.textContent = "Submitted successfully ✔";
         status.className = "text-sm text-green-600";
 
-        form.reset();
+        form.innerHTML = `
+          <div class="text-center py-12">
+            <i class="ri-checkbox-circle-line text-5xl text-green-600 mb-4"></i>
+            <h3 class="text-xl font-semibold mb-2">Submission Successful</h3>
+            <p class="text-gray-600 dark:text-gray-400">
+              Thank you. Our team will contact you shortly.
+            </p>
+          </div>
+        `;
+
+
+        // form.reset();
 
       } catch (err) {
         status.textContent = "Submission failed. Try again.";
@@ -308,5 +319,3 @@ async function loadContactForm() {
     console.error(err);
   }
 }
-
-//         "https://script.google.com/macros/s/AKfycbyTHVXRMmwh4TRVOYPOoziLRjj4PabvAIVdAlRbnHnK8_GvT_PyvMC6TuFePlGaWc4P/exec",

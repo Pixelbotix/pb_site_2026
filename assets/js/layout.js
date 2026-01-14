@@ -255,70 +255,8 @@ function initAcademicClients() {
 
 
 // COntact page part 
+// "https://script.google.com/macros/s/AKfycby2V1X-f9Z_0SYaSK6XR7QXIojv0f7-taoxCPbFrODC0hbUtKAyb_hIJdfEI_9YFqJ5/exec"
 
-async function loadContactForm() {
-  const container = document.getElementById("contact-form-container");
-  if (!container) return;
-
-  try {
-    const res = await fetch("/pb_site_2026/partials/contact-form.html", {
-      cache: "no-cache"
-    });
-    if (!res.ok) throw new Error("Form load failed");
-
-    container.innerHTML = await res.text();
-
-    // ✅ ATTACH SUBMIT HANDLER AFTER LOAD
-    const form = container.querySelector("#contactForm");
-    const status = container.querySelector("#formStatus");
-
-    if (!form) return;
-
-    form.addEventListener("submit", async (e) => {
-      e.preventDefault();
-
-      status.textContent = "Submitting…";
-      status.className = "text-sm text-blue-600";
-
-      const formData = new FormData(form);
-
-      try {
-        const response = await fetch(
-          "https://script.google.com/macros/s/AKfycby2V1X-f9Z_0SYaSK6XR7QXIojv0f7-taoxCPbFrODC0hbUtKAyb_hIJdfEI_9YFqJ5/exec",
-          {
-            method: "POST",
-            body: formData
-          }
-        );
-
-        if (!response.ok) throw new Error("Submission failed");
-
-        status.textContent = "Submitted successfully ✔";
-        status.className = "text-sm text-green-600";
-
-        form.innerHTML = `
-          <div class="text-center py-12">
-            <i class="ri-checkbox-circle-line text-5xl text-green-600 mb-4"></i>
-            <h3 class="text-xl font-semibold mb-2">Submission Successful</h3>
-            <p class="text-gray-600 dark:text-gray-400">
-              Thank you. Our team will contact you shortly.
-            </p>
-          </div>
-        `;
-
-
-        // form.reset();
-
-      } catch (err) {
-        status.textContent = "Submission failed. Try again.";
-        status.className = "text-sm text-red-600";
-      }
-    });
-
-  } catch (err) {
-    console.error(err);
-  }
-}
 
 
 
@@ -331,6 +269,7 @@ function initContactPopup() {
 
   if (!modal || !container) return;
 
+  // OPEN HANDLER
   document.addEventListener("click", async (e) => {
     const trigger = e.target.closest("[data-contact]");
     if (!trigger) return;
@@ -341,7 +280,6 @@ function initContactPopup() {
     const title  = trigger.dataset.title  || "Contact PixelBotix";
 
     titleEl.textContent = title;
-
     modal.classList.remove("hidden");
     document.body.style.overflow = "hidden";
 
@@ -352,11 +290,82 @@ function initContactPopup() {
       container.innerHTML = await res.text();
     }
 
-    injectContextAndBind(container, source);
+    bindContactForm(container, source);
   });
 
+  // CLOSE BUTTON
   closeBtn.onclick = () => {
     modal.classList.add("hidden");
     document.body.style.overflow = "auto";
+    container.innerHTML = "";
   };
+
+  // ESC KEY CLOSE  ✅ ADD THIS HERE
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape" && !modal.classList.contains("hidden")) {
+      modal.classList.add("hidden");
+      document.body.style.overflow = "auto";
+      container.innerHTML = "";
+    }
+  });
+}
+
+
+
+
+
+function bindContactForm(container, source = "Unknown") {
+  const form = container.querySelector("#contactForm");
+  const status = container.querySelector("#formStatus");
+
+  if (!form || form.dataset.bound === "true") return;
+  form.dataset.bound = "true";
+
+
+  // inject context
+  const sourceInput = form.querySelector('input[name="source"]');
+  if (sourceInput) sourceInput.value = source;
+
+  form.addEventListener("submit", async (e) => {
+    e.preventDefault();
+
+    status.textContent = "Submitting…";
+    status.className = "text-sm text-blue-600";
+
+    const formData = new FormData(form);
+
+    try {
+      const res = await fetch(
+        "https://script.google.com/macros/s/AKfycby2V1X-f9Z_0SYaSK6XR7QXIojv0f7-taoxCPbFrODC0hbUtKAyb_hIJdfEI_9YFqJ5/exec",
+        { method: "POST", body: formData }
+      );
+
+      if (!res.ok) throw new Error();
+
+      container.innerHTML = `
+        <div class="text-center py-12">
+          <i class="ri-checkbox-circle-line text-5xl text-green-600 mb-4"></i>
+          <h3 class="text-xl font-semibold mb-2">Submission Successful</h3>
+          <p class="text-gray-600 dark:text-gray-400">
+            Thank you. Our team will contact you shortly.
+          </p>
+        </div>
+      `;
+    } catch {
+      status.textContent = "Submission failed. Try again.";
+      status.className = "text-sm text-red-600";
+    }
+  });
+}
+
+async function loadContactForm() {
+  const container = document.getElementById("contact-form-container");
+  if (!container) return;
+
+  const res = await fetch("/pb_site_2026/partials/contact-form.html", {
+    cache: "no-cache"
+  });
+
+  container.innerHTML = await res.text();
+  bindContactForm(container, "Contact Page");
 }

@@ -207,6 +207,7 @@ async function initLayout() {
     initAcademicClients(); 
     initContactPopup();
     loadContactForm();
+    initChatBot();
   });
 }
 
@@ -368,4 +369,55 @@ async function loadContactForm() {
 
   container.innerHTML = await res.text();
   bindContactForm(container, "Contact Page");
+}
+
+function initChatBot() {
+  const toggleBtn = document.getElementById("pb-chat-toggle");
+  const chatBox = document.getElementById("pb-chatbox");
+  const sendBtn = document.getElementById("pb-chat-send");
+  const input = document.getElementById("pb-chat-input");
+  const messages = document.getElementById("pb-chat-messages");
+
+  if (!toggleBtn || !chatBox || !sendBtn || !input || !messages) return;
+
+  toggleBtn.onclick = () => chatBox.classList.toggle("hidden");
+
+  sendBtn.onclick = sendMessage;
+  input.addEventListener("keydown", e => {
+    if (e.key === "Enter") sendMessage();
+  });
+
+  async function sendMessage() {
+    const question = input.value.trim();
+    if (!question) return;
+
+    addMessage(question, "user");
+    input.value = "";
+
+    addMessage("Thinking...", "bot");
+
+    try {
+      const res = await fetch(CHAT_API, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ question })
+      });
+
+      const data = await res.json();
+      messages.lastChild.textContent = data.answer;
+    } catch {
+      messages.lastChild.textContent = "Assistant unavailable.";
+    }
+  }
+
+  function addMessage(text, from = "bot") {
+    const div = document.createElement("div");
+    div.className =
+      from === "user"
+        ? "text-right text-black dark:text-white"
+        : "text-left text-gray-700 dark:text-gray-300";
+    div.textContent = text;
+    messages.appendChild(div);
+    messages.scrollTop = messages.scrollHeight;
+  }
 }

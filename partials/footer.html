@@ -185,12 +185,7 @@
       </svg>
     </div>
 
-    <!-- PixelBotix AI Assistant Button -->
-    <button id="pb-chat-toggle"
-      class="bg-black text-white w-12 h-12 rounded-full shadow-lg
-            flex items-center justify-center hover:bg-gray-800">
-      🤖
-    </button>
+
 
     <a href="https://wa.me/917200445335" target="_blank"
       class="whatsapp-pulse bg-green-500 text-white w-12 h-12 rounded-full shadow-lg
@@ -200,6 +195,37 @@
     </a>
 
   </div>
+  
+  <!-- PixelBotix AI Chatbox -->
+  <div id="pb-chatbox"
+      class="fixed bottom-24 right-8 w-96 max-w-[90vw] h-[500px]
+              bg-white dark:bg-gray-900 border border-gray-300 dark:border-gray-700
+              rounded-2xl shadow-2xl hidden flex flex-col z-[9999]">
+
+    <div class="px-4 py-3 border-b dark:border-gray-700 font-semibold">
+      PixelBotix AI Assistant
+    </div>
+
+    <div id="pb-chat-messages"
+        class="flex-1 overflow-y-auto p-4 space-y-3 text-sm">
+      <div class="text-gray-500">
+        Ask about PixelBotix labs, programs, facilities.
+      </div>
+    </div>
+
+    <div class="p-3 border-t dark:border-gray-700 flex gap-2">
+      <input id="pb-chat-input"
+            type="text"
+            placeholder="Ask a question..."
+            class="flex-1 px-3 py-2 rounded border dark:bg-gray-800
+                    dark:border-gray-600 focus:outline-none" />
+      <button id="pb-chat-send"
+              class="bg-black text-white px-4 rounded">
+        Send
+      </button>
+    </div>
+  </div>
+
 </footer>
 
 <!-- Footer link utility -->

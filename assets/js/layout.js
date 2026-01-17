@@ -372,7 +372,7 @@ async function loadContactForm() {
 }
 
 function initChatBot() {
-  const CHAT_API = "http://203.57.85.11:8000/chat";
+  const CHAT_API = "/api/chat";
 
   const toggleBtn = document.getElementById("pb-chat-toggle");
   const chatBox = document.getElementById("pb-chatbox");

@@ -372,6 +372,8 @@ async function loadContactForm() {
 }
 
 function initChatBot() {
+  const CHAT_API = "http://203.57.85.11:8000/chat";
+
   const toggleBtn = document.getElementById("pb-chat-toggle");
   const chatBox = document.getElementById("pb-chatbox");
   const sendBtn = document.getElementById("pb-chat-send");
@@ -421,3 +423,4 @@ function initChatBot() {
     messages.scrollTop = messages.scrollHeight;
   }
 }
+

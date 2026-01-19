@@ -302,13 +302,13 @@ function initContactPopup() {
 
   // ESC KEY CLOSE  ✅ ADD THIS HERE
   document.addEventListener("keydown", (e) => {
-    if (e.key === "Escape" && !modal.classList.contains("hidden")) {
-      modal.classList.add("hidden");
-      document.body.style.overflow = "auto";
-      container.innerHTML = "";
+    if (e.key === "Escape") {
+      const workshopModalEl = document.getElementById("workshop-modal");
+      if (!workshopModalEl.classList.contains("hidden")) {
+        workshopModal("close");
+      }
     }
   });
-}
 
 
 

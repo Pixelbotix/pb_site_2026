@@ -371,15 +371,17 @@ async function loadContactForm() {
 }
 
 
+// Workshop registration
 function workshopModal(action, type) {
   const modal = document.getElementById("workshop-modal");
   const container = document.getElementById("workshop-modal-content");
 
   if (!modal || !container) return;
 
+  // ---------- OPEN ----------
   if (action === "open") {
-    modal.classList.remove("hidden");
     document.body.style.overflow = "hidden";
+    modal.classList.remove("hidden");
 
     const file =
       type === "group"
@@ -387,12 +389,22 @@ function workshopModal(action, type) {
         : "/pb_site_2026/partials/workshop-single-form.html";
 
     fetch(file, { cache: "no-cache" })
-      .then(res => res.text())
+      .then(res => {
+        if (!res.ok) throw new Error("Form load failed");
+        return res.text();
+      })
       .then(html => {
         container.innerHTML = html;
+      })
+      .catch(() => {
+        container.innerHTML =
+          "<p class='text-red-600'>Unable to load form.</p>";
       });
+
+    return;
   }
 
+  // ---------- CLOSE ----------
   if (action === "close") {
     modal.classList.add("hidden");
     document.body.style.overflow = "auto";
@@ -400,8 +412,7 @@ function workshopModal(action, type) {
   }
 }
 
-
-// ---------------- WORKSHOP MODAL CLOSE HANDLERS ----------------
+// ---------------- WORKSHOP MODAL CLOSE (GLOBAL HANDLERS) ----------------
 document.addEventListener("click", (e) => {
   if (e.target.id === "workshop-modal-close") {
     workshopModal("close");

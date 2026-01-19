@@ -22,23 +22,33 @@ body {
 
 
 :root {
-  --color-primary: #2563eb; /* blue-600 */
+  --color-primary: #2563eb;   /* blue-600 */
+  --color-secondary: #16a34a; /* green-600 */
 }
 
 .bg-primary {
   background-color: var(--color-primary);
 }
 
+.bg-secondary {
+  background-color: var(--color-secondary);
+}
+
 .text-primary {
   color: var(--color-primary);
 }
 
+.text-secondary {
+  color: var(--color-secondary);
+}
+
+/* Dark mode consistency */
 .dark .bg-primary {
   background-color: #3b82f6; /* blue-500 */
 }
 
-.dark .shadow-lg {
-  box-shadow: 0 12px 30px rgba(0,0,0,0.6);
+.dark .bg-secondary {
+  background-color: #22c55e; /* green-500 */
 }
 
 

@@ -103,28 +103,24 @@
                 <!-- Buttons -->
                 <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
 
-                    <!-- Apply Now -->
-                    <a href="https://forms.gle/QNNtczVbtp8pqVky8"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    class="w-full sm:w-auto">
-                        <button
-                            class="w-full sm:w-auto px-8 py-4 bg-primary text-white text-lg font-semibold rounded-lg hover:bg-opacity-90 transition flex items-center justify-center gap-2">
-                            <i class="ri-arrow-right-line"></i>
-                            Apply Now
-                        </button>
-                    </a>
+                <button
+                onclick="workshopModal('open','single')"
+                class="w-full sm:w-auto px-8 py-4 bg-primary text-white text-lg font-semibold rounded-lg hover:bg-opacity-90 transition flex items-center justify-center gap-2">
+                <i class="ri-arrow-right-line"></i>
+                Enroll Now
+                </button>
 
-                    <!-- Check Discount -->
-                    <a href="#group-discount" class="w-full sm:w-auto">
-                        <button
-                            class="w-full sm:w-auto px-8 py-4 bg-secondary text-white text-lg font-semibold rounded-lg hover:bg-opacity-90 transition flex items-center justify-center gap-2">
-                            <i class="ri-discount-percent-line"></i>
-                            Check Discount
-                        </button>
-                    </a>
+           
+                <button
+                onclick="workshopModal('open','group')"
+                class="w-full sm:w-auto px-8 py-4 bg-secondary text-white text-lg font-semibold rounded-lg hover:bg-opacity-90 transition flex items-center justify-center gap-2">
+                <i class="ri-discount-percent-line"></i>
+                Group of 5 Discount
+                </button>
+
 
                 </div>
+
 
             </div>
 
@@ -983,7 +979,7 @@
     </div>
 </section>
 
-
+    <!-- Reviews -->
     <section id="reviews" class="py-20 bg-gray-50">
         <div class="max-w-7xl mx-auto px-4">
             <div class="text-center mb-16">
@@ -1054,123 +1050,96 @@
         </div>
     </section>
 
+   
 
+<!-- ================= PRICING & ENROLLMENT ================= -->
+<section id="pricing" class="relative py-20 bg-gray-50">
+  <div class="max-w-7xl mx-auto px-4">
 
-<section id="group-discount" class="py-20 bg-white">
-    <div class="max-w-7xl mx-auto px-4">
-        
-        <!-- Heading -->
-        <div class="text-center mb-12">
-            <h2 class="text-4xl font-bold text-gray-900 mb-4">Group Discount Section</h2>
-            <p class="text-xl text-gray-600">Exclusive Student Offers</p>
-        </div>
-
-        <!-- Responsive Grid -->
-        <div class="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-4 lg:gap-6">
-
-            <!-- Card 1 -->
-            <div class="bg-gradient-to-br from-blue-50 to-indigo-50 rounded-xl p-4 lg:p-6 text-center border border-blue-100 shadow-sm hover:shadow-lg transition-shadow">
-                <div class="text-2xl lg:text-3xl font-bold text-primary mb-1">10% OFF</div>
-                <div class="text-base lg:text-lg font-semibold text-gray-900 mb-1">Group of 5</div>
-                <div class="text-gray-600 text-sm lg:text-base mb-3">₹800/student</div>
-
-                <a href="https://wa.me/917200445335?text=Hi%2C%20I%27m%20interested%20in%20the%20Group%20of%205%20discount%20(10%25%20OFF)."
-                   target="_blank"
-                   class="inline-block bg-green-500 text-white text-sm lg:text-base px-3 py-2 rounded-lg font-semibold hover:bg-green-600 transition">
-                    WhatsApp
-                </a>
-            </div>
-
-            <!-- Card 2 -->
-            <div class="bg-gradient-to-br from-green-50 to-emerald-50 rounded-xl p-4 lg:p-6 text-center border border-green-100 shadow-sm hover:shadow-lg transition-shadow">
-                <div class="text-2xl lg:text-3xl font-bold text-primary mb-1">15% OFF</div>
-                <div class="text-base lg:text-lg font-semibold text-gray-900 mb-1">Group of 10</div>
-                <div class="text-gray-600 text-sm lg:text-base mb-3">₹1200/student</div>
-
-                <a href="https://wa.me/917200445335?text=Hi%2C%20I%27m%20interested%20in%20the%20Group%20of%2010%20discount%20(15%25%20OFF)."
-                   target="_blank"
-                   class="inline-block bg-green-500 text-white text-sm lg:text-base px-3 py-2 rounded-lg font-semibold hover:bg-green-600 transition">
-                    WhatsApp
-                </a>
-            </div>
-
-            <!-- Card 3 -->
-            <div class="bg-gradient-to-br from-orange-50 to-red-50 rounded-xl p-4 lg:p-6 text-center border border-orange-100 shadow-sm hover:shadow-lg transition-shadow">
-                <div class="text-2xl lg:text-3xl font-bold text-primary mb-1">20% OFF</div>
-                <div class="text-base lg:text-lg font-semibold text-gray-900 mb-1">Group of 15</div>
-                <div class="text-gray-600 text-sm lg:text-base mb-3">₹1600/student</div>
-
-                <a href="https://wa.me/917200445335?text=Hi%2C%20I%27m%20interested%20in%20the%20Group%20of%2015%20discount%20(20%25%20OFF)."
-                   target="_blank"
-                   class="inline-block bg-green-500 text-white text-sm lg:text-base px-3 py-2 rounded-lg font-semibold hover:bg-green-600 transition">
-                    WhatsApp
-                </a>
-            </div>
-
-            <!-- Card 4 -->
-            <div class="bg-gradient-to-br from-purple-50 to-pink-50 rounded-xl p-4 lg:p-6 text-center border border-purple-100 shadow-sm hover:shadow-lg transition-shadow">
-                <div class="text-2xl lg:text-3xl font-bold text-primary mb-1">25% OFF</div>
-                <div class="text-base lg:text-lg font-semibold text-gray-900 mb-1">Group of 20</div>
-                <div class="text-gray-600 text-sm lg:text-base mb-3">₹2000/student</div>
-
-                <a href="https://wa.me/917200445335?text=Hi%2C%20I%27m%20interested%20in%20the%20Group%20of%2020%20discount%20(25%25%20OFF)."
-                   target="_blank"
-                   class="inline-block bg-green-500 text-white text-sm lg:text-base px-3 py-2 rounded-lg font-semibold hover:bg-green-600 transition">
-                    WhatsApp
-                </a>
-            </div>
-
-        </div>
-
-        <!-- Footer -->
-        <div class="text-center mt-6">
-            <p class="text-base lg:text-lg text-gray-700 font-semibold">
-                Bring your classmates — Learn Together, Save Together.
-            </p>
-        </div>
+    <!-- Heading -->
+    <div class="text-center mb-16">
+      <h2 class="text-4xl font-bold text-gray-900 mb-4">Pricing</h2>
+      <p class="text-xl text-gray-600">
+        One-Time Payment • Lifetime Access to Materials
+      </p>
     </div>
+
+    <!-- Pricing Cards -->
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+
+      <!-- SINGLE ENROLLMENT -->
+      <div class="bg-white rounded-2xl shadow-lg p-8 border-2 border-blue-600 flex flex-col justify-between">
+
+        <div>
+          <h3 class="text-2xl font-bold text-gray-900 mb-4 text-center">
+            Single Enrollment
+          </h3>
+
+          <div class="text-center mb-6">
+            <div class="text-5xl font-bold text-blue-600 mb-2">₹1,799</div>
+            <div class="text-xl text-gray-500 line-through mb-2">₹2,599</div>
+            <span class="inline-block bg-red-100 text-red-600 px-3 py-1 rounded-full text-sm font-semibold">
+              Limited Time Offer
+            </span>
+          </div>
+
+          <ul class="text-gray-700 space-y-2 mb-8 text-sm">
+            <li>• Individual access</li>
+            <li>• Lifetime workshop material</li>
+            <li>• Certificate of completion</li>
+          </ul>
+        </div>
+
+        <button
+          type="button"
+          onclick="workshopModal('open','single')"
+          class="w-full px-6 py-3 bg-blue-600 hover:bg-blue-700 text-white font-semibold rounded-lg">
+          Enroll @ Offer Price
+        </button>
+
+
+      </div>
+
+      <!-- GROUP OF 5 -->
+      <div class="bg-white rounded-2xl shadow-lg p-8 border-2 border-emerald-600 flex flex-col justify-between">
+
+        <div>
+          <h3 class="text-2xl font-bold text-gray-900 mb-4 text-center">
+            Group of 5 Enrollment
+          </h3>
+
+          <div class="text-center mb-6">
+            <div class="text-5xl font-bold text-emerald-600 mb-1">₹1,599</div>
+            <div class="text-sm text-gray-600 mb-2">per person</div>
+            <span class="inline-block bg-green-100 text-green-700 px-3 py-1 rounded-full text-sm font-semibold">
+              Group Discount
+            </span>
+          </div>
+
+          <ul class="text-gray-700 space-y-2 mb-8 text-sm">
+            <li>• 5 participants together</li>
+            <li>• Discounted pricing</li>
+            <li>• Ideal for students & teams</li>
+          </ul>
+        </div>
+
+        <button
+          type="button"
+          onclick="workshopModal('open','group')"
+          class="w-full px-6 py-3 bg-emerald-600 hover:bg-emerald-700 text-white font-semibold rounded-lg">
+          Enroll Group of 5
+        </button>
+      </div>
+
+    </div>
+  </div>
 </section>
 
 
 
-    <section class="py-20 bg-gray-50">
-        <div class="max-w-7xl mx-auto px-4">
-            <div class="text-center mb-16">
-                <h2 class="text-4xl font-bold text-gray-900 mb-4">Pricing</h2>
-                <p class="text-xl text-gray-600">One-Time Payment • Lifetime Access to Materials</p>
-            </div>
-            <div class="max-w-md mx-auto bg-white rounded-2xl shadow-lg p-8 text-center border-2 border-primary">
-                <div class="mb-6">
-                    <div class="text-5xl font-bold text-primary mb-2">₹7,999</div>
-                    <div class="text-xl text-gray-500 line-through mb-2">₹9,999</div>
-                    <div class="inline-block bg-red-100 text-red-600 px-3 py-1 rounded-full text-sm font-semibold">20%
-                        OFF Launch Offer</div>
-                </div>
-                <div class="space-y-4 mb-8">
-                    <a href="https://forms.gle/QNNtczVbtp8pqVky8" target="_blank" rel="noopener noreferrer">
-                    <button
-                        class="w-full px-8 py-4 bg-primary text-white text-lg font-semibold !rounded-button hover:bg-opacity-90 transition-colors whitespace-nowrap flex items-center justify-center gap-2">
-                        <i class="ri-arrow-right-line"></i>
-                        Enroll Now
-                    </button>
-                    </a>
-                    <a href="#group-discount">
-                    <button
-                        class="w-full px-8 py-4 bg-secondary text-white text-lg font-semibold !rounded-button hover:bg-opacity-90 transition-colors whitespace-nowrap flex items-center justify-center gap-2">
-                        <i class="ri-discount-percent-line"></i>
-                        Check Group Discounts
-                    </button>
-                    </a>
 
-                </div>
-                <div class="mb-6">
-                    <img src="https://readdy.ai/api/search-image?query=ROS%20robots%20and%20mobile%20navigation%20systems%20in%20action%2C%20autonomous%20mobile%20robots%20with%20pricing%20and%20enrollment%20benefits%2C%20robotics%20education%20value%20proposition&width=400&height=200&seq=pricing-robots&orientation=landscape"
-                        alt="ROS Robots" class="w-full h-32 object-cover object-top rounded-lg">
-                </div>
-            </div>
-        </div>
-    </section>
-    
+
+    <!-- faq  -->
     <section id="faqs" class="py-20 bg-white">
         <div class="max-w-4xl mx-auto px-4">
             <div class="text-center mb-16">
@@ -1223,48 +1192,30 @@
 
 
 
-    <!-- ================= CTA ================= -->
-    <section class="py-24 bg-primary text-white">
-      <div class="max-w-6xl mx-auto px-6 text-center">
-        <h2 class="text-4xl font-bold mb-6">
-          Build Real ROS 2 Systems
-        </h2>
-        <p class="text-xl mb-10">
-          Not tutorials. Not toy bots. Deployed robotics systems.
-        </p>
-        <a href="#"
-            data-contact
-            data-source="ros-2 page"
-            data-title="Get in Touch with PixelBotix"
-           class="inline-flex items-center justify-center bg-white text-primary px-10 py-4 rounded-2xl font-semibold">
-          Start a Collaboration
-        </a>
-      </div>
-    </section>
 
   </main>
 
   <!-- FOOTER -->
   <div id="site-footer"></div>
 
-  <script src="/pb_site_2026/assets/js/layout.js"></script>
-<!-- Script for YOutube -->
-<script>
-    document.getElementById("play-button").addEventListener("click", function () {
-        const container = document.getElementById("video-container");
 
-        container.innerHTML = `
-            <iframe 
-                class="w-full h-full"
-                src="https://www.youtube.com/embed/hi0jIaFB2ZE?autoplay=1&mute=1&rel=0"
-                title="Program Walkthrough Video"
-                frameborder="0"
-                allow="autoplay; encrypted-media"
-                allowfullscreen
-            ></iframe>
-        `;
-    });
-</script>
+    <!-- Script for YOutube -->
+    <script>
+        document.getElementById("play-button").addEventListener("click", function () {
+            const container = document.getElementById("video-container");
+
+            container.innerHTML = `
+                <iframe 
+                    class="w-full h-full"
+                    src="https://www.youtube.com/embed/hi0jIaFB2ZE?autoplay=1&mute=1&rel=0"
+                    title="Program Walkthrough Video"
+                    frameborder="0"
+                    allow="autoplay; encrypted-media"
+                    allowfullscreen
+                ></iframe>
+            `;
+        });
+    </script>
 
     <script id="faq-functionality">
         document.addEventListener('DOMContentLoaded', function () {
@@ -1283,6 +1234,24 @@
             });
         });
     </script>
+
+
+
+
+<!-- WORKSHOP ENROLLMENT MODAL -->
+<div id="workshop-modal"
+     class="fixed inset-0 bg-black/60 hidden z-50 flex items-center justify-center">
+
+  <div class="bg-white rounded-xl w-full max-w-3xl p-6 relative">
+    <button id="workshop-modal-close"
+            class="absolute top-3 right-4 text-xl">&times;</button>
+
+    <div id="workshop-modal-content"></div>
+  </div>
+</div>
+
+<!-- THEN load JS -->
+  <script src="/pb_site_2026/assets/js/layout.js"></script>
 
 </body>
 </html>

@@ -207,7 +207,6 @@ async function initLayout() {
     initAcademicClients(); 
     initContactPopup();
     loadContactForm();
-    initChatBot();
   });
 }
 
@@ -371,56 +370,46 @@ async function loadContactForm() {
   bindContactForm(container, "Contact Page");
 }
 
-function initChatBot() {
-  const CHAT_API = "http://203.57.85.11:8000/chat";
 
-  const toggleBtn = document.getElementById("pb-chat-toggle");
-  const chatBox = document.getElementById("pb-chatbox");
-  const sendBtn = document.getElementById("pb-chat-send");
-  const input = document.getElementById("pb-chat-input");
-  const messages = document.getElementById("pb-chat-messages");
+function workshopModal(action, type) {
+  const modal = document.getElementById("workshop-modal");
+  const container = document.getElementById("workshop-modal-content");
 
-  if (!toggleBtn || !chatBox || !sendBtn || !input || !messages) return;
+  if (!modal || !container) return;
 
-  toggleBtn.onclick = () => chatBox.classList.toggle("hidden");
+  if (action === "open") {
+    modal.classList.remove("hidden");
+    document.body.style.overflow = "hidden";
 
-  sendBtn.onclick = sendMessage;
-  input.addEventListener("keydown", e => {
-    if (e.key === "Enter") sendMessage();
-  });
+    const file =
+      type === "group"
+        ? "/pb_site_2026/partials/workshop-group-form.html"
+        : "/pb_site_2026/partials/workshop-single-form.html";
 
-  async function sendMessage() {
-    const question = input.value.trim();
-    if (!question) return;
-
-    addMessage(question, "user");
-    input.value = "";
-
-    addMessage("Thinking...", "bot");
-
-    try {
-      const res = await fetch(CHAT_API, {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ question })
+    fetch(file, { cache: "no-cache" })
+      .then(res => res.text())
+      .then(html => {
+        container.innerHTML = html;
       });
-
-      const data = await res.json();
-      messages.lastChild.textContent = data.answer;
-    } catch {
-      messages.lastChild.textContent = "Assistant unavailable.";
-    }
   }
 
-  function addMessage(text, from = "bot") {
-    const div = document.createElement("div");
-    div.className =
-      from === "user"
-        ? "text-right text-black dark:text-white"
-        : "text-left text-gray-700 dark:text-gray-300";
-    div.textContent = text;
-    messages.appendChild(div);
-    messages.scrollTop = messages.scrollHeight;
+  if (action === "close") {
+    modal.classList.add("hidden");
+    document.body.style.overflow = "auto";
+    container.innerHTML = "";
   }
 }
 
+
+// ---------------- WORKSHOP MODAL CLOSE HANDLERS ----------------
+document.addEventListener("click", (e) => {
+  if (e.target.id === "workshop-modal-close") {
+    workshopModal("close");
+  }
+});
+
+document.addEventListener("keydown", (e) => {
+  if (e.key === "Escape") {
+    workshopModal("close");
+  }
+});

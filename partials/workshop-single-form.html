@@ -1,0 +1,64 @@
+<!-- partials/workshop-single-form.html -->
+<form id="workshopSingleForm" class="space-y-6">
+
+  <input type="hidden" name="workshop_code" value="ROS2_3D">
+  <input type="hidden" name="price_type" value="OFFER">
+  <input type="hidden" name="group_size" value="1">
+
+  <h3 class="text-2xl font-bold text-gray-900">
+    Workshop Enrollment – Single Participant
+  </h3>
+
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+
+    <input name="name" required
+      placeholder="Full Name *"
+      class="px-4 py-3 border rounded-lg">
+
+    <select name="designation" required
+      class="px-4 py-3 border rounded-lg">
+      <option value="">Participant Designation *</option>
+      <option value="STUDENT">Student</option>
+      <option value="RESEARCH">Research Scholar</option>
+      <option value="FACULTY">Faculty</option>
+      <option value="INDUSTRY">Industry Person</option>
+      <option value="OTHER">Other</option>
+    </select>
+
+    <input name="college_name" required
+      placeholder="College Name *"
+      class="px-4 py-3 border rounded-lg">
+
+    <input name="department" required
+      placeholder="Department *"
+      class="px-4 py-3 border rounded-lg">
+
+    <select name="current_year"
+      class="px-4 py-3 border rounded-lg">
+      <option value="">Current Year (Students only)</option>
+      <option value="1">1st</option>
+      <option value="2">2nd</option>
+      <option value="3">3rd</option>
+      <option value="4">4th</option>
+      <option value="OTHER">Other</option>
+    </select>
+
+    <input name="mobile" required
+      placeholder="Mobile Number *"
+      class="px-4 py-3 border rounded-lg">
+
+    <input type="email" name="email" required
+      placeholder="Email ID *"
+      class="px-4 py-3 border rounded-lg">
+
+    <input type="date" name="date_of_birth" required
+      class="px-4 py-3 border rounded-lg">
+
+  </div>
+
+  <button type="submit"
+    class="w-full bg-blue-600 hover:bg-blue-700 text-white py-3 rounded-lg font-semibold">
+    Proceed to Payment
+  </button>
+
+</form>

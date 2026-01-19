@@ -310,7 +310,7 @@ function initContactPopup() {
     }
   });
 
-
+}
 
 
 

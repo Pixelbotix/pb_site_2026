@@ -372,13 +372,16 @@ async function loadContactForm() {
 }
 
 function initChatBot() {
-  const CHAT_API = "/api/chat";
+  let chatToken = null;
+
+  const CHAT_LOGIN = "/api/chat/login/";
+  const CHAT_ASK   = "/api/chat/ask/";
 
   const toggleBtn = document.getElementById("pb-chat-toggle");
-  const chatBox = document.getElementById("pb-chatbox");
-  const sendBtn = document.getElementById("pb-chat-send");
-  const input = document.getElementById("pb-chat-input");
-  const messages = document.getElementById("pb-chat-messages");
+  const chatBox   = document.getElementById("pb-chatbox");
+  const sendBtn   = document.getElementById("pb-chat-send");
+  const input     = document.getElementById("pb-chat-input");
+  const messages  = document.getElementById("pb-chat-messages");
 
   if (!toggleBtn || !chatBox || !sendBtn || !input || !messages) return;
 
@@ -389,6 +392,24 @@ function initChatBot() {
     if (e.key === "Enter") sendMessage();
   });
 
+  async function loginIfNeeded() {
+    if (chatToken) return;
+
+    const res = await fetch(CHAT_LOGIN, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        username: "pixelbotix",
+        password: "pb_chat_2026"
+      })
+    });
+
+    if (!res.ok) throw new Error("Login failed");
+
+    const data = await res.json();
+    chatToken = data.token;
+  }
+
   async function sendMessage() {
     const question = input.value.trim();
     if (!question) return;
@@ -396,19 +417,26 @@ function initChatBot() {
     addMessage(question, "user");
     input.value = "";
 
-    addMessage("Thinking...", "bot");
+    const thinkingEl = addMessage("Thinking...", "bot");
 
     try {
-      const res = await fetch(CHAT_API, {
+      await loginIfNeeded();
+
+      const res = await fetch(CHAT_ASK, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ question })
+        body: JSON.stringify({
+          token: chatToken,
+          question: question
+        })
       });
 
+      if (!res.ok) throw new Error();
+
       const data = await res.json();
-      messages.lastChild.textContent = data.answer;
+      thinkingEl.textContent = data.answer;
     } catch {
-      messages.lastChild.textContent = "Assistant unavailable.";
+      thinkingEl.textContent = "Assistant unavailable.";
     }
   }
 
@@ -421,6 +449,7 @@ function initChatBot() {
     div.textContent = text;
     messages.appendChild(div);
     messages.scrollTop = messages.scrollHeight;
+    return div;
   }
 }
 

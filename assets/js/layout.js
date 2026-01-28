@@ -371,11 +371,14 @@ async function loadContactForm() {
   bindContactForm(container, "Contact Page");
 }
 
+
 function initChatBot() {
   let chatToken = null;
 
-  const CHAT_LOGIN = "/api/chat/login/";
-  const CHAT_ASK   = "/api/chat/ask/";
+  // 🔒 ABSOLUTE BACKEND ORIGIN (CRITICAL FIX)
+  const API_BASE  = "https://shop.pixelbotix.com/api/chat";
+  const CHAT_LOGIN = `${API_BASE}/login/`;
+  const CHAT_ASK   = `${API_BASE}/ask/`;
 
   const toggleBtn = document.getElementById("pb-chat-toggle");
   const chatBox   = document.getElementById("pb-chatbox");

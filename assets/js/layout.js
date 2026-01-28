@@ -373,12 +373,11 @@ async function loadContactForm() {
 
 
 function initChatBot() {
-  let chatToken = null;
-
-  // 🔒 ABSOLUTE BACKEND ORIGIN (CRITICAL FIX)
-  const API_BASE  = "https://shop.pixelbotix.com/api/chat";
+  const API_BASE   = "https://shop.pixelbotix.com/api/chat";
   const CHAT_LOGIN = `${API_BASE}/login/`;
   const CHAT_ASK   = `${API_BASE}/ask/`;
+
+  let chatToken = sessionStorage.getItem("pb_chat_token");
 
   const toggleBtn = document.getElementById("pb-chat-toggle");
   const chatBox   = document.getElementById("pb-chatbox");
@@ -386,45 +385,72 @@ function initChatBot() {
   const input     = document.getElementById("pb-chat-input");
   const messages  = document.getElementById("pb-chat-messages");
 
-  if (!toggleBtn || !chatBox || !sendBtn || !input || !messages) return;
+  /* LOGIN OVERLAY ELEMENTS (must exist in footer) */
+  const loginOverlay = document.getElementById("pb-chat-login");
+  const loginBtn     = document.getElementById("pb-chat-login-btn");
+  const userInput    = document.getElementById("pb-chat-username");
+  const passInput    = document.getElementById("pb-chat-password");
+  const loginError   = document.getElementById("pb-chat-login-error");
 
-  toggleBtn.onclick = () => chatBox.classList.toggle("hidden");
+  if (!toggleBtn || !chatBox || !loginOverlay) return;
 
+  toggleBtn.onclick = () => {
+    chatBox.classList.toggle("hidden");
+    if (!chatToken) loginOverlay.classList.remove("hidden");
+  };
+
+  loginBtn.onclick = login;
   sendBtn.onclick = sendMessage;
+
   input.addEventListener("keydown", e => {
     if (e.key === "Enter") sendMessage();
   });
 
-  async function loginIfNeeded() {
-    if (chatToken) return;
+  async function login() {
+    loginError.textContent = "";
 
-    const res = await fetch(CHAT_LOGIN, {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({
-        username: "pixelbotix",
-        password: "pb_chat_2026"
-      })
-    });
+    const username = userInput.value.trim();
+    const password = passInput.value.trim();
 
-    if (!res.ok) throw new Error("Login failed");
+    if (!username || !password) {
+      loginError.textContent = "Username and password required";
+      return;
+    }
 
-    const data = await res.json();
-    chatToken = data.token;
+    try {
+      const res = await fetch(CHAT_LOGIN, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ username, password })
+      });
+
+      if (!res.ok) throw new Error();
+
+      const data = await res.json();
+      chatToken = data.token;
+      sessionStorage.setItem("pb_chat_token", chatToken);
+
+      loginOverlay.classList.add("hidden");
+    } catch {
+      loginError.textContent = "Invalid credentials";
+    }
   }
 
   async function sendMessage() {
+    if (!chatToken) {
+      loginOverlay.classList.remove("hidden");
+      return;
+    }
+
     const question = input.value.trim();
     if (!question) return;
 
     addMessage(question, "user");
     input.value = "";
 
-    const thinkingEl = addMessage("Thinking...", "bot");
+    const thinkingEl = addMessage("Thinking…", "bot");
 
     try {
-      await loginIfNeeded();
-
       const res = await fetch(CHAT_ASK, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
@@ -443,7 +469,7 @@ function initChatBot() {
     }
   }
 
-  function addMessage(text, from = "bot") {
+  function addMessage(text, from) {
     const div = document.createElement("div");
     div.className =
       from === "user"
@@ -455,4 +481,3 @@ function initChatBot() {
     return div;
   }
 }
-

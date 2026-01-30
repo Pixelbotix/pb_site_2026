@@ -481,3 +481,11 @@ function initChatBot() {
     return div;
   }
 }
+
+
+// ros 2 js
+
+function registerNow() {
+  // Replace with payment or form URL
+  window.location.href = "https://shop.pixelbotix.com";
+}

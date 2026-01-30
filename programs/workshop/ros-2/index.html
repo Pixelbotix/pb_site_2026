@@ -32,62 +32,73 @@
     <!-- ================= HERO WITH VIDEO BG ================= -->
     <section class="relative min-h-[90vh] overflow-hidden text-white">
 
-      <!-- Desktop self-hosted video -->
+      <!-- DESKTOP VIDEO BG -->
       <video
-        class="absolute inset-0 w-full h-full object-cover -z-10 brightness-110 contrast-105 hidden md:block"
+        class="absolute inset-0 w-full h-full object-cover hidden md:block
+              brightness-110 contrast-105 -z-10"
         src="/pb_site_2026/assets/videos/amr-platforms.mp4"
-        autoplay
-        muted
-        loop
-        playsinline
-      ></video>
+        autoplay muted loop playsinline>
+      </video>
 
-      <!-- Mobile YouTube autoplay -->
-      <iframe
-        class="absolute inset-0 w-full h-full -z-10 md:hidden"
-        src="https://www.youtube.com/embed/KWB3XPf3XNA?autoplay=1&mute=1&loop=1&playlist=KWB3XPf3XNA&controls=0&modestbranding=1&rel=0&iv_load_policy=3"
-        allow="autoplay; encrypted-media"
-        frameborder="0"
-      ></iframe>
+      <!-- OVERLAY (DESKTOP ONLY) -->
+      <div class="absolute inset-0 hidden md:block
+                  bg-gradient-to-r from-black/55 via-black/35 to-black/10"></div>
 
-      <!-- Dark Overlay -->
-      <div class="absolute inset-0 bg-gradient-to-b from-black/40 via-black/30 to-black/50"></div>
+      <!-- CONTENT -->
+      <div class="relative z-10 min-h-[90vh] flex flex-col md:flex-row">
 
-      <!-- Content -->
-      <div class="relative z-10 h-full flex items-center">
-        <div class="max-w-5xl mx-auto px-6 text-center">
-          <h1 class="text-5xl font-bold mb-4">
-            Master ROS2 & Autonomous Mobile Robot Navigation
-          </h1>
+        <!-- TEXT BLOCK -->
+        <div class="flex-1 flex items-center
+                    px-6 md:px-16
+                    pt-24 md:pt-0">
 
-          <p class="text-xl text-white/90 mb-8">
-            3-Day Hands-On ROS2 Workshop
-          </p>
+          <div class="max-w-xl text-left">
 
-          <div class="flex flex-wrap justify-center gap-6 text-lg mb-10">
-            <span class="flex items-center gap-2">
-              <i class="ri-calendar-line"></i> 12 Feb 2026
-            </span>
-            <span class="flex items-center gap-2">
-              <i class="ri-map-pin-line"></i> Chennai (Tambaram)
-            </span>
-            <span class="flex items-center gap-2">
-              <i class="ri-wallet-3-line"></i> ₹1599
-            </span>
+            <h1 class="text-4xl md:text-5xl font-bold mb-4">
+              Master ROS2 & Autonomous Mobile Robot Navigation
+            </h1>
+
+            <p class="text-lg md:text-xl text-white/90 mb-6">
+              3-Day Hands-On ROS2 Workshop
+            </p>
+
+            <div class="flex flex-wrap gap-4 text-base mb-6">
+              <span class="flex items-center gap-2">
+                <i class="ri-calendar-line"></i> 12 Feb 2026
+              </span>
+              <span class="flex items-center gap-2">
+                <i class="ri-map-pin-line"></i> Chennai (Tambaram)
+              </span>
+              <span class="flex items-center gap-2">
+                <i class="ri-wallet-3-line"></i> ₹1599
+              </span>
+            </div>
+
+            <p class="font-semibold mb-8">
+              Limited Seats • Real Robots • Industry-Grade Training
+            </p>
+
+            <button
+              onclick="registerNow()"
+              class="bg-white text-blue-700 px-10 py-4 rounded-2xl font-semibold text-lg">
+              Register Now
+            </button>
+
           </div>
-
-          <p class="font-semibold mb-10">
-            Limited Seats • Real Robots • Real Learning & Training
-          </p>
-
-          <button onclick="registerNow()"
-                  class="bg-white text-blue-700 px-10 py-4 rounded-2xl font-semibold text-lg">
-            Register Now
-          </button>
         </div>
-      </div>
 
+        <!-- MOBILE VIDEO (BOTTOM, SQUARE) -->
+        <div class="md:hidden w-full aspect-square mt-auto">
+          <video
+            class="w-full h-full object-cover"
+            src="/pb_site_2026/assets/videos/amr-platforms.mp4"
+            autoplay muted loop playsinline>
+          </video>
+        </div>
+
+      </div>
     </section>
+
 
 
 

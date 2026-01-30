@@ -1,559 +1,156 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <script type="text/javascript" crossorigin="anonymous" async="" src="js/array.js"></script>
-    <script src="js/e.js"></script>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Careers at Pixelbotix</title>
-    <script src="https://cdn.tailwindcss.com/3.4.16"></script>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
-    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
-    <link href="css/remixicon.min.css" rel="stylesheet">
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        primary: '#3b82f6',
-                        secondary: '#8b5cf6'
-                    },
-                    borderRadius: {
-                        'none': '0px',
-                        'sm': '4px',
-                        DEFAULT: '8px',
-                        'md': '12px',
-                        'lg': '16px',
-                        'xl': '20px',
-                        '2xl': '24px',
-                        '3xl': '32px',
-                        'full': '9999px',
-                        'button': '8px'
-                    }
-                }
-            },
-            darkMode: 'class'
-        }
-    </script>
-    <style>
-        :where([class^="ri-"])::before {
-            content: "\f3c2";
-        }
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-        .gradient-bg {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-        }
+  <title>Careers | PixelBotix Technologies</title>
+  <meta name="description"
+        content="Careers at PixelBotix Technologies. We are hiring AI Robotics Trainers and Accountants." />
 
-        .glass-effect {
-            backdrop-filter: blur(10px);
-            background: rgba(255, 255, 255, 0.1);
-            border: 1px solid rgba(255, 255, 255, 0.2);
-        }
+  <!-- Tailwind -->
+  <script src="https://cdn.tailwindcss.com/3.4.16"></script>
+  <script>
+    tailwind.config = { darkMode: 'class' }
+  </script>
 
-        .dark .glass-effect {
-            background: rgba(0, 0, 0, 0.3);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-        }
+  <!-- Icons -->
+  <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css">
 
-        .hero-bg {
-            background-image: url('https://readdy.ai/api/search-image?query=Professional%20Indian%20robotics%20engineers%20and%20researchers%20working%20in%20modern%20laboratory%20wearing%20white%20lab%20coats%20and%20safety%20glasses%2C%20diverse%20team%20of%20Indian%20professionals%20both%20men%20and%20women%20focused%20on%20robotics%20research%20and%20development%2C%20some%20engineers%20operating%203D%20printers%20and%20watching%20prototypes%20being%20printed%20while%20others%20assemble%20robotic%20components%20and%20circuit%20boards%2C%20realistic%20workplace%20scene%20with%20advanced%20robotics%20equipment%20workbenches%20and%20multiple%203D%20printing%20stations%2C%20contemporary%20high-tech%20research%20facility%20atmosphere%20with%20robotic%20arms%20humanoid%20robots%20and%20engineering%20tools%2C%20natural%20professional%20lighting%20in%20clean%20modern%20laboratory%20environment%2C%20engineers%20genuinely%20engaged%20in%20technical%20problem-solving%20and%20collaborative%20research%20work%2C%20white%20coated%20scientists%20working%20with%20cutting-edge%20technology%20and%20industrial%203D%20printing%20machines&width=1920&height=1080&seq=hero004&orientation=landscape');
-            background-size: cover;
-            background-position: center;
-            background-attachment: fixed;
-        }
-
-        .card-hover {
-            transition: all 0.3s ease;
-        }
-
-        .card-hover:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
-        }
-
-        .dark .card-hover:hover {
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
-        }
-
-        .toggle-switch {
-            position: relative;
-            width: 60px;
-            height: 30px;
-            background: #e5e7eb;
-            border-radius: 15px;
-            transition: all 0.3s ease;
-            cursor: pointer;
-        }
-
-        .toggle-switch.active {
-            background: #3b82f6;
-        }
-
-        .toggle-slider {
-            position: absolute;
-            top: 3px;
-            left: 3px;
-            width: 24px;
-            height: 24px;
-            background: white;
-            border-radius: 50%;
-            transition: all 0.3s ease;
-            display: flex;
-            align-items: center;
-            justify-center: center;
-            font-size: 12px;
-        }
-
-        .toggle-switch.active .toggle-slider {
-            transform: translateX(30px);
-        }
-
-        .fade-in {
-            opacity: 0;
-            transform: translateY(20px);
-            animation: fadeInUp 0.6s ease forwards;
-        }
-
-        @keyframes fadeInUp {
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        .stagger-1 {
-            animation-delay: 0.1s;
-        }
-
-        .stagger-2 {
-            animation-delay: 0.2s;
-        }
-
-        .stagger-3 {
-            animation-delay: 0.3s;
-        }
-
-        .custom-input {
-            background: rgba(255, 255, 255, 0.9);
-            border: 2px solid transparent;
-            transition: all 0.3s ease;
-        }
-
-        .custom-input:focus {
-            background: white;
-            border-color: #3b82f6;
-            box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
-        }
-
-        .dark .custom-input {
-            background: rgba(31, 41, 55, 0.9);
-            color: white;
-        }
-
-        .dark .custom-input:focus {
-            background: #374151;
-            border-color: #8b5cf6;
-            box-shadow: 0 0 0 3px rgba(139, 92, 246, 0.1);
-        }
-    </style>
+  <!-- Global Layout -->
+  <link rel="stylesheet" href="/pb_site_2026/assets/css/layout.css">
 </head>
 
-<body class="bg-gray-50 dark:bg-gray-900 transition-colors duration-300">
-    <!-- Header -->
-    <header class="fixed top-0 w-full z-50 glass-effect">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex items-center justify-between h-16">
-                <div class="flex items-center">
-                    <h1 class="text-2xl font-['Pacifico'] text-primary dark:text-secondary">Pixelbotix</h1>
-                </div>
-                <div class="flex items-center space-x-4">
-                    <nav class="hidden md:flex space-x-8">
-                        <a href="#careers"
-                            class="text-gray-700 dark:text-gray-300 hover:text-primary dark:hover:text-secondary transition-colors">Careers</a>
-                        <a href="#positions"
-                            class="text-gray-700 dark:text-gray-300 hover:text-primary dark:hover:text-secondary transition-colors">Open
-                            Positions</a>
-                        <a href="#contact"
-                            class="text-gray-700 dark:text-gray-300 hover:text-primary dark:hover:text-secondary transition-colors">Contact</a>
-                    </nav>
-                    <div class="toggle-switch" id="themeToggle">
-                        <div class="toggle-slider">
-                            <i class="ri-sun-line text-yellow-500"></i>
-                        </div>
-                    </div>
-                </div>
-            </div>
+<body class="bg-white dark:bg-gray-900 text-gray-900 dark:text-gray-100 transition-colors">
+
+  <!-- NAVBAR -->
+  <div id="site-navbar"></div>
+
+  <main>
+
+    <!-- ================= CAREERS HERO ================= -->
+    <section class="relative min-h-[80vh] overflow-hidden text-white">
+
+      <!-- Desktop Video -->
+      <video
+        class="absolute inset-0 w-full h-full object-cover -z-10 hidden md:block"
+        src="/pb_site_2026/assets/videos/careers.mp4"
+        autoplay
+        muted
+        loop
+        playsinline
+      ></video>
+
+      <!-- Mobile YouTube -->
+      <iframe
+        class="absolute inset-0 w-full h-full -z-10 md:hidden"
+        src="https://www.youtube.com/embed/KWB3XPf3XNA?autoplay=1&mute=1&loop=1&playlist=KWB3XPf3XNA&controls=0&modestbranding=1&rel=0"
+        allow="autoplay; encrypted-media"
+        frameborder="0"
+      ></iframe>
+
+      <!-- Overlay -->
+      <div class="absolute inset-0 bg-gradient-to-b from-emerald-900/60 via-emerald-800/40 to-black/70"></div>
+
+      <!-- Content -->
+      <div class="relative z-10 h-full flex items-center">
+        <div class="max-w-5xl mx-auto px-6 text-center">
+          <h1 class="text-5xl font-bold mb-4">
+            Careers at PixelBotix
+          </h1>
+
+          <p class="text-xl text-white/90 mb-6">
+            Build AI. Build Robots. Build the Future.
+          </p>
+
+          <p class="font-semibold">
+            We hire builders, not spectators.
+          </p>
         </div>
-    </header>
-    <!-- Hero Section -->
-    <section id="careers" class="hero-bg min-h-screen flex items-center relative">
-        <div class="absolute inset-0 bg-gradient-to-r from-blue-900/80 via-purple-900/60 to-transparent"></div>
-        <div class="relative w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="max-w-2xl">
-                <h1 class="text-5xl md:text-7xl font-bold text-white mb-6 fade-in">
-                    Careers at <span
-                        class="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-400">Pixelbotix</span>
-                </h1>
-                <p class="text-xl text-gray-200 mb-8 fade-in stagger-1">
-                    Join our innovative team and shape the future of robotics and technology education
-                </p>
-                <button onclick="scrollToSection('positions')"
-                    class="bg-gradient-to-r from-primary to-secondary text-white px-8 py-4 !rounded-button text-lg font-semibold hover:shadow-lg transform hover:scale-105 transition-all duration-300 fade-in stagger-2 whitespace-nowrap">
-                    <i class="ri-briefcase-line mr-2"></i>
-                    View Open Roles
-                </button>
-            </div>
-        </div>
+      </div>
     </section>
-    <!-- Company Introduction -->
-    <section class="py-20 bg-white dark:bg-gray-800 transition-colors duration-300">
-        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <div
-                class="bg-gradient-to-r from-blue-50 to-purple-50 dark:from-gray-700 dark:to-gray-600 p-8 rounded-2xl shadow-lg">
-                <h2 class="text-3xl font-bold text-gray-900 dark:text-white mb-4">About Pixelbotix</h2>
-                <p class="text-lg text-gray-700 dark:text-gray-300 leading-relaxed">
-                    At Pixelbotix, we're pioneering the future of robotics education and training. Our mission is to
-                    make advanced robotics accessible to learners of all ages through innovative teaching methods and
-                    cutting-edge technology.
-                </p>
-            </div>
-        </div>
-    </section>
-    <!-- Open Positions -->
-    <section id="positions" class="py-20 bg-gray-50 dark:bg-gray-900 transition-colors duration-300">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 class="text-4xl font-bold text-center text-gray-900 dark:text-white mb-12">Open Positions</h2>
-            <div class="grid md:grid-cols-2 gap-8">
-                <!-- Robotics Trainer Position -->
-                <div
-                    class="bg-white dark:bg-gray-800 rounded-2xl shadow-lg p-8 card-hover transition-colors duration-300">
-                    <div class="flex items-center mb-4">
-                        <div
-                            class="w-12 h-12 bg-gradient-to-r from-primary to-secondary rounded-lg flex items-center justify-center mr-4">
-                            <i class="ri-robot-line text-white text-xl"></i>
-                        </div>
-                        <div>
-                            <h3 class="text-2xl font-bold text-gray-900 dark:text-white">Robotics Trainer</h3>
-                            <div class="flex items-center space-x-4 mt-2">
-                                <span
-                                    class="inline-flex items-center px-3 py-1 rounded-full text-sm bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200">
-                                    <i class="ri-map-pin-line w-4 h-4 flex items-center justify-center mr-1"></i>
-                                    Onsite / Remote / Hybrid
-                                </span>
-                                <span
-                                    class="inline-flex items-center px-3 py-1 rounded-full text-sm bg-green-100 dark:bg-green-900 text-green-800 dark:text-green-200">
-                                    <i class="ri-time-line w-4 h-4 flex items-center justify-center mr-1"></i>
-                                    Full-time / Part-time / Contract
-                                </span>
-                            </div>
-                        </div>
-                    </div>
-                    <p class="text-gray-600 dark:text-gray-400 mb-6">
-                        Train students and clients in robotics and coding, preparing the next generation of tech
-                        innovators.
-                    </p>
-                    <button onclick="showRoleDetail('robotics')"
-                        class="w-full bg-primary hover:bg-blue-600 text-white py-3 px-6 !rounded-button font-semibold transition-colors whitespace-nowrap">
-                        View Role Details
-                    </button>
-                </div>
-                <!-- Accountant Position -->
-                <div
-                    class="bg-white dark:bg-gray-800 rounded-2xl shadow-lg p-8 card-hover transition-colors duration-300">
-                    <div class="flex items-center mb-4">
-                        <div
-                            class="w-12 h-12 bg-gradient-to-r from-secondary to-pink-500 rounded-lg flex items-center justify-center mr-4">
-                            <i class="ri-calculator-line text-white text-xl"></i>
-                        </div>
-                        <div>
-                            <h3 class="text-2xl font-bold text-gray-900 dark:text-white">Accountant / Bookkeeper</h3>
-                            <div class="flex items-center space-x-4 mt-2">
-                                <span
-                                    class="inline-flex items-center px-3 py-1 rounded-full text-sm bg-purple-100 dark:bg-purple-900 text-purple-800 dark:text-purple-200">
-                                    <i class="ri-map-pin-line w-4 h-4 flex items-center justify-center mr-1"></i>
-                                    Onsite / Remote
-                                </span>
-                                <span
-                                    class="inline-flex items-center px-3 py-1 rounded-full text-sm bg-orange-100 dark:bg-orange-900 text-orange-800 dark:text-orange-200">
-                                    <i class="ri-time-line w-4 h-4 flex items-center justify-center mr-1"></i>
-                                    Full-time / Part-time
-                                </span>
-                            </div>
-                        </div>
-                    </div>
-                    <p class="text-gray-600 dark:text-gray-400 mb-6">
-                        Manage daily financial records and support our growing business operations with precision and
-                        expertise.
-                    </p>
-                    <button onclick="showRoleDetail('accountant')"
-                        class="w-full bg-secondary hover:bg-purple-600 text-white py-3 px-6 !rounded-button font-semibold transition-colors whitespace-nowrap">
-                        View Role Details
-                    </button>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!-- Role Detail Modal -->
-    <div id="roleModal" class="fixed inset-0 z-50 hidden">
-        <div class="absolute inset-0 bg-black/50 backdrop-blur-sm" onclick="closeRoleDetail()"></div>
-        <div class="flex items-center justify-center min-h-screen p-4">
-            <div class="bg-white dark:bg-gray-800 rounded-2xl shadow-2xl max-w-4xl w-full max-h-[90vh] overflow-y-auto">
-                <div class="p-8">
-                    <div class="flex items-center justify-between mb-6">
-                        <h2 id="modalTitle" class="text-3xl font-bold text-gray-900 dark:text-white"></h2>
-                        <button onclick="closeRoleDetail()"
-                            class="w-8 h-8 flex items-center justify-center text-gray-500 hover:text-gray-700 dark:text-gray-400 dark:hover:text-gray-200">
-                            <i class="ri-close-line text-xl"></i>
-                        </button>
-                    </div>
-                    <div id="modalContent"></div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- Application Form Modal -->
-    <div id="applicationModal" class="fixed inset-0 z-50 hidden">
-        <div class="absolute inset-0 bg-black/50 backdrop-blur-sm" onclick="closeApplicationForm()"></div>
-        <div class="flex items-center justify-center min-h-screen p-4">
-            <div class="bg-white dark:bg-gray-800 rounded-2xl shadow-2xl max-w-2xl w-full">
-                <div class="p-8">
-                    <div class="flex items-center justify-between mb-6">
-                        <h2 class="text-3xl font-bold text-gray-900 dark:text-white">Apply for Position</h2>
-                        <button onclick="closeApplicationForm()"
-                            class="w-8 h-8 flex items-center justify-center text-gray-500 hover:text-gray-700 dark:text-gray-400 dark:hover:text-gray-200">
-                            <i class="ri-close-line text-xl"></i>
-                        </button>
-                    </div>
-                    <form id="applicationForm" class="space-y-6">
-                        <div>
-                            <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">Full
-                                Name</label>
-                            <input type="text" name="name" required=""
-                                class="w-full px-4 py-3 custom-input rounded-lg border-none outline-none text-sm">
-                        </div>
-                        <div>
-                            <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">Email
-                                Address</label>
-                            <input type="email" name="email" required=""
-                                class="w-full px-4 py-3 custom-input rounded-lg border-none outline-none text-sm">
-                        </div>
-                        <div>
-                            <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">Phone
-                                Number</label>
-                            <input type="tel" name="phone" required=""
-                                class="w-full px-4 py-3 custom-input rounded-lg border-none outline-none text-sm">
-                        </div>
-                        <div>
-                            <label
-                                class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">Position</label>
-                            <input type="text" id="applicationRole" name="role" readonly=""
-                                class="w-full px-4 py-3 custom-input rounded-lg border-none outline-none text-sm bg-gray-100 dark:bg-gray-700">
-                        </div>
-                        <div>
-                            <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">Upload
-                                CV</label>
-                            <div
-                                class="border-2 border-dashed border-gray-300 dark:border-gray-600 rounded-lg p-6 text-center hover:border-primary dark:hover:border-secondary transition-colors">
-                                <i class="ri-upload-cloud-line text-3xl text-gray-400 mb-2"></i>
-                                <p class="text-gray-600 dark:text-gray-400">Drag and drop your CV here or click to
-                                    browse</p>
-                                <input type="file" name="cv" accept=".pdf,.doc,.docx" class="hidden">
-                            </div>
-                        </div>
-                        <button type="submit"
-                            class="w-full bg-gradient-to-r from-primary to-secondary text-white py-3 px-6 !rounded-button font-semibold hover:shadow-lg transition-all whitespace-nowrap">
-                            Submit Application
-                        </button>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </div>
 
 
-    <script id="roleDetails">
-        const roleData = {
-            robotics: {
-                title: 'Robotics Trainer',
-                summary: 'Train students and clients in robotics and coding, preparing the next generation of tech innovators through hands-on learning experiences.',
-                responsibilities: [
-                    'Deliver comprehensive robotics and coding training sessions',
-                    'Prepare detailed lesson plans and educational kits',
-                    'Conduct engaging workshops and product demonstrations',
-                    'Maintain robots and laboratory equipment in optimal condition',
-                    'Track and evaluate student progress and performance',
-                    'Develop curriculum materials for different skill levels',
-                    'Collaborate with team members on educational initiatives'
-                ],
-                requirements: [
-                    'Strong foundation in electronics and circuit design',
-                    'Proficiency with Arduino and microcontroller programming',
-                    'Experience with Python, Scratch, or block-based coding',
-                    'Excellent teaching or training abilities',
-                    'Outstanding communication and classroom management skills',
-                    'Engineering or technical educational background preferred',
-                    'Experience working with students or learners of various ages'
-                ],
-                benefits: [
-                    'Comprehensive training and professional development',
-                    'Career advancement opportunities in robotics field',
-                    'Hands-on exposure to cutting-edge hardware and technology',
-                    'Performance-based incentives and bonuses',
-                    'Flexible work arrangements and schedule options'
-                ]
-            },
-            accountant: {
-                title: 'Accountant / Bookkeeper',
-                summary: 'Manage daily financial records and support our growing business operations with precision, accuracy, and financial expertise.',
-                responsibilities: [
-                    'Maintain accurate and up-to-date financial ledgers',
-                    'Record all business transactions systematically',
-                    'Prepare professional invoices and billing statements',
-                    'Track and categorize business expenses efficiently',
-                    'Generate comprehensive monthly financial reports',
-                    'Provide GST and tax preparation support when applicable',
-                    'Assist with budget planning and financial analysis'
-                ],
-                requirements: [
-                    'Solid understanding of accounting principles and practices',
-                    'Proficiency in Excel and accounting software platforms',
-                    'Exceptional attention to detail and accuracy',
-                    'Basic knowledge of tax regulations and compliance',
-                    'Commerce or accounting educational background',
-                    'Prior bookkeeping or accounting experience preferred',
-                    'Strong confidentiality and ethical standards'
-                ],
-                benefits: [
-                    'Stable and secure employment opportunity',
-                    'Continuous skill development and learning opportunities',
-                    'Direct impact on business growth and success',
-                    'Performance-based bonuses and recognition',
-                    'Professional growth within finance department'
-                ]
-            }
-        };
-        function showRoleDetail(roleType) {
-            const modal = document.getElementById('roleModal');
-            const title = document.getElementById('modalTitle');
-            const content = document.getElementById('modalContent');
-            const role = roleData[roleType];
-            title.textContent = role.title;
-            content.innerHTML = `
-<div class="mb-6">
-<h3 class="text-xl font-semibold text-gray-900 dark:text-white mb-3">Role Overview</h3>
-<p class="text-gray-700 dark:text-gray-300">${role.summary}</p>
-</div>
-<div class="mb-6">
-<h3 class="text-xl font-semibold text-gray-900 dark:text-white mb-3">Key Responsibilities</h3>
-<ul class="space-y-2">
-${role.responsibilities.map(item => `
-<li class="flex items-start">
-<i class="ri-check-line w-5 h-5 flex items-center justify-center text-green-500 mr-3 mt-0.5"></i>
-<span class="text-gray-700 dark:text-gray-300">${item}</span>
-</li>
-`).join('')}
-</ul>
-</div>
-<div class="mb-6">
-<h3 class="text-xl font-semibold text-gray-900 dark:text-white mb-3">Requirements</h3>
-<ul class="space-y-2">
-${role.requirements.map(item => `
-<li class="flex items-start">
-<i class="ri-star-line w-5 h-5 flex items-center justify-center text-blue-500 mr-3 mt-0.5"></i>
-<span class="text-gray-700 dark:text-gray-300">${item}</span>
-</li>
-`).join('')}
-</ul>
-</div>
-<div class="mb-8">
-<h3 class="text-xl font-semibold text-gray-900 dark:text-white mb-3">Benefits & Perks</h3>
-<ul class="space-y-2">
-${role.benefits.map(item => `
-<li class="flex items-start">
-<i class="ri-gift-line w-5 h-5 flex items-center justify-center text-purple-500 mr-3 mt-0.5"></i>
-<span class="text-gray-700 dark:text-gray-300">${item}</span>
-</li>
-`).join('')}
-</ul>
-</div>
-<button onclick="showApplicationForm('${role.title}')" class="w-full bg-gradient-to-r from-primary to-secondary text-white py-4 px-6 !rounded-button text-lg font-semibold hover:shadow-lg transition-all whitespace-nowrap">
-<i class="ri-send-plane-line mr-2"></i>
-Apply for This Position
-</button>
-`;
-            modal.classList.remove('hidden');
-            document.body.style.overflow = 'hidden';
-        }
-        function closeRoleDetail() {
-            const modal = document.getElementById('roleModal');
-            modal.classList.add('hidden');
-            document.body.style.overflow = 'auto';
-        }
-    </script>
-    <script id="applicationForm">
-        function showApplicationForm(roleName) {
-            closeRoleDetail();
-            const modal = document.getElementById('applicationModal');
-            const roleInput = document.getElementById('applicationRole');
-            roleInput.value = roleName;
-            modal.classList.remove('hidden');
-            document.body.style.overflow = 'hidden';
-        }
-        function closeApplicationForm() {
-            const modal = document.getElementById('applicationModal');
-            modal.classList.add('hidden');
-            document.body.style.overflow = 'auto';
-        }
-        document.addEventListener('DOMContentLoaded', function () {
-            const form = document.getElementById('applicationForm');
-            const fileInput = form.querySelector('input[type="file"]');
-            const dropZone = fileInput.parentElement;
-            dropZone.addEventListener('click', () => fileInput.click());
-            dropZone.addEventListener('dragover', (e) => {
-                e.preventDefault();
-                dropZone.classList.add('border-primary', 'dark:border-secondary');
-            });
-            dropZone.addEventListener('dragleave', () => {
-                dropZone.classList.remove('border-primary', 'dark:border-secondary');
-            });
-            dropZone.addEventListener('drop', (e) => {
-                e.preventDefault();
-                dropZone.classList.remove('border-primary', 'dark:border-secondary');
-                const files = e.dataTransfer.files;
-                if (files.length > 0) {
-                    fileInput.files = files;
-                    updateFileDisplay(files[0].name);
-                }
-            });
-            fileInput.addEventListener('change', (e) => {
-                if (e.target.files.length > 0) {
-                    updateFileDisplay(e.target.files[0].name);
-                }
-            });
-            function updateFileDisplay(fileName) {
-                const display = dropZone.querySelector('p');
-                display.textContent = `Selected: ${fileName}`;
-                display.classList.add('text-primary', 'dark:text-secondary');
-            }
-            form.addEventListener('submit', function (e) {
-                e.preventDefault();
-                const submitBtn = form.querySelector('button[type="submit"]');
-                const originalText = submitBtn.innerHTML;
-                submitBtn.innerHTML = '<i class="ri-loader-4-line animate-spin mr-2"></i>Submitting...';
-                submitBtn.disabled = true;
-                setTimeout(() => {
-                    alert('Application submitted successfully! We will contact you soon.');
-                    closeApplicationForm();
-                    form.reset();
-                    submitBtn.innerHTML = originalText;
-                    submitBtn.disabled = false;
-                }, 2000);
-            });
-        });
-    </script>
+    <!-- ================= OPEN POSITIONS ================= -->
+    <section class="container mx-auto py-20 px-6">
 
+      <div class="text-center mb-16">
+        <h2 class="text-3xl font-bold mb-2">Current Openings</h2>
+        <p class="text-gray-600 dark:text-gray-400">
+          Focused roles for serious professionals.
+        </p>
+      </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
+
+        <!-- AI Robotics Trainer -->
+        <div class="border border-blue-300 dark:border-blue-600 rounded-2xl p-8
+                    bg-blue-50 dark:bg-blue-900/20
+                    shadow-sm hover:shadow-md transition">
+            <h3 class="text-2xl font-bold mb-3 text-blue-800 dark:text-blue-300">
+            AI Robotics Trainer
+            </h3>
+            <p class="mb-4 text-blue-700 dark:text-blue-200">
+            Train engineers in ROS2, perception, and autonomous mobile robots.
+            </p>
+
+            <ul class="list-disc pl-5 space-y-2 mb-6 text-blue-800 dark:text-blue-100">
+            <li>Hands-on ROS2 and robot hardware experience</li>
+            <li>Python, OpenCV, SLAM, Nav2 proficiency</li>
+            <li>Strong teaching and mentoring ability</li>
+            <li>On-site role in Chennai</li>
+            </ul>
+
+            <p class="font-semibold text-blue-900 dark:text-blue-200">
+            Type: Full-time / Contract
+            </p>
+        </div>
+
+        <!-- Accountant -->
+        <div class="border border-amber-300 dark:border-amber-600 rounded-2xl p-8
+                    bg-amber-50 dark:bg-amber-900/20
+                    shadow-sm hover:shadow-md transition">
+            <h3 class="text-2xl font-bold mb-3 text-amber-800 dark:text-amber-300">
+            Accountant
+            </h3>
+            <p class="mb-4 text-amber-700 dark:text-amber-200">
+            Manage finance operations for a growing robotics company.
+            </p>
+
+            <ul class="list-disc pl-5 space-y-2 mb-6 text-amber-800 dark:text-amber-100">
+            <li>GST, TDS, and statutory compliance</li>
+            <li>Invoicing and expense tracking</li>
+            <li>Tally / Zoho Books experience preferred</li>
+            <li>Office-based role</li>
+            </ul>
+
+            <p class="font-semibold text-amber-900 dark:text-amber-200">
+            Type: Full-time
+            </p>
+        </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= APPLY CTA ================= -->
+    <section class="py-20 bg-emerald-900 text-white text-center">
+      <h2 class="text-3xl font-bold mb-4">Apply Now</h2>
+      <p class="mb-6">Send your CV with the role name in subject line.</p>
+
+      <a href="mailto:careers@pixelbotix.com"
+         class="bg-white text-emerald-900 px-10 py-4 rounded-xl font-semibold">
+        careers@pixelbotix.com
+      </a>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <div id="site-footer"></div>
+
+  <script src="/pb_site_2026/assets/js/layout.js"></script>
 </body>
-
 </html>

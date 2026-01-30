@@ -410,9 +410,6 @@ transform: translateY(-1px);
 /* ================= NSE STYLE BACK TO TOP ================= */
 
 .progress-circle {
-  position: fixed;
-  bottom: 8rem;
-  right: 2rem;
   width: 56px;
   height: 56px;
   cursor: pointer;
@@ -421,6 +418,7 @@ transform: translateY(-1px);
   pointer-events: none;
   transition: opacity 0.3s ease;
 }
+
 
 .progress-circle.show {
   opacity: 1;

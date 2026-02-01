@@ -37,7 +37,7 @@
   <script src="/assets/js/layout.js" defer></script>
 
   <!-- Page-specific styles -->
-  <style>
+  <!-- <style>
     .hero-overlay {
       background: linear-gradient(
         to right,
@@ -82,6 +82,45 @@
     .pulse-glow {
         animation: pulse-glow 2s ease-in-out infinite alternate;
     }
+</style> -->
+<style>
+  .hero-overlay {
+    background: linear-gradient(
+      to right,
+      rgba(0,0,0,0.45),
+      rgba(0,0,0,0.2),
+      transparent
+    );
+  }
+  .dark .hero-overlay {
+    background: linear-gradient(
+      to right,
+      rgba(0,0,0,0.55),
+      rgba(0,0,0,0.25),
+      transparent
+    );
+  }
+
+  .card-hover {
+    transition: transform .3s ease, box-shadow .3s ease;
+  }
+  .card-hover:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 18px 40px rgba(0,0,0,.15);
+  }
+
+  .floating-animation {
+    animation: float 6s ease-in-out infinite;
+  }
+
+  @keyframes float {
+    0%,100% { transform: translateY(0px); }
+    50% { transform: translateY(-20px); }
+  }
+
+  .pulse-glow {
+    animation: pulse-glow 2s ease-in-out infinite alternate;
+  }
 </style>
 
 
@@ -93,12 +132,12 @@
 <!-- NAVBAR -->
 <div id="site-navbar"></div>
 
-<main class="pt-20">
+<main class="pt-2">
 
         <!-- ================= HERO ================= -->
         <section
         class="relative min-h-screen flex items-center"
-        style="background-image:url('https://readdy.ai/api/search-image?query=modern%20futuristic%20robotics%20laboratory%20with%20clean%20white%20background%20and%20blue%20purple%20gradient%20lighting%20advanced%20robotic%20arms%20and%20AI%20systems%20in%20a%20minimalist%20high%20tech%20environment%20with%20holographic%20displays%20and%20sleek%20metallic%20surfaces%20professional%20photography%20style&width=1920&height=1080&seq=hero001&orientation=landscape');
+        style="background-image:url('/assets/images/home/pixelbotix-hero.jpg');
                 background-size:cover;
                 background-position:center;"
         >
@@ -109,12 +148,15 @@
         <div class="relative z-10 max-w-7xl mx-auto px-6 w-full">
             <!-- Heading -->
             <div class="max-w-4xl mb-14">
-            <h1 class="text-5xl lg:text-7xl font-bold leading-tight mb-6">
-                PixelBotix builds
-                <span class="block bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
-                deployable robotics,
-                </span>
-                AI, and automation ecosystems
+            <h1 class="text-white text-5xl lg:text-7xl font-bold leading-tight mb-6 drop-shadow-lg">
+            PixelBotix builds
+            <span class="relative inline-block px-3 py-1
+                        text-white
+                        bg-gradient-to-r from-cyan-400 to-blue-500
+                        rounded-md shadow-[0_0_25px_rgba(59,130,246,0.8)]">
+            Deployable Robotics, AI
+            </span>
+            and automation ecosystems
             </h1>
 
             <p class="text-xl text-gray-600 dark:text-gray-300 max-w-2xl">

@@ -469,8 +469,9 @@ transform: translateY(-1px);
 
 
 /* Home Page card minimum height for r&d eduverse and skill labs */
-.uniform-card {
+/* .uniform-card {
   height: 110px;
   display: flex;
   align-items: center;
-}
+} */
+.uniform-card { height: auto; }

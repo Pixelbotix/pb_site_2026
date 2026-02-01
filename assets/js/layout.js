@@ -106,7 +106,7 @@ function initDarkMode() {
 
 /* ---------- TRUSTED BY SCROLLER ---------- */
 function initTrustedBy() {
-  const BASE = "/pb_site_2026/static/trusted-by/";
+  const BASE = "/static/trusted-by/";
 
 
   const LOGOS = [
@@ -195,8 +195,8 @@ function initBackToTop() {
 
 /* ---------- MASTER INITIALIZER ---------- */
 async function initLayout() {
-  await loadPartial("site-navbar", "/pb_site_2026/partials/navbar.html");
-  await loadPartial("site-footer", "/pb_site_2026/partials/footer.html");
+  await loadPartial("site-navbar", "/partials/navbar.html");
+  await loadPartial("site-footer", "/partials/footer.html");
 
   requestAnimationFrame(() => {
     initMobileMenu();
@@ -217,7 +217,7 @@ document.addEventListener("DOMContentLoaded", initLayout);
 
 /* ---------- ACADEMIC CLIENTS SCROLLER IN GALLERY ---------- */
 function initAcademicClients() {
-  const BASE = "/pb_site_2026/static/academic-clients/";
+  const BASE = "/static/academic-clients/";
 
   const LOGOS = [
     "actlogo_10.jpg",
@@ -285,7 +285,7 @@ function initContactPopup() {
     document.body.style.overflow = "hidden";
 
     if (container.innerHTML.trim() === "") {
-      const res = await fetch("/pb_site_2026/partials/contact-form.html", {
+      const res = await fetch("/partials/contact-form.html", {
         cache: "no-cache"
       });
       container.innerHTML = await res.text();
@@ -363,7 +363,7 @@ async function loadContactForm() {
   const container = document.getElementById("contact-form-container");
   if (!container) return;
 
-  const res = await fetch("/pb_site_2026/partials/contact-form.html", {
+  const res = await fetch("/partials/contact-form.html", {
     cache: "no-cache"
   });
 

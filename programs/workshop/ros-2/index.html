@@ -115,50 +115,68 @@
       </div>
 
       <!-- ================= MOBILE STACK ================= -->
-      <div class="md:hidden">
+<!-- ================= MOBILE STACK ================= -->
+<div class="md:hidden">
 
-        <!-- VIDEO -->
-        <div class="relative aspect-square">
-          <video
-            class="w-full h-full object-cover"
-            src="/assets/videos/amr-platforms.mp4"
-            autoplay muted loop playsinline>
-          </video>
+  <!-- VIDEO -->
+  <div class="relative aspect-square">
+    <video
+      class="w-full h-full object-cover"
+      src="/assets/videos/amr-platforms.mp4"
+      autoplay muted loop playsinline>
+    </video>
 
-          <!-- VIDEO OVERLAY -->
-          <div class="absolute inset-0 bg-black/30"></div>
-        </div>
+    <!-- VIDEO OVERLAY -->
+    <div class="absolute inset-0 bg-black/40"></div>
+  </div>
 
-        <!-- TEXT BLOCK (MERGED WITH VIDEO) -->
-        <div class="bg-white dark:bg-gray-900
-                    text-gray-900 dark:text-white
-                    px-5 py-10 -mt-8
-                    rounded-t-3xl shadow-lg">
+  <!-- TEXT BLOCK (FORCED DARK) -->
+  <div class="bg-gray-950 text-white
+              px-5 py-8 -mt-10
+              rounded-t-3xl shadow-xl
+              text-center">
+
+    <h1 class="text-2xl font-bold mb-2 leading-snug
+               text-cyan-300
+               drop-shadow-[0_0_14px_rgba(34,211,238,1)]">
+      Master in ROS2 & Autonomous Mobile Robot Navigation
+    </h1>
+
+    <p class="text-sm mb-4
+              text-blue-300
+              drop-shadow-[0_0_12px_rgba(59,130,246,1)]">
+      3-Day Hands-On ROS2 Workshop
+    </p>
+
+    <div class="flex flex-col items-center gap-2 text-sm mb-5
+                text-purple-300
+                drop-shadow-[0_0_12px_rgba(168,85,247,1)]">
+      <span class="flex items-center gap-2">
+        <i class="ri-calendar-line"></i> 12 Feb to 14 Feb
+      </span>
+      <span class="flex items-center gap-2">
+        <i class="ri-map-pin-line"></i> Pixelbotix Robotics Lab, Chennai
+      </span>
+      <span class="flex items-center gap-2">
+        <i class="ri-wallet-3-line"></i> ₹1599
+      </span>
+    </div>
+
+    <button
+      onclick="registerNow()"
+      class="w-full max-w-xs mx-auto
+             bg-gradient-to-r from-cyan-500 to-blue-600
+             text-white py-3 rounded-xl font-semibold
+             shadow-[0_0_30px_rgba(59,130,246,1)]
+             hover:shadow-[0_0_45px_rgba(59,130,246,1)]
+             transition">
+      Register Now
+    </button>
+  </div>
+
+</div>
 
 
-
-          <h1 class="text-2xl font-bold mb-2">
-            Master in ROS2 & Autonomous Mobile Robot Navigation
-          </h1>
-
-          <p class="text-sm text-gray-600 dark:text-gray-300 mb-3">
-            3-Day Hands-On ROS2 Workshop
-          </p>
-
-          <div class="flex flex-wrap gap-3 text-sm mb-4">
-            <span><i class="ri-calendar-line"></i> 12 Feb to 14 Feb</span>
-            <span><i class="ri-map-pin-line"></i> Pixelbotix Robotics Lab, Chennai</span>
-            <span><i class="ri-wallet-3-line"></i> ₹1599</span>
-          </div>
-
-          <button
-            onclick="registerNow()"
-            class="w-full bg-blue-600 text-white py-3 rounded-xl font-semibold">
-            Register Now
-          </button>
-        </div>
-
-      </div>
 
     </section>
 

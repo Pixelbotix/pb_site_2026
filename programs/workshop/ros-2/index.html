@@ -186,19 +186,25 @@
         <div class="grid md:grid-cols-2 gap-16 items-stretch">
 
           <!-- LEFT: TRAINER -->
-          <div class="bg-white dark:bg-gray-900 rounded-2xl p-10 shadow-lg
-                      h-full flex flex-col">
+          <!-- LEFT: TRAINER -->
+          <div class="bg-white dark:bg-gray-900 rounded-2xl p-8 shadow-lg
+                      h-full flex flex-col
+                      text-center md:text-left
+                      items-center md:items-stretch">
 
-            <h2 class="text-3xl font-bold mb-8">
+            <h2 class="text-3xl font-bold mb-6">
               Trainer
             </h2>
 
-            <div class="flex items-start gap-6 mb-8">
+            <div class="flex flex-col md:flex-row
+                        items-center md:items-start
+                        gap-6 mb-8">
+
               <!-- IMAGE -->
               <img
                 src="/assets/images/people/director/Sabique.jpeg"
                 alt="Dr. P. V. Sabique"
-                class="w-28 h-28 rounded-2xl object-cover shadow-md flex-shrink-0"
+                class="w-28 h-28 rounded-2xl object-cover shadow-md"
               />
 
               <!-- INFO -->
@@ -214,8 +220,8 @@
               </div>
             </div>
 
-            <!-- TAGS (pushes content evenly) -->
-            <div class="mt-auto flex flex-wrap gap-3 text-sm">
+            <!-- TAGS -->
+            <div class="mt-auto flex flex-wrap justify-center md:justify-start gap-3 text-sm">
               <span class="px-4 py-2 rounded-full
                           bg-blue-50 dark:bg-blue-900/40
                           text-blue-700 dark:text-blue-300">
@@ -233,6 +239,7 @@
               </span>
             </div>
           </div>
+
 
           <!-- RIGHT: WHAT YOU WILL BUILD -->
           <div class="bg-white dark:bg-gray-900 rounded-2xl p-10 shadow-lg
@@ -304,16 +311,23 @@
               <h3 class="text-xl font-bold mb-3 text-blue-600">
                 Day 1 - Foundations
               </h3>
-              <p class="text-gray-600 dark:text-gray-300 text-lg">
-                ROS2 fundamentals, workspace setup, simulation, and motion control
-              </p>
+
+              <ul class="text-gray-600 dark:text-gray-300 text-base space-y-2 list-disc list-inside">
+                <li>Introduction to ROS 2</li>
+                <li>Workspace Setup</li>
+                <li>Visualization with RViz2 &amp; Tf2</li>
+                <li>Robot Modelling (URDF &amp; TF)</li>
+                <li>Gazebo and RViz Simulation with ROS 2</li>
+              </ul>
 
               <div class="mt-auto pt-6 text-sm text-blue-600 font-semibold">
                 Core ROS2 Concepts
               </div>
             </div>
+
           </div>
 
+          <!-- DAY 2 -->
           <!-- DAY 2 -->
           <div class="bg-white dark:bg-gray-900 rounded-2xl shadow-lg
                       overflow-hidden h-full flex flex-col">
@@ -332,9 +346,14 @@
               <h3 class="text-xl font-bold mb-3 text-purple-600">
                 Day 2 - Perception & Systems
               </h3>
-              <p class="text-gray-600 dark:text-gray-300 text-lg">
-                Sensors, OpenCV integration, embedded ROS, launch systems
-              </p>
+
+              <ul class="text-gray-600 dark:text-gray-300 text-base space-y-2 list-disc list-inside">
+                <li>Robot Motion Control</li>
+                <li>Sensor Integration (LiDAR)</li>
+                <li>Camera Perception &amp; OpenCV</li>
+                <li>System Integration with ROS2, Docker</li>
+                <li>Embedded ROS and Real Robot</li>
+              </ul>
 
               <div class="mt-auto pt-6 text-sm text-purple-600 font-semibold">
                 Sensors & Vision
@@ -342,6 +361,8 @@
             </div>
           </div>
 
+
+          <!-- DAY 3 -->
           <!-- DAY 3 -->
           <div class="bg-white dark:bg-gray-900 rounded-2xl shadow-lg
                       overflow-hidden h-full flex flex-col">
@@ -360,15 +381,20 @@
               <h3 class="text-xl font-bold mb-3 text-emerald-600">
                 Day 3 - Autonomy
               </h3>
-              <p class="text-gray-600 dark:text-gray-300 text-lg">
-                SLAM, Nav2 stack, autonomous navigation, real robot testing
-              </p>
+
+              <ul class="text-gray-600 dark:text-gray-300 text-base space-y-2 list-disc list-inside">
+                <li>Environment Preparation for AMR</li>
+                <li>ESP32 Firmware Understanding</li>
+                <li>Robot Teleoperation &amp; Mapping</li>
+                <li>Autonomous Navigation &amp; Testing</li>
+              </ul>
 
               <div class="mt-auto pt-6 text-sm text-emerald-600 font-semibold">
                 Real-World Deployment
               </div>
             </div>
           </div>
+
 
         </div>
       </div>

@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Partnerships & Collaborations | PixelBotix Technologies</title>
+  <meta name="description"
+        content="Academic and industry partnerships at PixelBotix Technologies - collaborations, workshops, R&D, FDPs, and internships." />
+
+  <!-- Tailwind -->
+  <script src="https://cdn.tailwindcss.com/3.4.16"></script>
+  <script>
+    tailwind.config = { darkMode: 'class' }
+  </script>
+
+  <!-- Icons -->
+  <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css">
+
+  <!-- Global Layout -->
+    <link rel="stylesheet" href="/assets/css/layout.css">
+    <link rel="icon" type="image/png" href="/assets/images/favicon/favicon.png">
+    <style>
+    @keyframes floatY {
+        0%   { transform: translateY(0px); }
+        50%  { transform: translateY(-20px); }
+        100% { transform: translateY(0px); }
+    }
+
+    .float-animation {
+        animation: floatY 4s ease-in-out infinite;
+    }
+    </style>
+</head>
+
+<body class="bg-white dark:bg-gray-900 text-gray-900 dark:text-gray-100 transition-colors">
+
+  <!-- NAVBAR -->
+  <div id="site-navbar"></div>
+
+  <main>
+
+    <section class="relative h-screen flex items-center overflow-hidden bg-gray-50 dark:bg-gray-900">
+
+    <!-- BACKGROUND CANVAS -->
+    <canvas id="neuralCanvas" class="absolute inset-0"></canvas>
+
+    <div class="relative z-10 w-full max-w-7xl mx-auto px-6 flex flex-col md:flex-row items-center justify-between">
+
+        <!-- LEFT -->
+        <div class="max-w-xl">
+            <h1 class="text-4xl md:text-6xl font-extrabold leading-tight mb-6">
+                <span id="typing"></span>
+                <span class="inline-block w-[2px] h-[1em] bg-black dark:bg-white ml-1 animate-pulse"></span>
+            </h1>
+
+            <p id="desc" class="text-lg text-gray-600 dark:text-gray-300 mb-8"></p>
+
+            <div class="flex gap-4">
+                <a href="#" class="px-6 py-3 bg-blue-600 text-white rounded-lg">Explore</a>
+                <a href="#" class="px-6 py-3 border border-gray-400 rounded-lg">Contact</a>
+            </div>
+        </div>
+
+        <!-- RIGHT -->
+        <div class="mt-10 md:mt-0">
+            <img id="heroImage"
+                class="w-[350px] md:w-[450px] float-animation transition-all duration-700 ease-in-out"
+                src="">
+        </div>
+
+    </div>
+</section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <div id="site-footer"></div>
+    <script>
+    /* ================= DATA ================= */
+    const slides = [
+        {
+            title: "Empowering Innovation with ROS2",
+            desc: "Equipping developers with ROS2, simulation tools, and real-world robotic system integration.",
+            img: "assets/images/home/pixelbotix-hero_1.png"
+        },
+        {
+            title: "Driving Innovation Through 3D Printing",
+            desc: "Transforming ideas into functional prototypes with advanced additive manufacturing.",
+            img: "assets/images/home/pixelbotix-hero_2.png"
+        },
+        {
+            title: "Enhancing Aerial Intelligence with Drones",
+            desc: "Smart drone solutions for inspection, mapping, and autonomous applications.",
+            img: "assets/images/home/pixelbotix-hero_3.png"
+        },
+        {
+            title: "Enabling Practical Learning with Modern Labs",
+            desc: "Modern lab environments for hands-on learning, research, and innovation.",
+            img: "assets/images/home/pixelbotix-hero_4.png"
+        }
+    ];
+
+    let slideIndex = 0;
+
+    /* ================= TYPEWRITER ================= */
+    let charIndex = 0;
+    let isDeleting = false;
+
+    function typeEffect() {
+        const text = slides[slideIndex].title;
+        const el = document.getElementById("typing");
+
+        if (!isDeleting) {
+            charIndex++;
+        } else {
+            charIndex--;
+        }
+
+        el.textContent = text.substring(0, charIndex);
+
+        if (!isDeleting && charIndex === text.length) {
+            setTimeout(() => isDeleting = true, 1200);
+        } else if (isDeleting && charIndex === 0) {
+            isDeleting = false;
+            slideIndex = (slideIndex + 1) % slides.length;
+            updateContent();
+        }
+
+        setTimeout(typeEffect, isDeleting ? 30 : 60);
+    }
+
+    /* ================= UPDATE ================= */
+    function updateContent() {
+        document.getElementById("desc").textContent = slides[slideIndex].desc;
+
+        const img = document.getElementById("heroImage");
+        img.style.opacity = 0;
+
+        setTimeout(() => {
+            img.src = slides[slideIndex].img;
+            img.style.opacity = 1;
+        }, 300);
+    }
+
+    /* INIT */
+    updateContent();
+    typeEffect();
+
+    /* ================= CANVAS ================= */
+    const canvas = document.getElementById('neuralCanvas');
+    const ctx = canvas.getContext('2d');
+
+    let w, h, particles;
+    let mouse = { x: null, y: null };
+
+    function resize() {
+        w = canvas.width = window.innerWidth;
+        h = canvas.height = window.innerHeight;
+    }
+    window.addEventListener('resize', resize);
+
+    window.addEventListener('mousemove', (e) => {
+        mouse.x = e.x;
+        mouse.y = e.y;
+    });
+
+    class Particle {
+        constructor() {
+            this.x = Math.random() * w;
+            this.y = Math.random() * h;
+            this.vx = (Math.random() - 0.5) * 1;
+            this.vy = (Math.random() - 0.5) * 1;
+        }
+
+        update() {
+            let dx = mouse.x - this.x;
+            let dy = mouse.y - this.y;
+            let dist = Math.sqrt(dx*dx + dy*dy);
+
+            if (dist < 180) {
+                this.x += dx * 0.02;
+                this.y += dy * 0.02;
+            }
+
+            this.x += this.vx;
+            this.y += this.vy;
+
+            if (this.x < 0 || this.x > w) this.vx *= -1;
+            if (this.y < 0 || this.y > h) this.vy *= -1;
+        }
+
+        draw() {
+            ctx.beginPath();
+            ctx.arc(this.x, this.y, 2, 0, Math.PI * 2);
+            ctx.fillStyle = "rgba(0,0,0,0.7)";
+            ctx.fill();
+        }
+    }
+
+    function createParticles() {
+        particles = [];
+        for (let i = 0; i < 100; i++) {
+            particles.push(new Particle());
+        }
+    }
+
+    function drawLines() {
+        for (let a = 0; a < particles.length; a++) {
+            for (let b = a + 1; b < particles.length; b++) {
+                let dx = particles[a].x - particles[b].x;
+                let dy = particles[a].y - particles[b].y;
+                let dist = Math.sqrt(dx*dx + dy*dy);
+
+                if (dist < 140) {
+                    ctx.strokeStyle = "rgba(0,123,255," + (1 - dist/140) + ")";
+                    ctx.beginPath();
+                    ctx.moveTo(particles[a].x, particles[a].y);
+                    ctx.lineTo(particles[b].x, particles[b].y);
+                    ctx.stroke();
+                }
+            }
+        }
+    }
+
+    function animate() {
+        ctx.clearRect(0,0,w,h);
+
+        for (let p of particles) {
+            p.update();
+            p.draw();
+        }
+
+        drawLines();
+        requestAnimationFrame(animate);
+    }
+
+    resize();
+    createParticles();
+    animate();
+    </script>
+
+  <script src="/assets/js/layout.js"></script>
+</body>
+</html>

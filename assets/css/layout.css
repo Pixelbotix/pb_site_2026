@@ -297,6 +297,179 @@ header .text-primary {
 
 
 /* =========================================================
+   PRODUCT CARD SYSTEM (FINAL CLEAN VERSION)
+   ========================================================= */
+
+.card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+
+  padding: 1.25rem;
+  border-radius: 16px;
+
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
+
+  transition: all 0.25s ease;
+  overflow: hidden;
+}
+
+/* DARK MODE */
+.dark .card {
+  background: #111827;
+  border-color: #374151;
+}
+
+/* HOVER */
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 15px 35px rgba(0,0,0,0.08);
+}
+
+.dark .card:hover {
+  box-shadow: 0 20px 40px rgba(0,0,0,0.6);
+}
+
+/* =========================================================
+   SUBTLE COLOR GLOW (CONTROLLED, NOT HEAVY)
+   ========================================================= */
+
+.card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 16px;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+}
+
+.card:hover::before {
+  opacity: 1;
+}
+
+/* COLOR VARIANTS */
+.card-blue::before {
+  background: radial-gradient(circle at top left, rgba(59,130,246,0.2), transparent 60%);
+}
+
+.card-indigo::before {
+  background: radial-gradient(circle at top left, rgba(99,102,241,0.2), transparent 60%);
+}
+
+.card-red::before {
+  background: radial-gradient(circle at top left, rgba(239,68,68,0.2), transparent 60%);
+}
+
+.card-purple::before {
+  background: radial-gradient(circle at top left, rgba(168,85,247,0.2), transparent 60%);
+}
+
+.card-pink::before {
+  background: radial-gradient(circle at top left, rgba(236,72,153,0.2), transparent 60%);
+}
+
+.card-green::before {
+  background: radial-gradient(circle at top left, rgba(34,197,94,0.2), transparent 60%);
+}
+
+/* =========================================================
+   IMAGE (NO CROP + CONSISTENT)
+   ========================================================= */
+
+.card .img {
+  width: 100%;
+  height:300px;
+  object-fit: cover;
+
+  background: #f8fafc;
+  border-radius: 12px;
+  margin: 0.8rem 0;
+  padding: 8px;
+}
+
+.dark .card .img {
+  background: #0b1220;
+}
+
+/* =========================================================
+   TYPOGRAPHY
+   ========================================================= */
+/* ===== TYPOGRAPHY FIX (READABLE SCALE) ===== */
+
+.card .title {
+  font-size: 1.75rem;       /* was ~1.25 */
+  font-weight: 700;
+  line-height: 1.3;
+  margin-bottom: 0.6rem;
+}
+
+.card .desc {
+  font-size: 1.5rem;      /* was ~0.95 */
+  line-height: 1.6;
+  margin-bottom: 1rem;
+  color: #6b7280;
+}
+
+.dark .card .desc {
+  color: #d1d5db;
+}
+
+.card .list {
+  font-size: 1rem;         /* was ~0.9 */
+  line-height: 1.6;
+  padding-left: 1.2rem;
+}
+
+
+.dark .card .list {
+  color: #d1d5db;
+}
+
+.card .list li {
+  margin-bottom: 4px;
+}
+
+/* =========================================================
+   BUTTON (OPTIONAL FUTURE USE)
+   ========================================================= */
+
+.explore-btn {
+  margin-top: auto;
+  width: 100%;
+  padding: 0.6rem;
+  border-radius: 10px;
+  font-weight: 600;
+
+  background: linear-gradient(to right, #2563eb, #3b82f6);
+  color: white;
+
+  opacity: 0.7;
+  cursor: not-allowed;
+  transition: all 0.25s ease;
+}
+
+.explore-btn:not(:disabled) {
+  opacity: 1;
+  cursor: pointer;
+}
+
+.explore-btn:not(:disabled):hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 20px rgba(37,99,235,0.3);
+}
+
+.dark .explore-btn {
+  background: linear-gradient(to right, #3b82f6, #60a5fa);
+}
+
+
+
+
+/* =========================================================
    Institutions We’ve Worked With SCROLLER in gallery 
    ========================================================= */
 
@@ -527,3 +700,5 @@ input {
 .dark body {
     background-color: #030712;
 }
+
+

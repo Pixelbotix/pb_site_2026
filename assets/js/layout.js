@@ -489,3 +489,46 @@ function registerNow() {
   // Replace with payment or form URL
   window.location.href = "https://shop.pixelbotix.com";
 }
+
+
+// Bootcamp js
+
+document.addEventListener('DOMContentLoaded', () => {
+    const regForm = document.getElementById('registrationForm');
+
+    if (regForm) {
+        regForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            
+            // Collect Form Data
+            const formData = {
+                guardian: regForm.querySelectorAll('input')[0].value,
+                phone: regForm.querySelectorAll('input')[1].value,
+                email: regForm.querySelectorAll('input')[2].value
+            };
+
+            console.log('Registration Initiated:', formData);
+            
+            // Success Alert (You can replace this with a Redirect to a Payment Gateway)
+            alert(`Thank you ${formData.guardian}! Proceeding to the payment gateway for ₹3,499.`);
+            
+            // Optional: window.location.href = "your-payment-link-here";
+        });
+    }
+});
+
+tailwind.config = {
+  darkMode: 'class',
+  theme: {
+    extend: {
+      colors: {
+        // The deep midnight background
+        brandDark: '#030712', 
+        // The subtle card background
+        cardDark: '#0f172a',
+        // Vibrant neon blue accent
+        accentBlue: '#3b82f6'
+      }
+    }
+  }
+}

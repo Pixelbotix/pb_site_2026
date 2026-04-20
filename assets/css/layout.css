@@ -189,6 +189,11 @@ header .text-primary {
   to   { transform: translateX(-50%); }
 }
 
+.dark #nav-logo-scroller img {
+  filter: invert(1) brightness(1.6) contrast(0.85) grayscale(0.2);
+  opacity: 0.9;
+}
+
 /* =========================================================
    MOBILE MENU
    ========================================================= */
@@ -455,17 +460,16 @@ transform: translateY(-1px);
   stroke: #60a5fa;
 }
 
-.arrow {
+.progress-arrow {
   fill: #2563eb;
   font-size: 14px;
   font-weight: 700;
-  transform: rotate(90deg);
-  pointer-events: none;
 }
 
-.dark .arrow {
+.dark .progress-arrow {
   fill: #60a5fa;
 }
+
 
 
 /* Home Page card minimum height for r&d eduverse and skill labs */
@@ -475,3 +479,51 @@ transform: translateY(-1px);
   align-items: center;
 } */
 .uniform-card { height: auto; }
+
+
+/* Bootcamp css */
+/* Smooth Scrolling */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Background Video Sizing */
+video {
+    filter: brightness(0.8);
+}
+
+/* Form focus glow */
+input:focus {
+    box-shadow: 0 0 0 4px rgba(37, 99, 235, 0.1);
+}
+
+/* Animation for stats */
+@keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.stat-card {
+    animation: fadeInUp 0.6s ease-out forwards;
+}
+
+/* Custom Scrollbar for a premium look */
+::-webkit-scrollbar { width: 10px; }
+::-webkit-scrollbar-track { background: #030712; }
+::-webkit-scrollbar-thumb { background: #1f2937; border-radius: 5px; }
+::-webkit-scrollbar-thumb:hover { background: #3b82f6; }
+
+/* Subtle card glow in dark mode */
+.dark .shadow-2xl {
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.7);
+}
+
+/* Smooth Input Transition */
+input {
+    transition: all 0.3s ease;
+}
+
+/* Background gradient for the body to match brandDark */
+.dark body {
+    background-color: #030712;
+}

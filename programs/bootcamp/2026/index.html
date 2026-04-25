@@ -4,15 +4,45 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <title>Partnerships & Collaborations | PixelBotix Technologies</title>
-  <meta name="description"
-        content="Academic and industry partnerships at PixelBotix Technologies - collaborations, workshops, R&D, FDPs, and internships." />
+  <title>Robotics & AI Boot Camp | PixelBotix Technologies</title>
+  <meta name="description" content="A hands-on 5-day journey into Electronics, Arduino, Robotics, 3D Printing, and AI for students grade 2-12." />
 
-  <!-- Tailwind -->
   <script src="https://cdn.tailwindcss.com/3.4.16"></script>
   <script>
-    tailwind.config = { darkMode: 'class' }
+    tailwind.config = { 
+        darkMode: 'class',
+        theme: {
+            extend: {
+                colors: {
+                    primary: '#6366f1',
+                    secondary: '#a855f7',
+                    accent: '#06b6d4',
+                }
+            }
+        }
+    }
   </script>
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css">
+
+  <style>
+    .glass-card {
+      background: rgba(255, 255, 255, 0.05);
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+    .dark .glass-card {
+      background: rgba(15, 23, 42, 0.6);
+    }
+    .video-overlay {
+      background: linear-gradient(to bottom, rgba(0,0,0,0.3), rgba(0,0,0,0.7));
+    }
+    .gradient-text {
+      background: linear-gradient(90deg, #6366f1, #a855f7, #06b6d4);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+  </style>
 
   <!-- Icons -->
   <link rel="stylesheet"
@@ -23,6 +53,11 @@
     <link rel="icon" type="image/png" href="/assets/images/favicon/favicon.png">
 </head>
 
+
+<head>
+
+</head>
+
 <body class="bg-white dark:bg-gray-900 text-gray-900 dark:text-gray-100 transition-colors">
 
   <!-- NAVBAR -->
@@ -30,180 +65,296 @@
 
   <main>
 
-<section class="relative h-screen min-h-[600px] flex items-center justify-center overflow-hidden">
+
+<section class="relative pt-2 md:pt-12 pb-12 px-0 md:px-4 bg-white dark:bg-gray-900 transition-colors">
+  <div class="max-w-7xl mx-auto flex flex-col items-center">
+
+<div class="w-full text-center mb-6 order-2 md:order-1 px-4">
+  
+  <h1 class="text-4xl md:text-6xl font-extrabold mb-4 tracking-tight text-gray-900 dark:text-white">
+    5-Day <span class="text-transparent bg-clip-text bg-gradient-to-r from-indigo-500 via-purple-500 to-cyan-500">Robotics & AI</span> Boot Camp
+  </h1>
+  
+  <p class="text-lg md:text-xl text-gray-600 dark:text-gray-400 mb-6 max-w-3xl mx-auto leading-relaxed">
+    Turn your child into a creator. From basic circuits to autonomous robots and AI tools.
+  </p>
+  
+  <div class="flex flex-col items-center gap-4">
+    <div class="flex flex-wrap justify-center gap-4">
+      <a href="https://wa.me/917200445685" class="bg-indigo-600 hover:bg-indigo-700 text-white px-10 py-4 rounded-xl font-bold text-lg transition-all shadow-lg active:scale-95">
+        Register Now ₹2999/-
+      </a>
+
+      <a href="https://wa.me/917200445685" class="bg-[#25D366] hover:bg-[#128C7E] text-white px-10 py-4 rounded-xl font-bold text-lg transition-all shadow-lg flex items-center gap-2 active:scale-95">
+        <i class="ri-whatsapp-line text-2xl"></i>
+        Enquire Now
+      </a>
+    </div>
+  <div class="inline-block px-4 py-1 rounded-full bg-indigo-100 dark:bg-indigo-900/30 text-indigo-600 dark:text-indigo-400 font-medium text-sm mb-4 border border-indigo-500/20">
+    <i class="ri-map-pin-2-line mr-1"></i> Offline at PixelBotix Main Office, Chennai, Tambaram 
+  </div>
+
+    <div class="flex flex-wrap justify-center gap-6 text-sm font-semibold text-gray-500 dark:text-gray-400">
+      <div class="flex items-center gap-1">
+        <i class="ri-calendar-event-line text-indigo-500"></i> May 4th to May 8th
+      </div>
+      <div class="flex items-center gap-1">
+        <i class="ri-time-line text-indigo-500"></i> 9 AM - 1 PM 
+      </div>
+      <div class="flex items-center gap-1 text-orange-500">
+        <i class="ri-fire-line"></i> Only 20 Seats Available!
+      </div>
+    </div>
+  </div>
+</div>
+
+        <div class="w-full max-w-5xl order-1 md:order-2 mb-8 md:mb-0 px-0 md:px-4">
+        <div class="relative overflow-hidden shadow-2xl md:rounded-3xl border-y-2 md:border-4 border-white dark:border-gray-800">
+            
+            <div class="hidden md:block aspect-video">
+            <video autoplay muted loop playsinline class="w-full h-full object-cover">
+                <source src="/assets/videos/bootcamp_videos_desktop.mp4" type="video/mp4">
+            </video>
+            </div>
+
+            <div class="block md:hidden aspect-square w-full">
+            <video autoplay muted loop playsinline class="w-full h-full object-cover">
+                <source src="/assets/videos/bootcamp_videos_mobile.mp4" type="video/mp4">
+            </video>
+            </div>
+            
+            <div class="absolute bottom-4 right-4 backdrop-blur-md bg-black/40 text-white px-4 py-2 rounded-lg text-xs font-bold border border-white/20">
+            <i class="ri-play-circle-line mr-1 text-red-500 animate-pulse"></i> LIVE LAB SESSIONS
+            </div>
+        </div>
+        </div>
+
+    </div>
+    </section>
+
+    <!-- CURRICULAM -->
+<section id="curriculum" class="py-24 px-4 bg-white dark:bg-gray-900 transition-colors">
+  <div class="max-w-7xl mx-auto">
+    <div class="text-center mb-16">
+      <h2 class="text-3xl md:text-5xl font-bold mb-4 dark:text-white">The 5-Day Journey</h2>
+      <p class="text-gray-600 dark:text-gray-400">Step-by-step hands-on learning designed for the future.</p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-5 gap-6">
+      <div class="p-6 rounded-2xl bg-indigo-50/50 dark:bg-indigo-900/10 border border-indigo-100 dark:border-indigo-900/30 hover:border-indigo-500 transition-all group shadow-sm">
+        <div class="w-12 h-12 bg-indigo-100 dark:bg-indigo-900/50 text-indigo-600 dark:text-indigo-400 rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
+          <i class="ri-flashlight-line text-2xl"></i>
+        </div>
+        <h3 class="text-xl font-bold mb-3 text-indigo-900 dark:text-indigo-300">Day 1: Electronics</h3>
+        <ul class="text-sm text-gray-600 dark:text-gray-400 space-y-2 list-none">
+          <li class="flex items-start gap-2">
+            <span class="text-indigo-500 mt-1">•</span>
+            <span>Build real circuits from scratch. </span>
+          </li>
+          <li class="flex items-start gap-2">
+            <span class="text-indigo-500 mt-1">•</span>
+            <span>Use LEDs, sensors, and buzzers.</span>
+          </li>
+        </ul>
+      </div>
+
+      <div class="p-6 rounded-2xl bg-purple-50/50 dark:bg-purple-900/10 border border-purple-100 dark:border-purple-900/30 hover:border-purple-500 transition-all group shadow-sm">
+        <div class="w-12 h-12 bg-purple-100 dark:bg-purple-900/50 text-purple-600 dark:text-purple-400 rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
+          <i class="ri-code-box-line text-2xl"></i>
+        </div>
+        <h3 class="text-xl font-bold mb-3 text-purple-900 dark:text-purple-300">Day 2: Coding</h3>
+        <ul class="text-sm text-gray-600 dark:text-gray-400 space-y-2 list-none">
+          <li class="flex items-start gap-2">
+            <span class="text-purple-500 mt-1">•</span>
+            <span>Learn Arduino programming.</span>
+          </li>
+          <li class="flex items-start gap-2">
+            <span class="text-purple-500 mt-1">•</span>
+            <span>Control real hardware in seconds.</span>
+          </li>
+        </ul>
+      </div>
+
+      <div class="p-6 rounded-2xl bg-cyan-50/50 dark:bg-cyan-900/10 border border-cyan-100 dark:border-cyan-900/30 hover:border-cyan-500 transition-all group shadow-sm">
+        <div class="w-12 h-12 bg-cyan-100 dark:bg-cyan-900/50 text-cyan-600 dark:text-cyan-400 rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
+          <i class="ri-robot-line text-2xl"></i>
+        </div>
+        <h3 class="text-xl font-bold mb-3 text-cyan-900 dark:text-cyan-300">Day 3: Robotics</h3>
+        <ul class="text-sm text-gray-600 dark:text-gray-400 space-y-2 list-none">
+          <li class="flex items-start gap-2">
+            <span class="text-cyan-500 mt-1">•</span>
+            <span>Build a mobile robot.</span>
+          </li>
+          <li class="flex items-start gap-2">
+            <span class="text-cyan-500 mt-1">•</span>
+            <span>Navigate mazes and avoid obstacles.</span>
+          </li>
+        </ul>
+      </div>
+
+      <div class="p-6 rounded-2xl bg-orange-50/50 dark:bg-orange-900/10 border border-orange-100 dark:border-orange-900/30 hover:border-orange-500 transition-all group shadow-sm">
+        <div class="w-12 h-12 bg-orange-100 dark:bg-orange-900/50 text-orange-600 dark:text-orange-400 rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
+          <i class="ri-printer-line text-2xl"></i>
+        </div>
+        <h3 class="text-xl font-bold mb-3 text-orange-900 dark:text-orange-300">Day 4: 3D Design</h3>
+        <ul class="text-sm text-gray-600 dark:text-gray-400 space-y-2 list-none">
+          <li class="flex items-start gap-2">
+            <span class="text-orange-500 mt-1">•</span>
+            <span>Turn ideas into touchable objects.</span>
+          </li>
+          <li class="flex items-start gap-2">
+            <span class="text-orange-500 mt-1">•</span>
+            <span>3D design and TinkerCAD.</span>
+          </li>
+        </ul>
+      </div>
+
+      <div class="p-6 rounded-2xl bg-emerald-50/50 dark:bg-emerald-900/10 border border-emerald-100 dark:border-emerald-900/30 hover:border-emerald-500 transition-all group shadow-sm">
+        <div class="w-12 h-12 bg-emerald-100 dark:bg-emerald-900/50 text-emerald-600 dark:text-emerald-400 rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
+          <i class="ri-cpu-line text-2xl"></i>
+        </div>
+        <h3 class="text-xl font-bold mb-3 text-emerald-900 dark:text-emerald-300">Day 5: AI Tools</h3>
+        <ul class="text-sm text-gray-600 dark:text-gray-400 space-y-2 list-none">
+          <li class="flex items-start gap-2">
+            <span class="text-emerald-500 mt-1">•</span>
+            <span>Train image classifiers. </span>
+          </li>
+          <li class="flex items-start gap-2">
+            <span class="text-emerald-500 mt-1">•</span>
+            <span>Explore the future of AI.</span>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Target audience section -->
+<section class="py-16 px-4 bg-white dark:bg-gray-900 transition-colors">
+  <div class="max-w-4xl mx-auto text-center">
+    <h2 class="text-3xl md:text-5xl font-black mb-10 tracking-tight text-gray-900 dark:text-white">
+      Who is this <span class="text-indigo-600 dark:text-indigo-400">program</span> for?
+    </h2>
     
-    <div class="absolute inset-0 z-0">
-        <video 
-            autoplay 
-            muted 
-            loop 
-            playsinline 
-            poster="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&q=80"
-            class="w-full h-full object-cover brightness-[0.4] dark:brightness-[0.3]"
-        >
-            <source src="https://assets.mixkit.co/videos/preview/mixkit-robotic-arm-in-a-high-tech-factory-31642-large.mp4" type="video/mp4">
-            Your browser does not support the video tag.
-        </video>
+    <div class="p-10 rounded-3xl bg-slate-50 dark:bg-gray-800 border-2 border-dashed border-indigo-200 dark:border-indigo-900/50 relative overflow-hidden">
+      <div class="absolute -right-8 -bottom-8 text-indigo-500/10 rotate-12">
+        <i class="ri-graduation-cap-fill text-9xl"></i>
+      </div>
+      
+      <div class="relative z-10">
+        <div class="w-20 h-20 bg-indigo-600 text-white rounded-2xl flex items-center justify-center mx-auto mb-6 shadow-xl shadow-indigo-500/20">
+          <i class="ri-user-star-line text-4xl"></i>
+        </div>
+        <h3 class="text-2xl md:text-3xl font-bold mb-4 dark:text-white">For School Students</h3>
+        <p class="text-4xl md:text-5xl font-black text-indigo-600 dark:text-indigo-400 mb-6 uppercase tracking-widest">
+          5<sup>th</sup> to 12<sup>th</sup> Grade
+        </p>
+        <div class="flex flex-wrap justify-center gap-4 text-sm font-semibold text-gray-500 dark:text-gray-400">
+          <span class="px-4 py-2 bg-white dark:bg-gray-700 rounded-full border border-gray-200 dark:border-gray-600">
+            <i class="ri-check-line text-green-500"></i> No prior experience required 
+          </span>
+          <span class="px-4 py-2 bg-white dark:bg-gray-700 rounded-full border border-gray-200 dark:border-gray-600">
+            <i class="ri-check-line text-green-500"></i> Small batch focus (20 seats) 
+          </span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Program Stats & Trust -->
+<section class="py-20 px-4 bg-indigo-600 dark:bg-indigo-950 transition-colors relative overflow-hidden">
+  <div class="absolute top-0 left-0 w-64 h-64 bg-white/5 rounded-full blur-3xl -translate-x-1/2 -translate-y-1/2"></div>
+  <div class="absolute bottom-0 right-0 w-96 h-96 bg-purple-500/10 rounded-full blur-3xl translate-x-1/3 translate-y-1/3"></div>
+
+  <div class="max-w-7xl mx-auto relative z-10 text-white">
+    <div class="text-center mb-16">
+      <h2 class="text-3xl md:text-5xl font-black mb-4 tracking-tight">Our Impact in Numbers</h2>
+      <p class="text-indigo-100/80">Recognized by various government authorized bodies</p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-12 text-center mb-16">
+      <div class="group">
+        <div class="text-5xl md:text-7xl font-black mb-2 flex items-center justify-center gap-2">
+          <span>70</span><span class="text-indigo-300 group-hover:translate-y-[-5px] transition-transform">+</span>
+        </div>
+        <p class="text-lg font-bold text-indigo-100 uppercase tracking-wider">Hands-on Robotics<br>Workshops Delivered</p>
+      </div>
+
+      <div class="group">
+        <div class="text-5xl md:text-7xl font-black mb-2 flex items-center justify-center gap-2">
+          <span>10000</span><span class="text-indigo-300 group-hover:translate-y-[-5px] transition-transform">+</span>
+        </div>
+        <p class="text-lg font-bold text-indigo-100 uppercase tracking-wider">Students Trained by<br>PixelBotix</p>
+      </div>
+
+      <div class="group">
+        <div class="text-5xl md:text-7xl font-black mb-2 flex items-center justify-center gap-2">
+          <span>50</span><span class="text-indigo-300 group-hover:translate-y-[-5px] transition-transform">+</span>
+        </div>
+        <p class="text-lg font-bold text-indigo-100 uppercase tracking-wider">Schools Reached<br>Across India</p>
+      </div>
+    </div>
+
+    <div class="max-w-2xl mx-auto backdrop-blur-md bg-white/10 p-8 rounded-3xl border border-white/20 text-center">
+      <div class="flex justify-center items-center gap-4 mb-4">
+        <div class="flex text-yellow-400 text-3xl">
+          <i class="ri-star-fill"></i>
+          <i class="ri-star-fill"></i>
+          <i class="ri-star-fill"></i>
+          <i class="ri-star-fill"></i>
+          <i class="ri-star-half-fill"></i>
+        </div>
+        <span class="text-3xl font-black">4.8 / 5</span>
+      </div>
+      <p class="text-xl font-medium text-indigo-50">
+        Join <span class="font-black underline decoration-yellow-400">10,000+</span> successful robotics students from PixelBotix!
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="py-20 px-4 bg-white dark:bg-gray-900 transition-colors">
+  <div class="max-w-4xl mx-auto relative group">
+    <div class="absolute -inset-1 bg-gradient-to-r from-indigo-500 via-purple-500 to-cyan-500 rounded-3xl blur opacity-25 group-hover:opacity-50 transition duration-1000"></div>
+    
+    <div class="relative p-10 md:p-16 rounded-3xl bg-white dark:bg-gray-800 border border-gray-100 dark:border-gray-700 shadow-2xl text-center">
+      
+      <h2 class="text-4xl md:text-6xl font-black mb-6 tracking-tight text-gray-900 dark:text-white">
+        Register <span class="text-indigo-600 dark:text-indigo-400">Now</span>
+      </h2>
+
+      <div class="mb-10">
+        <div class="inline-flex items-baseline gap-2 mb-4">
+          <span class="text-5xl md:text-7xl font-black text-indigo-600 dark:text-indigo-400">₹2999/-</span> <span class="text-lg font-bold text-gray-500 dark:text-gray-400 uppercase tracking-widest">per participant</span>
+        </div>
         
-        <div class="absolute inset-0 bg-gradient-to-b from-transparent via-brandDark/20 to-brandDark"></div>
-        <div class="absolute inset-0 bg-black/20"></div>
+        <div class="flex items-center justify-center gap-3">
+          <div class="flex items-center gap-2 px-4 py-2 bg-orange-100 dark:bg-orange-900/30 text-orange-600 dark:text-orange-400 rounded-full text-sm font-bold animate-pulse">
+            <i class="ri-fire-fill"></i> Limited seats available </div>
+          <span class="text-gray-400 dark:text-gray-500 text-sm font-medium">Batch Size: 20 Students</span> </div>
+      </div>
+
+      <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+        <a href="https://wa.me/917200445685?text=I%20want%20to%20Register%20for%20the%20Boot%20Camp" 
+           class="w-full sm:w-auto inline-flex items-center justify-center gap-3 bg-indigo-600 hover:bg-indigo-700 text-white px-10 py-5 rounded-2xl font-black text-xl transition-all shadow-xl shadow-indigo-500/20 active:scale-95">
+          Register Now
+          <i class="ri-arrow-right-line"></i>
+        </a>
+
+        <a href="https://wa.me/917200445685?text=I%20have%20an%20enquiry%20about%20the%20Boot%20Camp" 
+           class="w-full sm:w-auto inline-flex items-center justify-center gap-3 bg-[#25D366] hover:bg-[#128C7E] text-white px-10 py-5 rounded-2xl font-black text-xl transition-all shadow-xl shadow-green-500/20 active:scale-95">
+          Enquire Now
+          <i class="ri-whatsapp-line text-2xl"></i>
+        </a>
+      </div>
+      
     </div>
-
-    <div class="relative z-10 container mx-auto px-6">
-        <div class="max-w-4xl">
-            <span class="inline-block px-4 py-1.5 rounded-full bg-accentBlue/20 border border-accentBlue/30 text-accentBlue text-sm font-bold tracking-widest uppercase mb-6 animate-pulse">
-                5-Day Intensive Bootcamp
-            </span>
-            
-            <h1 class="text-5xl md:text-8xl font-black text-white leading-tight mb-8">
-                Robotics & <br>
-                <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-cyan-300">
-                    Artificial Intelligence
-                </span>
-            </h1>
-            
-            <div class="flex flex-col md:flex-row items-start md:items-center gap-8 mb-10">
-                <div class="flex items-center gap-3 text-white/90">
-                    <div class="w-12 h-12 rounded-xl bg-white/10 backdrop-blur-md flex items-center justify-center border border-white/20">
-                        <i class="ri-calendar-line text-2xl text-accentBlue"></i>
-                    </div>
-                    <div>
-                        <p class="text-xs uppercase opacity-60 font-bold">Date</p>
-                        <p class="font-bold">27 April - 1 May</p>
-                    </div>
-                </div>
-
-                <div class="flex items-center gap-3 text-white/90">
-                    <div class="w-12 h-12 rounded-xl bg-white/10 backdrop-blur-md flex items-center justify-center border border-white/20">
-                        <i class="ri-map-pin-line text-2xl text-accentBlue"></i>
-                    </div>
-                    <div>
-                        <p class="text-xs uppercase opacity-60 font-bold">Location</p>
-                        <p class="font-bold">PixelBotix Lab</p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="flex flex-wrap gap-5">
-                <a href="#register" class="group bg-accentBlue hover:bg-blue-600 text-white px-10 py-5 rounded-2xl font-black transition-all shadow-[0_20px_40px_-10px_rgba(59,130,246,0.5)] flex items-center gap-3">
-                    Register Now — ₹3,499
-                    <i class="ri-arrow-right-line group-hover:translate-x-1 transition-transform"></i>
-                </a>
-                <a href="https://wa.me/YOUR_NUMBER" class="bg-white/5 backdrop-blur-xl hover:bg-white/10 text-white border border-white/20 px-10 py-5 rounded-2xl font-bold flex items-center gap-3 transition-all">
-                    <i class="ri-whatsapp-line text-2xl text-green-400"></i> WhatsApp Support
-                </a>
-            </div>
-        </div>
-    </div>
-
-    <div class="absolute bottom-10 left-1/2 -translate-x-1/2 z-20 hidden md:block">
-        <div class="w-6 h-10 border-2 border-white/30 rounded-full flex justify-center p-1">
-            <div class="w-1 h-2 bg-white rounded-full animate-bounce"></div>
-        </div>
-    </div>
+  </div>
 </section>
 
-<section class="py-24 bg-white dark:bg-brandDark transition-colors">
-    <div class="container mx-auto px-6">
-        <div class="grid md:grid-cols-3 gap-8 -mt-32 relative z-30 mb-20">
-            <div class="bg-white dark:bg-cardDark p-10 rounded-3xl shadow-2xl border border-gray-100 dark:border-white/5 transition-all hover:border-accentBlue/50 group">
-                <div class="w-14 h-14 bg-blue-100 dark:bg-blue-500/10 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
-                    <i class="ri-robot-2-line text-3xl text-accentBlue"></i>
-                </div>
-                <h3 class="text-4xl font-black text-gray-900 dark:text-white mb-2">70+</h3>
-                <p class="text-gray-500 dark:text-gray-400 font-medium">Hands-On Workshops</p>
-            </div>
-            <div class="bg-white dark:bg-cardDark p-10 rounded-3xl shadow-2xl border border-gray-100 dark:border-white/5 transition-all hover:border-accentBlue/50 group">
-                <div class="w-14 h-14 bg-blue-100 dark:bg-blue-500/10 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
-                    <i class="ri-group-line text-3xl text-accentBlue"></i>
-                </div>
-                <h3 class="text-4xl font-black text-gray-900 dark:text-white mb-2">100k+</h3>
-                <p class="text-gray-500 dark:text-gray-400 font-medium">Students Trained</p>
-            </div>
-            <div class="bg-white dark:bg-cardDark p-10 rounded-3xl shadow-2xl border border-gray-100 dark:border-white/5 transition-all hover:border-accentBlue/50 group">
-                <div class="w-14 h-14 bg-blue-100 dark:bg-blue-500/10 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
-                    <i class="ri-school-line text-3xl text-accentBlue"></i>
-                </div>
-                <h3 class="text-4xl font-black text-gray-900 dark:text-white mb-2">30+</h3>
-                <p class="text-gray-500 dark:text-gray-400 font-medium">Partner Schools</p>
-            </div>
-        </div>
-
-        <div class="max-w-4xl mx-auto text-center">
-            <h2 class="text-3xl md:text-5xl font-bold mb-8 dark:text-white">Who is this program for?</h2>
-            <div class="inline-flex items-center gap-3 bg-blue-50 dark:bg-white/5 border border-blue-200 dark:border-white/10 px-8 py-4 rounded-2xl mb-12">
-                <span class="text-2xl">🎓</span>
-                <span class="text-xl font-bold text-gray-800 dark:text-blue-300">Students (Grade 5th to 12th)</span>
-            </div>
-            
-            <div class="bg-gray-50 dark:bg-cardDark/50 border border-dashed border-gray-300 dark:border-white/10 p-8 rounded-3xl">
-                <div class="flex justify-center text-yellow-400 text-3xl mb-4">
-                    <i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-half-fill"></i>
-                </div>
-                <p class="text-2xl font-bold dark:text-white mb-2">4.8 / 5 Rating</p>
-                <p class="text-gray-600 dark:text-gray-400">"Join 10,000+ successful robotics students from Pixelbotix"</p>
-            </div>
-        </div>
-    </div>
-</section>
-
-<section id="register" class="py-24 bg-gray-50 dark:bg-brandDark transition-colors">
-    <div class="container mx-auto px-6">
-        <div class="max-w-5xl mx-auto bg-white dark:bg-cardDark rounded-[2rem] overflow-hidden shadow-2xl flex flex-col lg:flex-row border border-gray-100 dark:border-white/5">
-            <div class="lg:w-2/5 bg-accentBlue p-12 text-white relative overflow-hidden">
-                <div class="relative z-10">
-                    <h2 class="text-4xl font-black mb-6">Bootcamp Registration</h2>
-                    <p class="mb-10 text-blue-100 text-lg leading-relaxed">Join us for 5 days of intensive building, coding, and AI exploration.</p>
-                    
-                    <div class="space-y-6">
-                        <div class="flex items-center gap-4">
-                            <div class="w-12 h-12 bg-white/20 rounded-full flex items-center justify-center"><i class="ri-check-line text-2xl"></i></div>
-                            <p class="font-bold">Hardware Kit Access</p>
-                        </div>
-                        <div class="flex items-center gap-4">
-                            <div class="w-12 h-12 bg-white/20 rounded-full flex items-center justify-center"><i class="ri-award-line text-2xl"></i></div>
-                            <p class="font-bold">Global Certification</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="absolute -bottom-20 -left-20 w-64 h-64 bg-white/10 rounded-full"></div>
-            </div>
-
-            <div class="lg:w-3/5 p-12">
-                <div class="flex justify-between items-center mb-10">
-                    <h3 class="text-2xl font-bold dark:text-white">Secure Your Seat</h3>
-                    <div class="text-right">
-                        <span class="block text-3xl font-black text-accentBlue">₹3,499</span>
-                        <span class="text-sm text-gray-500 dark:text-gray-400 uppercase tracking-widest">Limited Seats</span>
-                    </div>
-                </div>
-
-                <form id="registrationForm" class="space-y-6">
-                    <div class="space-y-2">
-                        <label class="text-sm font-bold text-gray-600 dark:text-gray-400 uppercase tracking-wider">Name of Guardian</label>
-                        <input type="text" required class="w-full px-5 py-4 rounded-xl border border-gray-200 dark:border-white/10 bg-gray-50 dark:bg-brandDark text-gray-900 dark:text-white focus:border-accentBlue focus:ring-1 focus:ring-accentBlue outline-none transition-all" placeholder="John Doe">
-                    </div>
-                    <div class="grid md:grid-cols-2 gap-6">
-                        <div class="space-y-2">
-                            <label class="text-sm font-bold text-gray-600 dark:text-gray-400 uppercase tracking-wider">Phone Number</label>
-                            <input type="tel" required class="w-full px-5 py-4 rounded-xl border border-gray-200 dark:border-white/10 bg-gray-50 dark:bg-brandDark text-gray-900 dark:text-white focus:border-accentBlue outline-none transition-all" placeholder="+91 ...">
-                        </div>
-                        <div class="space-y-2">
-                            <label class="text-sm font-bold text-gray-600 dark:text-gray-400 uppercase tracking-wider">Email ID</label>
-                            <input type="email" required class="w-full px-5 py-4 rounded-xl border border-gray-200 dark:border-white/10 bg-gray-50 dark:bg-brandDark text-gray-900 dark:text-white focus:border-accentBlue outline-none transition-all" placeholder="parent@email.com">
-                        </div>
-                    </div>
-                    <button type="submit" class="w-full bg-accentBlue hover:bg-blue-600 text-white font-black py-5 rounded-2xl shadow-xl transition-all transform hover:-translate-y-1 active:scale-95">
-                        Proceed to Registration
-                    </button>
-                </form>
-            </div>
-        </div>
-    </div>
-</section>
-
-
-  </main>
+</main>
 
   <!-- FOOTER -->
   <div id="site-footer"></div>

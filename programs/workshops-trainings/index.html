@@ -5,265 +5,247 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
   <title>Workshops & Training | PixelBotix</title>
-  <meta name="description"
-        content="Execution-focused robotics, ROS 2, AI, drone, and faculty workshops by PixelBotix Technologies." />
+  <meta name="description" content="Execution-focused robotics, AI, and drone workshops by PixelBotix Technologies." />
 
-  <!-- Tailwind -->
   <script src="https://cdn.tailwindcss.com/3.4.16"></script>
   <script>
-    tailwind.config = { darkMode: 'class' }
+    tailwind.config = { 
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            pbBlue: '#3b82f6',
+            pbEmerald: '#10b981',
+            pbAmber: '#f59e0b',
+          }
+        }
+      }
+    }
   </script>
 
-  <!-- Icons -->
-  <link rel="stylesheet"
-        href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css">
-
-  <!-- Global Layout -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css">
+  
   <link rel="stylesheet" href="/assets/css/layout.css">
   <link rel="icon" type="image/png" href="/assets/images/favicon/favicon.png">
 
   <style>
-    .filter-pill {
-      padding: 0.5rem 1rem;
-      border-radius: 9999px;
-      font-size: 0.875rem;
-      font-weight: 500;
-      cursor: pointer;
-      user-select: none;
-      transition: all 0.2s ease;
+    /* --- FIX: NAVBAR DROPDOWNS --- */
+    /* Forces dropdowns to hide and only show on hover if layout.js is failing */
+    #site-navbar ul li ul {
+      display: none;
+      position: absolute;
+      z-index: 50;
     }
-    .filter-pill.active {
-      outline: 2px solid #3b82f6;
-      outline-offset: 2px;
+    #site-navbar ul li:hover > ul {
+      display: block;
     }
-    .badge {
-      font-size: 0.75rem;
-      padding: 0.25rem 0.75rem;
-      border-radius: 9999px;
-      font-weight: 500;
-    }
-  </style>
 
-    <style>
-    .filter-pill {
-      padding: 0.5rem 1.25rem;
-      border-radius: 9999px;
-      font-size: 0.875rem;
-      font-weight: 600;
-      cursor: pointer;
-      transition: all 0.2s ease;
+    /* --- LOGO MARQUEE ANIMATION --- */
+    @keyframes scroll {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
     }
-    .filter-pill.active {
-      background-color: #2563eb !important;
-      color: white !important;
-      box-shadow: 0 4px 12px rgba(37, 99, 235, 0.2);
+    .logo-marquee {
+      display: flex;
+      width: max-content;
+      animation: scroll 30s linear infinite;
     }
-    .primary-toggle.active {
-      background-color: #2563eb;
+    .logo-marquee:hover { animation-play-state: paused; }
+
+    /* --- VIBRANT TOGGLES --- */
+    .filter-btn {
+      transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    
+    /* Category States */
+    .cat-btn[data-type="offline"].active {
+      background: linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%);
+      color: white;
+      box-shadow: 0 10px 25px -5px rgba(59, 130, 246, 0.4);
+      border-color: transparent;
+    }
+    .cat-btn[data-type="online"].active {
+      background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+      color: white;
+      box-shadow: 0 10px 25px -5px rgba(16, 185, 129, 0.4);
+      border-color: transparent;
+    }
+    .cat-btn[data-type="academic"].active {
+      background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);
+      color: white;
+      box-shadow: 0 10px 25px -5px rgba(245, 158, 11, 0.4);
+      border-color: transparent;
+    }
+
+    /* Timeline Sliding Toggle */
+    .timeline-btn.active {
+      background-color: #111827;
       color: white;
     }
-    .badge {
-      font-size: 0.7rem;
-      padding: 0.25rem 0.75rem;
-      border-radius: 9999px;
-      font-weight: 700;
-      text-transform: uppercase;
+    .dark .timeline-btn.active {
+      background-color: #ffffff;
+      color: #111827;
     }
-    .workshop-card {
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-    }
-    .workshop-card:hover {
-      transform: translateY(-5px);
-    }
-    .filter-hidden { display: none; }
 
+    /* Workshop Card Hover */
+    .workshop-card {
+      transition: all 0.4s ease;
+    }
+    .filter-hidden { display: none; opacity: 0; }
   </style>
 </head>
 
-<body class="bg-white dark:bg-gray-900 text-gray-900 dark:text-gray-100 transition-colors">
+<body class="bg-slate-50 dark:bg-[#0f172a] text-gray-900 dark:text-gray-100 transition-colors duration-500">
 
-<!-- NAVBAR -->
 <div id="site-navbar"></div>
 
 <main class="min-h-screen">
 
-  <section class="py-8 sticky top-0 z-10 bg-slate-50/80 dark:bg-gray-900/80 backdrop-blur-md">
-    <div class="max-w-3xl mx-auto px-6">
-      <div class="bg-gray-200 dark:bg-gray-800 p-1.5 rounded-full flex shadow-inner">
-        <button onclick="setPrimary('offline', this)" class="primary-toggle active flex-1 py-3 px-4 rounded-full text-sm font-bold transition-all">
-          <i class="ri-history-line mr-2"></i> PixelBotix Offline
-        </button>
-        <button onclick="setPrimary('academic', this)" class="primary-toggle flex-1 py-3 px-4 rounded-full text-sm font-bold transition-all">
-          <i class="ri-bank-line mr-2"></i> Academic & Industry
-        </button>
-      </div>
+
+
+  <section class="max-w-6xl mx-auto px-6 pt-12 pb-8">
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+      <button onclick="setPrimary('offline', this)" data-type="offline" 
+        class="cat-btn active filter-btn flex items-center justify-center gap-4 py-6 rounded-3xl border-2 border-white dark:border-gray-800 bg-white dark:bg-gray-800 shadow-sm">
+        <div class="w-12 h-12 rounded-2xl bg-blue-100 dark:bg-blue-900/30 flex items-center justify-center">
+          <i class="ri-map-pin-user-fill text-2xl text-blue-600"></i>
+        </div>
+        <div class="text-left">
+          <span class="block font-black text-lg uppercase tracking-tight">PixelBotix Offline Workshop</span>
+          <span class="text-[10px] opacity-60 font-bold uppercase">In-Person</span>
+        </div>
+      </button>
+
+      <button onclick="setPrimary('online', this)" data-type="online" 
+        class="cat-btn filter-btn flex items-center justify-center gap-4 py-6 rounded-3xl border-2 border-white dark:border-gray-800 bg-white dark:bg-gray-800 shadow-sm">
+        <div class="w-12 h-12 rounded-2xl bg-emerald-100 dark:bg-emerald-900/30 flex items-center justify-center">
+          <i class="ri-vidicon-fill text-2xl text-emerald-600"></i>
+        </div>
+        <div class="text-left">
+          <span class="block font-black text-lg uppercase tracking-tight">PixelBotix Online Workshop</span>
+          <span class="text-[10px] opacity-60 font-bold uppercase">Virtual Hub</span>
+        </div>
+      </button>
+
+      <button onclick="setPrimary('academic', this)" data-type="academic" 
+        class="cat-btn filter-btn flex items-center justify-center gap-4 py-6 rounded-3xl border-2 border-white dark:border-gray-800 bg-white dark:bg-gray-800 shadow-sm">
+        <div class="w-12 h-12 rounded-2xl bg-amber-100 dark:bg-amber-900/30 flex items-center justify-center">
+          <i class="ri-bank-fill text-2xl text-amber-600"></i>
+        </div>
+        <div class="text-left">
+          <span class="block font-black text-lg uppercase tracking-tight">Academic & Industry Workshop</span>
+          <span class="text-[10px] opacity-60 font-bold uppercase">Colleges</span>
+        </div>
+      </button>
     </div>
   </section>
 
-  <section class="py-6 border-b dark:border-gray-800">
-    <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row gap-8 justify-center items-center">
-      
-      <div class="flex items-center gap-3">
-        <span class="text-xs font-black uppercase tracking-widest text-gray-400">Status:</span>
-        <div class="flex gap-2" id="status-container">
-          <span onclick="setSecondary('status', 'upcoming', this)" class="filter-pill bg-white dark:bg-gray-800 border dark:border-gray-700">Upcoming</span>
-          <span onclick="setSecondary('status', 'completed', this)" class="filter-pill active bg-white dark:bg-gray-800 border dark:border-gray-700">Completed</span>
-        </div>
-      </div>
-
-      <div class="flex items-center gap-3">
-        <span class="text-xs font-black uppercase tracking-widest text-gray-400">Tech:</span>
-        <div class="flex gap-2">
-          <span onclick="setSecondary('category', 'all', this)" class="filter-pill active bg-white dark:bg-gray-800 border dark:border-gray-700">All Topics</span>
-          <span onclick="setSecondary('category', 'ros', this)" class="filter-pill bg-white dark:bg-gray-800 border dark:border-gray-700">ROS 2</span>
-          <span onclick="setSecondary('category', 'bionic-arm', this)" class="filter-pill bg-white dark:bg-gray-800 border dark:border-gray-700">Bionics</span>
-        </div>
-      </div>
+  <section class="max-w-xl mx-auto px-6 mb-16">
+    <div class="bg-gray-200 dark:bg-gray-800/50 p-1.5 rounded-[2rem] flex shadow-inner border dark:border-gray-700">
+      <button onclick="setStatus('upcoming', this)" class="timeline-btn active flex-1 py-4 rounded-[1.5rem] font-black text-xs uppercase tracking-widest transition-all">
+        <i class="ri-flashlight-line mr-2"></i> Upcoming
+      </button>
+      <button onclick="setStatus('completed', this)" class="timeline-btn flex-1 py-4 rounded-[1.5rem] font-black text-xs uppercase tracking-widest transition-all text-gray-500">
+        <i class="ri-history-line mr-2"></i> Completed
+      </button>
     </div>
   </section>
 
-  <section class="py-16">
-    <div id="workshop-grid" class="max-w-7xl mx-auto px-6 grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+  <section class="max-w-7xl mx-auto px-6 pb-24">
+    <div id="workshop-grid" class="grid md:grid-cols-2 lg:grid-cols-3 gap-10">
 
-      <article class="workshop-card bg-white dark:bg-gray-800 rounded-2xl shadow-sm border dark:border-gray-700 overflow-hidden"
-               data-primary="offline" data-status="completed" data-category="ros">
-        <img src="/assets/images/all_workshops/ROS2_workshop_27_Jan-29_Jan_1.jpeg" class="w-full h-48 object-cover grayscale" alt="ROS Offline">
-        <div class="p-6 border-l-4 border-blue-600">
-          <div class="flex gap-2 mb-3">
-            <span class="badge bg-blue-100 text-blue-700">ROS & AMR</span>
-            <span class="badge bg-gray-200 text-gray-700">Completed</span>
-          </div>
-          <h3 class="text-lg font-bold mb-2 text-gray-400">15 Days Skill Development: Master in ROS</h3>
-          <p class="text-sm text-gray-500 mb-4 font-medium">🏁 24 Nov 2025 · PixelBotix Hub</p>
-          <a href="https://pixelbotix.com/media/visual-media/photo-gallery/" class="block text-center py-2 bg-gray-100 dark:bg-gray-700 text-pbBlue rounded-xl font-bold text-sm hover:bg-blue-50 transition-colors">
-            View Photo Gallery <i class="ri-external-link-line ml-1"></i>
+      <article class="workshop-card group bg-white dark:bg-gray-800 rounded-[2.5rem] overflow-hidden border dark:border-gray-700 shadow-xl shadow-blue-500/5"
+               data-category="offline" data-status="upcoming">
+        <div class="h-60 relative overflow-hidden">
+          <img src="https://images.unsplash.com/photo-1531297484001-80022131f5a1?w=600" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" alt="ROS">
+          <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent"></div>
+          <div class="absolute top-6 left-6 bg-blue-600 text-white text-[10px] px-4 py-1.5 rounded-full font-black uppercase tracking-widest">Enrollment Open</div>
+        </div>
+        <div class="p-8">
+          <h3 class="text-2xl font-black mb-3 leading-tight">Master in ROS 2 Navigation</h3>
+          <p class="flex items-center text-gray-500 dark:text-gray-400 font-bold text-sm mb-6">
+            <i class="ri-map-pin-2-fill mr-2 text-blue-600"></i> PixelBotix Hub, Chennai
+          </p>
+          <button class="w-full py-4 bg-gray-900 dark:bg-blue-600 text-white rounded-2xl font-black hover:shadow-2xl transition-all uppercase tracking-widest">
+            Book Seat
+          </button>
+        </div>
+      </article>
+
+      <article class="workshop-card group bg-white dark:bg-gray-800 rounded-[2.5rem] overflow-hidden border dark:border-gray-700 shadow-xl shadow-emerald-500/5"
+               data-category="offline" data-status="completed">
+        <div class="h-60 relative overflow-hidden">
+          <img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=600" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" alt="ML">
+          <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent"></div>
+          <div class="absolute top-6 left-6 bg-emerald-600 text-white text-[10px] px-4 py-1.5 rounded-full font-black uppercase tracking-widest">Batch Completed</div>
+        </div>
+        <div class="p-8">
+          <h3 class="text-2xl font-black mb-3 leading-tight text-gray-800 dark:text-white">Bionic Hand ML Control</h3>
+          <p class="flex items-center text-gray-500 dark:text-gray-400 font-bold text-sm mb-6">
+            <i class="ri-checkbox-circle-fill mr-2 text-emerald-600"></i> Successfully Finished
+          </p>
+          <a href="#" class="block text-center py-4 border-2 border-emerald-600 text-emerald-600 dark:text-emerald-400 rounded-2xl font-black hover:bg-emerald-600 hover:text-white transition-all uppercase tracking-widest">
+            View Gallery
           </a>
         </div>
       </article>
 
-      <article class="workshop-card bg-white dark:bg-gray-800 rounded-2xl shadow-sm border dark:border-gray-700 overflow-hidden"
-               data-primary="offline" data-status="completed" data-category="bionic-arm">
-        <img src="https://images.unsplash.com/photo-1589254065878-42c9da997008?w=600" class="w-full h-48 object-cover grayscale" alt="Bionic Offline">
-        <div class="p-6 border-l-4 border-orange-600">
-          <div class="flex gap-2 mb-3">
-            <span class="badge bg-orange-100 text-orange-700">Bionics</span>
-            <span class="badge bg-gray-200 text-gray-700">Completed</span>
-          </div>
-          <h3 class="text-lg font-bold mb-2 text-gray-400">ML for Multi Gesture Bionic Hand Control</h3>
-          <p class="text-sm text-gray-500 mb-4 font-medium">🏁 24 Nov - 31 Dec 2025</p>
-          <a href="https://pixelbotix.com/media/visual-media/photo-gallery/" class="block text-center py-2 bg-gray-100 dark:bg-gray-700 text-pbBlue rounded-xl font-bold text-sm hover:bg-blue-50 transition-colors">
-            View Photo Gallery <i class="ri-external-link-line ml-1"></i>
-          </a>
-        </div>
-      </article>
-
-      <article class="workshop-card bg-white dark:bg-gray-800 rounded-2xl shadow-sm border dark:border-gray-700 overflow-hidden"
-               data-primary="offline" data-status="completed" data-category="ros">
-        <img src="https://images.unsplash.com/photo-1531297484001-80022131f5a1?w=600" class="w-full h-48 object-cover grayscale" alt="ROS Bootcamp">
-        <div class="p-6 border-l-4 border-blue-400">
-          <div class="flex gap-2 mb-3">
-            <span class="badge bg-blue-100 text-blue-700">ROS & AMR</span>
-            <span class="badge bg-gray-200 text-gray-700">Completed</span>
-          </div>
-          <h3 class="text-lg font-bold mb-2 text-gray-400">3 Days Master in ROS Navigation</h3>
-          <p class="text-sm text-gray-500 mb-4 font-medium">🏁 27-29 Jan 2025</p>
-          <a href="https://pixelbotix.com/media/visual-media/photo-gallery/" class="block text-center py-2 bg-gray-100 dark:bg-gray-700 text-pbBlue rounded-xl font-bold text-sm hover:bg-blue-50 transition-colors">
-            View Photo Gallery <i class="ri-external-link-line ml-1"></i>
-          </a>
-        </div>
-      </article>
-
-      <article class="workshop-card bg-white dark:bg-gray-800 rounded-2xl shadow-sm border dark:border-gray-700 overflow-hidden"
-              data-primary="academic" data-status="upcoming" data-category="ros">
-        <img src="https://images.unsplash.com/photo-1631217868264-e5b90bb7e133?w=600" class="w-full h-48 object-cover" alt="MIT AI">
-        <div class="p-6 border-l-4 border-teal-500">
-          <div class="flex gap-2 mb-3">
-            <span class="badge bg-teal-100 text-teal-700">3D Printing & AI</span>
-            <span class="badge bg-green-100 text-green-700">Upcoming</span>
-          </div>
-          <h3 class="text-lg font-bold mb-2">AI Integration in 3D Printing</h3>
-          <p class="text-sm text-gray-500 mb-4 font-medium">📅 7-8 Jan 2026 · MIT Anna University</p>
-          <button class="w-full py-2 bg-pbBlue text-white rounded-xl font-bold text-sm">Join Now</button>
-        </div>
-      </article>
-
     </div>
-  </section>
 
-  <section class="py-20 bg-gradient-to-r from-blue-600 to-indigo-700">
-    <div class="max-w-7xl mx-auto px-6 text-center">
-      <h2 class="text-3xl lg:text-5xl font-bold text-white mb-6">Bring This Workshop to Your Institution</h2>
-      <p class="text-lg text-blue-100 max-w-2xl mx-auto mb-10 opacity-90">Architecture-driven workshops designed for colleges and skill centers.</p>
-      <a href="#" class="inline-flex items-center bg-white text-blue-600 px-10 py-4 rounded-2xl font-black shadow-lg hover:bg-gray-100 transition-all">
-        Request a Workshop <i class="ri-arrow-right-line ml-2"></i>
-      </a>
+    <div id="no-results" class="hidden text-center py-32">
+      <div class="inline-flex p-10 bg-white dark:bg-gray-800 rounded-full shadow-inner mb-6">
+        <i class="ri-compass-3-line text-6xl text-blue-500"></i>
+      </div>
+      <h3 class="text-3xl font-black text-gray-300 dark:text-gray-700 uppercase tracking-tighter">New Sessions Coming Soon</h3>
+      <p class="text-gray-500 mt-2 font-bold uppercase text-xs tracking-widest">Check another category or timeline</p>
     </div>
   </section>
 
 </main>
 
-<script>
-let activeState = { primary: 'offline', status: 'completed', category: 'all' };
-
-function setPrimary(val, btn) {
-    activeState.primary = val;
-    // Auto-switch status for Offline category
-    if(val === 'offline') activeState.status = 'completed';
-    else activeState.status = 'upcoming';
-    
-    syncPills();
-    applyFilters();
-}
-
-function setSecondary(type, val, btn) {
-    activeState[type] = val;
-    applyFilters();
-}
-
-function syncPills() {
-    document.querySelectorAll('.primary-toggle').forEach(b => {
-        b.classList.toggle('active', b.innerText.toLowerCase().includes(activeState.primary));
-    });
-    // Sync status pills visually
-    document.querySelectorAll('#status-container .filter-pill').forEach(p => {
-        p.classList.toggle('active', p.innerText.toLowerCase().includes(activeState.status));
-    });
-}
-
-function applyFilters() {
-    const cards = document.querySelectorAll('.workshop-card');
-
-    cards.forEach(card => {
-        const pMatch = card.dataset.primary === activeState.primary;
-        const sMatch = card.dataset.status === activeState.status;
-        const cMatch =
-            activeState.category === 'all' ||
-            card.dataset.category === activeState.category;
-
-        if (pMatch && sMatch && cMatch) {
-            card.classList.remove('filter-hidden');
-        } else {
-            card.classList.add('filter-hidden');
-        }
-    });
-
-    // Sync status pills
-    document.querySelectorAll('#status-container .filter-pill').forEach(p => {
-        p.classList.toggle(
-            'active',
-            p.innerText.toLowerCase().includes(activeState.status)
-        );
-    });
-}
-
-
-document.addEventListener("DOMContentLoaded", applyFilters);
-</script>
-
-
-<!-- FOOTER -->
 <div id="site-footer"></div>
 
+<script>
+  let activeState = { category: 'offline', status: 'upcoming' };
+
+  function setPrimary(val, btn) {
+    activeState.category = val;
+    document.querySelectorAll('.cat-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    applyFilters();
+  }
+
+  function setStatus(val, btn) {
+    activeState.status = val;
+    document.querySelectorAll('.timeline-btn').forEach(b => {
+      b.classList.remove('active');
+      b.classList.add('text-gray-500'); 
+    });
+    btn.classList.add('active');
+    btn.classList.remove('text-gray-500');
+    applyFilters();
+  }
+
+  function applyFilters() {
+    const cards = document.querySelectorAll('.workshop-card');
+    let count = 0;
+
+    cards.forEach(card => {
+      const match = card.dataset.category === activeState.category && card.dataset.status === activeState.status;
+      if (match) {
+        card.classList.remove('filter-hidden');
+        count++;
+      } else {
+        card.classList.add('filter-hidden');
+      }
+    });
+
+    document.getElementById('no-results').classList.toggle('hidden', count > 0);
+    document.getElementById('workshop-grid').classList.toggle('hidden', count === 0);
+  }
+
+  document.addEventListener("DOMContentLoaded", applyFilters);
+</script>
 
 <script src="/assets/js/layout.js"></script>
 </body>

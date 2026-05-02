@@ -295,6 +295,315 @@ header .text-primary {
   }
 }
 
+
+/* =========================================================
+   HOME PAGE EXCLUSIVE: PREMIUM PRODUCT CARDS
+   ========================================================= */
+/* =========================================================
+   PIXELBOTIX COMPACT & CENTERED PRODUCT SECTION
+   ========================================================= */
+
+/* Center the Section Header */
+.section-header-center {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.premium-product-grid {
+    --card-radius: 20px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.25rem;
+}
+
+.premium-card {
+    position: relative;
+    /* Apply subtle multi-color shade based on accent variable */
+    background: linear-gradient(135deg, rgba(255,255,255,1) 0%, var(--bg-shade) 100%);
+    border: 1px solid var(--border-shade);
+    border-radius: var(--card-radius);
+    padding: 1.25rem;
+    display: flex;
+    flex-direction: column;
+    transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+    overflow: hidden;
+}
+
+.dark .premium-card {
+    background: linear-gradient(135deg, #111827 0%, var(--bg-shade-dark) 100%);
+    border-color: #1f2937;
+}
+
+/* Icon and Title in one line */
+.card-header-row {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin-bottom: 0.5rem;
+}
+
+.card-icon-box {
+    width: 38px;
+    height: 38px;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+    background: var(--accent-color);
+    color: white;
+    box-shadow: 0 4px 12px -4px var(--accent-color);
+}
+
+.premium-card .card-title {
+    font-size: 1.25rem;
+    font-weight: 800;
+    margin: 0;
+    color: #111827;
+}
+
+.dark .premium-card .card-title {
+    color: #f9fafb;
+}
+
+/* Tightened Image Container */
+.product-image-container {
+    width: 100%;
+    height: 150px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0.75rem 0;
+    border-radius: 12px;
+    background: rgba(255, 255, 255, 0.4);
+    border: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.dark .product-image-container {
+    background: rgba(15, 23, 42, 0.6);
+}
+
+.product-image-container img {
+    max-width: 85%;
+    max-height: 85%;
+    object-fit: contain;
+    filter: drop-shadow(0 5px 10px rgba(0,0,0,0.08));
+}
+
+.premium-card:hover {
+    transform: translateY(-8px);
+    border-color: var(--accent-color);
+    box-shadow: 0 15px 30px -10px var(--shadow-color);
+}
+
+
+
+/* =========================================================
+   EXECUTION EVIDENCE - PREMIUM GLASSMORPHISM
+   ========================================================= */
+.evidence-section {
+    position: relative;
+    background: radial-gradient(circle at top right, rgba(59, 130, 246, 0.05), transparent),
+                radial-gradient(circle at bottom left, rgba(16, 185, 129, 0.05), transparent);
+}
+
+.dark .evidence-section {
+    background: radial-gradient(circle at top right, rgba(37, 99, 235, 0.1), transparent),
+                radial-gradient(circle at bottom left, rgba(5, 150, 105, 0.1), transparent);
+}
+
+.glass-stat-card {
+    background: rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    border-bottom: 4px solid var(--accent-color);
+    box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.05);
+    transition: all 0.4s ease;
+}
+
+.dark .glass-stat-card {
+    background: rgba(17, 24, 39, 0.6);
+    border-color: rgba(255, 255, 255, 0.05);
+    border-bottom-color: var(--accent-color);
+    box-shadow: 0 20px 40px -20px rgba(0, 0, 0, 0.5);
+}
+
+.glass-stat-card:hover {
+    transform: translateY(-5px);
+    background: rgba(255, 255, 255, 0.9);
+}
+
+.dark .glass-stat-card:hover {
+    background: rgba(31, 41, 55, 0.8);
+}
+
+.stat-value {
+    background: linear-gradient(to bottom right, var(--accent-color), var(--glow-color));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    filter: drop-shadow(0 2px 4px rgba(0,0,0,0.1));
+}
+
+.info-pill {
+    background: linear-gradient(90deg, #1e40af, #0891b2);
+    border-radius: 9999px;
+    color: white;
+    box-shadow: 0 4px 15px rgba(30, 64, 175, 0.3);
+    transition: transform 0.3s ease;
+}
+
+.info-pill:hover {
+    transform: scale(1.01);
+}
+
+
+/* =========================================================
+   WHO THIS IS FOR - ULTRA-WIDE ROW & PREMIUM EFFECTS
+   ========================================================= */
+
+/* Force 5 columns on Tablet & Desktop */
+.row-force-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr); /* Always 5 columns */
+    gap: 1rem;
+}
+
+/* Fallback to stack only on Mobile */
+@media (max-width: 768px) {
+    .row-force-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+}
+
+.premium-target-card {
+    position: relative;
+    padding: 1.5rem 1rem;
+    border-radius: 20px;
+    border: 1px solid var(--border-color);
+    background: linear-gradient(145deg, rgba(255,255,255,0.9), var(--bg-shade));
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    height: 100%;
+}
+
+.dark .premium-target-card {
+    background: linear-gradient(145deg, rgba(31, 41, 55, 0.4), var(--bg-shade-dark));
+    border-color: rgba(255, 255, 255, 0.05);
+}
+
+.premium-target-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 30px -10px var(--shadow-color);
+    border-color: var(--accent-color);
+}
+
+.icon-circle {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--accent-color);
+    color: white;
+    margin-bottom: 1rem;
+    box-shadow: 0 8px 15px -5px var(--accent-color);
+}
+
+.premium-target-card h3 {
+    font-size: 1.1rem;
+    font-weight: 800;
+    margin-bottom: 0.5rem;
+}
+
+.premium-target-card p {
+    font-size: 0.85rem;
+    line-height: 1.4;
+    margin-bottom: 1.25rem;
+}
+
+
+/* =========================================================
+   PREMIUM CTA - DYNAMIC MESH GRADIENT
+   ========================================================= */
+.premium-cta-section {
+    position: relative;
+    overflow: hidden;
+    /* Multi-color mesh gradient */
+    background: linear-gradient(135deg, #1e40af 0%, #3b82f6 40%, #8b5cf6 70%, #ec4899 100%);
+    z-index: 1;
+}
+
+/* Animated background "Blobs" for depth */
+.premium-cta-section::before {
+    content: "";
+    position: absolute;
+    top: -50%;
+    left: -10%;
+    width: 70%;
+    height: 150%;
+    background: radial-gradient(circle, rgba(96, 165, 250, 0.3) 0%, transparent 60%);
+    animation: pulseGlow 8s ease-in-out infinite alternate;
+    z-index: -1;
+}
+
+@keyframes pulseGlow {
+    from { transform: scale(1) translate(0, 0); }
+    to { transform: scale(1.2) translate(10%, 5%); }
+}
+
+.glass-cta-button {
+    background: rgba(255, 255, 255, 1);
+    color: #1e40af;
+    backdrop-filter: blur(8px);
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    box-shadow: 0 15px 35px -10px rgba(0, 0, 0, 0.2);
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.glass-cta-button:hover {
+    background: #ffffff;
+    transform: translateY(-5px) scale(1.05);
+    box-shadow: 0 20px 40px -10px rgba(0, 0, 0, 0.3);
+    color: #2563eb;
+}
+
+.dark .premium-cta-section {
+    background: linear-gradient(135deg, #030712 0%, #1e3a8a 50%, #4c1d95 100%);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 /* =========================================================
    Research & DevelopmentSkill Labs & InfrastructurePixelBotix Eduverse
    ========================================================= */

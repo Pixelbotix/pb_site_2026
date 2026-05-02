@@ -297,13 +297,10 @@ header .text-primary {
 
 
 /* =========================================================
-   HOME PAGE EXCLUSIVE: PREMIUM PRODUCT CARDS
-   ========================================================= */
-/* =========================================================
-   PIXELBOTIX COMPACT & CENTERED PRODUCT SECTION
+   PIXELBOTIX PREMIUM PRODUCT SECTION (STRICT GRID)
    ========================================================= */
 
-/* Center the Section Header */
+/* --- 1. Header & Layout --- */
 .section-header-center {
     display: flex;
     flex-direction: column;
@@ -311,32 +308,52 @@ header .text-primary {
     text-align: center;
 }
 
+/* --- 2. Strict Grid Logic --- */
 .premium-product-grid {
-    --card-radius: 20px;
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: 1fr; /* Stacked for mobile */
     gap: 1.25rem;
+    width: 100%;
 }
 
+/* Tablet view (2 columns) */
+@media (min-width: 768px) {
+    .premium-product-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* Desktop view (Strictly 3 columns regardless of zoom) */
+@media (min-width: 1024px) {
+    .premium-product-grid {
+        grid-template-columns: repeat(3, 1fr); 
+        gap: 1.5rem;
+    }
+}
+
+/* --- 3. Card Geometry & Border --- */
 .premium-card {
     position: relative;
-    /* Apply subtle multi-color shade based on accent variable */
-    background: linear-gradient(135deg, rgba(255,255,255,1) 0%, var(--bg-shade) 100%);
-    border: 1px solid var(--border-shade);
-    border-radius: var(--card-radius);
-    padding: 1.25rem;
+    /* Smooth curved corners */
+    border-radius: 24px; 
+    /* Visible, solid border aligned with brand colors */
+    border: 1.5px solid var(--border-shade);
+    padding: 1.5rem;
     display: flex;
     flex-direction: column;
-    transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
     overflow: hidden;
+    /* Multi-color shade background */
+    background: linear-gradient(135deg, rgba(255,255,255,1) 0%, var(--bg-shade) 100%);
+    transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
 }
 
 .dark .premium-card {
     background: linear-gradient(135deg, #111827 0%, var(--bg-shade-dark) 100%);
-    border-color: #1f2937;
+    /* Clearly visible border in dark mode */
+    border-color: #374151; 
 }
 
-/* Icon and Title in one line */
+/* --- 4. Card Internal Elements --- */
 .card-header-row {
     display: flex;
     align-items: center;
@@ -345,20 +362,20 @@ header .text-primary {
 }
 
 .card-icon-box {
-    width: 38px;
-    height: 38px;
+    width: 40px;
+    height: 40px;
     flex-shrink: 0;
     display: flex;
     align-items: center;
     justify-content: center;
-    border-radius: 10px;
+    border-radius: 12px;
     background: var(--accent-color);
     color: white;
     box-shadow: 0 4px 12px -4px var(--accent-color);
 }
 
 .premium-card .card-title {
-    font-size: 1.25rem;
+    font-size: 1.3rem;
     font-weight: 800;
     margin: 0;
     color: #111827;
@@ -368,36 +385,38 @@ header .text-primary {
     color: #f9fafb;
 }
 
-/* Tightened Image Container */
+/* --- 5. Image Handling --- */
 .product-image-container {
     width: 100%;
-    height: 150px;
+    height: 160px;
     display: flex;
     align-items: center;
     justify-content: center;
-    margin: 0.75rem 0;
-    border-radius: 12px;
+    margin: 1rem 0;
+    border-radius: 16px;
     background: rgba(255, 255, 255, 0.4);
-    border: 1px solid rgba(0, 0, 0, 0.05);
+    border: 1px solid rgba(0, 0, 0, 0.08);
 }
 
 .dark .product-image-container {
     background: rgba(15, 23, 42, 0.6);
+    border-color: rgba(255, 255, 255, 0.1);
 }
 
 .product-image-container img {
     max-width: 85%;
     max-height: 85%;
     object-fit: contain;
-    filter: drop-shadow(0 5px 10px rgba(0,0,0,0.08));
+    filter: drop-shadow(0 5px 12px rgba(0,0,0,0.1));
 }
 
+/* --- 6. Hover Interaction --- */
 .premium-card:hover {
     transform: translateY(-8px);
+    /* Border intensifies on hover */
     border-color: var(--accent-color);
     box-shadow: 0 15px 30px -10px var(--shadow-color);
 }
-
 
 
 /* =========================================================

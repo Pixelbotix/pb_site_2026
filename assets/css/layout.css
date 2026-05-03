@@ -1043,3 +1043,47 @@ input {
 }
 
 
+/* 5 days ros workshop page */
+
+/* Base card adjustment for multi-color transparency */
+.card {
+    background: rgba(255, 255, 255, 0.85); /* Slightly transparent white */
+    backdrop-blur: 10px; /* Optional: adds a modern frosted glass look */
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+/* Day-specific background tints */
+.card-blue { background: rgba(59, 130, 246, 0.08); }
+.card-indigo { background: rgba(99, 102, 241, 0.08); }
+.card-purple { background: rgba(168, 85, 247, 0.08); }
+.card-red { background: rgba(239, 68, 68, 0.08); }
+.card-green { background: rgba(34, 197, 94, 0.08); }
+
+/* Dark mode overrides for deeper color saturation */
+.dark .card-blue { background: rgba(59, 130, 246, 0.15); border-color: rgba(59, 130, 246, 0.3); }
+.dark .card-indigo { background: rgba(99, 102, 241, 0.15); border-color: rgba(99, 102, 241, 0.3); }
+.dark .card-purple { background: rgba(168, 85, 247, 0.15); border-color: rgba(168, 85, 247, 0.3); }
+.dark .card-red { background: rgba(239, 68, 68, 0.15); border-color: rgba(239, 68, 68, 0.3); }
+.dark .card-green { background: rgba(34, 197, 94, 0.15); border-color: rgba(34, 197, 94, 0.3); }
+
+/* Keep your existing Subtle Color Glow visible at low opacity before hover */
+.card::before {
+    opacity: 0.15; /* Gradient visible before hover */
+}
+.card:hover::before {
+    opacity: 0.3; /* Brightens on hover */
+}
+/* Make the gradient visible by default at 10% intensity */
+.card::before {
+    opacity: 0.1; /* Visible before hover */
+}
+
+/* Increase intensity to 100% (of the defined 0.2 alpha) on hover */
+.card:hover::before {
+    opacity: 1;
+}
+
+/* Premium adjustment for dark mode to make colors pop more */
+.dark .card::before {
+    opacity: 0.15;
+}

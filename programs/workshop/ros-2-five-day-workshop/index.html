@@ -22,60 +22,68 @@
   <div id="site-navbar"></div>
 
   <main class="pt-5">
-    <section class="relative md:min-h-[85vh] overflow-hidden bg-gradient-to-br from-slate-900 via-gray-900 to-black">
+
+
+    <section class="relative h-[calc(80vh-4rem)] w-full overflow-hidden bg-slate-950 flex flex-col md:flex-row">
         
-        <video class="absolute inset-0 w-full h-full object-cover hidden md:block opacity-0 transition-opacity duration-700"
-            src="/assets/videos/amr-platforms.mp4" 
-            poster="/assets/images/workshops/ros-2/ros2-day2.png"
-            autoplay muted loop playsinline onloadeddata="this.classList.remove('opacity-0')">
-        </video>
+        <div class="relative z-20 w-full md:w-[30%] h-full flex flex-col justify-between p-5 md:p-8 bg-slate-950 border-r border-white/5">
+            
+            <div class="fadeInUp">
+                <h1 class="text-lg md:text-xl lg:text-2xl font-black text-white leading-tight">
+                    Master in <span class="text-cyan-300 drop-shadow-[0_0_15px_rgba(34,211,238,0.8)]">ROS</span> & <br>
+                    Autonomous Mobile <br> Robot Navigation
+                </h1>
+                <p class="mt-1 text-[9px] md:text-xs text-blue-200/60 font-medium tracking-wide">
+                    5-Days Hands-On Intensive Workshop
+                </p>
+            </div>
 
-        <div class="absolute inset-0 hidden md:block bg-gradient-to-r from-black/80 via-black/55 to-black/20"></div>
-
-        <div class="relative z-10 hidden md:flex md:min-h-[85vh]">
-            <div class="flex items-center px-16">
-                <div class="max-w-xl bg-black/55 backdrop-blur-md p-8 rounded-3xl border border-cyan-400/40 shadow-[0_0_40px_rgba(34,211,238,0.35)]">
-                    <h1 class="text-5xl font-bold mb-4 text-cyan-300 drop-shadow-[0_0_20px_rgba(34,211,238,0.9)]">
-                        Master in ROS & Autonomous Mobile Robot Navigation
-                    </h1>
-                    <p class="text-xl mb-6 text-blue-300 drop-shadow-[0_0_16px_rgba(59,130,246,0.9)]">
-                        5-Days Hands-On Intensive Workshop
-                    </p>
-                    <div class="flex flex-col gap-2 mb-6 text-lg text-purple-300 drop-shadow-[0_0_14px_rgba(168,85,247,0.9)]">
-                        <span><i class="ri-calendar-line"></i> 11th May to 15th May 2026</span>
-                        <span><i class="ri-map-pin-line"></i> Pixelbotix Robotics Lab, Tambaram</span>
-                        <div class="flex items-center gap-3">
-                            <span class="text-2xl font-bold text-white">₹2999</span>
-                            <span class="line-through text-gray-400 text-sm">₹3999</span>
-                            <span class="bg-red-500 text-white text-xs px-2 py-1 rounded-full">25% OFF</span>
-                        </div>
+            <div class="backdrop-blur-md bg-black/45 border border-white/10 p-4 md:p-5 rounded-[1.5rem] shadow-2xl fadeInUp">
+                <div class="flex flex-col gap-3">
+                    <div class="flex items-center gap-2 text-purple-300">
+                        <i class="ri-calendar-line text-sm"></i>
+                        <span class="text-[9px] md:text-[10px] font-semibold tracking-wider uppercase">11th May - 15th May 2026</span>
                     </div>
-                    <button onclick="applyNow()" class="bg-gradient-to-r from-cyan-500 to-blue-600 text-white px-10 py-4 rounded-2xl font-semibold shadow-[0_0_35px_rgba(59,130,246,1)] hover:shadow-[0_0_55px_rgba(59,130,246,1)] transition">
-                        Apply Now
-                    </button>
+
+                    <div class="flex items-center gap-2 text-cyan-300">
+                        <i class="ri-map-pin-line text-sm"></i>
+                        <span class="text-[9px] md:text-[10px] font-semibold tracking-wider">Pixelbotix Lab, Tambaram</span>
+                    </div>
+
+                    <div class="flex flex-col gap-0">
+                        <div class="flex items-center gap-2">
+                            <span class="text-lg font-black text-white">₹2999</span>
+                            <span class="bg-red-500 text-white text-[7px] px-1.5 py-0.5 rounded-full font-bold">25% OFF</span>
+                        </div>
+                        <span class="text-slate-500 text-[9px] line-through opacity-60 ml-1">₹3999</span>
+                    </div>
+
+                    <div class="flex items-center gap-3 pt-1">
+                        <button onclick="applyNow()" class="flex-1 bg-gradient-to-r from-cyan-500 to-blue-600 text-white py-2 rounded-xl font-bold text-[9px] shadow-[0_0_15px_rgba(59,130,246,0.3)] hover:scale-105 transition-all uppercase">
+                            Apply Now
+                        </button>
+
+                        <a href="https://wa.me/917200445685" class="whatsapp-pulse flex items-center justify-center w-9 h-9 bg-green-500 text-white rounded-full text-base shadow-lg">
+                            <i class="ri-whatsapp-line"></i>
+                            <div class="pulse-ring"></div>
+                        </a>
+                    </div>
                 </div>
             </div>
         </div>
 
-        <div class="md:hidden">
-            <div class="relative aspect-video bg-gray-900">
-                <video class="w-full h-full object-contain" src="/assets/videos/amr-platforms.mp4" autoplay muted loop playsinline></video>
-                <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/40 to-transparent"></div>
-            </div>
-            <div class="bg-gray-950 text-white px-5 py-8 -mt-10 rounded-t-3xl text-center relative z-20">
-                <h1 class="text-2xl font-bold mb-2 text-cyan-300">Master in ROS & AMR Navigation</h1>
-                <p class="text-sm mb-4 text-blue-300">5-Days Hands-On Workshop</p>
-                <div class="flex flex-col items-center gap-2 text-sm mb-5 text-purple-300">
-                    <span><i class="ri-calendar-line"></i> 11 May - 15 May</span>
-                    <span><i class="ri-map-pin-line"></i> Tambaram, Chennai</span>
-                    <span class="text-lg font-bold">₹2999 <span class="line-through text-xs opacity-60">₹3999</span></span>
-                </div>
-                <button onclick="applyNow()" class="w-full bg-gradient-to-r from-cyan-500 to-blue-600 py-3 rounded-xl font-semibold shadow-[0_0_30px_rgba(59,130,246,1)]">
-                    Apply Now
-                </button>
-            </div>
+        <div class="relative w-full md:w-[70%] h-full bg-black">
+            <video class="w-full h-full object-contain opacity-0 transition-opacity duration-700"
+                src="/assets/videos/amr-platforms.mp4" 
+                poster="/assets/images/workshops/ros-2/ros2-day2.png"
+                autoplay muted loop playsinline onloadeddata="this.classList.remove('opacity-0')">
+            </video>
+            
+            <div class="absolute inset-y-0 left-0 w-16 bg-gradient-to-r from-slate-950 to-transparent"></div>
         </div>
     </section>
+
+
 
     <!-- ================= TRAINER & OUTCOMES ================= -->
     <section class="py-5 md:py-5 bg-gray-50 dark:bg-gray-800">
@@ -182,105 +190,139 @@
     </section>
 
 
-    <section class="py-16 bg-gray-50 dark:bg-gray-800">
+
+    <!-- WOrkshop curiculam -->
+    <section class="py-16 bg-white dark:bg-[#030712]">
         <div class="max-w-7xl mx-auto px-6">
-            <h2 class="text-4xl font-bold text-center mb-4">Workshop Curriculum</h2>
-            <p class="text-center text-gray-600 dark:text-gray-400 mb-12">Only 20 Seats Available for personalized mentoring</p>
+            <div class="text-center mb-12">
+                <h2 class="text-4xl font-black text-gray-900 dark:text-white mb-4">Workshop Curriculum</h2>
+                <p class="text-gray-500 font-medium tracking-wide">Only 20 Seats Available for personalized mentoring</p>
+            </div>
             
-            <div class="grid md:grid-cols-3 lg:grid-cols-5 gap-4 items-stretch">
-                <div class="card card-blue p-6">
-                    <span class="text-xs font-bold text-blue-500 mb-2 block uppercase">Day 1</span>
-                    <h3 class="title !text-lg">Foundations</h3>
-                    <ul class="list text-sm">
+            <div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-4 items-stretch">
+                
+                <div class="card card-blue p-6 flex flex-col border-t-4 border-t-blue-500 shadow-lg">
+                    <div class="flex justify-between items-center mb-6">
+                        <span class="text-[10px] font-black text-blue-600 dark:text-blue-400 uppercase tracking-widest">Day 1</span>
+                        <i class="ri-terminal-box-line text-blue-500 text-xl"></i>
+                    </div>
+                    <h3 class="title !text-lg !font-extrabold mb-3">Foundations</h3>
+                    <ul class="list text-sm space-y-2 text-gray-600 dark:text-gray-300">
                         <li>Introduction to ROS2</li>
                         <li>Workspace & Python</li>
                         <li>RViz2 & TF2 Visuals</li>
                     </ul>
                 </div>
-                <div class="card card-indigo p-6">
-                    <span class="text-xs font-bold text-indigo-500 mb-2 block uppercase">Day 2</span>
-                    <h3 class="title !text-lg">Modeling & Sim</h3>
-                    <ul class="list text-sm">
-                        <li>URDF Robot Modeling</li>
+
+                <div class="card card-indigo p-6 flex flex-col border-t-4 border-t-indigo-500 shadow-lg">
+                    <div class="flex justify-between items-center mb-6">
+                        <span class="text-[10px] font-black text-indigo-600 dark:text-indigo-400 uppercase tracking-widest">Day 2</span>
+                        <i class="ri-robot-line text-indigo-500 text-xl"></i>
+                    </div>
+                    <h3 class="title !text-lg !font-extrabold mb-3">Modeling & Sim</h3>
+                    <ul class="list text-sm space-y-2 text-gray-600 dark:text-gray-300">
+                        <li>URDF Robot Model</li>
                         <li>Gazebo Simulation</li>
                         <li>Motion Control</li>
                     </ul>
                 </div>
-                <div class="card card-purple p-6">
-                    <span class="text-xs font-bold text-purple-500 mb-2 block uppercase">Day 3</span>
-                    <h3 class="title !text-lg">Sensors & AI</h3>
-                    <ul class="list text-sm">
+
+                <div class="card card-purple p-6 flex flex-col border-t-4 border-t-purple-500 shadow-lg">
+                    <div class="flex justify-between items-center mb-6">
+                        <span class="text-[10px] font-black text-purple-600 dark:text-purple-400 uppercase tracking-widest">Day 3</span>
+                        <i class="ri-radar-line text-purple-500 text-xl"></i>
+                    </div>
+                    <h3 class="title !text-lg !font-extrabold mb-3">Sensors & AI</h3>
+                    <ul class="list text-sm space-y-2 text-gray-600 dark:text-gray-300">
                         <li>LiDAR Integration</li>
                         <li>Camera & OpenCV</li>
                         <li>Docker Integration</li>
                     </ul>
                 </div>
-                <div class="card card-red p-6">
-                    <span class="text-xs font-bold text-red-500 mb-2 block uppercase">Day 4</span>
-                    <h3 class="title !text-lg">Embedded ROS</h3>
-                    <li>Real Robot Setup</li>
-                    <li>ESP32 Firmware</li>
-                    <li>Environment Prep</li>
+
+                <div class="card card-red p-6 flex flex-col border-t-4 border-t-red-500 shadow-lg">
+                    <div class="flex justify-between items-center mb-6">
+                        <span class="text-[10px] font-black text-red-600 dark:text-red-400 uppercase tracking-widest">Day 4</span>
+                        <i class="ri-cpu-line text-red-500 text-xl"></i>
+                    </div>
+                    <h3 class="title !text-lg !font-extrabold mb-3">Embedded ROS</h3>
+                    <ul class="list text-sm space-y-2 text-gray-600 dark:text-gray-300">
+                        <li>Real Robot Setup</li>
+                        <li>ESP32 Firmware</li>
+                        <li>Environment Prep</li>
+                    </ul>
                 </div>
-                <div class="card card-green p-6">
-                    <span class="text-xs font-bold text-green-500 mb-2 block uppercase">Day 5</span>
-                    <h3 class="title !text-lg">Navigation</h3>
-                    <li>Teleop & Mapping</li>
-                    <li>Autonomous Stack</li>
-                    <li>Final Testing</li>
+
+                <div class="card card-green p-6 flex flex-col border-t-4 border-t-green-500 shadow-lg">
+                    <div class="flex justify-between items-center mb-6">
+                        <span class="text-[10px] font-black text-green-600 dark:text-green-400 uppercase tracking-widest">Day 5</span>
+                        <i class="ri-navigation-line text-green-500 text-xl"></i>
+                    </div>
+                    <h3 class="title !text-lg !font-extrabold mb-3">Navigation</h3>
+                    <ul class="list text-sm space-y-2 text-gray-600 dark:text-gray-300">
+                        <li>Teleop & Mapping</li>
+                        <li>Autonomous Stack</li>
+                        <li>Final Testing</li>
+                    </ul>
                 </div>
+
             </div>
         </div>
     </section>
 
 
-    <!-- Who is this program for  -->
-    <section class="py-10 bg-gray-50">
-        <div class="max-w-7xl mx-auto px-4">
+<!-- who is this program for  -->
+<section class="py-16 bg-gray-50 dark:bg-slate-950 transition-colors">
+    <div class="max-w-7xl mx-auto px-4">
 
-            <div class="text-center mb-12">
-                <h2 class="text-4xl font-bold text-gray-900 mb-4">Who Is This Program For?</h2>
+        <div class="text-center mb-12">
+            <h2 class="text-4xl font-black text-gray-900 dark:text-white mb-4">Who Is This Program For?</h2>
+            <div class="w-20 h-1 bg-cyan-500 mx-auto rounded-full"></div>
+        </div>
+
+        <div class="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-6">
+
+            <div class="bg-white dark:bg-slate-900 rounded-2xl p-5 shadow-md hover:shadow-xl transition-all border border-transparent dark:border-white/10 text-center flex flex-col items-center group">
+                <div class="overflow-hidden rounded-xl mb-4 w-full">
+                    <img src="/assets/images/programs/ros-2_five_day_workshop/student_beginners.jpg"
+                         alt="Students" class="w-full h-32 object-cover transform group-hover:scale-110 transition-transform duration-500">
+                </div>
+                <h3 class="text-lg font-bold text-gray-900 dark:text-cyan-400 mb-2">Students & Beginners</h3>
+                <p class="text-gray-600 dark:text-slate-400 text-sm leading-relaxed">Perfect for UG/PG students from any branch.</p>
             </div>
 
-            <!-- Compact grid: 2 on mobile, 2 on md, 4 on lg -->
-            <div class="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-4">
-
-                <div
-                    class="bg-white rounded-xl p-4 shadow-md hover:shadow-lg transition-shadow text-center flex flex-col items-center">
-                    <img src="https://readdy.ai/api/search-image?query=young%20Indian%20engineering%20students%20with%20laptops%20and%20robotics%20textbooks%20in%20university%20setting%2C%20undergraduate%20students%20learning%20robotics%2C%20diverse%20group%20of%20engineering%20students&width=300&height=200&seq=students-beginners&orientation=landscape"
-                        alt="Students" class="w-full h-28 object-cover rounded-lg mb-3">
-                    <h3 class="text-lg font-semibold text-gray-900 mb-1">Students & Beginners</h3>
-                    <p class="text-gray-600 text-sm">Perfect for UG/PG students from any branch.</p>
+            <div class="bg-white dark:bg-slate-900 rounded-2xl p-5 shadow-md hover:shadow-xl transition-all border border-transparent dark:border-white/10 text-center flex flex-col items-center group">
+                <div class="overflow-hidden rounded-xl mb-4 w-full">
+                    <img src="/assets/images/programs/ros-2_five_day_workshop/engineers_developers.jpg"
+                         alt="Engineers" class="w-full h-32 object-cover transform group-hover:scale-110 transition-transform duration-500">
                 </div>
+                <h3 class="text-lg font-bold text-gray-900 dark:text-cyan-400 mb-2">Engineers & Developers</h3>
+                <p class="text-gray-600 dark:text-slate-400 text-sm leading-relaxed">Shift into AI, robotics & automation.</p>
+            </div>
 
-                <div
-                    class="bg-white rounded-xl p-4 shadow-md hover:shadow-lg transition-shadow text-center flex flex-col items-center">
-                    <img src="https://readdy.ai/api/search-image?query=professional%20engineers%20and%20developers%20working%20on%20robotics%20projects%2C%20software%20engineers%20transitioning%20to%20robotics%2C%20modern%20tech%20workplace%20with%20automation%20systems&width=300&height=200&seq=engineers-developers&orientation=landscape"
-                        alt="Engineers" class="w-full h-28 object-cover rounded-lg mb-3">
-                    <h3 class="text-lg font-semibold text-gray-900 mb-1">Engineers & Developers</h3>
-                    <p class="text-gray-600 text-sm">Shift into AI, robotics & automation.</p>
+            <div class="bg-white dark:bg-slate-900 rounded-2xl p-5 shadow-md hover:shadow-xl transition-all border border-transparent dark:border-white/10 text-center flex flex-col items-center group">
+                <div class="overflow-hidden rounded-xl mb-4 w-full">
+                    <img src="/assets/images/programs/ros-2_five_day_workshop/researchers_scientists.jpg"
+                         alt="Researchers" class="w-full h-32 object-cover transform group-hover:scale-110 transition-transform duration-500">
                 </div>
+                <h3 class="text-lg font-bold text-gray-900 dark:text-cyan-400 mb-2">Researchers & Academics</h3>
+                <p class="text-gray-600 dark:text-slate-400 text-sm leading-relaxed">Perfect for MTech/PhD robotics projects.</p>
+            </div>
 
-                <div
-                    class="bg-white rounded-xl p-4 shadow-md hover:shadow-lg transition-shadow text-center flex flex-col items-center">
-                    <img src="https://readdy.ai/api/search-image?query=researchers%20and%20academics%20working%20on%20robotics%20research%20projects%2C%20PhD%20students%20with%20robotic%20systems%2C%20university%20research%20laboratory%20environment&width=300&height=200&seq=researchers-academics&orientation=landscape"
-                        alt="Researchers" class="w-full h-28 object-cover rounded-lg mb-3">
-                    <h3 class="text-lg font-semibold text-gray-900 mb-1">Researchers & Academics</h3>
-                    <p class="text-gray-600 text-sm">Perfect for MTech/PhD robotics projects.</p>
+            <div class="bg-white dark:bg-slate-900 rounded-2xl p-5 shadow-md hover:shadow-xl transition-all border border-transparent dark:border-white/10 text-center flex flex-col items-center group">
+                <div class="overflow-hidden rounded-xl mb-4 w-full">
+                    <img src="/assets/images/programs/ros-2_five_day_workshop/makers_innovators.jpg"
+                         alt="Makers" class="w-full h-32 object-cover transform group-hover:scale-110 transition-transform duration-500">
                 </div>
-
-                <div
-                    class="bg-white rounded-xl p-4 shadow-md hover:shadow-lg transition-shadow text-center flex flex-col items-center">
-                    <img src="https://readdy.ai/api/search-image?query=makers%20and%20innovators%20building%20robot%20prototypes%20in%20workshop%2C%20creative%20engineers%20with%20DIY%20robotics%20projects%2C%20innovation%20lab%20with%20robotic%20components&width=300&height=200&seq=makers-innovators&orientation=landscape"
-                        alt="Makers" class="w-full h-28 object-cover rounded-lg mb-3">
-                    <h3 class="text-lg font-semibold text-gray-900 mb-1">Makers & Innovators</h3>
-                    <p class="text-gray-600 text-sm">Build real robots & automation systems.</p>
-                </div>
-
+                <h3 class="text-lg font-bold text-gray-900 dark:text-cyan-400 mb-2">Makers & Innovators</h3>
+                <p class="text-gray-600 dark:text-slate-400 text-sm leading-relaxed">Build real robots & automation systems.</p>
             </div>
 
         </div>
-    </section>
+    </div>
+</section>
+
+
 
     <!-- Execution Evidence - Premium Refined Version -->
     <section class="evidence-section py-16 transition-colors">
@@ -328,14 +370,14 @@
             </div>
 
             <!-- PILL MESSAGES -->
-            <div class="max-w-5xl mx-auto space-y-4">
+            <!-- <div class="max-w-5xl mx-auto space-y-4">
                 <div class="info-pill p-4 md:p-5 text-center text-sm md:text-base font-semibold">
                     We provide comprehensive training for teachers on all lab equipment and the proposed curriculum to ensure confident and effective classroom delivery
                 </div>
                 <div class="info-pill p-4 md:p-5 text-center text-sm md:text-base font-semibold">
                     We offer fully customized lab setups tailored to your available space, budget, and specific educational requirements
                 </div>
-            </div>
+            </div> -->
 
             <!-- VIEW EXECUTION BUTTON -->
             <div class="text-center mt-12">
@@ -347,293 +389,280 @@
         </div>
     </section>  
 
+
     <!-- What will you learn -->
-    <section class="py-20 bg-white">
+    <section class="py-20 bg-white dark:bg-[#030712] transition-colors">
         <div class="max-w-7xl mx-auto px-4">
 
             <div class="text-center mb-16">
-                <h2 class="text-4xl font-bold text-gray-900 mb-4">What You Will Learn</h2>
-                <p class="text-xl text-gray-600">3-Part Skill Structure for Complete Robotics Mastery</p>
+                <h2 class="text-4xl font-black text-gray-900 dark:text-white mb-4">What You Will Learn</h2>
+                <p class="text-xl text-gray-600 dark:text-gray-400">3-Part Skill Structure for Complete Robotics Mastery</p>
             </div>
 
             <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
 
-                <!-- A. Technical Skills -->
-                <div class="bg-gradient-to-br from-blue-50 to-indigo-50 rounded-xl p-8 border border-blue-100">
+                <div class="bg-gradient-to-br from-blue-50 to-indigo-50 dark:from-blue-950/30 dark:to-indigo-950/30 rounded-xl p-8 border border-blue-100 dark:border-blue-900/30 shadow-sm">
 
-                    <!-- Icon + Title centered -->
                     <div class="flex items-center justify-center gap-4 mb-8">
-                        <div class="w-12 h-12 flex items-center justify-center bg-primary rounded-lg">
+                        <div class="w-12 h-12 flex items-center justify-center bg-primary rounded-lg shadow-lg">
                             <i class="ri-code-line text-2xl text-white"></i>
                         </div>
-                        <h3 class="text-2xl font-bold text-gray-900">A. Technical Skills</h3>
+                        <h3 class="text-2xl font-bold text-gray-900 dark:text-white uppercase tracking-tight">A. Technical Skills</h3>
                     </div>
 
-                    <div class="grid grid-cols-3 gap-6 text-center text-sm text-gray-700">
+                    <div class="grid grid-cols-3 gap-6 text-center text-sm text-gray-700 dark:text-gray-300">
 
-                        <!-- Each skill item (updated) -->
                         <div>
                             <div class="w-12 h-12 mx-auto mb-2 flex items-center justify-center">
-                                <img src="/assets/images/workshops/ros-2/internship_icon/python_icon.png"
-                                    class="max-w-full max-h-full object-contain">
+                                <img src="/assets/images/workshops/ros-2/internship_icon/python_icon.png" 
+                                    class="max-w-full max-h-full object-contain" alt="Python">
                             </div>
-                            <p>Python</p>
+                            <p class="font-medium">Python</p>
                         </div>
 
                         <div>
                             <div class="w-12 h-12 mx-auto mb-2 flex items-center justify-center">
-                                <img src="/assets/images/workshops/ros-2/internship_icon/docker.png"
-                                    class="max-w-full max-h-full object-contain">
+                                <img src="/assets/images/workshops/ros-2/internship_icon/docker.png" 
+                                    class="max-w-full max-h-full object-contain" alt="Docker">
                             </div>
-                            <p>Docker</p>
-                        </div>
-
-
-                        <div>
-                            <div class="w-12 h-12 mx-auto mb-2 flex items-center justify-center">
-                                <img src="/assets/images/workshops/ros-2/internship_icon/ros_2.png"
-                                    class="max-w-full max-h-full object-contain">
-                            </div>
-                            <p>ROS2 Basics</p>
-                        </div>
-
-
-                        <div>
-                            <div class="w-12 h-12 mx-auto mb-2 flex items-center justify-center">
-                                <img src="/assets/images/workshops/ros-2/internship_icon/rvix_2.png"
-                                    class="max-w-full max-h-full object-contain">
-                            </div>
-                            <p>RViz2</p>
+                            <p class="font-medium">Docker</p>
                         </div>
 
                         <div>
                             <div class="w-12 h-12 mx-auto mb-2 flex items-center justify-center">
-                                <img src="/assets/images/workshops/ros-2/internship_icon/urdf.png"
-                                    class="max-w-full max-h-full object-contain">
+                                <img src="/assets/images/workshops/ros-2/internship_icon/ros_2.png" 
+                                    class="max-w-full max-h-full object-contain" alt="ROS2">
                             </div>
-                            <p>URDF</p>
+                            <p class="font-medium">ROS2 Basics</p>
                         </div>
 
                         <div>
                             <div class="w-12 h-12 mx-auto mb-2 flex items-center justify-center">
-                                <img src="/assets/images/workshops/ros-2/internship_icon/gazebo.png"
-                                    class="max-w-full max-h-full object-contain">
+                                <img src="/assets/images/workshops/ros-2/internship_icon/rvix_2.png" 
+                                    class="max-w-full max-h-full object-contain" alt="RViz2">
                             </div>
-                            <p>Gazebo</p>
+                            <p class="font-medium">RViz2</p>
                         </div>
 
                         <div>
                             <div class="w-12 h-12 mx-auto mb-2 flex items-center justify-center">
-                                <img src="/assets/images/workshops/ros-2/internship_icon/lidar.png"
-                                    class="max-w-full max-h-full object-contain">
+                                <img src="/assets/images/workshops/ros-2/internship_icon/urdf.png" 
+                                    class="max-w-full max-h-full object-contain" alt="URDF">
                             </div>
-                            <p>LiDAR</p>
+                            <p class="font-medium">URDF</p>
                         </div>
 
                         <div>
                             <div class="w-12 h-12 mx-auto mb-2 flex items-center justify-center">
-                                <img src="/assets/images/workshops/ros-2/internship_icon/opencv.png"
-                                    class="max-w-full max-h-full object-contain">
+                                <img src="/assets/images/workshops/ros-2/internship_icon/gazebo.png" 
+                                    class="max-w-full max-h-full object-contain" alt="Gazebo">
                             </div>
-                            <p>OpenCV</p>
+                            <p class="font-medium">Gazebo</p>
                         </div>
 
                         <div>
                             <div class="w-12 h-12 mx-auto mb-2 flex items-center justify-center">
-                                <img src="/assets/images/workshops/ros-2/internship_icon/kinematics.png"
-                                    class="max-w-full max-h-full object-contain">
+                                <img src="/assets/images/workshops/ros-2/internship_icon/lidar.png" 
+                                    class="max-w-full max-h-full object-contain" alt="LiDAR">
                             </div>
-                            <p>Kinematics</p>
+                            <p class="font-medium">LiDAR</p>
                         </div>
 
+                        <div>
+                            <div class="w-12 h-12 mx-auto mb-2 flex items-center justify-center">
+                                <img src="/assets/images/workshops/ros-2/internship_icon/opencv.png" 
+                                    class="max-w-full max-h-full object-contain" alt="OpenCV">
+                            </div>
+                            <p class="font-medium">OpenCV</p>
+                        </div>
 
+                        <div>
+                            <div class="w-12 h-12 mx-auto mb-2 flex items-center justify-center">
+                                <img src="/assets/images/workshops/ros-2/internship_icon/kinematics.png" 
+                                    class="max-w-full max-h-full object-contain" alt="Kinematics">
+                            </div>
+                            <p class="font-medium">Kinematics</p>
+                        </div>
 
                     </div>
                 </div>
 
+                <div class="bg-gradient-to-br from-blue-50 to-indigo-50 dark:from-slate-900/40 dark:to-slate-800/40 rounded-xl p-8 border border-blue-100 dark:border-white/10 shadow-sm transition-colors">
 
-                <!-- B. Soft Skills -->
-
-                <div class="bg-gradient-to-br from-blue-50 to-indigo-50 rounded-xl p-8 border border-blue-100">
-
-                    <!-- Icon + Title centered -->
                     <div class="flex items-center justify-center gap-4 mb-8">
-                        <div class="w-12 h-12 flex items-center justify-center bg-primary rounded-lg">
+                        <div class="w-12 h-12 flex items-center justify-center bg-primary rounded-lg shadow-lg">
                             <i class="ri-user-line text-2xl text-white"></i>
                         </div>
-                        <h3 class="text-2xl font-bold text-gray-900">B. Soft Skills</h3>
+                        <h3 class="text-2xl font-bold text-gray-900 dark:text-white uppercase tracking-tight">B. Soft Skills</h3>
                     </div>
 
-                    <div class="grid grid-cols-3 gap-6 text-center text-sm text-gray-700">
+                    <div class="grid grid-cols-3 gap-6 text-center text-sm text-gray-700 dark:text-gray-300">
 
                         <div>
                             <div class="w-12 h-12 mx-auto mb-2 flex items-center justify-center">
-                                <img src="/assets/images/workshops/ros-2/internship_icon/problem_solving.png"
-                                    class="max-w-full max-h-full object-contain">
+                                <img src="/assets/images/workshops/ros-2/internship_icon/problem_solving.png" 
+                                    class="max-w-full max-h-full object-contain" alt="Problem Solving">
                             </div>
-                            <p>Problem Solving</p>
+                            <p class="font-medium">Problem Solving</p>
                         </div>
 
                         <div>
                             <div class="w-12 h-12 mx-auto mb-2 flex items-center justify-center">
-                                <img src="/assets/images/workshops/ros-2/internship_icon/system_thinking.png"
-                                    class="max-w-full max-h-full object-contain">
+                                <img src="/assets/images/workshops/ros-2/internship_icon/system_thinking.png" 
+                                    class="max-w-full max-h-full object-contain" alt="System Thinking">
                             </div>
-                            <p>System Thinking</p>
+                            <p class="font-medium">System Thinking</p>
                         </div>
 
                         <div>
                             <div class="w-12 h-12 mx-auto mb-2 flex items-center justify-center">
-                                <img src="/assets/images/workshops/ros-2/internship_icon/debugging.png"
-                                    class="max-w-full max-h-full object-contain">
+                                <img src="/assets/images/workshops/ros-2/internship_icon/debugging.png" 
+                                    class="max-w-full max-h-full object-contain" alt="Debugging">
                             </div>
-                            <p>Debugging</p>
+                            <p class="font-medium">Debugging</p>
                         </div>
 
                         <div>
                             <div class="w-12 h-12 mx-auto mb-2 flex items-center justify-center">
-                                <img src="/assets/images/workshops/ros-2/internship_icon/team_work.png"
-                                    class="max-w-full max-h-full object-contain">
+                                <img src="/assets/images/workshops/ros-2/internship_icon/team_work.png" 
+                                    class="max-w-full max-h-full object-contain" alt="Teamwork">
                             </div>
-                            <p>Teamwork</p>
+                            <p class="font-medium">Teamwork</p>
                         </div>
 
                         <div>
                             <div class="w-12 h-12 mx-auto mb-2 flex items-center justify-center">
-                                <img src="/assets/images/workshops/ros-2/internship_icon/communication_skill.png"
-                                    class="max-w-full max-h-full object-contain">
+                                <img src="/assets/images/workshops/ros-2/internship_icon/communication_skill.png" 
+                                    class="max-w-full max-h-full object-contain" alt="Communication">
                             </div>
-                            <p>Communication</p>
+                            <p class="font-medium">Communication</p>
                         </div>
 
                         <div>
                             <div class="w-12 h-12 mx-auto mb-2 flex items-center justify-center">
-                                <img src="/assets/images/workshops/ros-2/internship_icon/documentation.png"
-                                    class="max-w-full max-h-full object-contain">
+                                <img src="/assets/images/workshops/ros-2/internship_icon/documentation.png" 
+                                    class="max-w-full max-h-full object-contain" alt="Documentation">
                             </div>
-                            <p>Documentation</p>
+                            <p class="font-medium">Documentation</p>
                         </div>
 
                         <div>
                             <div class="w-12 h-12 mx-auto mb-2 flex items-center justify-center">
-                                <img src="/assets/images/workshops/ros-2/internship_icon/presentation_skill.png"
-                                    class="max-w-full max-h-full object-contain">
+                                <img src="/assets/images/workshops/ros-2/internship_icon/presentation_skill.png" 
+                                    class="max-w-full max-h-full object-contain" alt="Presentation">
                             </div>
-                            <p>Presentation</p>
+                            <p class="font-medium">Presentation</p>
                         </div>
 
                         <div>
                             <div class="w-12 h-12 mx-auto mb-2 flex items-center justify-center">
-                                <img src="/assets/images/workshops/ros-2/internship_icon/confidence.png"
-                                    class="max-w-full max-h-full object-contain">
+                                <img src="/assets/images/workshops/ros-2/internship_icon/confidence.png" 
+                                    class="max-w-full max-h-full object-contain" alt="Lab Confidence">
                             </div>
-                            <p>Lab Confidence</p>
+                            <p class="font-medium">Lab Confidence</p>
                         </div>
 
                         <div>
                             <div class="w-12 h-12 mx-auto mb-2 flex items-center justify-center">
-                                <img src="/assets/images/workshops/ros-2/internship_icon/leadership.png"
-                                    class="max-w-full max-h-full object-contain">
+                                <img src="/assets/images/workshops/ros-2/internship_icon/leadership.png" 
+                                    class="max-w-full max-h-full object-contain" alt="Leadership">
                             </div>
-                            <p>Leadership</p>
+                            <p class="font-medium">Leadership</p>
                         </div>
 
                     </div>
                 </div>
 
+                <div class="bg-gradient-to-br from-orange-50 to-red-50 dark:from-orange-950/20 dark:to-red-950/20 rounded-xl p-8 border border-orange-100 dark:border-orange-900/20 shadow-sm transition-colors">
 
-                <!-- C. Career Skills -->
-                <div class="bg-gradient-to-br from-orange-50 to-red-50 rounded-xl p-8 border border-orange-100">
-
-                    <!-- Icon + Title centered -->
                     <div class="flex items-center justify-center gap-4 mb-8">
-                        <div class="w-12 h-12 flex items-center justify-center bg-primary rounded-lg">
+                        <div class="w-12 h-12 flex items-center justify-center bg-primary rounded-lg shadow-lg">
                             <i class="ri-briefcase-line text-2xl text-white"></i>
                         </div>
-                        <h3 class="text-2xl font-bold text-gray-900">C. Career Skills</h3>
+                        <h3 class="text-2xl font-bold text-gray-900 dark:text-white uppercase tracking-tight">C. Career Skills</h3>
                     </div>
 
-                    <div class="grid grid-cols-3 gap-6 text-center text-sm text-gray-700">
+                    <div class="grid grid-cols-3 gap-6 text-center text-sm text-gray-700 dark:text-gray-300">
 
                         <div>
                             <div class="w-12 h-12 mx-auto mb-2 flex items-center justify-center">
-                                <img src="/assets/images/workshops/ros-2/internship_icon/portfolio.png"
-                                    class="max-w-full max-h-full object-contain">
+                                <img src="/assets/images/workshops/ros-2/internship_icon/portfolio.png" 
+                                    class="max-w-full max-h-full object-contain" alt="Portfolio">
                             </div>
-                            <p>Portfolio</p>
+                            <p class="font-medium">Portfolio</p>
                         </div>
 
                         <div>
                             <div class="w-12 h-12 mx-auto mb-2 flex items-center justify-center">
-                                <img src="/assets/images/workshops/ros-2/internship_icon/interview.png"
-                                    class="max-w-full max-h-full object-contain">
+                                <img src="/assets/images/workshops/ros-2/internship_icon/interview.png" 
+                                    class="max-w-full max-h-full object-contain" alt="Interviews">
                             </div>
-                            <p>Interviews</p>
+                            <p class="font-medium">Interviews</p>
                         </div>
 
                         <div>
                             <div class="w-12 h-12 mx-auto mb-2 flex items-center justify-center">
-                                <img src="/assets/images/workshops/ros-2/internship_icon/industry.png"
-                                    class="max-w-full max-h-full object-contain">
+                                <img src="/assets/images/workshops/ros-2/internship_icon/industry.png" 
+                                    class="max-w-full max-h-full object-contain" alt="Industry">
                             </div>
-                            <p>Industry</p>
+                            <p class="font-medium">Industry</p>
                         </div>
 
                         <div>
                             <div class="w-12 h-12 mx-auto mb-2 flex items-center justify-center">
-                                <img src="/assets/images/workshops/ros-2/internship_icon/research.png"
-                                    class="max-w-full max-h-full object-contain">
+                                <img src="/assets/images/workshops/ros-2/internship_icon/research.png" 
+                                    class="max-w-full max-h-full object-contain" alt="Research">
                             </div>
-                            <p>Research</p>
+                            <p class="font-medium">Research</p>
                         </div>
 
                         <div>
                             <div class="w-12 h-12 mx-auto mb-2 flex items-center justify-center">
-                                <img src="/assets/images/workshops/ros-2/internship_icon/academic.png"
-                                    class="max-w-full max-h-full object-contain">
+                                <img src="/assets/images/workshops/ros-2/internship_icon/academic.png" 
+                                    class="max-w-full max-h-full object-contain" alt="Academics">
                             </div>
-                            <p>Academics</p>
+                            <p class="font-medium">Academics</p>
                         </div>
 
                         <div>
                             <div class="w-12 h-12 mx-auto mb-2 flex items-center justify-center">
-                                <img src="/assets/images/workshops/ros-2/internship_icon/internship.png"
-                                    class="max-w-full max-h-full object-contain">
+                                <img src="/assets/images/workshops/ros-2/internship_icon/internship.png" 
+                                    class="max-w-full max-h-full object-contain" alt="Internships">
                             </div>
-                            <p>Internships</p>
+                            <p class="font-medium">Internships</p>
                         </div>
 
                         <div>
                             <div class="w-12 h-12 mx-auto mb-2 flex items-center justify-center">
-                                <img src="/assets/images/workshops/ros-2/internship_icon/resume.png"
-                                    class="max-w-full max-h-full object-contain">
+                                <img src="/assets/images/workshops/ros-2/internship_icon/resume.png" 
+                                    class="max-w-full max-h-full object-contain" alt="Resume Building">
                             </div>
-                            <p>Resume</p>
+                            <p class="font-medium">Resume</p>
                         </div>
 
                         <div>
                             <div class="w-12 h-12 mx-auto mb-2 flex items-center justify-center">
-                                <img src="/assets/images/workshops/ros-2/internship_icon/career_path.png"
-                                    class="max-w-full max-h-full object-contain">
+                                <img src="/assets/images/workshops/ros-2/internship_icon/career_path.png" 
+                                    class="max-w-full max-h-full object-contain" alt="Career Path">
                             </div>
-                            <p>Career Path</p>
+                            <p class="font-medium">Career Path</p>
                         </div>
 
                         <div>
                             <div class="w-12 h-12 mx-auto mb-2 flex items-center justify-center">
-                                <img src="/assets/images/workshops/ros-2/internship_icon/networking.png"
-                                    class="max-w-full max-h-full object-contain">
+                                <img src="/assets/images/workshops/ros-2/internship_icon/networking.png" 
+                                    class="max-w-full max-h-full object-contain" alt="Networking">
                             </div>
-                            <p>Networking</p>
+                            <p class="font-medium">Networking</p>
                         </div>
 
                     </div>
                 </div>
-
 
             </div>
         </div>
     </section>
+
 
     <!-- ================= REGISTER ================= -->
     <section class="py-5 md:py-5 bg-gradient-to-r from-blue-600 to-indigo-700 text-white">
@@ -652,148 +681,100 @@
       </div>
     </section>
 
+
     <!-- Testimonials -->
-    <section id="reviews" class="py-20 bg-gray-50">
-    <div class="max-w-7xl mx-auto px-4">
+    <section id="reviews" class="py-20 bg-gray-50 dark:bg-slate-950 transition-colors">
+        <div class="max-w-7xl mx-auto px-4">
 
-        <div class="text-center mb-16">
-        <div class="flex items-center justify-center gap-2 mb-4">
-            <div class="flex text-yellow-400 text-2xl">
-            <i class="ri-star-fill"></i>
-            <i class="ri-star-fill"></i>
-            <i class="ri-star-fill"></i>
-            <i class="ri-star-fill"></i>
-            <i class="ri-star-fill"></i>
-            </div>
-            <span class="text-2xl font-bold text-gray-900">4.7 / 5</span>
-        </div>
-        <p class="text-xl text-gray-600">Join 8,000+ successful robotics students from PixelBotix</p>
-        </div>
-
-        <!-- DESKTOP GRID -->
-        <div class="hidden md:grid grid-cols-4 gap-6">
-
-        <div class="bg-white rounded-xl p-6 shadow-md">
-            <div class="flex items-center gap-4 mb-4">
-            <img src="https://readdy.ai/api/search-image?query=young%20Indian%20engineering%20student%20male%20with%20confident%20smile%2C%20professional%20headshot%2C%20robotics%20student%20portrait&width=60&height=60"
-                class="w-12 h-12 rounded-full object-cover">
-            <div>
-                <h4 class="font-semibold">Arjun Patel</h4>
-                <p class="text-sm text-gray-600">VIT University</p>
-            </div>
-            </div>
-            <p>"Dr. Sabique's teaching made ROS2 incredibly easy."</p>
-        </div>
-
-        <div class="bg-white rounded-xl p-6 shadow-md">
-            <div class="flex items-center gap-4 mb-4">
-            <img src="https://readdy.ai/api/search-image?query=young%20Indian%20female%20engineering%20student%20with%20bright%20smile%2C%20professional%20headshot%2C%20robotics%20student%20portrait&width=60&height=60"
-                class="w-12 h-12 rounded-full object-cover">
-            <div>
-                <h4 class="font-semibold">Priya Sharma</h4>
-                <p class="text-sm text-gray-600">Anna University</p>
-            </div>
-            </div>
-            <p>"Best robotics program I've attended."</p>
-        </div>
-
-        <div class="bg-white rounded-xl p-6 shadow-md">
-            <div class="flex items-center gap-4 mb-4">
-            <img src="https://readdy.ai/api/search-image?query=young%20Indian%20male%20engineering%20student%20with%20glasses%2C%20professional%20headshot%2C%20robotics%20student%20portrait&width=60&height=60"
-                class="w-12 h-12 rounded-full object-cover">
-            <div>
-                <h4 class="font-semibold">Rahul Kumar</h4>
-                <p class="text-sm text-gray-600">SRM Institute</p>
-            </div>
-            </div>
-            <p>"SLAM & navigation training was phenomenal."</p>
-        </div>
-
-        <div class="bg-white rounded-xl p-6 shadow-md">
-            <div class="flex items-center gap-4 mb-4">
-            <img src="https://readdy.ai/api/search-image?query=young%20Indian%20female%20engineering%20student%20with%20traditional%20attire%2C%20professional%20headshot%2C%20robotics%20student%20portrait&width=60&height=60"
-                class="w-12 h-12 rounded-full object-cover">
-            <div>
-                <h4 class="font-semibold">Sneha Reddy</h4>
-                <p class="text-sm text-gray-600">Sathyabama University</p>
-            </div>
-            </div>
-            <p>"PixelBotix's offline approach is unmatched."</p>
-        </div>
-
-        </div>
-
-        <!-- MOBILE INFINITE SLIDER -->
-        <div class="relative overflow-hidden md:hidden">
-        <div class="flex gap-6 w-max animate-marquee">
-
-            <!-- SET 1 -->
-            <div class="bg-white rounded-xl p-6 shadow-md min-w-80">
-            <div class="flex items-center gap-4 mb-4">
-                <img src="https://readdy.ai/api/search-image?query=young%20Indian%20engineering%20student%20male%20with%20confident%20smile%2C%20professional%20headshot%2C%20robotics%20student%20portrait&width=60&height=60"
-                    class="w-12 h-12 rounded-full object-cover">
-                <div>
-                <h4 class="font-semibold">Arjun Patel</h4>
-                <p class="text-sm text-gray-600">VIT University</p>
+            <div class="text-center mb-16">
+                <div class="flex items-center justify-center gap-2 mb-4">
+                    <div class="flex text-yellow-400 text-2xl">
+                        <i class="ri-star-fill"></i>
+                        <i class="ri-star-fill"></i>
+                        <i class="ri-star-fill"></i>
+                        <i class="ri-star-fill"></i>
+                        <i class="ri-star-fill"></i>
+                    </div>
+                    <span class="text-2xl font-bold text-gray-900 dark:text-white">4.8 / 5</span>
                 </div>
-            </div>
-            <p>"Dr. Sabique's teaching made ROS2 incredibly easy."</p>
+                <p class="text-xl text-gray-600 dark:text-gray-400">Join 8,000+ successful robotics students from PixelBotix</p>
             </div>
 
-            <div class="bg-white rounded-xl p-6 shadow-md min-w-80">
-            <div class="flex items-center gap-4 mb-4">
-                <img src="https://readdy.ai/api/search-image?query=young%20Indian%20female%20engineering%20student%20with%20bright%20smile%2C%20professional%20headshot%2C%20robotics%20student%20portrait&width=60&height=60"
-                    class="w-12 h-12 rounded-full object-cover">
-                <div>
-                <h4 class="font-semibold">Priya Sharma</h4>
-                <p class="text-sm text-gray-600">Anna University</p>
+            <div class="hidden md:grid grid-cols-4 gap-6">
+
+                <div class="bg-white dark:bg-slate-900 rounded-xl p-6 shadow-md border border-transparent dark:border-white/10 hover:shadow-xl transition-all">
+                    <div class="flex items-center gap-4 mb-4">
+                        <img src="/assets/images/programs/ros-2_five_day_workshop/testimonials/arun.jpg"
+                            class="w-12 h-12 rounded-full object-cover ring-2 ring-cyan-500/20">
+                        <div>
+                            <h4 class="font-semibold text-gray-900 dark:text-white">Arun</h4>
+                            <p class="text-sm text-gray-600 dark:text-cyan-400">VIT University</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-700 dark:text-slate-300 italic">"Dr. Sabique's teaching made ROS2 incredibly easy."</p>
                 </div>
-            </div>
-            <p>"Best robotics program I've attended."</p>
-            </div>
 
-            <div class="bg-white rounded-xl p-6 shadow-md min-w-80">
-            <div class="flex items-center gap-4 mb-4">
-                <img src="https://readdy.ai/api/search-image?query=young%20Indian%20male%20engineering%20student%20with%20glasses%2C%20professional%20headshot%2C%20robotics%20student%20portrait&width=60&height=60"
-                    class="w-12 h-12 rounded-full object-cover">
-                <div>
-                <h4 class="font-semibold">Rahul Kumar</h4>
-                <p class="text-sm text-gray-600">SRM Institute</p>
+                <div class="bg-white dark:bg-slate-900 rounded-xl p-6 shadow-md border border-transparent dark:border-white/10 hover:shadow-xl transition-all">
+                    <div class="flex items-center gap-4 mb-4">
+                        <img src="/assets/images/programs/ros-2_five_day_workshop/testimonials/Preethi.jpg"
+                            class="w-12 h-12 rounded-full object-cover ring-2 ring-cyan-500/20">
+                        <div>
+                            <h4 class="font-semibold text-gray-900 dark:text-white">Preethi</h4>
+                            <p class="text-sm text-gray-600 dark:text-cyan-400">Anna University</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-700 dark:text-slate-300 italic">"Best robotics program I've attended."</p>
                 </div>
-            </div>
-            <p>"SLAM & navigation training was phenomenal."</p>
-            </div>
 
-            <div class="bg-white rounded-xl p-6 shadow-md min-w-80">
-            <div class="flex items-center gap-4 mb-4">
-                <img src="https://readdy.ai/api/search-image?query=young%20Indian%20female%20engineering%20student%20with%20traditional%20attire%2C%20professional%20headshot%2C%20robotics%20student%20portrait&width=60&height=60"
-                    class="w-12 h-12 rounded-full object-cover">
-                <div>
-                <h4 class="font-semibold">Sneha Reddy</h4>
-                <p class="text-sm text-gray-600">Sathyabama University</p>
+                <div class="bg-white dark:bg-slate-900 rounded-xl p-6 shadow-md border border-transparent dark:border-white/10 hover:shadow-xl transition-all">
+                    <div class="flex items-center gap-4 mb-4">
+                        <img src="/assets/images/programs/ros-2_five_day_workshop/testimonials/priya.jpg"
+                            class="w-12 h-12 rounded-full object-cover ring-2 ring-cyan-500/20">
+                        <div>
+                            <h4 class="font-semibold text-gray-900 dark:text-white">Priya</h4>
+                            <p class="text-sm text-gray-600 dark:text-cyan-400">SRM Institute</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-700 dark:text-slate-300 italic">"SLAM & navigation training was phenomenal."</p>
                 </div>
-            </div>
-            <p>"PixelBotix's offline approach is unmatched."</p>
+
+                <div class="bg-white dark:bg-slate-900 rounded-xl p-6 shadow-md border border-transparent dark:border-white/10 hover:shadow-xl transition-all">
+                    <div class="flex items-center gap-4 mb-4">
+                        <img src="/assets/images/programs/ros-2_five_day_workshop/testimonials/Tarun.jpg"
+                            class="w-12 h-12 rounded-full object-cover ring-2 ring-cyan-500/20">
+                        <div>
+                            <h4 class="font-semibold text-gray-900 dark:text-white">Tarun</h4>
+                            <p class="text-sm text-gray-600 dark:text-cyan-400">Sathyabama University</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-700 dark:text-slate-300 italic">"PixelBotix's offline approach is unmatched."</p>
+                </div>
+
             </div>
 
-            <!-- CLONE SET -->
-            (repeat same 4 blocks again)
+            <div class="relative overflow-hidden md:hidden">
+                <div class="flex gap-6 w-max animate-marquee">
+                    </div>
+            </div>
 
         </div>
-        </div>
-
-    </div>
     </section>
+
+
 
   </main>
 
   <div id="site-footer"></div>
 
   <script src="/assets/js/layout.js"></script>
+
+
   <script>
     function applyNow() {
       window.location.href = "https://pixelbotix.com/ros_internship.html";
     }
   </script>
+
+
 </body>
 </html>

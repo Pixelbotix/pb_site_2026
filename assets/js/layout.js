@@ -532,3 +532,4 @@ tailwind.config = {
     }
   }
 }
+

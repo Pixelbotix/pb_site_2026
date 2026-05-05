@@ -487,7 +487,7 @@ function initChatBot() {
 
 function registerNow() {
   // Replace with payment or form URL
-  window.location.href = "https://shop.pixelbotix.com";
+  window.location.href = "https://wa.me/917200445685?text=Hi%2C%20I%20want%20to%20book%20a%20seat%20for%20the%205-day%20ROS%20workshop.%20Please%20share%20details.";
 }
 
 

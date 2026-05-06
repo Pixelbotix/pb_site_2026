@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     
-    <title>5-Day ROS2 & Autonomous Mobile Robot Navigation | PixelBotix</title>
+    <title>5-Day ROS2 Workshop with Autonomous Mobile Robot Navigation | PixelBotix</title>
     <meta name="description" content="Join PixelBotix's 5-day hands-on ROS2 & Autonomous Mobile Robot Navigation Workshop in Chennai. Master ROS2, SLAM, LiDAR, Docker & OpenCV with real robots.">
     <meta name="keywords" content="ROS2 Workshop, 5-day robotics training, PixelBotix, Autonomous Mobile Robots, AMR, LiDAR, ESP32, Chennai robotics">
 
@@ -82,15 +82,26 @@
             </div>
         </div>
 
-        <div class="relative w-full md:w-[70%] h-full bg-black">
-            <video class="w-full h-full object-contain opacity-0 transition-opacity duration-700"
-                src="/assets/videos/amr-platforms.mp4" 
-                poster="/assets/images/workshops/ros-2/ros2-day2.png"
-                autoplay muted loop playsinline onloadeddata="this.classList.remove('opacity-0')">
-            </video>
-            
-            <div class="absolute inset-y-0 left-0 w-16 bg-gradient-to-r from-slate-950 to-transparent"></div>
-        </div>
+<div class="relative w-full md:w-[70%] h-full bg-black" id="video-container">
+    <video id="workshopVideo" 
+        class="w-full h-full object-contain opacity-0 transition-opacity duration-700"
+        src="/assets/videos/5days_Workshop_ROS_Landscape.mp4" 
+        poster="/assets/images/posters/offline/ros_11_15_may_2026.jpeg"
+        autoplay muted loop playsinline 
+        onloadeddata="this.classList.remove('opacity-0')">
+    </video>
+    
+    <button onclick="toggleSound()" 
+            id="audioToggle"
+            class="absolute bottom-6 left-6 z-40 flex items-center justify-center w-12 h-12 bg-white/10 backdrop-blur-md border border-white/20 rounded-full text-white shadow-2xl hover:bg-cyan-500 hover:scale-110 transition-all group">
+        <i id="audioIcon" class="ri-volume-mute-line text-xl"></i>
+        <div class="absolute inset-0 rounded-full animate-ping bg-cyan-400/20 group-hover:hidden"></div>
+    </button>
+
+    <div class="absolute inset-y-0 left-0 w-16 bg-gradient-to-r from-slate-950 to-transparent"></div>
+</div>
+
+
     </section>
 
 

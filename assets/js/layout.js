@@ -533,3 +533,22 @@ tailwind.config = {
   }
 }
 
+// ros 5 day workshop page
+
+function toggleSound() {
+    const video = document.getElementById('workshopVideo');
+    const icon = document.getElementById('audioIcon');
+    const btn = document.getElementById('audioToggle');
+
+    if (video.muted) {
+        video.muted = false;
+        // If the video was paused by the browser's autoplay block, play it now
+        video.play(); 
+        icon.className = 'ri-volume-up-line text-xl';
+        btn.classList.add('bg-cyan-600', 'border-cyan-400');
+    } else {
+        video.muted = true;
+        icon.className = 'ri-volume-mute-line text-xl';
+        btn.classList.remove('bg-cyan-600', 'border-cyan-400');
+    }
+}

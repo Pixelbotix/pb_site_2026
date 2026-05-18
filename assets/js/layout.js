@@ -552,3 +552,23 @@ function toggleSound() {
         btn.classList.remove('bg-cyan-600', 'border-cyan-400');
     }
 }
+// ros2 15 days ros traing workshop page
+
+window.addEventListener('DOMContentLoaded', () => {
+    const video = document.getElementById('workshopVideo');
+    
+    if (video) {
+        // 1. Force the video timeline to jump straight to 5 seconds as soon as metadata is ready
+        video.addEventListener('loadedmetadata', () => {
+            video.currentTime = 4; 
+        });
+
+        // 2. Prevent it from looping back to 00:00 when it ends at 60 seconds
+        video.addEventListener('timeupdate', () => {
+            if (video.currentTime >= 60) {
+                video.currentTime = 4; // Loop back exactly to the 5-second mark
+                video.play().catch(err => console.log("Loop play safely caught:", err));
+            }
+        });
+    }
+});

@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Insights & Tech Blogs | PixelBotix Technologies</title>
+  <meta name="description"
+        content="Deep-tech insights, engineering tutorials, and research breakthroughs in ROS 2 Robotics, Edge AI, and Additive Manufacturing from PixelBotix." />
+
+  <script src="https://cdn.tailwindcss.com/3.4.16"></script>
+  <script>
+    tailwind.config = { 
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            pbBlue: '#3b82f6',
+            pbEmerald: '#10b981',
+            pbAmber: '#f59e0b',
+          }
+        }
+      }
+    }
+  </script>
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css">
+
+  <link rel="stylesheet" href="/assets/css/layout.css">
+  <link rel="icon" type="image/png" href="/assets/images/favicon/favicon.png">
+
+  <style>
+    /* --- FIX: NAVBAR DROPDOWNS --- */
+    #site-navbar ul li ul {
+      display: none;
+      position: absolute;
+      z-index: 50;
+    }
+    #site-navbar ul li:hover > ul {
+      display: block;
+    }
+
+    /* --- VIBRANT FILTER TOGGLES --- */
+    .filter-btn {
+      transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    
+    /* Deep-Tech Category States */
+    .cat-btn[data-type="robotics"].active {
+      background: linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%);
+      color: white;
+      box-shadow: 0 10px 25px -5px rgba(59, 130, 246, 0.4);
+      border-color: transparent;
+    }
+    .cat-btn[data-type="embedded-ai"].active {
+      background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+      color: white;
+      box-shadow: 0 10px 25px -5px rgba(16, 185, 129, 0.4);
+      border-color: transparent;
+    }
+    .cat-btn[data-type="3d-systems"].active {
+      background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);
+      color: white;
+      box-shadow: 0 10px 25px -5px rgba(245, 158, 11, 0.4);
+      border-color: transparent;
+    }
+
+    /* Post Type Timeline Toggle */
+    .timeline-btn.active {
+      background-color: #111827;
+      color: white;
+    }
+    .dark .timeline-btn.active {
+      background-color: #ffffff;
+      color: #111827;
+    }
+
+    .blog-card {
+      transition: all 0.4s ease;
+    }
+  </style>
+</head>
+
+<body class="bg-slate-50 dark:bg-[#0f172a] text-gray-900 dark:text-gray-100 transition-colors duration-500">
+
+  <div id="site-navbar"></div>
+
+  <main class="min-h-screen">
+    
+    <section class="max-w-4xl mx-auto text-center px-6 pt-16 pb-6">
+      <h1 class="text-4xl md:text-5xl font-black tracking-tight mb-4">
+        The <span class="text-blue-600 dark:text-blue-400">PixelBotix</span> Engineering Blog
+      </h1>
+      <p class="text-gray-600 dark:text-gray-400 font-medium max-w-2xl mx-auto">
+        Bridging the execution gap between engineering theory and production physical systems. Insights on Edge AI, ROS 2, and DfAM.
+      </p>
+    </section>
+
+    <section class="max-w-6xl mx-auto px-6 pt-6 pb-8">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+        
+        <button onclick="setPrimary('robotics', this)" data-type="robotics" 
+          class="cat-btn active filter-btn flex items-center justify-center gap-4 py-4 rounded-2xl border-2 border-white dark:border-gray-800 bg-white dark:bg-gray-800 shadow-sm transition-all hover:translate-y-[-2px]">
+          <div class="w-10 h-10 rounded-xl bg-blue-100 dark:bg-blue-900/30 flex items-center justify-center shrink-0">
+            <i class="ri-robot-2-fill text-xl text-blue-600"></i>
+          </div>
+          <div class="text-left">
+            <span class="block font-black text-base uppercase tracking-tight leading-tight">Robotics & ROS 2</span>
+            <span class="text-[9px] opacity-60 font-bold uppercase">Autonomous Navigation</span>
+          </div>
+        </button>
+
+        <button onclick="setPrimary('embedded-ai', this)" data-type="embedded-ai" 
+          class="cat-btn filter-btn flex items-center justify-center gap-4 py-4 rounded-2xl border-2 border-white dark:border-gray-800 bg-white dark:bg-gray-800 shadow-sm transition-all hover:translate-y-[-2px]">
+          <div class="w-10 h-10 rounded-xl bg-emerald-100 dark:bg-emerald-900/30 flex items-center justify-center shrink-0">
+            <i class="ri-cpu-line text-xl text-emerald-600"></i>
+          </div>
+          <div class="text-left">
+            <span class="block font-black text-base uppercase tracking-tight leading-tight">Embedded AI & ML</span>
+            <span class="text-[9px] opacity-60 font-bold uppercase">TinyML & Computer Vision</span>
+          </div>
+        </button>
+
+        <button onclick="setPrimary('3d-systems', this)" data-type="3d-systems" 
+          class="cat-btn filter-btn flex items-center justify-center gap-4 py-4 rounded-2xl border-2 border-white dark:border-gray-800 bg-white dark:bg-gray-800 shadow-sm transition-all hover:translate-y-[-2px]">
+          <div class="w-10 h-10 rounded-xl bg-amber-100 dark:bg-amber-900/30 flex items-center justify-center shrink-0">
+            <i class="ri-printer-cloud-fill text-xl text-amber-600"></i>
+          </div>
+          <div class="text-left">
+            <span class="block font-black text-base uppercase tracking-tight leading-tight">3D Systems & DfAM</span>
+            <span class="text-[9px] opacity-60 font-bold uppercase">Additive & Scan Systems</span>
+          </div>
+        </button>
+
+      </div>
+    </section>
+
+    <section class="max-w-xl mx-auto px-6 mb-16">
+      <div class="bg-gray-200 dark:bg-gray-800/50 p-1.5 rounded-[2rem] flex shadow-inner border dark:border-gray-700">
+        <button onclick="setStatus('latest', this)" class="timeline-btn active flex-1 py-4 rounded-[1.5rem] font-black text-xs uppercase tracking-widest transition-all">
+          <i class="ri-time-line mr-2"></i> Latest Articles
+        </button>
+        <button onclick="setStatus('guides', this)" class="timeline-btn flex-1 py-4 rounded-[1.5rem] font-black text-xs uppercase tracking-widest transition-all text-gray-500">
+          <i class="ri-book-open-line mr-2"></i> Guides & Tutorials
+        </button>
+      </div>
+    </section>
+
+    <section class="max-w-7xl mx-auto px-6 pb-24">
+      <div id="blog-grid" class="grid md:grid-cols-2 lg:grid-cols-3 gap-10 items-stretch">
+
+        <article class="blog-card group bg-white dark:bg-gray-800 rounded-[2.5rem] overflow-hidden border dark:border-gray-700 shadow-xl shadow-blue-500/5 flex flex-col h-full"
+                 data-category="robotics" data-status="latest">
+          <div class="h-[280px] relative overflow-hidden bg-gray-100 dark:bg-gray-900">
+            <img src="/assets/images/posters/offline/ros_22_26_june_2026.jpeg"
+                 class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                 alt="ROS 2 Navigation Stacks">
+            <div class="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent"></div>
+            <div class="absolute top-6 left-6 bg-blue-600 text-white text-[10px] px-4 py-1.5 rounded-full font-black uppercase tracking-widest shadow-lg">
+              5 Min Read
+            </div>
+          </div>
+          <div class="p-8 flex flex-col flex-grow">
+            <h3 class="text-2xl font-black mb-4 leading-tight text-gray-900 dark:text-white">
+              The Shift from ROS to ROS 2: Building Robust Mobile Frameworks
+            </h3>
+            <p class="text-gray-500 dark:text-gray-400 font-medium text-sm mb-6 line-clamp-3">
+              Discover why modern autonomous mobile robots require the real-time node resilience of the ROS 2 navigation architectures.
+            </p>
+            <div class="mt-auto">
+              <a href="/blog/robotics/ros-to-ros2-shift"
+                 class="block text-center w-full py-4 bg-gray-900 dark:bg-blue-600 text-white rounded-2xl font-black hover:shadow-2xl transition-all uppercase tracking-widest">
+                Read Article
+              </a>
+            </div>
+          </div>
+        </article>
+
+        <article class="blog-card group bg-white dark:bg-gray-800 rounded-[2.5rem] overflow-hidden border dark:border-gray-700 shadow-xl shadow-blue-500/5 flex flex-col h-full"
+                 data-category="robotics" data-status="guides">
+          <div class="h-[280px] relative overflow-hidden bg-gray-100 dark:bg-gray-900">
+            <img src="/assets/images/posters/offline/ros_11_15_may_2026.jpeg"
+                 class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                 alt="Autonomous Navigation">
+            <div class="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent"></div>
+            <div class="absolute top-6 left-6 bg-blue-800 text-white text-[10px] px-4 py-1.5 rounded-full font-black uppercase tracking-widest shadow-lg">
+              Technical Guide
+            </div>
+          </div>
+          <div class="p-8 flex flex-col flex-grow">
+            <h3 class="text-2xl font-black mb-4 leading-tight text-gray-900 dark:text-white">
+              Configuring Nav2 Stack for Real-World Autonomous Mapping
+            </h3>
+            <p class="text-gray-500 dark:text-gray-400 font-medium text-sm mb-6 line-clamp-3">
+              A detailed code guide on initializing sensor-fusion architectures and mapping thresholds for local workspace environments.
+            </p>
+            <div class="mt-auto">
+              <a href="/blog/robotics/configuring-nav2-stack-guide"
+                 class="block text-center w-full py-4 border-2 border-blue-600 text-blue-600 dark:text-blue-400 rounded-2xl font-black hover:bg-blue-600 hover:text-white transition-all uppercase tracking-widest">
+                View Tutorial
+              </a>
+            </div>
+          </div>
+        </article>
+
+        <article class="blog-card group bg-white dark:bg-gray-800 rounded-[2.5rem] overflow-hidden border dark:border-gray-700 shadow-xl shadow-emerald-500/5 flex flex-col h-full"
+                 data-category="embedded-ai" data-status="latest">
+          <div class="h-[280px] relative overflow-hidden bg-gray-100 dark:bg-gray-900">
+            <img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=600"
+                 class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                 alt="TinyML Processing">
+            <div class="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent"></div>
+            <div class="absolute top-6 left-6 bg-emerald-600 text-white text-[10px] px-4 py-1.5 rounded-full font-black uppercase tracking-widest shadow-lg">
+              6 Min Read
+            </div>
+          </div>
+          <div class="p-8 flex flex-col flex-grow">
+            <h3 class="text-2xl font-black mb-4 leading-tight text-gray-900 dark:text-white">
+              Why Cloud AI Fails Hardware: The Embedded TinyML Paradigm
+            </h3>
+            <p class="text-gray-500 dark:text-gray-400 font-medium text-sm mb-6 line-clamp-3">
+              E Anand breaks down why deployable hardware systems must execute quantized neural pipelines directly at the localized chip layer.
+            </p>
+            <div class="mt-auto">
+              <a href="/blog/embedded-ai/tinyml-hardware-latency"
+                 class="block text-center w-full py-4 bg-gray-900 dark:bg-emerald-600 text-white rounded-2xl font-black hover:shadow-2xl transition-all uppercase tracking-widest">
+                Read Article
+              </a>
+            </div>
+          </div>
+        </article>
+
+        <article class="blog-card group bg-white dark:bg-gray-800 rounded-[2.5rem] overflow-hidden border dark:border-gray-700 shadow-xl shadow-amber-500/5 flex flex-col h-full"
+                 data-category="3d-systems" data-status="latest">
+          <div class="h-[280px] relative overflow-hidden bg-gray-100 dark:bg-gray-900">
+            <img src="/assets/images/posters/offline/bootcamp_4_9_may_2026.png"
+                 class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                 alt="Design for Additive Manufacturing">
+            <div class="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent"></div>
+            <div class="absolute top-6 left-6 bg-amber-600 text-white text-[10px] px-4 py-1.5 rounded-full font-black uppercase tracking-widest shadow-lg">
+              4 Min Read
+            </div>
+          </div>
+          <div class="p-8 flex flex-col flex-grow">
+            <h3 class="text-2xl font-black mb-4 leading-tight text-gray-900 dark:text-white">
+              Beyond the Plastic Toy: Production DfAM Rules for Robotics
+            </h3>
+            <p class="text-gray-500 dark:text-gray-400 font-medium text-sm mb-6 line-clamp-3">
+              How PixelBotix engineers leverage topology geometry mapping and scanning workflows to produce highly lightweight structural hardware parts.
+            </p>
+            <div class="mt-auto">
+              <a href="/blog/3d-printing/dfam-robotics-prototyping"
+                 class="block text-center w-full py-4 bg-gray-900 dark:bg-amber-600 text-white rounded-2xl font-black hover:shadow-2xl transition-all uppercase tracking-widest">
+                Read Article
+              </a>
+            </div>
+          </div>
+        </article>
+
+      </div>
+
+      <div id="no-results" class="hidden text-center py-20 bg-white dark:bg-gray-800 rounded-[2.5rem] border dark:border-gray-700 mt-6 shadow-sm">
+        <i class="ri-article-line text-5xl text-gray-400 block mb-4"></i>
+        <h3 class="text-xl font-black">No articles published here yet</h3>
+        <p class="text-gray-500 text-sm mt-1">Our R&D engineering team is currently writing insights for this category.</p>
+      </div>
+    </section>
+
+  </main>
+
+  <div id="site-footer"></div>
+
+  <script>
+    let activeState = { category: 'robotics', status: 'latest' };
+
+    function setPrimary(val, btn) {
+      activeState.category = val;
+      document.querySelectorAll('.cat-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      applyFilters();
+    }
+
+    function setStatus(val, btn) {
+      activeState.status = val;
+      document.querySelectorAll('.timeline-btn').forEach(b => {
+        b.classList.remove('active');
+        b.classList.add('text-gray-500'); 
+      });
+      btn.classList.add('active');
+      btn.classList.remove('text-gray-500');
+      applyFilters();
+    }
+
+    function applyFilters() {
+      const cards = document.querySelectorAll('.blog-card');
+      const grid = document.getElementById('blog-grid');
+      const noResults = document.getElementById('no-results');
+      let visibleCount = 0;
+
+      cards.forEach(card => {
+        const cardCat = card.getAttribute('data-category');
+        const cardStatus = card.getAttribute('data-status');
+
+        if (cardCat === activeState.category && cardStatus === activeState.status) {
+          card.style.display = 'flex';
+          visibleCount++;
+        } else {
+          card.style.display = 'none';
+        }
+      });
+
+      if (noResults) {
+        if (visibleCount === 0) {
+          noResults.classList.remove('hidden');
+          grid.classList.add('hidden');
+        } else {
+          noResults.classList.add('hidden');
+          grid.classList.remove('hidden');
+        }
+      }
+    }
+
+    document.addEventListener("DOMContentLoaded", applyFilters);
+  </script>
+
+  <script src="/assets/js/layout.js"></script>
+</body>
+</html>

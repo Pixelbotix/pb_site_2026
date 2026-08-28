@@ -110,20 +110,24 @@ function initTrustedBy() {
 
 
   const LOGOS = [
+    "saint_gobain_logo.png",
+    "zoho_logo.png",
+    "in_pat_pro_logo.png",
+    "mit_logo_1.png",
+    "iitm_logo.png",
+    "Vellore_Institute_of_Technology_seal_4.svg.png",
+    "CEG_col_2.png",
     "3devok-logo_4.png",
     "actlogo_10.jpg",
     "Airobo_infinity_2.png",
     "Bigzero-logo_3.jpg",
-    "CEG_col_2.png",
     "DMI_5.png",
-    "iitm_logo.png",
     "KIT_2.svg.png",
     "LMEC_7.webp",
     "Loyola_6.png",
     "make3d_6.png",
     "medical_spectra.jpeg",
     "Mithra_3d_tech_5.jpg",
-    "mit_logo_1.png",
     "nitt_13.png",
     "perfin_health_care_1.png",
     "Pertinent-Logo-1.png",
@@ -133,8 +137,7 @@ function initTrustedBy() {
     "sairam-sec-logo_8.png",
     "Saveetha_1.png",
     "sri_balaji_14.png",
-    "SRM_Institute_of_Science_and_Technology_Logo.svg_3.png",
-    "Vellore_Institute_of_Technology_seal_4.svg.png"
+    "SRM_Institute_of_Science_and_Technology_Logo.svg_3.png"
   ];
 
   const scroller = document.getElementById("nav-logo-scroller");

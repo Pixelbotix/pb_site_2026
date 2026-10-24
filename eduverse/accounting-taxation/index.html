@@ -1,1007 +1,553 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Accounting &amp; Taxation Courses in Chennai | Tally, GST &amp; Income Tax | PixelBotix</title>
+  <meta name="description" content="Explore accounting courses in Chennai, Tally Prime with GST, GST return filing, income tax, TDS, payroll and Excel training. Self-paced online and mentor-supported options for learners across Tamil Nadu and India.">
+  <meta name="robots" content="index,follow">
+  <link rel="canonical" href="https://pixelbotix.com/accounting-taxation/">
+  <meta name="theme-color" content="#5b21b6">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Accounting &amp; Taxation Courses in Chennai | PixelBotix Eduverse">
+  <meta property="og:description" content="Practical Tally Prime, GST, income tax, TDS, payroll and accounting courses with online learning options across Tamil Nadu.">
+  <meta property="og:url" content="https://pixelbotix.com/accounting-taxation/">
 
-  <!-- Regional SEO & Conversions Metadata -->
-  <title>Practical Accounting & Taxation Online Course | GST, TDS, Tally, ITR | PixelBotix Eduverse</title>
-  <meta name="description"
-        content="Master Practical Accounting, GST Return Filing, TDS, TallyPrime, and ITR Computation. Earn verifiable PixelBotix Eduverse certification shareable on LinkedIn. Online live and self-paced across Chennai, Coimbatore, Bengaluru, Mysuru, Kochi, and Trivandrum." />
-  <meta name="keywords"
-        content="practical accounting course, taxation certification online, GST return filing training, TDS computation, Tally Prime course Chennai, accounting training Bangalore, taxation course Kochi, Tamil Nadu, Karnataka, Kerala, PixelBotix Eduverse" />
+  <script>
+    tailwind.config = {
+        darkMode: 'class',
+        theme: {
+          extend: {
+            colors: {
+              brand: {
+                50: '#f5f3ff', 100: '#ede9fe', 200: '#ddd6fe',
+                300: '#c4b5fd', 400: '#a78bfa', 500: '#8b5cf6',
+                600: '#7c3aed', 700: '#6d28d9', 800: '#5b21b6', 900: '#4c1d95'
+              }
+            },
+            fontFamily: { sans: ['Inter', 'system-ui', 'sans-serif'] }
+          }
+        }
+    };
+  </script>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/remixicon@4.6.0/fonts/remixicon.css">
+  <link rel="stylesheet" href="/assets/css/layout.css">
 
-  <!-- Schema.org Structured Data -->
+  <style>
+    :root {
+      --page-bg: #fff;
+      --surface-bg: #fff;
+      --surface-muted: #f8fafc;
+      --border-color: #e5e7eb;
+      --text-primary: #111827;
+      --text-secondary: #64748b;
+    }
+    html.dark {
+      color-scheme: dark;
+      --page-bg: #0b1020;
+      --surface-bg: #111827;
+      --surface-muted: #151d2e;
+      --border-color: #293449;
+      --text-primary: #f8fafc;
+      --text-secondary: #a5b4c8;
+    }
+    html, body { min-height: 100%; }
+    body {
+      background-color: var(--page-bg);
+      color: var(--text-primary);
+      font-family: Inter, system-ui, sans-serif;
+    }
+    main { background-color: var(--page-bg); color: var(--text-primary); }
+    .surface { background-color: var(--surface-bg); border-color: var(--border-color); }
+    .surface-muted { background-color: var(--surface-muted); }
+    .text-secondary { color: var(--text-secondary); }
+    html.dark body { background-color: var(--page-bg); color: var(--text-primary); }
+    html.dark .course-card, html.dark .bundle-card { background-color: var(--surface-bg); border-color: var(--border-color); }
+    html.dark .course-card .text-gray-900, html.dark .bundle-card .text-gray-900 { color: var(--text-primary); }
+    .hero-background {
+      background: radial-gradient(ellipse at top right, rgb(139 92 246 / 15%), transparent 52%),
+                  radial-gradient(ellipse at bottom left, rgb(99 102 241 / 9%), transparent 50%),
+                  var(--surface-muted);
+    }
+    .course-card, .bundle-card {
+      display: flex; flex-direction: column; min-width: 0; overflow: hidden;
+      background: var(--surface-bg); border: 1px solid var(--border-color);
+      border-radius: 1rem; transition: border-color .18s ease, transform .18s ease, box-shadow .18s ease;
+    }
+    .course-card:hover, .bundle-card:hover {
+      border-color: #8b5cf6; transform: translateY(-2px);
+      box-shadow: 0 8px 24px rgb(91 33 182 / 8%);
+    }
+    .course-card .course-image { aspect-ratio: 16 / 9; }
+    .course-card-body { display: flex; flex: 1; flex-direction: column; padding: 1rem; }
+    .course-price-grid { display: grid; grid-template-columns: 1fr 1fr; gap: .625rem; }
+    .course-price-option { min-width: 0; border: 1px solid var(--border-color); border-radius: .75rem; padding: .75rem; }
+    .course-price-option.is-mentor { border-color: #c4b5fd; background: #f5f3ff; }
+    html.dark .course-price-option.is-mentor { background: #1e1b35; border-color: #51417d; }
+    .course-price-option .price-value { display: block; margin-top: .35rem; font-size: 1.2rem; font-weight: 800; letter-spacing: -.03em; }
+    .course-price-option .price-old { display: block; margin-top: .15rem; font-size: .75rem; }
+    .course-price-option .discount-label { margin-top: .35rem; font-size: .65rem; padding: .2rem .45rem; }
+    .course-detail-toggle { cursor: pointer; color: #7c3aed; font-size: .8rem; font-weight: 700; }
+    html.dark .course-detail-toggle { color: #c4b5fd; }
+    .course-detail-panel { padding-top: .25rem; }
+    @media (min-width: 640px) {
+      .course-card-body { padding: 1.125rem; }
+    }
+    @media (max-width: 380px) {
+      .course-price-grid { grid-template-columns: 1fr; }
+      .course-price-option .price-value { font-size: 1.3rem; }
+    }
+    .enquire-button {
+      display: inline-flex; width: 100%; min-height: 46px; align-items: center;
+      justify-content: center; gap: .5rem; border: 1px solid #5b21b6;
+      border-radius: .75rem; background: #5b21b6; color: #fff !important;
+      padding: .7rem 1rem; text-align: center; font-size: .875rem;
+      font-weight: 800; line-height: 1.35; text-decoration: none;
+      visibility: visible; opacity: 1; box-sizing: border-box;
+      transition: background-color .18s ease, border-color .18s ease;
+    }
+    .enquire-button:hover { background: #4c1d95; border-color: #4c1d95; color: #fff !important; }
+    .enquire-button:focus-visible { outline: 3px solid #a78bfa; outline-offset: 3px; }
+    .enquire-button i { display: inline-block; flex: 0 0 auto; font-size: 1.15rem; line-height: 1; }
+    .filter-buttons { display: flex; flex-wrap: wrap; gap: .625rem; margin-top: 1.25rem; }
+    .course-filter-button {
+      display: inline-flex; align-items: center; justify-content: center; gap: .4rem;
+      min-height: 44px; border: 1px solid #cbd5e1; border-radius: 999px;
+      background: #fff; color: #334155; padding: .65rem 1rem; font-size: .875rem;
+      font-weight: 700; cursor: pointer; transition: all .15s ease;
+    }
+    .course-filter-button:hover { border-color: #7c3aed; color: #5b21b6; }
+    .course-filter-button[aria-pressed="true"] { border-color: #5b21b6; background: #5b21b6; color: #fff; }
+    html.dark .course-filter-button { background: #111827; border-color: #475569; color: #e2e8f0; }
+    html.dark .course-filter-button:hover { border-color: #a78bfa; color: #ddd6fe; }
+    html.dark .course-filter-button[aria-pressed="true"] { background: #7c3aed; border-color: #8b5cf6; color: #fff; }
+    html.dark .enquire-button { background: #7c3aed; border-color: #a78bfa; color: #fff !important; }
+    html.dark .enquire-button:hover { background: #6d28d9; border-color: #a78bfa; }
+    .course-card:focus-within, .bundle-card:focus-within {
+      outline: 2px solid #8b5cf6; outline-offset: 3px;
+    }
+    .eyebrow { letter-spacing: .12em; text-transform: uppercase; }
+    .discount-label {
+      display: inline-flex; align-items: center; border-radius: 999px;
+      background: #dcfce7; color: #166534; padding: .3rem .65rem;
+      font-size: .75rem; font-weight: 700;
+    }
+    .price-old { color: var(--text-secondary); text-decoration: line-through; text-decoration-thickness: 1.5px; }
+    .topic-list { list-style: none; padding: 0; margin: 0; }
+    .topic-list li {
+      position: relative; padding-left: 1.1rem; margin-top: .45rem;
+      color: var(--text-secondary); font-size: .875rem; line-height: 1.5;
+    }
+    .topic-list li::before {
+      content: ""; position: absolute; top: .48rem; left: .1rem;
+      width: .4rem; height: .4rem; border-radius: 50%; background: #8b5cf6;
+    }
+    .course-image { width: 100%; aspect-ratio: 16 / 9; object-fit: cover; background: var(--surface-muted); }
+    .section-anchor { scroll-margin-top: 6rem; }
+    .faq-item { border: 1px solid var(--border-color); border-radius: .875rem; background: var(--surface-bg); }
+    .faq-item summary { cursor: pointer; padding: 1rem 1.1rem; font-weight: 600; list-style: none; }
+    .faq-item summary::-webkit-details-marker { display: none; }
+    .faq-item summary::after { content: "+"; float: right; color: #8b5cf6; font-size: 1.2rem; }
+    .faq-item[open] summary::after { content: "−"; }
+    .faq-answer { padding: 0 1.1rem 1.1rem; color: var(--text-secondary); line-height: 1.75; }
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after { scroll-behavior: auto !important; transition-duration: .01ms !important; }
+    }
+  </style>
+
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@type": "Course",
-    "name": "Practical Accounting & Taxation Certification Course",
-    "description": "Comprehensive practical accounting, GST, Income Tax, TDS, Payroll, and TallyPrime training with government portal simulations.",
-    "provider": {
+    "@type": "CollectionPage",
+    "name": "Practical Accounting & Taxation Courses",
+    "url": "https://pixelbotix.com/accounting-taxation/",
+    "description": "Individual accounting, taxation and office productivity courses with self-paced online learning and mentor-supported options.",
+    "publisher": {
       "@type": "Organization",
       "name": "PixelBotix Eduverse",
-      "sameAs": "https://pixelbotix.com"
-    },
-    "hasCourseInstance": {
-      "@type": "CourseInstance",
-      "courseMode": "Online",
-      "courseWorkload": "PT30H",
-      "offers": {
-        "@type": "Offer",
-        "price": "2499",
-        "priceCurrency": "INR",
-        "availability": "https://schema.org/InStock"
+      "parentOrganization": {
+        "@type": "Organization",
+        "name": "PixelBotix Technologies Pvt. Ltd.",
+        "url": "https://pixelbotix.com/"
       }
     }
   }
   </script>
 
-  <!-- Tailwind -->
-  <script src="https://cdn.tailwindcss.com/3.4.16"></script>
-  <script>
-    tailwind.config = {
-      darkMode: 'class',
-      theme: {
-        extend: {
-          colors: {
-            brand: {
-              50: '#f5f3ff',
-              100: '#ede9fe',
-              200: '#ddd6fe',
-              500: '#8b5cf6',
-              600: '#7c3aed',
-              700: '#6d28d9',
-              800: '#5b21b6',
-              900: '#4c1d95',
-            }
-          }
-        }
-      }
-    }
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    "name": "Accounting and Taxation Courses from PixelBotix Eduverse",
+    "itemListOrder": "https://schema.org/ItemListUnordered",
+    "numberOfItems": 15,
+    "itemListElement": [
+      {"@type":"ListItem","position":1,"item":{"@type":"Course","name":"Basic Accounting and Tally Prime"}},
+      {"@type":"ListItem","position":2,"item":{"@type":"Course","name":"Microsoft Excel for Accounting"}},
+      {"@type":"ListItem","position":3,"item":{"@type":"Course","name":"Income Tax Computation"}},
+      {"@type":"ListItem","position":4,"item":{"@type":"Course","name":"Payroll and Salary Statement"}},
+      {"@type":"ListItem","position":5,"item":{"@type":"Course","name":"TDS Computation"}},
+      {"@type":"ListItem","position":6,"item":{"@type":"Course","name":"GST Computation"}},
+      {"@type":"ListItem","position":7,"item":{"@type":"Course","name":"GST Return Filing"}},
+      {"@type":"ListItem","position":8,"item":{"@type":"Course","name":"Advanced Tally Prime"}},
+      {"@type":"ListItem","position":9,"item":{"@type":"Course","name":"Income Tax Return Filing"}},
+      {"@type":"ListItem","position":10,"item":{"@type":"Course","name":"TDS Return Filing"}},
+      {"@type":"ListItem","position":11,"item":{"@type":"Course","name":"PF and ESI Return Filing"}},
+      {"@type":"ListItem","position":12,"item":{"@type":"Course","name":"Business Taxation"}},
+      {"@type":"ListItem","position":13,"item":{"@type":"Course","name":"Financial Statements and MIS"}},
+      {"@type":"ListItem","position":14,"item":{"@type":"Course","name":"Microsoft Word"}},
+      {"@type":"ListItem","position":15,"item":{"@type":"Course","name":"Microsoft PowerPoint"}}
+    ]
+  }
   </script>
 
-  <!-- Icons -->
-  <link rel="stylesheet"
-        href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css">
-
-  <!-- Global Layout -->
-  <link rel="stylesheet" href="/assets/css/layout.css">
-  <link rel="icon" type="image/png" href="/assets/images/favicon/favicon.png">
 </head>
 
-<body class="bg-slate-50 dark:bg-gray-950 text-slate-900 dark:text-gray-100 transition-colors selection:bg-purple-500 selection:text-white font-sans antialiased">
-
-  <!-- NAVBAR -->
+<body class="min-h-screen antialiased">
+  <!-- layout.js loads /partials/navbar.html into this exact target -->
   <div id="site-navbar"></div>
 
-  <main class="overflow-hidden">
-
-    <!-- URGENCY & TRUST TOP STRIP (Psychology: Loss Aversion & Social Proof) -->
-    <div class="bg-gradient-to-r from-purple-700 via-indigo-700 to-purple-800 text-white py-2.5 px-4 text-xs font-semibold text-center flex items-center justify-center gap-3">
-      <span class="inline-flex items-center gap-1 bg-amber-400 text-slate-950 px-2 py-0.5 rounded-full font-bold uppercase tracking-wider text-[10px]">
-        <i class="ri-fire-fill"></i> Fast Filling Cohort
-      </span>
-      <span>August 2026 Batch Admissions Open • Limited Early-Bird Scholarships (Save up to 55%)</span>
-      <a href="#specialised-combos" class="underline hover:text-amber-200 hidden sm:inline ml-2">Claim Offer &rarr;</a>
-    </div>
-
-    <!-- HERO SECTION -->
-    <section class="relative pt-10 pb-16 md:py-24 bg-gradient-to-b from-purple-50 via-white to-slate-50 dark:from-gray-900 dark:via-gray-950 dark:to-gray-950 border-b border-purple-100 dark:border-gray-800">
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-          
-          <!-- Left Column: Copy & Value Proposition -->
-          <div class="lg:col-span-7 space-y-6">
-            <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-purple-100 dark:bg-purple-950/60 border border-purple-200 dark:border-purple-800 text-purple-700 dark:text-purple-300 text-xs font-bold uppercase tracking-wider">
-              <i class="ri-shield-check-line text-sm"></i>
-              PixelBotix Eduverse • Industry Accredited Finance Track
-            </div>
-
-            <h1 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-slate-900 dark:text-white tracking-tight leading-tight">
-              Master Practical <span class="text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-indigo-600 dark:from-purple-400 dark:to-indigo-300">Accounting & Taxation</span> With Real Portal Experience
-            </h1>
-
-            <p class="text-base sm:text-lg text-slate-600 dark:text-gray-300 leading-relaxed max-w-2xl">
-              Ditch outdated theory. Gain end-to-end practical mastery in GST, Income Tax, TDS, Payroll, and TallyPrime. Train on actual government portal simulation software, get certified, and become 100% industry-ready from day one.
-            </p>
-
-            <!-- SEO Regional Footprint -->
-            <div class="flex items-center gap-2 text-xs text-slate-500 dark:text-gray-400">
-              <i class="ri-map-pin-2-line text-purple-600"></i>
-              <span>Live batches tailored for learners across <strong>Tamil Nadu</strong> (Chennai, Coimbatore), <strong>Karnataka</strong> (Bengaluru, Mysuru), and <strong>Kerala</strong> (Kochi, Trivandrum).</span>
-            </div>
-
-            <!-- CTA Actions -->
-            <div class="flex flex-wrap items-center gap-4 pt-2">
-              <a href="#specialised-combos" class="inline-flex items-center justify-center px-7 py-4 rounded-xl font-bold text-white bg-purple-600 hover:bg-purple-700 shadow-lg shadow-purple-600/30 transition-all hover:scale-[1.02]">
-                Explore Career Bundles
-                <i class="ri-arrow-right-line ml-2"></i>
-              </a>
-              <a href="https://wa.me/917200445685?text=Hi%20Acc%20%26%20Tax" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center px-6 py-4 rounded-xl font-bold text-emerald-700 dark:text-emerald-300 bg-emerald-50 dark:bg-emerald-950/50 border border-emerald-300 dark:border-emerald-800 hover:bg-emerald-100 transition-all">
-                <i class="ri-whatsapp-line text-emerald-600 text-lg mr-2"></i>
-                Instant Enrollment Help
-              </a>
-            </div>
-
-            <!-- Stats Bar -->
-            <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 pt-6 border-t border-slate-200 dark:border-gray-800">
-              <div>
-                <p class="text-2xl font-black text-slate-900 dark:text-white">25,000+</p>
-                <p class="text-xs text-slate-500 dark:text-gray-400 font-medium">Students Trained</p>
-              </div>
-              <div>
-                <p class="text-2xl font-black text-slate-900 dark:text-white">70+</p>
-                <p class="text-xs text-slate-500 dark:text-gray-400 font-medium">College Partners</p>
-              </div>
-              <div>
-                <p class="text-2xl font-black text-slate-900 dark:text-white">100+</p>
-                <p class="text-xs text-slate-500 dark:text-gray-400 font-medium">Workshops Held</p>
-              </div>
-              <div>
-                <p class="text-2xl font-black text-slate-900 dark:text-white">15+</p>
-                <p class="text-xs text-slate-500 dark:text-gray-400 font-medium">Vernacular Languages</p>
-              </div>
-            </div>
-          </div>
-
-          <!-- Right Column: Hero Visual Card with Psychology Cues -->
-          <div class="lg:col-span-5 relative">
-            <div class="relative mx-auto max-w-md lg:max-w-none rounded-2xl overflow-hidden shadow-2xl border border-purple-200 dark:border-gray-800 bg-white dark:bg-gray-900 p-3">
-              <img src="/assets/images/eduverse/finance/taxation_accounting_course.jpg" 
-                   alt="Practical Accounting and Taxation Learning Ecosystem" 
-                   onerror="this.src='https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?auto=format&fit=crop&w=800&q=80'"
-                   class="w-full h-auto rounded-xl object-cover shadow-sm" />
-              
-              <div class="p-4 bg-gradient-to-r from-purple-900 via-indigo-900 to-purple-950 text-white rounded-xl mt-3 flex items-center justify-between">
-                <div>
-                  <p class="text-[11px] text-purple-200 uppercase tracking-wider font-semibold">Interactive LMS & Labs</p>
-                  <p class="text-sm font-bold">Industry Simulation Ready</p>
-                </div>
-                <span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-extrabold bg-amber-400 text-slate-950">
-                  <i class="ri-sparkling-fill mr-1"></i> 100% Practical
-                </span>
-              </div>
-            </div>
-          </div>
-
-        </div>
-      </div>
-    </section>
-
-    <!-- KEY ADVANTAGES (Psychology: Cognitive Fluency & Credibility) -->
-    <section class="py-12 bg-white dark:bg-gray-900 border-b border-slate-200 dark:border-gray-800">
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6">
-          <div class="flex items-start gap-3 p-4 rounded-xl bg-purple-50/50 dark:bg-gray-800/40 border border-purple-100 dark:border-gray-700 hover:border-purple-300 transition-colors">
-            <div class="w-10 h-10 rounded-lg bg-purple-600 text-white flex items-center justify-center shrink-0 shadow-md">
-              <i class="ri-computer-line text-lg"></i>
-            </div>
-            <div>
-              <h4 class="text-sm font-bold text-slate-900 dark:text-white">Govt Portal Sim</h4>
-              <p class="text-xs text-slate-500 dark:text-gray-400 mt-0.5">Real GST & ITR portal experimentation</p>
-            </div>
-          </div>
-
-          <div class="flex items-start gap-3 p-4 rounded-xl bg-purple-50/50 dark:bg-gray-800/40 border border-purple-100 dark:border-gray-700 hover:border-purple-300 transition-colors">
-            <div class="w-10 h-10 rounded-lg bg-indigo-600 text-white flex items-center justify-center shrink-0 shadow-md">
-              <i class="ri-briefcase-4-line text-lg"></i>
-            </div>
-            <div>
-              <h4 class="text-sm font-bold text-slate-900 dark:text-white">Career Readiness</h4>
-              <p class="text-xs text-slate-500 dark:text-gray-400 mt-0.5">Designed to get hired in CA firms & MNCs</p>
-            </div>
-          </div>
-
-          <div class="flex items-start gap-3 p-4 rounded-xl bg-purple-50/50 dark:bg-gray-800/40 border border-purple-100 dark:border-gray-700 hover:border-purple-300 transition-colors">
-            <div class="w-10 h-10 rounded-lg bg-pink-600 text-white flex items-center justify-center shrink-0 shadow-md">
-              <i class="ri-translate-2 text-lg"></i>
-            </div>
-            <div>
-              <h4 class="text-sm font-bold text-slate-900 dark:text-white">15+ Languages</h4>
-              <p class="text-xs text-slate-500 dark:text-gray-400 mt-0.5">Learn smoothly in your native tongue</p>
-            </div>
-          </div>
-
-          <div class="flex items-start gap-3 p-4 rounded-xl bg-purple-50/50 dark:bg-gray-800/40 border border-purple-100 dark:border-gray-700 hover:border-purple-300 transition-colors">
-            <div class="w-10 h-10 rounded-lg bg-amber-600 text-white flex items-center justify-center shrink-0 shadow-md">
-              <i class="ri-qr-code-line text-lg"></i>
-            </div>
-            <div>
-              <h4 class="text-sm font-bold text-slate-900 dark:text-white">QR Verification</h4>
-              <p class="text-xs text-slate-500 dark:text-gray-400 mt-0.5">Instant online verifiable credentials</p>
-            </div>
-          </div>
-
-          <div class="flex items-start gap-3 p-4 rounded-xl bg-purple-50/50 dark:bg-gray-800/40 border border-purple-100 dark:border-gray-700 hover:border-purple-300 transition-colors col-span-2 md:col-span-1">
-            <div class="w-10 h-10 rounded-lg bg-emerald-600 text-white flex items-center justify-center shrink-0 shadow-md">
-              <i class="ri-gamepad-line text-lg"></i>
-            </div>
-            <div>
-              <h4 class="text-sm font-bold text-slate-900 dark:text-white">Gamified LMS</h4>
-              <p class="text-xs text-slate-500 dark:text-gray-400 mt-0.5">Retain concepts up to 5x faster</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- CERTIFICATION AUTHORITY & LINKEDIN SHOWCASE (Psychology: Authority & Status signaling) -->
-    <section class="py-16 md:py-20 bg-gradient-to-r from-purple-900 via-slate-900 to-indigo-950 text-white relative">
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
-          
-          <div class="lg:col-span-6 space-y-6">
-            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-purple-500/20 border border-purple-400/30 text-purple-300 text-xs font-bold uppercase tracking-wider">
-              <i class="ri-linkedin-box-fill text-base text-blue-400"></i> LinkedIn Verifiable Credential
-            </div>
-
-            <h2 class="text-3xl sm:text-4xl font-extrabold tracking-tight leading-tight">
-              Get an Industry-Recognized Credential Powered by <span class="text-purple-300">PixelBotix</span>
-            </h2>
-
-            <p class="text-slate-300 text-sm sm:text-base leading-relaxed">
-              Stand out in competitive interviews. Every certificate issued comes with a <strong>unique QR Code</strong> and permanent URL verification on the PixelBotix Eduverse portal, allowing recruiters and CA firms to authenticate your practical skills instantly.
-            </p>
-
-            <div class="space-y-3.5 pt-2">
-              <div class="flex items-start gap-3">
-                <div class="w-6 h-6 rounded-full bg-emerald-500/20 text-emerald-400 flex items-center justify-center shrink-0 mt-0.5">
-                  <i class="ri-check-line text-sm font-bold"></i>
-                </div>
-                <p class="text-xs sm:text-sm text-slate-200"><strong>1-Click LinkedIn Integration:</strong> Add verified skills directly to your LinkedIn profile Licenses & Certifications.</p>
-              </div>
-
-              <div class="flex items-start gap-3">
-                <div class="w-6 h-6 rounded-full bg-emerald-500/20 text-emerald-400 flex items-center justify-center shrink-0 mt-0.5">
-                  <i class="ri-check-line text-sm font-bold"></i>
-                </div>
-                <p class="text-xs sm:text-sm text-slate-200"><strong>Tamper-Proof QR Verification:</strong> Instant background authentication by prospective employers.</p>
-              </div>
-
-              <div class="flex items-start gap-3">
-                <div class="w-6 h-6 rounded-full bg-emerald-500/20 text-emerald-400 flex items-center justify-center shrink-0 mt-0.5">
-                  <i class="ri-check-line text-sm font-bold"></i>
-                </div>
-                <p class="text-xs sm:text-sm text-slate-200"><strong>Industry-Ready Validation:</strong> Demonstrates hands-on proficiency in TallyPrime, GST computation, and TRACES filing.</p>
-              </div>
-            </div>
-
-            <div class="pt-4">
-              <a href="https://wa.me/917200445685?text=Hi%20want%20to%20know%20about%20Certificate%20Verification" target="_blank" rel="noopener noreferrer" class="inline-flex items-center px-6 py-3 rounded-xl bg-purple-600 hover:bg-purple-700 text-white font-bold text-xs uppercase tracking-wider shadow-lg transition-all">
-                <i class="ri-shield-user-line mr-2 text-base"></i> Verify Sample Certificate
-              </a>
-            </div>
-          </div>
-
-          <!-- Certificate Visual Preview -->
-          <div class="lg:col-span-6 relative">
-            <div class="p-4 sm:p-6 rounded-2xl bg-white/10 backdrop-blur-md border border-white/20 shadow-2xl relative">
-              <div class="bg-white rounded-xl p-6 text-slate-900 shadow-inner border border-slate-200 relative overflow-hidden">
-                <!-- Certificate Decorative Border -->
-                <div class="border-4 border-double border-purple-900/20 p-6 rounded-lg text-center space-y-4">
-                  <div class="flex justify-between items-center">
-                    <span class="text-xs font-bold text-purple-900 uppercase tracking-widest">PixelBotix Eduverse</span>
-                    <span class="text-[10px] font-mono bg-purple-100 text-purple-800 px-2 py-0.5 rounded">ID: PB-TAX-2026-8849</span>
-                  </div>
-                  
-                  <div class="py-2">
-                    <p class="text-xs uppercase text-slate-500 tracking-wider">Certificate of Completion</p>
-                    <h3 class="text-xl sm:text-2xl font-serif font-black text-slate-900 mt-1">Finance & Taxation Executive</h3>
-                    <p class="text-xs text-slate-600 mt-1">Awarded for demonstrating verified practical competencies in TallyPrime, GST Returns, TDS (24Q/26Q), and ITR Filings.</p>
-                  </div>
-
-                  <div class="flex justify-between items-end pt-4 border-t border-slate-200 text-left">
-                    <div>
-                      <p class="text-[10px] text-slate-400 uppercase">Director of Academic Training</p>
-                      <p class="text-xs font-bold text-slate-800">PixelBotix Technologies</p>
-                    </div>
-                    <div class="text-center">
-                      <div class="w-14 h-14 bg-slate-900 text-white rounded p-1 mx-auto flex items-center justify-center text-[10px] font-mono">
-                        [ QR CODE ]
-                      </div>
-                      <p class="text-[9px] text-emerald-700 font-bold mt-1"><i class="ri-checkbox-circle-fill"></i> Online Verified</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <!-- Floating LinkedIn Badge -->
-              <div class="absolute -bottom-4 right-6 bg-slate-950 border border-slate-700 text-white px-4 py-2 rounded-xl shadow-xl flex items-center gap-2.5 text-xs font-semibold">
-                <i class="ri-linkedin-box-fill text-xl text-blue-400"></i>
-                <span>Direct 1-Click LinkedIn Badge Addition</span>
-              </div>
-            </div>
-          </div>
-
-        </div>
-      </div>
-    </section>
-
-    <!-- SPECIALISED COMBINATION PACKAGES (CAREER TRACKS) -->
-    <section id="specialised-combos" class="py-16 md:py-24 bg-slate-100 dark:bg-gray-950">
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        
-        <div class="text-center max-w-3xl mx-auto mb-14">
-          <span class="text-purple-600 dark:text-purple-400 font-bold text-xs uppercase tracking-widest">Complete Career Fast-Tracks</span>
-          <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 dark:text-white mt-2">Specialised Course Combinations</h2>
-          <p class="text-slate-600 dark:text-gray-300 mt-3 text-sm sm:text-base">
-            Structured 3-month comprehensive tracks specifically curated to land immediate high-paying roles in CA firms, MNCs, and accounting firms.
+  <main>
+    <section class="hero-background">
+      <div class="mx-auto max-w-7xl px-4 py-12 sm:px-6 sm:py-16 lg:px-8 lg:py-20">
+        <nav aria-label="Breadcrumb" class="mb-7 text-sm text-secondary">
+          <a href="/" class="hover:text-brand-600">Home</a>
+          <span class="mx-2" aria-hidden="true">/</span>
+          <a href="/eduverse/" class="hover:text-brand-600">Eduverse</a>
+          <span class="mx-2" aria-hidden="true">/</span>
+          <span aria-current="page">Accounting &amp; Taxation</span>
+        </nav>
+        <div class="max-w-4xl">
+          <p class="eyebrow mb-4 text-xs font-bold text-brand-600 dark:text-brand-300">PixelBotix Eduverse · Professional Skills</p>
+          <h1 class="text-3xl font-extrabold leading-tight tracking-tight sm:text-4xl lg:text-6xl">
+            Practical Accounting <span class="text-brand-600 dark:text-brand-300">&amp; Taxation Courses</span>
+          </h1>
+          <p class="mt-5 max-w-2xl text-base leading-7 text-secondary sm:text-lg">
+            Build practical skills in accounting, Tally Prime, GST, income tax, TDS,
+            payroll, return filing and financial reporting through structured online
+            learning and mentor-supported training.
           </p>
-        </div>
-
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          
-          <!-- Package 1: Jr. Accounts Executive -->
-          <div class="rounded-2xl bg-white dark:bg-gray-900 border border-purple-200 dark:border-gray-800 shadow-xl overflow-hidden flex flex-col justify-between hover:shadow-2xl transition-all">
-            <div class="p-6 sm:p-7">
-              <div class="flex justify-between items-start">
-                <span class="px-3 py-1 rounded-full text-xs font-bold bg-purple-100 dark:bg-purple-950 text-purple-700 dark:text-purple-300">Level 1 • 3 Months</span>
-                <span class="text-xs font-bold text-emerald-600 dark:text-emerald-400 bg-emerald-50 dark:bg-emerald-950/60 px-2 py-0.5 rounded">Save ₹7,000 (32% OFF)</span>
-              </div>
-              <h3 class="text-xl font-extrabold text-slate-900 dark:text-white mt-3">Jr. Accounts Executive</h3>
-              <p class="text-xs text-slate-500 dark:text-gray-400 mt-1">Foundation to core commercial bookkeeping & compliance</p>
-              
-              <div class="mt-4 flex items-baseline gap-2">
-                <span class="text-3xl font-black text-slate-900 dark:text-white">₹14,999</span>
-                <span class="text-sm line-through text-slate-400">₹21,999</span>
-              </div>
-
-              <div class="mt-6 space-y-2.5 text-xs text-slate-600 dark:text-gray-300 border-t border-slate-100 dark:border-gray-800 pt-4">
-                <p class="font-bold text-slate-800 dark:text-gray-200 uppercase tracking-wider text-[11px]">Included Modules:</p>
-                <div class="flex items-center gap-2"><i class="ri-check-line text-purple-600 font-bold"></i> Basic Accounting & Tally Prime Foundation</div>
-                <div class="flex items-center gap-2"><i class="ri-check-line text-purple-600 font-bold"></i> Microsoft Excel (Basic to Advanced)</div>
-                <div class="flex items-center gap-2"><i class="ri-check-line text-purple-600 font-bold"></i> Payroll & Salary Statements</div>
-                <div class="flex items-center gap-2"><i class="ri-check-line text-purple-600 font-bold"></i> Income Tax Computation</div>
-                <div class="flex items-center gap-2"><i class="ri-check-line text-purple-600 font-bold"></i> TDS Computation</div>
-                <div class="flex items-center gap-2"><i class="ri-check-line text-purple-600 font-bold"></i> GST Computation & Return Filing</div>
-              </div>
-
-              <div class="grid grid-cols-3 gap-2 mt-6 pt-4 border-t border-slate-100 dark:border-gray-800 text-center text-xs">
-                <div class="bg-purple-50/50 dark:bg-gray-800 p-2 rounded-lg">
-                  <span class="block font-bold text-slate-800 dark:text-white">195</span>
-                  <span class="text-[10px] text-slate-500">Videos</span>
-                </div>
-                <div class="bg-purple-50/50 dark:bg-gray-800 p-2 rounded-lg">
-                  <span class="block font-bold text-slate-800 dark:text-white">88</span>
-                  <span class="text-[10px] text-slate-500">Cases</span>
-                </div>
-                <div class="bg-purple-50/50 dark:bg-gray-800 p-2 rounded-lg">
-                  <span class="block font-bold text-slate-800 dark:text-white">160</span>
-                  <span class="text-[10px] text-slate-500">Experiments</span>
-                </div>
-              </div>
-            </div>
-
-            <div class="p-6 bg-slate-50 dark:bg-gray-900/60 border-t border-slate-100 dark:border-gray-800">
-              <a href="https://wa.me/917200445685?text=Enroll%20Jr%20Accounts%20Executive" class="w-full block py-3.5 text-center rounded-xl bg-purple-600 hover:bg-purple-700 text-white font-bold text-xs uppercase tracking-wider transition-colors shadow-md">
-                Enroll in Track
-              </a>
-            </div>
+          <div class="mt-8 flex flex-col gap-3 sm:flex-row">
+            <a href="#individual-courses" class="inline-flex min-h-12 items-center justify-center gap-2 rounded-xl border-2 border-violet-700 bg-violet-700 px-5 py-3 font-bold text-white shadow-md transition hover:border-violet-800 hover:bg-violet-800 dark:border-violet-400 dark:bg-violet-600 dark:text-white dark:hover:bg-violet-500">Explore Individual Courses</a>
+            <a href="#specialised-combinations" class="inline-flex min-h-12 items-center justify-center gap-2 rounded-xl border-2 border-gray-400 bg-white px-5 py-3 font-bold text-gray-900 shadow-md transition hover:border-violet-700 hover:bg-violet-50 dark:border-slate-500 dark:bg-slate-800 dark:text-white dark:hover:border-violet-400 dark:hover:bg-slate-700">Explore Course Combos</a>
           </div>
-
-          <!-- Package 2: Finance & Taxation Executive (Psychology: Decoy & Most Value Anchor) -->
-          <div class="rounded-2xl bg-white dark:bg-gray-900 border-2 border-purple-600 shadow-2xl overflow-hidden flex flex-col justify-between relative transform lg:-translate-y-2">
-            <div class="absolute top-0 right-0 bg-purple-600 text-white text-[10px] font-extrabold px-4 py-1.5 rounded-bl-xl uppercase tracking-wider shadow-sm">
-              ★ Flagship Career Program
-            </div>
-
-            <div class="p-6 sm:p-7">
-              <div class="flex justify-between items-start">
-                <span class="px-3 py-1 rounded-full text-xs font-bold bg-purple-100 dark:bg-purple-950 text-purple-700 dark:text-purple-300">Level I & II Mastery</span>
-                <span class="text-xs font-bold text-emerald-600 dark:text-emerald-400 bg-emerald-50 dark:bg-emerald-950/60 px-2 py-0.5 rounded">Save ₹15,000 (38% OFF)</span>
-              </div>
-              <h3 class="text-xl font-black text-slate-900 dark:text-white mt-3">Finance & Taxation Executive</h3>
-              <p class="text-xs text-slate-500 dark:text-gray-400 mt-1">End-to-end accounting, direct/indirect taxation & corporate analytics</p>
-              
-              <div class="mt-4 flex items-baseline gap-2">
-                <span class="text-3xl font-black text-slate-900 dark:text-white">₹24,999</span>
-                <span class="text-sm line-through text-slate-400">₹39,999</span>
-              </div>
-
-              <div class="mt-6 space-y-2 text-xs text-slate-600 dark:text-gray-300 border-t border-slate-100 dark:border-gray-800 pt-4">
-                <p class="font-bold text-slate-800 dark:text-gray-200 uppercase tracking-wider text-[11px]">Covers All 13 Core Modules:</p>
-                <div class="grid grid-cols-2 gap-x-2 gap-y-1.5">
-                  <div class="flex items-center gap-1.5"><i class="ri-checkbox-circle-fill text-purple-600"></i> Basic Accounting</div>
-                  <div class="flex items-center gap-1.5"><i class="ri-checkbox-circle-fill text-purple-600"></i> Tally Specialisation</div>
-                  <div class="flex items-center gap-1.5"><i class="ri-checkbox-circle-fill text-purple-600"></i> Business Tax</div>
-                  <div class="flex items-center gap-1.5"><i class="ri-checkbox-circle-fill text-purple-600"></i> Financial MIS</div>
-                  <div class="flex items-center gap-1.5"><i class="ri-checkbox-circle-fill text-purple-600"></i> TDS Filing (24Q/26Q)</div>
-                  <div class="flex items-center gap-1.5"><i class="ri-checkbox-circle-fill text-purple-600"></i> GST Online & Offline</div>
-                  <div class="flex items-center gap-1.5"><i class="ri-checkbox-circle-fill text-purple-600"></i> Advanced Excel</div>
-                  <div class="flex items-center gap-1.5"><i class="ri-checkbox-circle-fill text-purple-600"></i> Payroll & PF/ESI</div>
-                </div>
-              </div>
-
-              <div class="mt-6 p-3 rounded-xl bg-purple-50 dark:bg-purple-950/40 border border-purple-200 dark:border-purple-800 text-xs text-purple-800 dark:text-purple-300 font-semibold text-center flex items-center justify-center gap-2">
-                <i class="ri-shield-star-fill text-amber-500 text-base"></i> Verified LinkedIn Badge & Portfolio Ready
-              </div>
-            </div>
-
-            <div class="p-6 bg-slate-50 dark:bg-gray-900/60 border-t border-slate-100 dark:border-gray-800">
-              <a href="https://wa.me/917200445685?text=Enroll%20Finance%20and%20Taxation%20Executive" class="w-full block py-4 text-center rounded-xl bg-gradient-to-r from-purple-600 to-indigo-600 hover:from-purple-700 hover:to-indigo-700 text-white font-extrabold text-xs uppercase tracking-wider shadow-lg shadow-purple-600/30 transition-all hover:scale-[1.02]">
-                Enroll in Flagship Track
-              </a>
-            </div>
+          <div class="mt-8 flex flex-wrap gap-2 text-sm">
+            <span class="rounded-full border border-brand-200 px-3 py-2 dark:border-slate-600">Self-paced online</span>
+            <span class="rounded-full border border-brand-200 px-3 py-2 dark:border-slate-600">Online + mentor</span>
+            <span class="rounded-full border border-brand-200 px-3 py-2 dark:border-slate-600">Practical assignments</span>
+            <span class="rounded-full border border-brand-200 px-3 py-2 dark:border-slate-600">Certificate of completion</span>
           </div>
-
-          <!-- Package 3: Tax Specialisation -->
-          <div class="rounded-2xl bg-white dark:bg-gray-900 border border-purple-200 dark:border-gray-800 shadow-xl overflow-hidden flex flex-col justify-between hover:shadow-2xl transition-all">
-            <div class="p-6 sm:p-7">
-              <div class="flex justify-between items-start">
-                <span class="px-3 py-1 rounded-full text-xs font-bold bg-purple-100 dark:bg-purple-950 text-purple-700 dark:text-purple-300">Level 2 • 3 Months</span>
-                <span class="text-xs font-bold text-emerald-600 dark:text-emerald-400 bg-emerald-50 dark:bg-emerald-950/60 px-2 py-0.5 rounded">Save ₹9,000 (36% OFF)</span>
-              </div>
-              <h3 class="text-xl font-extrabold text-slate-900 dark:text-white mt-3">Tax Specialisation Track</h3>
-              <p class="text-xs text-slate-500 dark:text-gray-400 mt-1">Direct, Indirect tax filing & statutory portal compliance</p>
-              
-              <div class="mt-4 flex items-baseline gap-2">
-                <span class="text-3xl font-black text-slate-900 dark:text-white">₹15,999</span>
-                <span class="text-sm line-through text-slate-400">₹24,999</span>
-              </div>
-
-              <div class="mt-6 space-y-2.5 text-xs text-slate-600 dark:text-gray-300 border-t border-slate-100 dark:border-gray-800 pt-4">
-                <p class="font-bold text-slate-800 dark:text-gray-200 uppercase tracking-wider text-[11px]">Included Modules:</p>
-                <div class="flex items-center gap-2"><i class="ri-check-line text-purple-600 font-bold"></i> ITR Filing for Individuals (ITR-1 & ITR-2)</div>
-                <div class="flex items-center gap-2"><i class="ri-check-line text-purple-600 font-bold"></i> Business Taxation & Depreciation Acts</div>
-                <div class="flex items-center gap-2"><i class="ri-check-line text-purple-600 font-bold"></i> GST Computation, RCM, & Invoicing</div>
-                <div class="flex items-center gap-2"><i class="ri-check-line text-purple-600 font-bold"></i> GST Return Filing (Online & Offline)</div>
-                <div class="flex items-center gap-2"><i class="ri-check-line text-purple-600 font-bold"></i> TDS on Salary & Non-Salary (24Q/26Q)</div>
-                <div class="flex items-center gap-2"><i class="ri-check-line text-purple-600 font-bold"></i> TDS TRACES Rectification Procedures</div>
-              </div>
-
-              <div class="grid grid-cols-3 gap-2 mt-6 pt-4 border-t border-slate-100 dark:border-gray-800 text-center text-xs">
-                <div class="bg-purple-50/50 dark:bg-gray-800 p-2 rounded-lg">
-                  <span class="block font-bold text-slate-800 dark:text-white">110</span>
-                  <span class="text-[10px] text-slate-500">Videos</span>
-                </div>
-                <div class="bg-purple-50/50 dark:bg-gray-800 p-2 rounded-lg">
-                  <span class="block font-bold text-slate-800 dark:text-white">79</span>
-                  <span class="text-[10px] text-slate-500">Cases</span>
-                </div>
-                <div class="bg-purple-50/50 dark:bg-gray-800 p-2 rounded-lg">
-                  <span class="block font-bold text-slate-800 dark:text-white">178</span>
-                  <span class="text-[10px] text-slate-500">Experiments</span>
-                </div>
-              </div>
-            </div>
-
-            <div class="p-6 bg-slate-50 dark:bg-gray-900/60 border-t border-slate-100 dark:border-gray-800">
-              <a href="https://wa.me/917200445685?text=Enroll%20Tax%20Specialisation" class="w-full block py-3.5 text-center rounded-xl bg-purple-600 hover:bg-purple-700 text-white font-bold text-xs uppercase tracking-wider transition-colors shadow-md">
-                Enroll in Track
-              </a>
-            </div>
-          </div>
-
         </div>
       </div>
     </section>
 
-    <!-- SELF-PACED & MODULAR INDIVIDUAL SKILL MODULES (RICH VISUAL CARDS) -->
-    <section class="py-16 md:py-24 bg-white dark:bg-gray-900 border-t border-slate-200 dark:border-gray-800">
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        
-        <div class="flex flex-col md:flex-row md:items-end justify-between mb-12">
-          <div class="max-w-2xl">
-            <span class="text-purple-600 dark:text-purple-400 font-bold text-xs uppercase tracking-widest">Self-Paced & Modular</span>
-            <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 dark:text-white mt-1">Individual Skill Modules</h2>
-            <p class="text-slate-600 dark:text-gray-400 text-sm sm:text-base mt-2">
-              Need specific upskilling without committing to full tracks? Pick standalone micro-modules, practice at your pace, and earn verifiable credentials.
-            </p>
-          </div>
-          <div class="mt-4 md:mt-0">
-            <span class="inline-flex items-center gap-1.5 text-xs text-purple-700 dark:text-purple-300 font-bold bg-purple-50 dark:bg-purple-950 px-3.5 py-2 rounded-xl border border-purple-200 dark:border-purple-800">
-              <i class="ri-discount-percent-fill text-purple-600"></i> Up to 55% Off Today
-            </span>
-          </div>
+    <section class="border-y border-gray-200 dark:border-slate-700">
+      <div class="mx-auto grid max-w-7xl grid-cols-1 gap-6 px-4 py-9 sm:grid-cols-2 sm:px-6 lg:grid-cols-4 lg:px-8">
+        <div><h2 class="font-bold">Learn at your pace</h2><p class="mt-2 text-sm leading-6 text-secondary">Access self-paced learning materials and study around your schedule.</p></div>
+        <div><h2 class="font-bold">Learn with a mentor</h2><p class="mt-2 text-sm leading-6 text-secondary">Choose the online-with-mentor option for guided learning.</p></div>
+        <div><h2 class="font-bold">Practice real workflows</h2><p class="mt-2 text-sm leading-6 text-secondary">Build familiarity with accounting, taxation and compliance tasks.</p></div>
+        <div><h2 class="font-bold">Study from anywhere</h2><p class="mt-2 text-sm leading-6 text-secondary">Online learning for students and professionals across India.</p></div>
+      </div>
+    </section>
+
+    <section id="individual-courses" class="section-anchor py-14 sm:py-20">
+      <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div class="max-w-3xl">
+          <p class="eyebrow text-xs font-bold text-brand-600 dark:text-brand-300">Start with the skills you need</p>
+          <h2 class="mt-3 text-2xl font-extrabold tracking-tight sm:text-4xl">Individual Courses</h2>
+          <p class="mt-4 leading-7 text-secondary">Choose a specific skill, from accounting fundamentals to tax computation and return filing. Each course has two learning options.</p>
         </div>
-
-        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
-
-          <!-- 1. Basic Accounting & Tally Prime -->
-          <div class="rounded-2xl border border-slate-200 dark:border-gray-800 bg-white dark:bg-gray-950 overflow-hidden flex flex-col justify-between hover:border-purple-500 hover:shadow-xl transition-all group">
-            <div class="relative h-44 overflow-hidden bg-slate-100 dark:bg-gray-800">
-              <img src="https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?auto=format&fit=crop&w=600&q=80" 
-                   alt="Basic Accounting & Tally Prime" 
-                   class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" />
-              <div class="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent"></div>
-              <span class="absolute top-3 right-3 bg-red-600 text-white font-extrabold text-[10px] px-2.5 py-1 rounded-full shadow">
-                50% OFF
-              </span>
-              <span class="absolute bottom-3 left-3 text-white text-xs font-semibold flex items-center gap-1">
-                <i class="ri-time-line text-purple-300"></i> 30 hrs • 28 Videos
-              </span>
-            </div>
-
-            <div class="p-5 flex-1 flex flex-col justify-between">
-              <div>
-                <h4 class="font-bold text-base text-slate-900 dark:text-white group-hover:text-purple-600 dark:group-hover:text-purple-400 transition-colors">
-                  Basic Accounting & Tally Prime
-                </h4>
-                <p class="text-xs text-slate-500 dark:text-gray-400 mt-2 leading-relaxed">
-                  Dual-entry fundamentals, company setup, voucher postings, finalization of ledger balances, and BRS reconciliation.
-                </p>
-                <div class="mt-3 flex items-center gap-2 text-[11px] text-slate-600 dark:text-gray-400">
-                  <span class="bg-slate-100 dark:bg-gray-800 px-2 py-0.5 rounded">16 Cases</span>
-                  <span class="bg-slate-100 dark:bg-gray-800 px-2 py-0.5 rounded">89 MCQs</span>
-                </div>
-              </div>
-
-              <div class="mt-5 pt-4 border-t border-slate-100 dark:border-gray-800 flex items-center justify-between">
-                <div>
-                  <span class="text-xl font-black text-slate-900 dark:text-white">₹2,499</span>
-                  <span class="text-xs line-through text-slate-400 ml-1.5">₹4,999</span>
-                </div>
-                <a href="https://wa.me/917200445685?text=Enroll%20Basic%20Accounting%20Tally" class="px-4 py-2 rounded-xl bg-purple-600 hover:bg-purple-700 text-white text-xs font-bold transition-colors shadow-sm">
-                  Enroll Now
-                </a>
-              </div>
-            </div>
+        <div class="surface-muted mt-8 rounded-2xl border border-gray-200 p-4 dark:border-slate-700 sm:p-5">
+          <p class="text-sm font-bold">Browse by skill area</p>
+          <p class="mt-1 text-sm text-secondary">Every category stays visible. Tap once to show the courses you need.</p>
+          <div id="course-filters" class="filter-buttons" role="group" aria-label="Filter individual courses by category">
+            <button type="button" class="course-filter-button" data-category="all" aria-pressed="true">All courses <span aria-hidden="true">15</span></button>
+            <button type="button" class="course-filter-button" data-category="accounting" aria-pressed="false">Accounting &amp; Tally</button>
+            <button type="button" class="course-filter-button" data-category="tax" aria-pressed="false">Taxation &amp; Compliance</button>
+            <button type="button" class="course-filter-button" data-category="payroll" aria-pressed="false">Payroll &amp; Labour Compliance</button>
+            <button type="button" class="course-filter-button" data-category="finance" aria-pressed="false">Finance &amp; Reporting</button>
+            <button type="button" class="course-filter-button" data-category="office" aria-pressed="false">Office Productivity</button>
           </div>
-
-          <!-- 2. GST Return Filing -->
-          <div class="rounded-2xl border border-slate-200 dark:border-gray-800 bg-white dark:bg-gray-950 overflow-hidden flex flex-col justify-between hover:border-purple-500 hover:shadow-xl transition-all group">
-            <div class="relative h-44 overflow-hidden bg-slate-100 dark:bg-gray-800">
-              <img src="https://images.unsplash.com/photo-1450133064473-71024230f91b?auto=format&fit=crop&w=600&q=80" 
-                   alt="GST Return Filing Training" 
-                   class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" />
-              <div class="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent"></div>
-              <span class="absolute top-3 right-3 bg-red-600 text-white font-extrabold text-[10px] px-2.5 py-1 rounded-full shadow">
-                50% OFF
-              </span>
-              <span class="absolute bottom-3 left-3 text-white text-xs font-semibold flex items-center gap-1">
-                <i class="ri-computer-line text-purple-300"></i> 30 hrs • Govt Simulator
-              </span>
-            </div>
-
-            <div class="p-5 flex-1 flex flex-col justify-between">
-              <div>
-                <h4 class="font-bold text-base text-slate-900 dark:text-white group-hover:text-purple-600 dark:group-hover:text-purple-400 transition-colors">
-                  GST Return Filing (Online & Tally)
-                </h4>
-                <p class="text-xs text-slate-500 dark:text-gray-400 mt-2 leading-relaxed">
-                  Real GST portal filing simulations, offline JSON generation, GSTR-1, GSTR-3B filings, and ITC matchings.
-                </p>
-                <div class="mt-3 flex items-center gap-2 text-[11px] text-slate-600 dark:text-gray-400">
-                  <span class="bg-slate-100 dark:bg-gray-800 px-2 py-0.5 rounded">9 Simulations</span>
-                  <span class="bg-slate-100 dark:bg-gray-800 px-2 py-0.5 rounded">17 Experiments</span>
-                </div>
-              </div>
-
-              <div class="mt-5 pt-4 border-t border-slate-100 dark:border-gray-800 flex items-center justify-between">
-                <div>
-                  <span class="text-xl font-black text-slate-900 dark:text-white">₹2,499</span>
-                  <span class="text-xs line-through text-slate-400 ml-1.5">₹4,999</span>
-                </div>
-                <a href="https://wa.me/917200445685?text=Enroll%20GST%20Return%20Filing" class="px-4 py-2 rounded-xl bg-purple-600 hover:bg-purple-700 text-white text-xs font-bold transition-colors shadow-sm">
-                  Enroll Now
-                </a>
-              </div>
-            </div>
-          </div>
-
-          <!-- 3. Income Tax Computation & ITR -->
-          <div class="rounded-2xl border border-slate-200 dark:border-gray-800 bg-white dark:bg-gray-950 overflow-hidden flex flex-col justify-between hover:border-purple-500 hover:shadow-xl transition-all group">
-            <div class="relative h-44 overflow-hidden bg-slate-100 dark:bg-gray-800">
-              <img src="https://images.unsplash.com/photo-1586486855514-8c633cc6fd38?auto=format&fit=crop&w=600&q=80" 
-                   alt="Income Tax Computation and ITR" 
-                   class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" />
-              <div class="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent"></div>
-              <span class="absolute top-3 right-3 bg-red-600 text-white font-extrabold text-[10px] px-2.5 py-1 rounded-full shadow">
-                45% OFF
-              </span>
-              <span class="absolute bottom-3 left-3 text-white text-xs font-semibold flex items-center gap-1">
-                <i class="ri-file-text-line text-purple-300"></i> 30 hrs • 36 Videos
-              </span>
-            </div>
-
-            <div class="p-5 flex-1 flex flex-col justify-between">
-              <div>
-                <h4 class="font-bold text-base text-slate-900 dark:text-white group-hover:text-purple-600 dark:group-hover:text-purple-400 transition-colors">
-                  Income Tax Computation & ITR
-                </h4>
-                <p class="text-xs text-slate-500 dark:text-gray-400 mt-2 leading-relaxed">
-                  Salary heads, house property income, capital gains computation, deductions under VIA, and ITR-1/ITR-2 filings.
-                </p>
-                <div class="mt-3 flex items-center gap-2 text-[11px] text-slate-600 dark:text-gray-400">
-                  <span class="bg-slate-100 dark:bg-gray-800 px-2 py-0.5 rounded">18 Cases</span>
-                  <span class="bg-slate-100 dark:bg-gray-800 px-2 py-0.5 rounded">83 MCQs</span>
-                </div>
-              </div>
-
-              <div class="mt-5 pt-4 border-t border-slate-100 dark:border-gray-800 flex items-center justify-between">
-                <div>
-                  <span class="text-xl font-black text-slate-900 dark:text-white">₹2,499</span>
-                  <span class="text-xs line-through text-slate-400 ml-1.5">₹4,599</span>
-                </div>
-                <a href="https://wa.me/917200445685?text=Enroll%20Income%20Tax%20Computation" class="px-4 py-2 rounded-xl bg-purple-600 hover:bg-purple-700 text-white text-xs font-bold transition-colors shadow-sm">
-                  Enroll Now
-                </a>
-              </div>
-            </div>
-          </div>
-
-          <!-- 4. TDS Return Filing (24Q & 26Q) -->
-          <div class="rounded-2xl border border-slate-200 dark:border-gray-800 bg-white dark:bg-gray-950 overflow-hidden flex flex-col justify-between hover:border-purple-500 hover:shadow-xl transition-all group">
-            <div class="relative h-44 overflow-hidden bg-slate-100 dark:bg-gray-800">
-              <img src="https://images.unsplash.com/photo-1554224154-26032ffc0d07?auto=format&fit=crop&w=600&q=80" 
-                   alt="TDS Return Filing Course" 
-                   class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" />
-              <div class="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent"></div>
-              <span class="absolute top-3 right-3 bg-red-600 text-white font-extrabold text-[10px] px-2.5 py-1 rounded-full shadow">
-                45% OFF
-              </span>
-              <span class="absolute bottom-3 left-3 text-white text-xs font-semibold flex items-center gap-1">
-                <i class="ri-bill-line text-purple-300"></i> 30 hrs • TRACES Utility
-              </span>
-            </div>
-
-            <div class="p-5 flex-1 flex flex-col justify-between">
-              <div>
-                <h4 class="font-bold text-base text-slate-900 dark:text-white group-hover:text-purple-600 dark:group-hover:text-purple-400 transition-colors">
-                  TDS Return Filing & TRACES
-                </h4>
-                <p class="text-xs text-slate-500 dark:text-gray-400 mt-2 leading-relaxed">
-                  Salary TDS (Form 24Q), contractor/vendor TDS (Form 26Q), challan validations, TRACES portal, and corrections.
-                </p>
-                <div class="mt-3 flex items-center gap-2 text-[11px] text-slate-600 dark:text-gray-400">
-                  <span class="bg-slate-100 dark:bg-gray-800 px-2 py-0.5 rounded">7 Simulations</span>
-                  <span class="bg-slate-100 dark:bg-gray-800 px-2 py-0.5 rounded">14 Experiments</span>
-                </div>
-              </div>
-
-              <div class="mt-5 pt-4 border-t border-slate-100 dark:border-gray-800 flex items-center justify-between">
-                <div>
-                  <span class="text-xl font-black text-slate-900 dark:text-white">₹2,499</span>
-                  <span class="text-xs line-through text-slate-400 ml-1.5">₹4,599</span>
-                </div>
-                <a href="https://wa.me/917200445685?text=Enroll%20TDS%20Return%20Filing" class="px-4 py-2 rounded-xl bg-purple-600 hover:bg-purple-700 text-white text-xs font-bold transition-colors shadow-sm">
-                  Enroll Now
-                </a>
-              </div>
-            </div>
-          </div>
-
-          <!-- 5. Tally Advanced Specialisation -->
-          <div class="rounded-2xl border border-slate-200 dark:border-gray-800 bg-white dark:bg-gray-950 overflow-hidden flex flex-col justify-between hover:border-purple-500 hover:shadow-xl transition-all group">
-            <div class="relative h-44 overflow-hidden bg-slate-100 dark:bg-gray-800">
-              <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=600&q=80" 
-                   alt="Tally Advanced Specialisation" 
-                   class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" />
-              <div class="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent"></div>
-              <span class="absolute top-3 right-3 bg-red-600 text-white font-extrabold text-[10px] px-2.5 py-1 rounded-full shadow">
-                45% OFF
-              </span>
-              <span class="absolute bottom-3 left-3 text-white text-xs font-semibold flex items-center gap-1">
-                <i class="ri-stack-line text-purple-300"></i> 30 hrs • 17 Case Studies
-              </span>
-            </div>
-
-            <div class="p-5 flex-1 flex flex-col justify-between">
-              <div>
-                <h4 class="font-bold text-base text-slate-900 dark:text-white group-hover:text-purple-600 dark:group-hover:text-purple-400 transition-colors">
-                  Tally Advanced Specialisation
-                </h4>
-                <p class="text-xs text-slate-500 dark:text-gray-400 mt-2 leading-relaxed">
-                  Bill-by-bill reference tracking, multi-currency invoicing, cost centre allocations, inventory management & audit reviews.
-                </p>
-                <div class="mt-3 flex items-center gap-2 text-[11px] text-slate-600 dark:text-gray-400">
-                  <span class="bg-slate-100 dark:bg-gray-800 px-2 py-0.5 rounded">20 Videos</span>
-                  <span class="bg-slate-100 dark:bg-gray-800 px-2 py-0.5 rounded">8 MCQs</span>
-                </div>
-              </div>
-
-              <div class="mt-5 pt-4 border-t border-slate-100 dark:border-gray-800 flex items-center justify-between">
-                <div>
-                  <span class="text-xl font-black text-slate-900 dark:text-white">₹2,499</span>
-                  <span class="text-xs line-through text-slate-400 ml-1.5">₹4,599</span>
-                </div>
-                <a href="https://wa.me/917200445685?text=Enroll%20Tally%20Advanced" class="px-4 py-2 rounded-xl bg-purple-600 hover:bg-purple-700 text-white text-xs font-bold transition-colors shadow-sm">
-                  Enroll Now
-                </a>
-              </div>
-            </div>
-          </div>
-
-          <!-- 6. PF & ESI Statutory Compliance -->
-          <div class="rounded-2xl border border-slate-200 dark:border-gray-800 bg-white dark:bg-gray-950 overflow-hidden flex flex-col justify-between hover:border-purple-500 hover:shadow-xl transition-all group">
-            <div class="relative h-44 overflow-hidden bg-slate-100 dark:bg-gray-800">
-              <img src="https://images.unsplash.com/photo-1521791136064-7986c2920216?auto=format&fit=crop&w=600&q=80" 
-                   alt="PF and ESI Return Filing Training" 
-                   class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" />
-              <div class="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent"></div>
-              <span class="absolute top-3 right-3 bg-red-600 text-white font-extrabold text-[10px] px-2.5 py-1 rounded-full shadow">
-                50% OFF
-              </span>
-              <span class="absolute bottom-3 left-3 text-white text-xs font-semibold flex items-center gap-1">
-                <i class="ri-user-settings-line text-purple-300"></i> 30 hrs • 15 Experiments
-              </span>
-            </div>
-
-            <div class="p-5 flex-1 flex flex-col justify-between">
-              <div>
-                <h4 class="font-bold text-base text-slate-900 dark:text-white group-hover:text-purple-600 dark:group-hover:text-purple-400 transition-colors">
-                  PF & ESI Return Filing
-                </h4>
-                <p class="text-xs text-slate-500 dark:text-gray-400 mt-2 leading-relaxed">
-                  EPF unified portal management, ECR file preparation, monthly challan generation, ESI portal filing & labor compliance.
-                </p>
-                <div class="mt-3 flex items-center gap-2 text-[11px] text-slate-600 dark:text-gray-400">
-                  <span class="bg-slate-100 dark:bg-gray-800 px-2 py-0.5 rounded">8 Simulations</span>
-                  <span class="bg-slate-100 dark:bg-gray-800 px-2 py-0.5 rounded">48 MCQs</span>
-                </div>
-              </div>
-
-              <div class="mt-5 pt-4 border-t border-slate-100 dark:border-gray-800 flex items-center justify-between">
-                <div>
-                  <span class="text-xl font-black text-slate-900 dark:text-white">₹2,499</span>
-                  <span class="text-xs line-through text-slate-400 ml-1.5">₹4,999</span>
-                </div>
-                <a href="https://wa.me/917200445685?text=Enroll%20PF%20and%20ESI" class="px-4 py-2 rounded-xl bg-purple-600 hover:bg-purple-700 text-white text-xs font-bold transition-colors shadow-sm">
-                  Enroll Now
-                </a>
-              </div>
-            </div>
-          </div>
-
-          <!-- 7. Microsoft Excel for Finance Professionals -->
-          <div class="rounded-2xl border border-slate-200 dark:border-gray-800 bg-white dark:bg-gray-950 overflow-hidden flex flex-col justify-between hover:border-purple-500 hover:shadow-xl transition-all group">
-            <div class="relative h-44 overflow-hidden bg-slate-100 dark:bg-gray-800">
-              <img src="https://images.unsplash.com/photo-1543286386-713bdd548da4?auto=format&fit=crop&w=600&q=80" 
-                   alt="Microsoft Excel for Finance" 
-                   class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" />
-              <div class="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent"></div>
-              <span class="absolute top-3 right-3 bg-red-600 text-white font-extrabold text-[10px] px-2.5 py-1 rounded-full shadow">
-                55% OFF
-              </span>
-              <span class="absolute bottom-3 left-3 text-white text-xs font-semibold flex items-center gap-1">
-                <i class="ri-file-excel-2-line text-purple-300"></i> 20 hrs • 30 Experiments
-              </span>
-            </div>
-
-            <div class="p-5 flex-1 flex flex-col justify-between">
-              <div>
-                <h4 class="font-bold text-base text-slate-900 dark:text-white group-hover:text-purple-600 dark:group-hover:text-purple-400 transition-colors">
-                  Microsoft Excel (Basic to Advanced)
-                </h4>
-                <p class="text-xs text-slate-500 dark:text-gray-400 mt-2 leading-relaxed">
-                  Financial presentation standards, lookup functions (XLOOKUP/VLOOKUP), dynamic pivot tables, and dashboard reporting.
-                </p>
-                <div class="mt-3 flex items-center gap-2 text-[11px] text-slate-600 dark:text-gray-400">
-                  <span class="bg-slate-100 dark:bg-gray-800 px-2 py-0.5 rounded">13 Cases</span>
-                  <span class="bg-slate-100 dark:bg-gray-800 px-2 py-0.5 rounded">32 MCQs</span>
-                </div>
-              </div>
-
-              <div class="mt-5 pt-4 border-t border-slate-100 dark:border-gray-800 flex items-center justify-between">
-                <div>
-                  <span class="text-xl font-black text-slate-900 dark:text-white">₹999</span>
-                  <span class="text-xs line-through text-slate-400 ml-1.5">₹2,199</span>
-                </div>
-                <a href="https://wa.me/917200445685?text=Enroll%20MS%20Excel" class="px-4 py-2 rounded-xl bg-purple-600 hover:bg-purple-700 text-white text-xs font-bold transition-colors shadow-sm">
-                  Enroll Now
-                </a>
-              </div>
-            </div>
-          </div>
-
-          <!-- 8. Financial Statements & MIS Analysis -->
-          <div class="rounded-2xl border border-slate-200 dark:border-gray-800 bg-white dark:bg-gray-950 overflow-hidden flex flex-col justify-between hover:border-purple-500 hover:shadow-xl transition-all group">
-            <div class="relative h-44 overflow-hidden bg-slate-100 dark:bg-gray-800">
-              <img src="https://images.unsplash.com/photo-1590283603385-17ffb3a7f29f?auto=format&fit=crop&w=600&q=80" 
-                   alt="Financial Statements and MIS Analysis" 
-                   class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" />
-              <div class="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent"></div>
-              <span class="absolute top-3 right-3 bg-red-600 text-white font-extrabold text-[10px] px-2.5 py-1 rounded-full shadow">
-                50% OFF
-              </span>
-              <span class="absolute bottom-3 left-3 text-white text-xs font-semibold flex items-center gap-1">
-                <i class="ri-line-chart-line text-purple-300"></i> 30 hrs • Companies Act
-              </span>
-            </div>
-
-            <div class="p-5 flex-1 flex flex-col justify-between">
-              <div>
-                <h4 class="font-bold text-base text-slate-900 dark:text-white group-hover:text-purple-600 dark:group-hover:text-purple-400 transition-colors">
-                  Financial Statements & MIS
-                </h4>
-                <p class="text-xs text-slate-500 dark:text-gray-400 mt-2 leading-relaxed">
-                  Companies Act 2013 balance sheet preparation, P&L schedules, product profitability ratios, budget vs. actual variance analysis.
-                </p>
-                <div class="mt-3 flex items-center gap-2 text-[11px] text-slate-600 dark:text-gray-400">
-                  <span class="bg-slate-100 dark:bg-gray-800 px-2 py-0.5 rounded">19 Cases</span>
-                  <span class="bg-slate-100 dark:bg-gray-800 px-2 py-0.5 rounded">59 MCQs</span>
-                </div>
-              </div>
-
-              <div class="mt-5 pt-4 border-t border-slate-100 dark:border-gray-800 flex items-center justify-between">
-                <div>
-                  <span class="text-xl font-black text-slate-900 dark:text-white">₹2,499</span>
-                  <span class="text-xs line-through text-slate-400 ml-1.5">₹4,999</span>
-                </div>
-                <a href="https://wa.me/917200445685?text=Enroll%20MIS%20and%20FS" class="px-4 py-2 rounded-xl bg-purple-600 hover:bg-purple-700 text-white text-xs font-bold transition-colors shadow-sm">
-                  Enroll Now
-                </a>
-              </div>
-            </div>
-          </div>
-
+          <p id="course-count" class="mt-4 text-sm text-secondary" aria-live="polite">Showing all 15 individual courses.</p>
+        </div>
+        <div id="course-grid" class="mt-7 grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3"></div>
+        <p id="course-empty" class="mt-8 hidden text-center text-secondary">No courses match your search. Try another keyword or category.</p>
+        <div class="mt-8 rounded-2xl border border-brand-200 bg-brand-50 p-5 dark:border-slate-700 dark:bg-slate-900 sm:p-6">
+          <h3 class="font-bold">Not sure which course to choose?</h3>
+          <p class="mt-2 text-sm leading-6 text-secondary">Share your current skill level and learning objective. Our team can help you identify a relevant course or combination.</p>
+          <a href="https://wa.me/917200445685?text=Hello%20PixelBotix%20Eduverse%2C%20I%20need%20help%20choosing%20an%20Accounting%20%26%20Taxation%20course." target="_blank" rel="noopener noreferrer" class="mt-4 inline-flex min-h-11 items-center justify-center gap-2 rounded-xl bg-brand-700 px-5 py-3 text-sm font-semibold text-white hover:bg-brand-800"><i class="ri-whatsapp-line text-lg" aria-hidden="true"></i>Get Course Guidance on WhatsApp</a>
         </div>
       </div>
     </section>
 
-    <!-- FLEXIBLE DELIVERY FORMATS -->
-    <section class="py-16 bg-slate-50 dark:bg-gray-950 border-t border-slate-200 dark:border-gray-800">
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        
-        <div class="text-center max-w-2xl mx-auto mb-12">
-          <span class="text-purple-600 dark:text-purple-400 font-bold text-xs uppercase tracking-widest">Tailored Delivery</span>
-          <h2 class="text-2xl sm:text-3xl font-extrabold text-slate-900 dark:text-white mt-1">Flexible Learning Modes Designed for You</h2>
-          <p class="text-slate-600 dark:text-gray-400 text-sm mt-2">Attend live from across South India or join our dedicated training hubs.</p>
+    <section id="specialised-combinations" class="section-anchor surface-muted border-y border-gray-200 py-14 dark:border-slate-700 sm:py-20">
+      <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div class="max-w-3xl">
+          <p class="eyebrow text-xs font-bold text-brand-600 dark:text-brand-300">Structured learning pathways</p>
+          <h2 class="mt-3 text-2xl font-extrabold tracking-tight sm:text-4xl">Specialised Course Combinations</h2>
+          <p class="mt-4 leading-7 text-secondary">Build a broader skill set through connected modules for accounting, finance, taxation and HR.</p>
         </div>
-
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-          <div class="p-6 rounded-2xl bg-white dark:bg-gray-900 border border-slate-200 dark:border-gray-800 hover:border-purple-400 transition-colors">
-            <div class="w-12 h-12 rounded-xl bg-purple-100 dark:bg-purple-950 text-purple-600 flex items-center justify-center text-xl mb-4 font-black">
-              01
-            </div>
-            <h3 class="text-base font-bold text-slate-900 dark:text-white">Self-Paced Online</h3>
-            <p class="text-xs text-slate-600 dark:text-gray-400 mt-2 leading-relaxed">
-              Lifetime access to high-definition recorded modules, simulation kits, and continuous email mentorship support.
-            </p>
-          </div>
-
-          <div class="p-6 rounded-2xl bg-white dark:bg-gray-900 border border-slate-200 dark:border-gray-800 hover:border-purple-400 transition-colors">
-            <div class="w-12 h-12 rounded-xl bg-purple-100 dark:bg-purple-950 text-purple-600 flex items-center justify-center text-xl mb-4 font-black">
-              02
-            </div>
-            <h3 class="text-base font-bold text-slate-900 dark:text-white">Online Live Sessions</h3>
-            <p class="text-xs text-slate-600 dark:text-gray-400 mt-2 leading-relaxed">
-              Virtual instructor-led training via Zoom/Teams with interactive doubt clearing for students in Chennai, Bengaluru, and Kochi.
-            </p>
-          </div>
-
-          <div class="p-6 rounded-2xl bg-white dark:bg-gray-900 border border-slate-200 dark:border-gray-800 hover:border-purple-400 transition-colors">
-            <div class="w-12 h-12 rounded-xl bg-purple-100 dark:bg-purple-950 text-purple-600 flex items-center justify-center text-xl mb-4 font-black">
-              03
-            </div>
-            <h3 class="text-base font-bold text-slate-900 dark:text-white">Offline Training</h3>
-            <p class="text-xs text-slate-600 dark:text-gray-400 mt-2 leading-relaxed">
-              In-person classroom batches at our Tambaram, Chennai learning centre with peer collaboration and direct trainer interaction.
-            </p>
-          </div>
-
-          <div class="p-6 rounded-2xl bg-white dark:bg-gray-900 border border-slate-200 dark:border-gray-800 hover:border-purple-400 transition-colors">
-            <div class="w-12 h-12 rounded-xl bg-purple-100 dark:bg-purple-950 text-purple-600 flex items-center justify-center text-xl mb-4 font-black">
-              04
-            </div>
-            <h3 class="text-base font-bold text-slate-900 dark:text-white">Internship Embedded</h3>
-            <p class="text-xs text-slate-600 dark:text-gray-400 mt-2 leading-relaxed">
-              Hands-on corporate project assignments, real case audits, and enterprise internship certificates.
-            </p>
-          </div>
-        </div>
-
+        <div id="bundle-grid" class="mt-9 grid grid-cols-1 gap-6 md:grid-cols-2 xl:grid-cols-3"></div>
+        <p class="mt-7 text-sm leading-6 text-secondary">Programme durations and prices are based on the supplied brochure. Confirm the applicable learning format, current batch schedule and enrolment terms with the team before payment.</p>
       </div>
     </section>
 
-    <!-- WHO SHOULD ATTEND -->
-    <section class="py-16 md:py-20 bg-white dark:bg-gray-900 border-t border-slate-200 dark:border-gray-800">
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        
-        <div class="text-center max-w-2xl mx-auto mb-12">
-          <span class="text-purple-600 dark:text-purple-400 font-bold text-xs uppercase tracking-widest">Audience Focus</span>
-          <h2 class="text-2xl sm:text-3xl font-extrabold text-slate-900 dark:text-white mt-1">Who Should Attend This Programme?</h2>
-          <p class="text-slate-600 dark:text-gray-400 text-sm mt-2">Tailored for finance aspirants, working accountants, and SME business owners.</p>
-        </div>
-
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          <div class="p-5 rounded-2xl border border-slate-200 dark:border-gray-800 bg-slate-50 dark:bg-gray-950 flex items-start gap-4">
-            <div class="w-10 h-10 rounded-xl bg-purple-100 dark:bg-purple-950 text-purple-600 flex items-center justify-center shrink-0">
-              <i class="ri-graduation-cap-line text-xl"></i>
-            </div>
-            <div>
-              <h4 class="font-bold text-slate-900 dark:text-white text-sm">Commerce & B.Com / BBA Students</h4>
-              <p class="text-xs text-slate-600 dark:text-gray-400 mt-1">Transform theoretical syllabus into real-world job-ready filing skills for campus placements.</p>
-            </div>
-          </div>
-
-          <div class="p-5 rounded-2xl border border-slate-200 dark:border-gray-800 bg-slate-50 dark:bg-gray-950 flex items-start gap-4">
-            <div class="w-10 h-10 rounded-xl bg-purple-100 dark:bg-purple-950 text-purple-600 flex items-center justify-center shrink-0">
-              <i class="ri-user-star-line text-xl"></i>
-            </div>
-            <div>
-              <h4 class="font-bold text-slate-900 dark:text-white text-sm">Finance & Admin Executives</h4>
-              <p class="text-xs text-slate-600 dark:text-gray-400 mt-1">Upgrade knowledge on GST computation, annual TDS returns, and EPF/ESI statutory forms.</p>
-            </div>
-          </div>
-
-          <div class="p-5 rounded-2xl border border-slate-200 dark:border-gray-800 bg-slate-50 dark:bg-gray-950 flex items-start gap-4">
-            <div class="w-10 h-10 rounded-xl bg-purple-100 dark:bg-purple-950 text-purple-600 flex items-center justify-center shrink-0">
-              <i class="ri-book-read-line text-xl"></i>
-            </div>
-            <div>
-              <h4 class="font-bold text-slate-900 dark:text-white text-sm">Practising Accountants</h4>
-              <p class="text-xs text-slate-600 dark:text-gray-400 mt-1">Stay updated with latest taxation amendments, audit trails, and advanced Tally features.</p>
-            </div>
-          </div>
-
-          <div class="p-5 rounded-2xl border border-slate-200 dark:border-gray-800 bg-slate-50 dark:bg-gray-950 flex items-start gap-4">
-            <div class="w-10 h-10 rounded-xl bg-purple-100 dark:bg-purple-950 text-purple-600 flex items-center justify-center shrink-0">
-              <i class="ri-store-2-line text-xl"></i>
-            </div>
-            <div>
-              <h4 class="font-bold text-slate-900 dark:text-white text-sm">Business Owners & Founders</h4>
-              <p class="text-xs text-slate-600 dark:text-gray-400 mt-1">Take control of cash flows, monitor company profitability, and supervise compliance with ease.</p>
-            </div>
-          </div>
-
-          <div class="p-5 rounded-2xl border border-slate-200 dark:border-gray-800 bg-slate-50 dark:bg-gray-950 flex items-start gap-4">
-            <div class="w-10 h-10 rounded-xl bg-purple-100 dark:bg-purple-950 text-purple-600 flex items-center justify-center shrink-0">
-              <i class="ri-team-line text-xl"></i>
-            </div>
-            <div>
-              <h4 class="font-bold text-slate-900 dark:text-white text-sm">HR & Payroll Officers</h4>
-              <p class="text-xs text-slate-600 dark:text-gray-400 mt-1">Master salary slip generation, Form 24Q TDS filing, and labor compliance structures.</p>
-            </div>
-          </div>
-
-          <div class="p-5 rounded-2xl border border-slate-200 dark:border-gray-800 bg-slate-50 dark:bg-gray-950 flex items-start gap-4">
-            <div class="w-10 h-10 rounded-xl bg-purple-100 dark:bg-purple-950 text-purple-600 flex items-center justify-center shrink-0">
-              <i class="ri-building-line text-xl"></i>
-            </div>
-            <div>
-              <h4 class="font-bold text-slate-900 dark:text-white text-sm">Startup Accounts Teams</h4>
-              <p class="text-xs text-slate-600 dark:text-gray-400 mt-1">Standardize internal financial records, vendor invoicing, and periodic reporting.</p>
-            </div>
-          </div>
-        </div>
-
-      </div>
-    </section>
-
-    <!-- FINAL CONVERSION & ENROLLMENT BANNER -->
-    <section class="py-16 bg-gradient-to-r from-purple-900 via-indigo-900 to-slate-900 text-white relative overflow-hidden">
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
-          
-          <div class="lg:col-span-8 space-y-4">
-            <div class="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-purple-300 bg-purple-800/60 px-3 py-1 rounded-full">
-              <i class="ri-fire-fill text-amber-400"></i> Next Cohort Starts Soon
-            </div>
-            <h2 class="text-3xl sm:text-4xl font-black">Transform Your Accounting Career Today</h2>
-            <p class="text-purple-200 text-sm sm:text-base max-w-2xl leading-relaxed">
-              Don't stay stuck with theoretical knowledge. Join 25,000+ ambitious learners, master live tax portals, and earn verifiable credentials powered by PixelBotix.
-            </p>
-            <div class="flex flex-wrap items-center gap-6 pt-3 text-xs sm:text-sm">
-              <a href="tel:+917200445335" class="inline-flex items-center gap-2 hover:text-purple-300 font-semibold">
-                <i class="ri-phone-fill text-purple-400 text-base"></i> +91 72004 45335
-              </a>
-              <a href="mailto:info@pixelbotix.com" class="inline-flex items-center gap-2 hover:text-purple-300 font-semibold">
-                <i class="ri-mail-fill text-purple-400 text-base"></i> info@pixelbotix.com
-              </a>
-              <span class="inline-flex items-center gap-2 text-slate-300">
-                <i class="ri-map-pin-line text-purple-400 text-base"></i> Tambaram, Chennai - 600045
-              </span>
-            </div>
-          </div>
-
-          <div class="lg:col-span-4 flex lg:justify-end">
-            <a href="https://wa.me/917200445685?text=Hi%20Acc%20%26%20Tax" target="_blank" rel="noopener noreferrer" class="inline-flex items-center px-8 py-4 rounded-xl bg-emerald-500 hover:bg-emerald-600 text-white font-extrabold text-base shadow-2xl transition-transform hover:scale-105">
-              <i class="ri-whatsapp-line text-2xl mr-3"></i>
-              <span>Chat & Register Now<br><span class="text-xs font-normal opacity-90">+91 72004 45685</span></span>
-            </a>
-          </div>
-
+    <section class="py-14 sm:py-20">
+      <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div class="max-w-3xl"><p class="eyebrow text-xs font-bold text-brand-600 dark:text-brand-300">Designed for practical skill development</p><h2 class="mt-3 text-2xl font-extrabold tracking-tight sm:text-4xl">Who Should Attend?</h2><p class="mt-4 leading-7 text-secondary">The programme is intended for learners who work with business finances, records, reporting or compliance.</p></div>
+        <div class="mt-8 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
+          <article class="surface rounded-2xl border p-5"><h3 class="font-bold">Accounting &amp; Finance Students</h3><p class="mt-2 text-sm leading-6 text-secondary">Build foundational accounting knowledge and practical skills relevant to entry-level finance roles.</p></article>
+          <article class="surface rounded-2xl border p-5"><h3 class="font-bold">Finance &amp; Admin Professionals</h3><p class="mt-2 text-sm leading-6 text-secondary">Strengthen your understanding of GST, TDS, income tax and financial administration.</p></article>
+          <article class="surface rounded-2xl border p-5"><h3 class="font-bold">Accountants &amp; Bookkeepers</h3><p class="mt-2 text-sm leading-6 text-secondary">Develop practical familiarity with accounting records, reconciliations and reporting.</p></article>
+          <article class="surface rounded-2xl border p-5"><h3 class="font-bold">Business Owners &amp; Entrepreneurs</h3><p class="mt-2 text-sm leading-6 text-secondary">Understand bookkeeping, tax computation, profitability and cash-flow reporting.</p></article>
+          <article class="surface rounded-2xl border p-5"><h3 class="font-bold">Start-ups &amp; SMEs</h3><p class="mt-2 text-sm leading-6 text-secondary">Develop skills in documentation, reporting and day-to-day compliance workflows.</p></article>
+          <article class="surface rounded-2xl border p-5"><h3 class="font-bold">Career Switchers</h3><p class="mt-2 text-sm leading-6 text-secondary">Build a foundation in office productivity, accounting systems and taxation processes.</p></article>
         </div>
       </div>
     </section>
 
+    <section class="surface-muted border-y border-gray-200 py-14 dark:border-slate-700 sm:py-20">
+      <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div class="max-w-3xl"><p class="eyebrow text-xs font-bold text-brand-600 dark:text-brand-300">Flexible learning</p><h2 class="mt-3 text-2xl font-extrabold tracking-tight sm:text-4xl">Choose Your Learning Mode</h2><p class="mt-4 leading-7 text-secondary">Select the learning format that fits your schedule and preferred level of interaction.</p></div>
+        <div class="mt-8 grid grid-cols-1 gap-5 sm:grid-cols-2">
+          <article class="surface rounded-2xl border p-6"><h3 class="text-lg font-bold">Self-Paced Online</h3><p class="mt-3 leading-7 text-secondary">Study recorded lessons and learning materials at your own pace, around your schedule.</p></article>
+          <article class="surface rounded-2xl border p-6"><h3 class="text-lg font-bold">Online Learning with Mentor</h3><p class="mt-3 leading-7 text-secondary">Choose the mentor-supported option for guided online learning. Confirm session availability when enrolling.</p></article>
+          <article class="surface rounded-2xl border p-6"><h3 class="text-lg font-bold">Offline Classroom Sessions</h3><p class="mt-3 leading-7 text-secondary">The brochure describes classroom training at the Chennai training centre. Confirm current location, schedule and course availability before visiting.</p></article>
+          <article class="surface rounded-2xl border p-6"><h3 class="text-lg font-bold">Corporate Training</h3><p class="mt-3 leading-7 text-secondary">Enquire about customised training-cum-internship programmes and team training arrangements.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="py-14 sm:py-20">
+      <div class="mx-auto max-w-5xl px-4 text-center sm:px-6 lg:px-8">
+        <p class="eyebrow text-xs font-bold text-brand-600 dark:text-brand-300">Online learning across India</p>
+        <h2 class="mt-3 text-2xl font-extrabold tracking-tight sm:text-4xl">Learn from Chennai, Tamil Nadu, Kerala and Beyond</h2>
+        <p class="mx-auto mt-5 max-w-4xl leading-7 text-secondary">Looking for an accounting course in Chennai, a Tally Prime course with GST, practical GST return filing training, or an income tax and TDS course? PixelBotix Eduverse offers individual skill courses and structured combinations with self-paced online learning and an online mentor-supported option. Learners can enquire from Chennai and across Tamil Nadu, including Coimbatore, Madurai, Tiruchirappalli (Trichy), Salem, Tiruppur, Erode, Vellore, Tirunelveli, Thanjavur, Dindigul, Thoothukudi, Kanchipuram, Chengalpattu, Tiruvallur, Villupuram, Cuddalore, Karur, Namakkal, Krishnagiri, Dharmapuri, Sivaganga, Virudhunagar, Ramanathapuram, Tenkasi, Kanniyakumari, Nilgiris, Ariyalur, Perambalur, Ranipet, Tirupathur, Kallakurichi, Mayiladuthurai, Nagapattinam, Tiruvarur, and other districts. Online learning can also support learners in Kerala and elsewhere in India, subject to course availability. Offline classroom availability, venue and batch dates should be confirmed before travelling.</p>
+        <div class="mt-7 flex flex-wrap justify-center gap-3"><span class="rounded-full border border-gray-300 px-4 py-2 text-sm dark:border-slate-600">Accounting Courses in Chennai</span><span class="rounded-full border border-gray-300 px-4 py-2 text-sm dark:border-slate-600">Tally Prime &amp; GST</span><span class="rounded-full border border-gray-300 px-4 py-2 text-sm dark:border-slate-600">GST Return Filing</span><span class="rounded-full border border-gray-300 px-4 py-2 text-sm dark:border-slate-600">Income Tax &amp; TDS</span><span class="rounded-full border border-gray-300 px-4 py-2 text-sm dark:border-slate-600">Online Courses Across Tamil Nadu</span></div>
+      </div>
+    </section>
+
+    <section class="surface-muted border-y border-gray-200 py-14 dark:border-slate-700 sm:py-20">
+      <div class="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
+        <h2 class="text-2xl font-extrabold tracking-tight sm:text-4xl">Frequently Asked Questions</h2>
+        <div class="mt-8 space-y-3">
+          <details class="faq-item"><summary>Which accounting and taxation courses are available?</summary><div class="faq-answer">The brochure lists Basic Accounting &amp; Tally Prime, Tally Advanced, GST Computation, GST Return Filing, Income Tax Computation, ITR Filing, TDS Computation, TDS Return Filing, Payroll, PF &amp; ESI, Business Taxation, Financial Statements &amp; MIS, Excel, Word and PowerPoint.</div></details>
+          <details class="faq-item"><summary>What is the difference between the two learning options?</summary><div class="faq-answer">The self-paced option is designed for independent online study. The online-with-mentor option provides a mentor-supported format. Confirm the specific support and live-session arrangements for your selected course before enrolment.</div></details>
+          <details class="faq-item"><summary>Can students outside Chennai enrol?</summary><div class="faq-answer">Online courses are intended to make learning accessible beyond Chennai, including learners across Tamil Nadu, Kerala and other Indian states. Availability depends on the course and delivery format.</div></details>
+          <details class="faq-item"><summary>Are specialised combinations available?</summary><div class="faq-answer">The brochure lists Junior Accounts Executive, Senior Accounts Executive, Finance &amp; Taxation Executive, HR Specialisation and Tax Specialisation. The brochure specifies a three-month duration for these programmes.</div></details>
+          <details class="faq-item"><summary>Will I receive a certificate?</summary><div class="faq-answer">The brochure describes a certificate of completion with QR-code verification. Confirm the completion requirements and certificate terms for the selected programme.</div></details>
+          <details class="faq-item"><summary>How can I enquire about course fees?</summary><div class="faq-answer">Contact the PixelBotix Eduverse team on WhatsApp. Share the course name and preferred learning mode so the team can confirm the current fee, availability and enrolment procedure.</div></details>
+        </div>
+      </div>
+    </section>
+
+    <section class="py-14 sm:py-20">
+      <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div class="rounded-3xl bg-violet-900 px-6 py-10 text-white sm:px-10 sm:py-14 lg:px-14 dark:bg-slate-900 dark:border dark:border-slate-700">
+          <div class="max-w-3xl">
+            <p class="eyebrow text-xs font-bold text-violet-200">PixelBotix Eduverse</p>
+            <h2 class="mt-3 text-2xl font-extrabold tracking-tight sm:text-4xl">Build Practical Accounting &amp; Taxation Skills</h2>
+            <p class="mt-4 leading-7 text-violet-100 dark:text-slate-200">Choose an individual course or a specialised combination. Get the details you need before deciding on your learning path.</p>
+            <a href="https://wa.me/917200445685?text=Hello%20PixelBotix%20Eduverse%2C%20I%20would%20like%20details%20about%20the%20Accounting%20%26%20Taxation%20courses." target="_blank" rel="noopener noreferrer" class="mt-7 inline-flex min-h-12 items-center justify-center gap-2 rounded-xl border-2 border-white bg-white px-6 py-3 font-bold text-violet-900 shadow-md transition hover:bg-violet-100 hover:text-violet-950 dark:border-emerald-400 dark:bg-emerald-500 dark:text-white dark:hover:bg-emerald-600"><i class="ri-whatsapp-line text-xl" aria-hidden="true"></i>Enquire on WhatsApp</a>
+          </div>
+        </div>
+      </div>
+    </section>
   </main>
 
-  <!-- FOOTER -->
+  <!-- layout.js loads /partials/footer.html and owns all footer/floating controls -->
   <div id="site-footer"></div>
 
-  <script src="/assets/js/layout.js"></script>
+  <script>
+    'use strict';
+
+    const WHATSAPP_NUMBER = '917200445685';
+
+    /*
+     * Course photos use distinct Unsplash image assets as initial artwork.
+     * For long-term production reliability, download licensed images into
+     * /assets/images/courses/ and replace these URLs with local paths.
+     */
+    const individualCourses = [
+      { name: 'Basic Accounting & Tally Prime', category: 'accounting', image: 'https://images.unsplash.com/photo-1554224155-6726b3ff858f?auto=format&fit=crop&w=900&q=80', selfPrice: 1999, selfOriginal: 3999, mentorPrice: 3999, mentorOriginal: 7999, topics: ['Basic accounting and company creation', 'Company data management and voucher entries', 'Concept of double entry', 'Ledger finalisation and bank reconciliation'], duration: '30 hours', videos: 28, mcqs: 89, caseStudies: 16, experiments: 30 },
+      { name: 'Microsoft Excel', category: 'office', image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=900&q=80', selfPrice: 599, selfOriginal: 1199, mentorPrice: 1200, mentorOriginal: 2399, topics: ['Basic and advanced Excel', 'Excel shortcuts and features', 'Excel presentation standards'], duration: '20 hours', videos: 20, mcqs: 32, caseStudies: 13 },
+      { name: 'Income Tax Computation', category: 'tax', image: 'https://images.unsplash.com/photo-1554224154-26032ffc0d07?auto=format&fit=crop&w=900&q=80', selfPrice: 1999, selfOriginal: 3999, mentorPrice: 3999, mentorOriginal: 7999, topics: ['Income tax basics', 'Salary and allowances', 'Income from house property', 'Capital gains and other sources', 'Deductions and tax computation', 'Advance tax computation for an individual'], duration: '30 hours', videos: 36, mcqs: 83, caseStudies: 18, experiments: 27, simulations: 6 },
+      { name: 'Payroll or Salary Statement', category: 'payroll', image: 'https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=900&q=80', selfPrice: 899, selfOriginal: 1799, mentorPrice: 1799, mentorOriginal: 3599, topics: ['Appointment procedure', 'Payroll preparation', 'Payroll in Tally Prime'], duration: '20 hours', videos: 22, mcqs: 77, caseStudies: 8 },
+      { name: 'TDS Computation', category: 'tax', image: 'https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?auto=format&fit=crop&w=900&q=80', selfPrice: 1999, selfOriginal: 3999, mentorPrice: 3999, mentorOriginal: 7999, topics: ['TDS on salary', 'TDS on income other than salary'], duration: '20 hours', videos: 22, mcqs: 46, caseStudies: 6, experiments: 17, simulations: 6 },
+      { name: 'GST Computation', category: 'tax', image: 'https://images.unsplash.com/photo-1554224154-22dec7ec8818?auto=format&fit=crop&w=900&q=80', selfPrice: 1999, selfOriginal: 3999, mentorPrice: 3999, mentorOriginal: 7999, topics: ['GST basics', 'GST invoice preparation', 'Debit notes and credit notes', 'E-Way Bill', 'RCM, TDS and TCS concepts', 'GST computation'], duration: '30 hours', videos: 42, mcqs: 60, caseStudies: 23, experiments: 12, simulations: 7 },
+      { name: 'GST Return Filing', category: 'tax', image: 'https://images.unsplash.com/photo-1554224154-26032ffc0d07?auto=format&fit=crop&w=900&q=80', selfPrice: 1999, selfOriginal: 3999, mentorPrice: 3999, mentorOriginal: 7999, topics: ['GST return filing online', 'GST returns in Tally offline'], duration: '30 hours', videos: 14, mcqs: 38, caseStudies: 6, experiments: 17, simulations: 9 },
+      { name: 'Tally Advanced', category: 'accounting', image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=900&q=80', selfPrice: 1999, selfOriginal: 3999, mentorPrice: 3999, mentorOriginal: 7999, topics: ['Accounting with bill reference', 'Opening balance verification', 'Purchase process and export invoicing', 'Cost centres and inventory management', 'Review and rectification'], duration: '30 hours', videos: 20, mcqs: 8, caseStudies: 17 },
+      { name: 'ITR Filing (Individual)', category: 'tax', image: 'https://images.unsplash.com/photo-1554224154-22dec7ec8818?auto=format&fit=crop&w=900&q=80', selfPrice: 1999, selfOriginal: 3999, mentorPrice: 3999, mentorOriginal: 7999, topics: ['Basics of income tax returns', 'Income Tax Return Filing: ITR-1', 'Income Tax Return Filing: ITR-2'], duration: '30 hours', videos: 11, mcqs: 21, caseStudies: 17, experiments: 34, simulations: 8 },
+      { name: 'TDS Return Filing', category: 'tax', image: 'https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?auto=format&fit=crop&w=900&q=80', selfPrice: 1999, selfOriginal: 3999, mentorPrice: 3999, mentorOriginal: 7999, topics: ['Salary TDS return: Form 24Q', 'Non-salary TDS return: Form 26Q', 'TDS rectification'], duration: '30 hours', videos: 13, mcqs: 25, caseStudies: 5, experiments: 14, simulations: 7 },
+      { name: 'PF & ESI Return Filing', category: 'payroll', image: 'https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=900&q=80', selfPrice: 1999, selfOriginal: 3999, mentorPrice: 3999, mentorOriginal: 7999, topics: ['EPF basics and return filing', 'Employee accounts and withdrawals', 'ESI return filing'], duration: '30 hours', videos: 16, mcqs: 48, caseStudies: 6, experiments: 15, simulations: 8 },
+      { name: 'Business Taxation', category: 'finance', image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=900&q=80', selfPrice: 1999, selfOriginal: 3999, mentorPrice: 3999, mentorOriginal: 7999, topics: ['Income tax computation for a business entity', 'Tax computation for partnership firms and companies', 'Depreciation under the Income Tax Act', 'Depreciation under the Companies Act'], duration: '30 hours', videos: 13, mcqs: 40, caseStudies: 8, experiments: 13, simulations: 5 },
+      { name: 'Financial Statements & MIS', category: 'finance', image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=900&q=80', selfPrice: 1999, selfOriginal: 3999, mentorPrice: 3999, mentorOriginal: 7999, topics: ['Financial statements under Companies Act 2013', 'MIS and analytical tools', 'Product profit analysis', 'Budget versus actual', 'Cash flow statement'], duration: '30 hours', videos: 22, mcqs: 59, caseStudies: 19 },
+      { name: 'Microsoft Word', category: 'office', image: 'https://images.unsplash.com/photo-1455390582262-044cdead277a?auto=format&fit=crop&w=900&q=80', selfPrice: 599, selfOriginal: 1199, mentorPrice: 1200, mentorOriginal: 2399, topics: ['Working with paragraphs and lines', 'Page layout and styles', 'Adding visual elements', 'Advanced document features', 'Working with files and documents'], duration: '10 hours', videos: 5, mcqs: 70, caseStudies: 18 },
+      { name: 'Microsoft PowerPoint', category: 'office', image: 'https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=900&q=80', selfPrice: 599, selfOriginal: 1199, mentorPrice: 1200, mentorOriginal: 2399, topics: ['Creating and editing slides', 'Formatting and styling', 'Adding media', 'Presenting your work', 'Advanced features and collaboration'], duration: '12 hours', videos: 7, mcqs: 53, caseStudies: 17 }
+    ];
+
+    const specialisedBundles = [
+      { name: 'Junior Accounts Executive', level: 'Level I', image: 'https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=900&q=80', duration: '3 months', selfPrice: 11499, selfOriginal: 22999, mentorPrice: 22999, mentorOriginal: 45999, description: 'Build a foundation in accounting, Tally, Excel, payroll, income tax, GST and TDS computation.', modules: ['Basic Accounting & Tally Foundation', 'Excel Foundation', 'Payroll or Salary Statement', 'Income Tax Computation', 'TDS Computation', 'GST Computation', 'GST Return Filing'] },
+      { name: 'Senior Accounts Executive', level: 'Level II', image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=900&q=80', duration: '3 months', selfPrice: 11999, selfOriginal: 23999, mentorPrice: 23999, mentorOriginal: 47999, description: 'Develop broader accounting and compliance skills through advanced Tally, filing and reporting modules.', modules: ['Tally Specialisation', 'ITR Filing (Individual)', 'TDS Return Filing', 'PF & ESI Return Filing', 'Business Taxation', 'Financial Statements & MIS'] },
+      { name: 'Finance & Taxation Executive', level: 'Levels I & II', image: 'https://images.unsplash.com/photo-1554224155-6726b3ff858f?auto=format&fit=crop&w=900&q=80', duration: '3 months', selfPrice: 23999, selfOriginal: 47999, mentorPrice: 47999, mentorOriginal: 95999, description: 'A broad pathway covering accounting, Tally, taxation, compliance, payroll and financial reporting.', modules: ['Basic Accounting & Tally Foundation', 'Tally Specialisation', 'Business Taxation', 'Financial Statements & MIS', 'Income Tax Computation', 'GST Computation', 'Microsoft Excel', 'Payroll or Salary Statement', 'TDS Computation', 'ITR Filing (Individual)', 'TDS Return Filing', 'GST Return Filing', 'PF & ESI Return Filing'] },
+      { name: 'HR Specialisation', level: 'Professional pathway', image: 'https://images.unsplash.com/photo-1521737711867-e3b97375f902?auto=format&fit=crop&w=900&q=80', duration: '3 months', selfPrice: 11499, selfOriginal: 22999, mentorPrice: 22999, mentorOriginal: 45999, description: 'Develop practical office, payroll, TDS, employee compliance and individual income tax skills.', modules: ['Microsoft Excel', 'Payroll or Salary Statement', 'TDS Computation', 'PF & ESI Return Filing', 'TDS Return Filing', 'ITR Filing (Individual)', 'Income Tax Computation'] },
+      { name: 'Tax Specialisation', level: 'Professional pathway', image: 'https://images.unsplash.com/photo-1554224154-26032ffc0d07?auto=format&fit=crop&w=900&q=80', duration: '3 months', selfPrice: 13999, selfOriginal: 27999, mentorPrice: 27999, mentorOriginal: 55999, description: 'Focus on individual ITR filing, TDS, GST returns and business taxation processes.', modules: ['ITR Filing (Individual)', 'TDS Computation', 'GST Return Filing', 'TDS Return Filing', 'GST Computation', 'Business Taxation'] }
+    ];
+
+    const money = amount => new Intl.NumberFormat('en-IN', { style: 'currency', currency: 'INR', maximumFractionDigits: 0 }).format(amount);
+    const escapeHTML = value => String(value).replace(/[&<>"']/g, character => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' })[character]);
+    const discountPercent = (original, current) => Math.round(((original - current) / original) * 100);
+    const whatsappLink = courseName => `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(`Hello PixelBotix Eduverse, I am interested in ${courseName}. Please share the current fee, available learning modes and enrolment details.`)}`;
+
+    function renderTopics(topics) {
+      return `<ul class="topic-list mt-4">${topics.map(topic => `<li>${escapeHTML(topic)}</li>`).join('')}</ul>`;
+    }
+
+    function renderPrice(label, current, original) {
+      return `<div class="rounded-xl border border-gray-200 p-4 dark:border-slate-700">
+        <p class="text-sm font-semibold">${escapeHTML(label)}</p>
+        <div class="mt-3 flex flex-wrap items-center gap-2">
+          <span class="text-2xl font-extrabold">${money(current)}</span>
+          <span class="price-old text-sm">${money(original)}</span>
+          <span class="discount-label">${discountPercent(original, current)}% off</span>
+        </div>
+      </div>`;
+    }
+
+    function renderCourse(course) {
+      const categoryLabels = {
+        accounting: 'Accounting & Tally',
+        tax: 'Taxation & Compliance',
+        payroll: 'Payroll & Compliance',
+        finance: 'Finance & Reporting',
+        office: 'Office Productivity'
+      };
+      const courseId = `topics-${individualCourses.indexOf(course)}`;
+      return `<article class="course-card">
+        <img class="course-image" src="${escapeHTML(course.image)}" alt="${escapeHTML(course.name)} course artwork" width="900" height="506" loading="lazy" decoding="async" referrerpolicy="no-referrer">
+        <div class="course-card-body">
+          <div class="flex items-start justify-between gap-2">
+            <p class="eyebrow text-[10px] font-bold text-brand-600 dark:text-brand-300">${escapeHTML(categoryLabels[course.category])}</p>
+            <span class="shrink-0 rounded-full bg-gray-100 px-2 py-1 text-[11px] font-semibold text-gray-600 dark:bg-slate-800 dark:text-slate-300">${escapeHTML(course.duration)}</span>
+          </div>
+          <h3 class="mt-2 text-base font-bold leading-snug sm:text-lg">${escapeHTML(course.name)}</h3>
+
+          <div class="mt-3 flex flex-wrap gap-2 text-xs text-secondary">
+            <span>${escapeHTML(course.videos)} videos</span>
+            <span aria-hidden="true">·</span>
+            <span>${escapeHTML(course.mcqs)} MCQs</span>
+            ${course.caseStudies !== undefined ? `<span aria-hidden="true">·</span><span>${escapeHTML(course.caseStudies)} case studies</span>` : ''}
+          </div>
+
+          <details class="mt-3">
+            <summary class="course-detail-toggle">View course topics</summary>
+            <div class="course-detail-panel">
+              ${renderTopics(course.topics)}
+            </div>
+          </details>
+
+          <div class="mt-auto pt-4">
+            <div class="course-price-grid">
+              <div class="course-price-option">
+                <p class="text-xs font-semibold leading-snug text-secondary">Self-paced</p>
+                <span class="price-value">${money(course.selfPrice)}</span>
+                <span class="price-old">${money(course.selfOriginal)}</span>
+                <span class="discount-label">${discountPercent(course.selfOriginal, course.selfPrice)}% off</span>
+              </div>
+              <div class="course-price-option is-mentor">
+                <p class="text-xs font-semibold leading-snug text-secondary">Online + mentor</p>
+                <span class="price-value">${money(course.mentorPrice)}</span>
+                <span class="price-old">${money(course.mentorOriginal)}</span>
+                <span class="discount-label">${discountPercent(course.mentorOriginal, course.mentorPrice)}% off</span>
+              </div>
+            </div>
+            <a href="${whatsappLink(course.name)}" target="_blank" rel="noopener noreferrer" class="enquire-button mt-4">
+              <i class="ri-whatsapp-line text-lg" aria-hidden="true"></i>
+              Enquire on WhatsApp
+            </a>
+          </div>
+        </div>
+      </article>`;
+    }
+
+    function renderBundle(bundle) {
+      return `<article class="bundle-card">
+        <img class="course-image" src="${escapeHTML(bundle.image)}" alt="${escapeHTML(bundle.name)} programme artwork" width="900" height="506" loading="lazy" decoding="async" referrerpolicy="no-referrer">
+        <div class="flex flex-1 flex-col p-5 sm:p-6">
+          <div class="flex-1">
+            <div class="flex flex-wrap items-center justify-between gap-2">
+              <span class="inline-flex rounded-full bg-brand-100 px-3 py-1 text-xs font-bold text-brand-800 dark:bg-slate-700 dark:text-brand-200">${escapeHTML(bundle.level)}</span>
+              <span class="text-xs font-semibold text-secondary">${escapeHTML(bundle.duration)}</span>
+            </div>
+            <h3 class="mt-3 text-lg font-extrabold leading-snug sm:text-xl">${escapeHTML(bundle.name)}</h3>
+            <p class="mt-2 text-sm leading-6 text-secondary">${escapeHTML(bundle.description)}</p>
+            <details class="mt-3">
+              <summary class="course-detail-toggle">View ${bundle.modules.length} included modules</summary>
+              ${renderTopics(bundle.modules)}
+            </details>
+          </div>
+          <div class="mt-5 space-y-3 border-t border-gray-200 pt-4 dark:border-slate-700">
+            <div class="course-price-grid">
+              <div class="course-price-option">
+                <p class="text-xs font-semibold leading-snug text-secondary">Self-paced</p>
+                <span class="price-value">${money(bundle.selfPrice)}</span>
+                <span class="price-old">${money(bundle.selfOriginal)}</span>
+                <span class="discount-label">${discountPercent(bundle.selfOriginal, bundle.selfPrice)}% off</span>
+              </div>
+              <div class="course-price-option is-mentor">
+                <p class="text-xs font-semibold leading-snug text-secondary">Online + mentor</p>
+                <span class="price-value">${money(bundle.mentorPrice)}</span>
+                <span class="price-old">${money(bundle.mentorOriginal)}</span>
+                <span class="discount-label">${discountPercent(bundle.mentorOriginal, bundle.mentorPrice)}% off</span>
+              </div>
+            </div>
+            <a href="${whatsappLink(bundle.name)}" target="_blank" rel="noopener noreferrer" class="enquire-button">
+              <i class="ri-whatsapp-line text-lg" aria-hidden="true"></i>
+              Enquire about programme
+            </a>
+          </div>
+        </div>
+      </article>`;
+    }
+
+    let activeCourseCategory = 'all';
+
+    function renderCourses() {
+      const grid = document.getElementById('course-grid');
+      const count = document.getElementById('course-count');
+      const empty = document.getElementById('course-empty');
+      const filtered = individualCourses.filter(course =>
+        activeCourseCategory === 'all' || course.category === activeCourseCategory
+      );
+      grid.innerHTML = filtered.map(renderCourse).join('');
+      empty.classList.toggle('hidden', filtered.length > 0);
+      count.textContent = activeCourseCategory === 'all'
+        ? `Showing all ${filtered.length} individual courses.`
+        : `Showing ${filtered.length} courses in this category.`;
+      document.querySelectorAll('.course-filter-button').forEach(button => {
+        const selected = button.dataset.category === activeCourseCategory;
+        button.setAttribute('aria-pressed', String(selected));
+      });
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+      document.querySelectorAll('.course-filter-button').forEach(button => {
+        button.addEventListener('click', () => {
+          activeCourseCategory = button.dataset.category;
+          renderCourses();
+        });
+      });
+      renderCourses();
+      document.getElementById('bundle-grid').innerHTML = specialisedBundles.map(renderBundle).join('');
+    });
+  </script>
+
+  <!-- Shared shell owns navbar, footer, dark mode, contact popup, chatbot and floating controls.
+       This page deliberately does not bind a second theme controller. -->
+  <script src="/assets/js/layout.js" defer></script>
 </body>
 </html>

@@ -156,6 +156,140 @@
     }
     .pb-mobile-sticky { display: none; }
 
+    /* =========================================================
+       PIXELBOTIX SHARED DARK / LIGHT THEME
+       The shared navbar toggles html.dark and stores the choice
+       under the existing pixelbotix-theme key in layout.js.
+    ========================================================= */
+    html {
+      color-scheme: light;
+      background: #ffffff;
+    }
+
+    html.dark {
+      color-scheme: dark;
+      background: #0f172a;
+      --pb-ink: #f8fafc;
+      --pb-muted: #94a3b8;
+      --pb-line: #334155;
+      --pb-surface: #1e293b;
+    }
+
+    html.dark body {
+      background: #0f172a !important;
+      color: #e2e8f0 !important;
+    }
+
+    html.dark #main-content,
+    html.dark #scanner-range,
+    html.dark #main-content .bg-white,
+    html.dark #main-content .bg-slate-50 {
+      background-color: #0f172a !important;
+    }
+
+    html.dark .pb-hero {
+      background:
+        radial-gradient(ellipse at 90% 10%, rgba(59, 130, 246, .20), transparent 35%),
+        radial-gradient(ellipse at 8% 85%, rgba(16, 185, 129, .10), transparent 32%),
+        linear-gradient(135deg, #0f172a 0%, #111c31 54%, #0f172a 100%);
+    }
+
+    html.dark .pb-card,
+    html.dark #main-content .bg-white\/80,
+    html.dark #main-content .bg-white\/90 {
+      background-color: #1e293b !important;
+      border-color: #334155 !important;
+      color: #e2e8f0;
+    }
+
+    html.dark .pb-card:hover {
+      border-color: #475569 !important;
+      box-shadow: 0 16px 36px rgba(0, 0, 0, .24);
+    }
+
+    html.dark .pb-section-title,
+    html.dark #main-content .text-slate-950,
+    html.dark #main-content .text-slate-900,
+    html.dark #main-content .text-slate-800,
+    html.dark #main-content .text-slate-700,
+    html.dark .pb-faq summary,
+    html.dark .pb-spec-row strong {
+      color: #f8fafc !important;
+    }
+
+    html.dark #main-content .text-slate-600,
+    html.dark #main-content .text-slate-500,
+    html.dark #main-content .text-slate-400 {
+      color: #a8b6c9 !important;
+    }
+
+    html.dark #main-content .text-blue-800,
+    html.dark #main-content .text-blue-700,
+    html.dark .pb-eyebrow {
+      color: #93c5fd !important;
+    }
+
+    html.dark #main-content .border-slate-100,
+    html.dark #main-content .border-slate-200,
+    html.dark .pb-faq details,
+    html.dark .pb-spec-row {
+      border-color: #334155 !important;
+    }
+
+    html.dark .pb-pill,
+    html.dark .pb-city-list span {
+      color: #cbd5e1;
+      background: #172337;
+      border-color: #475569;
+    }
+
+    html.dark .pb-feature-icon {
+      color: #93c5fd;
+      background: rgba(59, 130, 246, .16);
+    }
+
+    html.dark .pb-product-image {
+      border-color: #475569;
+      background: linear-gradient(145deg, #f8fafc, #e2e8f0);
+    }
+
+    html.dark .pb-spec-row strong {
+      color: #f8fafc !important;
+    }
+
+    html.dark .pb-btn-secondary {
+      color: #bfdbfe !important;
+      background: #1e3a5f !important;
+      border-color: #365779 !important;
+    }
+
+    html.dark .pb-btn-secondary:hover {
+      background: #25476f !important;
+    }
+
+    html.dark #main-content .bg-blue-50\/70 {
+      background: rgba(30, 58, 95, .55) !important;
+      border-color: #365779 !important;
+    }
+
+    html.dark #main-content .border-blue-100 {
+      border-color: #365779 !important;
+    }
+
+    html.dark .pb-mobile-sticky {
+      background: rgba(15, 23, 42, .94);
+      border-color: #334155;
+    }
+
+    html.dark .pb-faq summary::after {
+      color: #93c5fd;
+    }
+
+    /* The final CTA intentionally remains a dark contrast section. */
+    html.dark #main-content .bg-slate-950 {
+      background-color: #080f1c !important;
+    }
+
     @media (max-width: 640px) {
       .pb-wrap { width: min(100% - 24px, 1160px); }
       .pb-card { border-radius: 17px; }

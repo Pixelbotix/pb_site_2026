@@ -164,11 +164,17 @@
       background: #fff;
       box-shadow: 0 12px 32px rgba(20, 42, 90, .06);
     }
+    .pb-demo-grid {
+      align-items: start;
+    }
+    .pb-demo-card {
+      width: 100%;
+      min-width: 0;
+    }
     .pb-demo-frame {
       position: relative;
       width: 100%;
-      aspect-ratio: 16 / 9;
-      max-height: none;
+      aspect-ratio: 9 / 16;
       background: #080f1c;
       overflow: hidden;
     }
@@ -200,6 +206,10 @@
     html.dark .pb-demo-sound { background: rgba(0, 0, 0, .78); color: #ffffff; border-color: rgba(255,255,255,.2); }
     @media (min-width: 768px) {
       .pb-demo-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+    }
+    @media (max-width: 639px) {
+      .pb-demo-grid { grid-template-columns: minmax(0, 1fr); }
+      .pb-demo-card { max-width: 420px; margin-inline: auto; }
     }
 
 

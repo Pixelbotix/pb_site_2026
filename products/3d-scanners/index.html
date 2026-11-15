@@ -156,6 +156,53 @@
     }
     .pb-mobile-sticky { display: none; }
 
+    /* PIXELBOTIX REAL-TIME SCANNING VIDEO DEMONSTRATIONS */
+    .pb-demo-card {
+      overflow: hidden;
+      border: 1px solid var(--pb-line);
+      border-radius: 20px;
+      background: #fff;
+      box-shadow: 0 12px 32px rgba(20, 42, 90, .06);
+    }
+    .pb-demo-frame {
+      position: relative;
+      width: 100%;
+      aspect-ratio: 16 / 9;
+      max-height: none;
+      background: #080f1c;
+      overflow: hidden;
+    }
+    .pb-demo-frame iframe {
+      display: block;
+      width: 100%;
+      height: 100%;
+      border: 0;
+    }
+    .pb-demo-content { padding: 1.1rem 1.15rem 1.25rem; }
+    .pb-demo-sound {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: .5rem;
+      min-height: 42px;
+      padding: .65rem .9rem;
+      border: 1px solid #cbd5e1;
+      border-radius: 11px;
+      background: rgba(0, 0, 0, .75);
+      color: #ffffff;
+      font-size: .875rem;
+      font-weight: 750;
+      cursor: pointer;
+    }
+    .pb-demo-sound:disabled { opacity: .6; cursor: wait; }
+    .pb-demo-sound:focus-visible { outline: 3px solid #93c5fd; outline-offset: 3px; }
+    html.dark .pb-demo-card { background: #1e293b; border-color: #334155; }
+    html.dark .pb-demo-sound { background: rgba(0, 0, 0, .78); color: #ffffff; border-color: rgba(255,255,255,.2); }
+    @media (min-width: 768px) {
+      .pb-demo-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+    }
+
+
     /* =========================================================
        PIXELBOTIX SHARED DARK / LIGHT THEME
        The shared navbar toggles html.dark and stores the choice
@@ -345,7 +392,7 @@
             "@type": "Product",
             "name": "3DeVOK MT Gen2 Advanced 3D Scanner",
             "brand": { "@type": "Brand", "name": "3DeVOK" },
-            "url": "https://www.3devok.com/products-3devok-mt-gen2-3d-scanner"
+            "url": "https://pixelbotix.com/products/3d-scanners/#mt-gen2"
           }
         },
         {
@@ -355,7 +402,7 @@
             "@type": "Product",
             "name": "3DeVOK MT Professional 3D Scanner",
             "brand": { "@type": "Brand", "name": "3DeVOK" },
-            "url": "https://www.3devok.com/products-3devok-mt-3d-scanner"
+            "url": "https://pixelbotix.com/products/3d-scanners/#mt-professional"
           }
         },
         {
@@ -365,7 +412,7 @@
             "@type": "Product",
             "name": "3DeVOK MQ Color 3D Scanner",
             "brand": { "@type": "Brand", "name": "3DeVOK" },
-            "url": "https://www.3devok.com/products-3devok-mq-3d-scanner"
+            "url": "https://pixelbotix.com/products/3d-scanners/#mq-color"
           }
         },
         {
@@ -375,7 +422,7 @@
             "@type": "Product",
             "name": "3DeVOK Airgo Wireless Handle",
             "brand": { "@type": "Brand", "name": "3DeVOK" },
-            "url": "https://www.3devok.com/products/3devok-airgo-wireless-handle/"
+            "url": "https://pixelbotix.com/products/3d-scanners/#airgo"
           }
         }
       ]
@@ -458,7 +505,94 @@
       </div>
     </section>
 
-    <!-- PRODUCT RANGE -->
+
+
+    <!-- REAL-TIME 3D SCANNING DEMONSTRATIONS -->
+    <section id="live-scanning-demos" class="pb-section bg-white">
+      <div class="pb-wrap">
+        <div class="mx-auto max-w-3xl text-center">
+          <p class="pb-eyebrow text-blue-700">Real scanning at PixelBotix</p>
+          <h2 class="pb-section-title mt-3 text-3xl font-black sm:text-4xl">See handheld 3D scanning in action.</h2>
+          <p class="mt-4 text-base leading-7 text-slate-600">
+            These short videos were recorded during 3D scanning demonstrations at the PixelBotix office. Watch the scanner capture real objects and see how a physical part is digitised in a live workflow.
+          </p>
+        </div>
+
+        <div class="pb-demo-grid mt-8 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+          <article class="pb-demo-card">
+            <div class="pb-demo-frame">
+              <iframe
+                id="pb-demo-player-1"
+                class="w-full h-full pointer-events-none"
+                src="https://www.youtube.com/embed/QEBdIRKr20k?autoplay=1&amp;mute=1&amp;controls=0&amp;loop=1&amp;playlist=QEBdIRKr20k&amp;modestbranding=1&amp;rel=0&amp;playsinline=1&amp;enablejsapi=1&amp;origin=https%3A%2F%2Fpixelbotix.com"
+                title="Real-time 3D scanning demonstration at PixelBotix office, video 1"
+                width="640"
+                height="360"
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                referrerpolicy="strict-origin-when-cross-origin"
+                allowfullscreen></iframe>
+              <button class="pb-demo-sound absolute bottom-3 right-3 z-20 border-white/20 bg-black/75 text-white shadow-xl backdrop-blur-md hover:bg-black/90" type="button" data-player="1" aria-pressed="false" disabled>
+                <i class="ri-volume-mute-line text-base text-cyan-400" aria-hidden="true"></i><span>Tap to Unmute</span>
+              </button>
+            </div>
+            <div class="pb-demo-content">
+              <h3 class="text-lg font-extrabold text-slate-950">Live 3D scanning demonstration 01</h3>
+              <p class="mt-2 text-sm leading-6 text-slate-600">A real-time scanning session recorded at the PixelBotix office.</p>
+            </div>
+          </article>
+
+          <article class="pb-demo-card">
+            <div class="pb-demo-frame">
+              <iframe
+                id="pb-demo-player-2"
+                class="w-full h-full pointer-events-none"
+                src="https://www.youtube.com/embed/PgWvj5198tg?autoplay=1&amp;mute=1&amp;controls=0&amp;loop=1&amp;playlist=PgWvj5198tg&amp;modestbranding=1&amp;rel=0&amp;playsinline=1&amp;enablejsapi=1&amp;origin=https%3A%2F%2Fpixelbotix.com"
+                title="Real-time 3D scanning demonstration at PixelBotix office, video 2"
+                width="640"
+                height="360"
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                referrerpolicy="strict-origin-when-cross-origin"
+                allowfullscreen></iframe>
+              <button class="pb-demo-sound absolute bottom-3 right-3 z-20 border-white/20 bg-black/75 text-white shadow-xl backdrop-blur-md hover:bg-black/90" type="button" data-player="2" aria-pressed="false" disabled>
+                <i class="ri-volume-mute-line text-base text-cyan-400" aria-hidden="true"></i><span>Tap to Unmute</span>
+              </button>
+            </div>
+            <div class="pb-demo-content">
+              <h3 class="text-lg font-extrabold text-slate-950">Live 3D scanning demonstration 02</h3>
+              <p class="mt-2 text-sm leading-6 text-slate-600">Another view of the scanning process and captured object geometry.</p>
+            </div>
+          </article>
+
+          <article class="pb-demo-card">
+            <div class="pb-demo-frame">
+              <iframe
+                id="pb-demo-player-3"
+                class="w-full h-full pointer-events-none"
+                src="https://www.youtube.com/embed/uSZv4AqA6Go?autoplay=1&amp;mute=1&amp;controls=0&amp;loop=1&amp;playlist=uSZv4AqA6Go&amp;modestbranding=1&amp;rel=0&amp;playsinline=1&amp;enablejsapi=1&amp;origin=https%3A%2F%2Fpixelbotix.com"
+                title="Real-time 3D scanning demonstration at PixelBotix office, video 3"
+                width="640"
+                height="360"
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                referrerpolicy="strict-origin-when-cross-origin"
+                allowfullscreen></iframe>
+              <button class="pb-demo-sound absolute bottom-3 right-3 z-20 border-white/20 bg-black/75 text-white shadow-xl backdrop-blur-md hover:bg-black/90" type="button" data-player="3" aria-pressed="false" disabled>
+                <i class="ri-volume-mute-line text-base text-cyan-400" aria-hidden="true"></i><span>Tap to Unmute</span>
+              </button>
+            </div>
+            <div class="pb-demo-content">
+              <h3 class="text-lg font-extrabold text-slate-950">Live 3D scanning demonstration 03</h3>
+              <p class="mt-2 text-sm leading-6 text-slate-600">A further real-world example from a PixelBotix office scanning session.</p>
+            </div>
+          </article>
+        </div>
+        <p class="mt-5 text-center text-xs leading-5 text-slate-500">Each video autoplays muted and loops continuously. Use its individual sound button to enable or mute audio.</p>
+      </div>
+    </section>
+
+        <!-- PRODUCT RANGE -->
     <section id="scanner-range" class="pb-section bg-slate-50">
       <div class="pb-wrap">
         <div class="max-w-3xl">
@@ -495,7 +629,7 @@
             <p class="mt-3 text-xs leading-5 text-slate-500">*Manufacturer-stated laboratory/theoretical test figures. Accuracy depends on scanning mode, conditions and measurement setup. Refer to the official technical documentation.</p>
             <div class="mt-auto flex flex-col gap-3 pt-5 sm:flex-row">
               <a href="https://wa.me/917200445685?text=Hello%20PixelBotix%2C%20please%20share%20the%20price%20and%20quotation%20for%20the%203DeVOK%20MT%20Gen2%20Advanced%203D%20Scanner." class="pb-btn pb-btn-primary flex-1"><i class="ri-whatsapp-line" aria-hidden="true"></i> Request price on WhatsApp</a>
-              <a href="https://www.3devok.com/products-3devok-mt-gen2-3d-scanner" target="_blank" rel="noopener noreferrer" class="pb-btn pb-btn-secondary flex-1">Official specifications <i class="ri-external-link-line" aria-hidden="true"></i></a>
+              <a href="https://wa.me/917200445685?text=Hello%20PixelBotix%2C%20please%20share%20the%20official%20datasheet%20and%20detailed%20technical%20specifications%20for%20the%203DeVOK%20MT%20Gen2%20Advanced%203D%20Scanner." target="_blank" rel="noopener noreferrer" class="pb-btn pb-btn-secondary flex-1"><i class="ri-whatsapp-line" aria-hidden="true"></i> Request datasheet on WhatsApp</a>
             </div>
           </article>
 
@@ -524,7 +658,7 @@
             <p class="mt-3 text-xs leading-5 text-slate-500">*Manufacturer-stated laboratory/theoretical test figures. Accuracy depends on scanning mode, conditions and measurement setup. Refer to the official technical documentation.</p>
             <div class="mt-auto flex flex-col gap-3 pt-5 sm:flex-row">
               <a href="https://wa.me/917200445685?text=Hello%20PixelBotix%2C%20please%20share%20the%20price%20and%20quotation%20for%20the%203DeVOK%20MT%20Professional%203D%20Scanner." class="pb-btn pb-btn-primary flex-1"><i class="ri-whatsapp-line" aria-hidden="true"></i> Request price on WhatsApp</a>
-              <a href="https://www.3devok.com/products-3devok-mt-3d-scanner" target="_blank" rel="noopener noreferrer" class="pb-btn pb-btn-secondary flex-1">Official specifications <i class="ri-external-link-line" aria-hidden="true"></i></a>
+              <a href="https://wa.me/917200445685?text=Hello%20PixelBotix%2C%20please%20share%20the%20official%20datasheet%20and%20detailed%20technical%20specifications%20for%20the%203DeVOK%20MT%20Professional%203D%20Scanner." target="_blank" rel="noopener noreferrer" class="pb-btn pb-btn-secondary flex-1"><i class="ri-whatsapp-line" aria-hidden="true"></i> Request datasheet on WhatsApp</a>
             </div>
           </article>
 
@@ -553,7 +687,7 @@
             <p class="mt-3 text-xs leading-5 text-slate-500">*Manufacturer-stated laboratory/theoretical test figure. Actual results depend on scanning mode, alignment and working conditions.</p>
             <div class="mt-auto flex flex-col gap-3 pt-5 sm:flex-row">
               <a href="https://wa.me/917200445685?text=Hello%20PixelBotix%2C%20please%20share%20the%20price%20and%20quotation%20for%20the%203DeVOK%20MQ%20Color%203D%20Scanner." class="pb-btn pb-btn-primary flex-1"><i class="ri-whatsapp-line" aria-hidden="true"></i> Request price on WhatsApp</a>
-              <a href="https://www.3devok.com/products-3devok-mq-3d-scanner" target="_blank" rel="noopener noreferrer" class="pb-btn pb-btn-secondary flex-1">Official specifications <i class="ri-external-link-line" aria-hidden="true"></i></a>
+              <a href="https://wa.me/917200445685?text=Hello%20PixelBotix%2C%20please%20share%20the%20official%20datasheet%20and%20detailed%20technical%20specifications%20for%20the%203DeVOK%20MQ%20Color%203D%20Scanner." target="_blank" rel="noopener noreferrer" class="pb-btn pb-btn-secondary flex-1"><i class="ri-whatsapp-line" aria-hidden="true"></i> Request datasheet on WhatsApp</a>
             </div>
           </article>
 
@@ -581,7 +715,7 @@
             </div>
             <div class="mt-auto flex flex-col gap-3 pt-5 sm:flex-row">
               <a href="https://wa.me/917200445685?text=Hello%20PixelBotix%2C%20please%20share%20the%20price%20and%20quotation%20for%20the%203DeVOK%20Airgo%20Wireless%20Handle." class="pb-btn pb-btn-primary flex-1"><i class="ri-whatsapp-line" aria-hidden="true"></i> Request price on WhatsApp</a>
-              <a href="https://www.3devok.com/products/3devok-airgo-wireless-handle/" target="_blank" rel="noopener noreferrer" class="pb-btn pb-btn-secondary flex-1">Official specifications <i class="ri-external-link-line" aria-hidden="true"></i></a>
+              <a href="https://wa.me/917200445685?text=Hello%20PixelBotix%2C%20please%20share%20the%20official%20datasheet%20and%20detailed%20technical%20specifications%20for%20the%203DeVOK%20Airgo%20Wireless%20Handle." target="_blank" rel="noopener noreferrer" class="pb-btn pb-btn-secondary flex-1"><i class="ri-whatsapp-line" aria-hidden="true"></i> Request datasheet on WhatsApp</a>
             </div>
           </article>
         </div>
@@ -721,7 +855,7 @@
           </details>
           <details>
             <summary>Where can I download the technical datasheet?</summary>
-            <p class="mt-3 pr-8 text-sm leading-6 text-slate-600">Use the official 3DeVOK product specification links on each product card. For model-specific brochures, PC requirements, software details and configuration information, contact PixelBotix.</p>
+            <p class="mt-3 pr-8 text-sm leading-6 text-slate-600">Select “Request datasheet on WhatsApp” on the relevant product card. PixelBotix will share the available official datasheet and model-specific technical information directly with you.</p>
           </details>
         </div>
       </div>
@@ -750,6 +884,72 @@
     <a href="https://wa.me/917200445685?text=Hello%20PixelBotix%2C%20please%20share%20the%203DeVOK%203D%20scanner%20quotation." class="pb-btn pb-btn-primary text-sm"><i class="ri-whatsapp-line" aria-hidden="true"></i> Get price</a>
   </div>
 
-  <script src="/assets/js/layout.js"></script>
+
+  <script>
+    (() => {
+      const playerIds = ['pb-demo-player-1', 'pb-demo-player-2', 'pb-demo-player-3'];
+      const buttons = document.querySelectorAll('.pb-demo-sound[data-player]');
+      const players = new Map();
+
+      function setButtonState(button, isMuted) {
+        button.setAttribute('aria-pressed', String(!isMuted));
+        button.innerHTML = isMuted
+          ? '<i class="ri-volume-mute-line text-base text-cyan-400" aria-hidden="true"></i><span>Tap to Unmute</span>'
+          : '<i class="ri-volume-up-line text-base text-cyan-400" aria-hidden="true"></i><span>Mute sound</span>';
+      }
+
+      function initialisePlayers() {
+        if (!window.YT || typeof window.YT.Player !== 'function') return;
+        playerIds.forEach((id, index) => {
+          new YT.Player(id, {
+            events: {
+              onReady: (event) => {
+                const player = event.target;
+                player.mute();
+                player.playVideo();
+                players.set(index + 1, player);
+                const button = document.querySelector('.pb-demo-sound[data-player="' + (index + 1) + '"]');
+                if (button) {
+                  button.disabled = false;
+                  setButtonState(button, true);
+                }
+              }
+            },
+            playerVars: {
+              autoplay: 1,
+              mute: 1,
+              controls: 0,
+              loop: 1,
+              playlist: ['QEBdIRKr20k', 'PgWvj5198tg', 'uSZv4AqA6Go'][index],
+              playsinline: 1,
+              modestbranding: 1,
+              rel: 0
+            }
+          });
+        });
+      }
+
+      buttons.forEach((button) => {
+        button.addEventListener('click', () => {
+          const player = players.get(Number(button.dataset.player));
+          if (!player) return;
+          if (player.isMuted()) {
+            player.unMute();
+            player.setVolume(100);
+            setButtonState(button, false);
+          } else {
+            player.mute();
+            setButtonState(button, true);
+          }
+        });
+      });
+
+      window.onYouTubeIframeAPIReady = initialisePlayers;
+      if (window.YT && typeof window.YT.Player === 'function') initialisePlayers();
+    })();
+  </script>
+  <script async src="https://www.youtube.com/iframe_api"></script>
+
+    <script src="/assets/js/layout.js"></script>
 </body>
 </html>
